@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeTable - Own Your Restaurant's Digital Menu</title>
+    
+    <!-- Exact user-provided image utilized directly as the favicon -->
+    <link rel="icon" type="image/png" href="ChatGPT Image Jun 26, 2026, 09_43_23 PM_2.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cormorant Garamond for elegant serif headings, Inter for high-performance UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                    },
+                    colors: {
+                        bistro: {
+                            50: '#fdfcfb',
+                            100: '#f8f4ef',
+                            200: '#ede2d4',
+                            300: '#e1cdb8',
+                            400: '#cbab8f',
+                            500: '#c49b55', // Rich gold brand color from logo
+                            600: '#9b714e',
+                            700: '#7e573a',
+                            800: '#644129',
+                            900: '#462b1b',
+                            950: '#0c0a09', // Deep roasted coffee bean black
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c0a09; /* Warm stone-950 coffee bean base */
+            color: #f5f5f4; /* Warm stone text */
+            overflow-x: hidden;
+        }
+        /* Custom scrollbar to match sleek theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0c0a09;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2e2520;
+            border-radius: 9999px;
+            border: 2px solid #0c0a09;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #46372f;
+        }
+        /* Glassmorphism with slight champagne tint */
+        .glass-panel {
+            background: rgba(18, 14, 12, 0.7);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(196, 155, 85, 0.1);
+        }
+        /* Subtle paper fiber texture overlay */
+        .bg-grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.015;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="selection:bg-bistro-200 selection:text-bistro-950">
+
+    <!-- Subtle texture overlay -->
+    <div class="fixed inset-0 bg-grain z-40"></div>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-bistro-900/30 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <!-- Precision Crop-Masked Logo Element to remove white background corners perfectly -->
+                <div class="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center shadow-[0_0_15px_rgba(196,155,85,0.3)] bg-black">
+                    <img src="ChatGPT Image Jun 26, 2026, 09_43_23 PM_2.png" alt="VibeTable Logo" class="w-full h-full object-cover rounded-full scale-[1.03]">
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-serif font-bold tracking-tight text-white leading-none">VibeTable</span>
+                    <span class="text-[8px] font-sans uppercase tracking-widest text-bistro-500 font-bold mt-1">Digital Menus</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-400">
+                <a href="#problem" class="hover:text-bistro-300 transition-colors">Why VibeTable</a>
+                <a href="#live-experience" class="hover:text-bistro-300 transition-colors flex items-center gap-1.5">
+                    Live Demo 
+                    <span class="px-1.5 py-0.5 bg-bistro-500/10 text-bistro-400 text-[10px] rounded border border-bistro-500/20 font-bold uppercase tracking-wider">Interactive</span>
+                </a>
+                <a href="#features" class="hover:text-bistro-300 transition-colors">Features</a>
+                <a href="#pricing" class="hover:text-bistro-300 transition-colors">Pricing</a>
+                <a href="#faq" class="hover:text-bistro-300 transition-colors">FAQ</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#pricing" class="hidden sm:inline-flex text-xs uppercase font-semibold tracking-wider text-bistro-400 hover:text-white transition-colors">
+                    Cost Calculator
+                </a>
+                <a href="#playground" class="px-5 py-2.5 bg-bistro-500 text-stone-950 font-bold text-sm rounded-full hover:bg-white hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_0_25px_rgba(196,155,85,0.2)]">
+                    Build Yours
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-40 pb-24 md:pt-48 md:pb-36 overflow-hidden">
+        <!-- Radial candle-light ambient gradients -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[1000px] md:h-[1000px] rounded-full bg-bistro-500/10 blur-[150px] pointer-events-none animate-pulse-slow"></div>
+        <div class="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[700px] md:h-[700px] rounded-full bg-orange-800/10 blur-[120px] pointer-events-none animate-pulse-slow" style="animation-delay: 2s;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                
+                <!-- Tagline Badge -->
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bistro-950/80 border border-bistro-900/40 text-xs font-semibold text-bistro-300 mb-8 shadow-inner">
+                    <span class="flex h-2 w-2 rounded-full bg-bistro-500 animate-pulse"></span>
+                    <span class="font-sans uppercase tracking-wider text-[10px]">Restaurant Menu System You Fully Own</span>
+                </div>
+
+                <!-- Main Bold Headline -->
+                <h1 class="text-5xl sm:text-6xl md:text-8xl font-serif font-light tracking-tight text-white mb-8 leading-[1.05]">
+                    Own Your Restaurant's <br>
+                    <span class="font-serif italic text-transparent bg-clip-text bg-gradient-to-b from-bistro-300 to-bistro-500">Digital Menu.</span>
+                </h1>
+
+                <!-- Persuasive Subheadline -->
+                <p class="text-lg md:text-2xl text-stone-400 font-sans max-w-3xl mx-auto mb-12 leading-relaxed">
+                    Give customers a beautiful, warm, lightning-fast mobile menu experience. 
+                    <span class="text-white font-medium">Zero monthly subscriptions.</span> No platform lock-in. Just one simple payment, forever.
+                </p>
+
+                <!-- Calls to Action -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
+                    <a href="#live-experience" class="w-full sm:w-auto px-8 py-4 bg-bistro-100 text-bistro-950 rounded-full font-bold text-base hover:bg-white transition-all flex items-center justify-center gap-2 group hover:shadow-[0_0_30px_rgba(225,205,184,0.15)]">
+                        Explore Live Menu Tour <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#playground" class="w-full sm:w-auto px-8 py-4 bg-bistro-950 border border-bistro-900 text-stone-200 rounded-full font-bold text-base hover:bg-bistro-900 hover:border-bistro-800 transition-all flex items-center justify-center gap-2">
+                        Open Sandbox Builder
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative mt-12 max-w-5xl mx-auto rounded-3xl border border-bistro-900/40 bg-bistro-950/20 p-4 md:p-6 shadow-[0_30px_100px_rgba(0,0,0,0.8)] glass-panel">
+                <div class="flex items-center justify-between border-b border-bistro-900/30 pb-4 mb-6">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-stone-800"></span>
+                        <span class="w-3 h-3 rounded-full bg-bistro-700"></span>
+                        <span class="w-3 h-3 rounded-full bg-bistro-500"></span>
+                    </div>
+                    <div class="px-6 py-1 bg-bistro-950/80 rounded-lg text-[10px] font-mono text-bistro-400 tracking-wider flex items-center gap-1.5">
+                        <i class="fa-solid fa-microchip"></i> VIBETABLE-PRESET_EST_2026
+                    </div>
+                    <div class="w-3"></div>
+                </div>
+
+                <!-- Simulated Product Image Grid -->
+                <div class="grid md:grid-cols-12 gap-6 items-center">
+                    <div class="md:col-span-7 space-y-6">
+                        <div class="inline-block px-3 py-1 bg-bistro-900/40 border border-bistro-800/30 text-bistro-300 text-xs font-semibold rounded-lg uppercase tracking-wider font-sans text-[10px]">Curation Mode</div>
+                        <h3 class="text-3xl md:text-4xl font-serif text-white leading-tight">Instant updates, striking styling, designed to enhance average ticket value.</h3>
+                        <p class="text-stone-400 font-sans text-sm leading-relaxed">Our digital menus aren't clunky PDFs or cold industrial interfaces. They are warm hospitality canvases engineered to render your signature dishes as appetizing visual journeys—encouraging guests to explore, upgrade, and enjoy more.</p>
+                        
+                        <div class="grid grid-cols-2 gap-4 pt-4">
+                            <div class="p-4 bg-bistro-950/40 border border-bistro-900/20 rounded-2xl flex items-start gap-3">
+                                <i class="fa-solid fa-hourglass text-bistro-400 mt-1"></i>
+                                <div>
+                                    <div class="text-white font-medium text-sm">0.2s Rendering</div>
+                                    <div class="text-[10px] text-stone-500">Bespoke fast assets</div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-bistro-950/40 border border-bistro-900/20 rounded-2xl flex items-start gap-3">
+                                <i class="fa-solid fa-qrcode text-bistro-400 mt-1"></i>
+                                <div>
+                                    <div class="text-white font-medium text-sm">Tabletop Art QR</div>
+                                    <div class="text-[10px] text-stone-500">Elegant scan frames</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Beautiful simulated phone layout (iPhone standard 390x844 max proportions scaled) -->
+                    <div class="md:col-span-5 flex justify-center">
+                        <div class="w-full max-w-[375px] sm:max-w-[390px] h-[780px] sm:h-[844px] rounded-[40px] border-[8px] border-bistro-900/60 bg-bistro-950 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative flex flex-col">
+                            <!-- Speaker/Camera Notch -->
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-bistro-900/60 rounded-b-xl z-20 flex items-center justify-center">
+                                <div class="w-10 h-1.5 bg-bistro-950 rounded-full"></div>
+                            </div>
+                            
+                            <!-- Inside Phone View -->
+                            <div class="flex-1 overflow-y-auto flex flex-col text-xs pt-6 pb-4">
+                                <div class="p-4 flex items-center justify-between border-b border-bistro-900/20 bg-stone-950">
+                                    <span class="font-serif font-bold text-white text-base">Lumina Café</span>
+                                    <div class="px-2.5 py-0.5 bg-bistro-900/30 text-bistro-300 text-[10px] rounded-full flex items-center gap-1 border border-bistro-800/20">
+                                        <i class="fa-solid fa-star text-bistro-400 text-[8px]"></i> 4.9 Reviews
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="w-full h-24 bg-bistro-900/20 rounded-xl overflow-hidden relative flex items-center justify-center border border-bistro-900/10">
+                                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=400" alt="Espresso" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                                        <div class="absolute bottom-2 left-2 text-left">
+                                            <span class="bg-bistro-400 text-bistro-950 font-extrabold text-[8px] px-1.5 py-0.5 rounded tracking-wide mr-1 uppercase">Trending</span>
+                                            <p class="text-white font-serif font-bold text-sm">Morning Fresh Roast</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex gap-2 px-3 pb-3 border-b border-bistro-900/10 overflow-x-auto text-[10px]">
+                                    <span class="px-2.5 py-1 bg-bistro-100 text-bistro-950 font-bold rounded-full shrink-0">Coffee Bar</span>
+                                    <span class="px-2.5 py-1 bg-bistro-950 text-bistro-300 font-medium rounded-full border border-bistro-900/40 shrink-0">Breads & Pastry</span>
+                                    <span class="px-2.5 py-1 bg-bistro-950 text-bistro-300 font-medium rounded-full border border-bistro-900/40 shrink-0">Seasonal Elixirs</span>
+                                </div>
+                                
+                                <div class="p-3 space-y-3 flex-1">
+                                    <div class="flex items-center justify-between p-3 bg-bistro-900/10 rounded-xl border border-bistro-900/20">
+                                        <div class="text-left">
+                                            <div class="font-serif font-bold text-stone-100 text-sm">Flat White</div>
+                                            <div class="text-[10px] text-stone-500 mt-0.5">Velvety steamed microfoam over double espresso</div>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="font-serif font-bold text-bistro-300 text-xs">$4.50</div>
+                                            <div class="text-[9px] text-stone-500">Aero / Hot</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 bg-bistro-900/10 rounded-xl border border-bistro-900/20">
+                                        <div class="text-left">
+                                            <div class="font-serif font-bold text-stone-100 text-sm">Pistachio Latte</div>
+                                            <div class="text-[10px] text-stone-500 mt-0.5">In-house premium pistachio cream, raw honey</div>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="font-serif font-bold text-bistro-300 text-xs">$5.25</div>
+                                            <span class="bg-bistro-900/60 text-bistro-300 font-semibold text-[8px] px-1 py-0.5 rounded">NEW</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 bg-bistro-900/10 rounded-xl border border-bistro-900/20">
+                                        <div class="text-left">
+                                            <div class="font-serif font-bold text-stone-100 text-sm">Ceremonial Matcha</div>
+                                            <div class="text-[10px] text-stone-500 mt-0.5">Uji ceremonial whisked latte, organic macadamia</div>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="font-serif font-bold text-bistro-300 text-xs">$5.75</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="px-3 py-2 border-t border-bistro-900/20 text-center">
+                                    <p class="text-[9px] text-stone-600">VibeTable Bespoke Assets. Table 12.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 border-b border-bistro-900/20 bg-stone-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-center text-[10px] font-semibold text-bistro-500 uppercase tracking-widest mb-8">
+                Empowering Bespoke Venues & Cafés Globally
+              </p>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center max-w-5xl mx-auto">
+                <div class="p-4">
+                    <div class="text-3xl md:text-4xl font-serif font-light text-white mb-1">98</div>
+                    <div class="text-xs text-stone-500">Google Performance Score</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl md:text-4xl font-serif font-light text-white mb-1">100%</div>
+                    <div class="text-xs text-stone-500">Organic Discovery Ready</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl md:text-4xl font-serif font-light text-white mb-1">0</div>
+                    <div class="text-xs text-stone-500">Monthly Maintenance Fees</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl md:text-4xl font-serif font-light text-white mb-1">Unlimited</div>
+                    <div class="text-xs text-stone-500">Dishes & Menu Iterations</div>
+                </div>
+              </div>
+        </div>
+    </section>
+
+    <section id="problem" class="py-24 max-w-7xl mx-auto px-6 relative">
+        <div class="absolute -left-48 top-1/4 w-96 h-96 bg-stone-900/20 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="text-center mb-20 max-w-3xl mx-auto">
+            <span class="text-bistro-400 text-xs font-semibold uppercase tracking-widest bg-bistro-950/80 border border-bistro-900/40 px-3 py-1.5 rounded-full mb-4 inline-block">The Hospitality Pain-Point</span>
+            <h2 class="text-3xl md:text-5xl font-serif font-light text-white tracking-tight leading-tight">
+                Most Venues Lose Guests to Frustrating, Friction-filled Menus
+            </h2>
+            <p class="text-stone-400 mt-4 text-base md:text-lg">
+                Your menu is the ultimate sensory invitation. Yet, many restaurants break the dining flow by relying on rigid, clunky formats that leak potential revenue.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Problem Card 1 -->
+            <div class="p-8 rounded-3xl bg-bistro-900/10 border border-bistro-900/20 hover:border-bistro-800/40 transition-all group">
+                <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-ban text-lg"></i>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3">Pinch-and-Zoom PDFs</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    PDF menus are hostile to dynamic cellular screens. They force your guests to pinch, drag, and squint desperately just to analyze high-margin side orders.
+                </p>
+            </div>
+
+            <!-- Problem Card 2 -->
+            <div class="p-8 rounded-3xl bg-bistro-900/10 border border-bistro-900/20 hover:border-bistro-800/40 transition-all group">
+                <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-file-invoice-dollar text-lg"></i>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3">The Perpetual Subscription Trap</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Software rentals lock you in forever—charging $99 to $249 every month. Over three years, you pay thousands of dollars for simple, passive hosting of your digital content.
+                </p>
+            </div>
+
+            <!-- Problem Card 3 -->
+            <div class="p-8 rounded-3xl bg-bistro-900/10 border border-bistro-900/20 hover:border-bistro-800/40 transition-all group">
+                <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-print text-lg"></i>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3">Expensive Printed Waste</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Update a single pricing point, shift seasonal ingredients, or run out of a vintage wine, and your premium, textured paper menu immediately becomes outdated.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="playground" class="py-24 bg-stone-950 border-t border-bistro-900/20 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <span class="text-bistro-400 text-xs font-semibold uppercase tracking-widest bg-bistro-950/80 border border-bistro-900/40 px-3 py-1.5 rounded-full mb-4 inline-block">Bespoke Sandbox</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-light text-white tracking-tight">The Live Sandbox Simulator</h2>
+                <p class="text-stone-400 mt-4">
+                    Modify the live-updating back-of-house parameters on the left, and watch the customer experience adjust instantaneously inside the preview device.
+                </p>
+            </div>
+
+            <!-- Interactive Terminal & Device Layout -->
+            <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+                
+                <!-- Admin Dashboard Simulator (LG Col-Span 7) -->
+                <div class="lg:col-span-7 rounded-3xl border border-bistro-900/20 bg-bistro-950/30 p-6 flex flex-col justify-between relative overflow-hidden glass-panel">
+                    <div>
+                        <div class="flex items-center gap-2 mb-6">
+                            <span class="w-3.5 h-3.5 rounded-full bg-bistro-950 flex items-center justify-center text-[8px] text-bistro-400"><i class="fa-solid fa-lock"></i></span>
+                            <span class="text-[10px] font-mono text-stone-500 uppercase tracking-wider">portal.vibetable.com/settings</span>
+                        </div>
+                        
+                        <h3 class="text-2xl font-serif font-bold text-white mb-2">Configure Your Menu State</h3>
+                        <p class="text-stone-400 text-sm mb-6 font-sans">Interact with these controllers to see how responsive the assets behave.</p>
+                        
+                        <!-- Control 1: Menu Title -->
+                        <div class="space-y-2 mb-6">
+                            <label class="text-[10px] font-bold text-bistro-400 uppercase tracking-widest block">Restaurant Title</label>
+                            <input id="demo-title-input" type="text" value="The Daily Grind" 
+                                   class="w-full bg-stone-950 border border-bistro-900/30 rounded-xl px-4 py-3 text-sm text-stone-100 focus:outline-none focus:border-bistro-400 transition-colors"
+                                   oninput="updateMenuTitle(this.value)">
+                        </div>
+
+                        <!-- Control 2: Custom Promo Badge -->
+                        <div class="space-y-2 mb-6">
+                            <label class="text-[10px] font-bold text-bistro-400 uppercase tracking-widest block">Headline Promo Text</label>
+                            <input id="demo-promo-input" type="text" value="WEEKEND BRUNCH SPECIALS" 
+                                   class="w-full bg-stone-950 border border-bistro-900/30 rounded-xl px-4 py-3 text-sm text-stone-100 focus:outline-none focus:border-bistro-400 transition-colors"
+                                   oninput="updatePromoText(this.value)">
+                        </div>
+
+                        <!-- Control 3: Change Prices Dynamic Mode -->
+                        <div class="space-y-3 mb-6">
+                            <label class="text-[10px] font-bold text-bistro-400 uppercase tracking-widest block">Direct Live Pricing Adjustments</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-stone-950 p-4 rounded-xl border border-bistro-900/20">
+                                    <span class="text-xs text-stone-500 block mb-1">Flat White Coffee</span>
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-sm text-bistro-400 font-bold">$</span>
+                                        <input id="price-coffee" type="number" step="0.25" value="4.50" 
+                                               class="w-full bg-transparent text-sm text-stone-200 focus:outline-none font-serif font-bold"
+                                               oninput="updatePrice('coffee', this.value)">
+                                    </div>
+                                </div>
+                                <div class="bg-stone-950 p-4 rounded-xl border border-bistro-900/20">
+                                    <span class="text-xs text-stone-500 block mb-1">Smashed Avocado Toast</span>
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-sm text-bistro-400 font-bold">$</span>
+                                        <input id="price-toast" type="number" step="0.50" value="12.00" 
+                                               class="w-full bg-transparent text-sm text-stone-200 focus:outline-none font-serif font-bold"
+                                               oninput="updatePrice('toast', this.value)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Promo Event Trigger -->
+                        <div class="mb-6">
+                            <label class="text-[10px] font-bold text-bistro-400 uppercase tracking-widest block mb-2">Automated Event Simulation</label>
+                            <div class="flex flex-wrap gap-2">
+                                <button onclick="triggerHappyHour()" class="px-4 py-2 bg-bistro-500/10 border border-bistro-500/20 text-bistro-300 hover:bg-bistro-500/20 text-xs font-bold rounded-lg transition-all uppercase tracking-wider">
+                                    Apply Happy Hour (10% Off)
+                                </button>
+                                <button onclick="triggerSoldOut('coffee')" class="px-4 py-2 bg-red-950/40 border border-red-900/30 text-red-400 hover:bg-red-900/20 text-xs font-bold rounded-lg transition-all uppercase tracking-wider">
+                                    Mark Coffee Out of Stock
+                                </button>
+                                <button onclick="resetSimulator()" class="px-4 py-2 bg-stone-900 border border-bistro-900/40 text-stone-300 hover:bg-bistro-800 text-xs font-bold rounded-lg transition-all ml-auto uppercase tracking-wider">
+                                    Reset Sandbox
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-bistro-900/20 text-xs text-stone-500 flex items-center gap-2">
+                        <i class="fa-solid fa-circle-nodes text-bistro-400"></i> No central server overhead. Changes propagate instantly to active client browsers.
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 flex justify-center items-center">
+                    <div class="w-full max-w-[375px] sm:max-w-[390px] h-[780px] sm:h-[844px] rounded-[50px] border-[10px] border-bistro-900/60 bg-bistro-950 overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.8)] relative flex flex-col">
+                        <!-- Dynamic Toast Alert System inside Phone -->
+                        <div id="phone-toast" class="absolute top-12 left-4 right-4 bg-bistro-950/90 border border-bistro-900/30 text-stone-100 text-[10px] px-3 py-2.5 rounded-xl shadow-2xl z-40 transform -translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info text-bistro-400"></i>
+                            <span id="phone-toast-text" class="font-sans">Toast message.</span>
+                        </div>
+
+                        <!-- Speaker/Camera Notch -->
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-bistro-900/60 rounded-b-2xl z-20 flex items-center justify-center">
+                            <div class="w-12 h-1.5 bg-bistro-950 rounded-full"></div>
+                        </div>
+
+                        <!-- Customer App Content Screen -->
+                        <div class="flex-1 overflow-y-auto flex flex-col text-xs pt-8 pb-4 bg-[#110e0c]">
+                            <!-- Café Logo & Navigation Header inside Phone -->
+                            <div class="p-4 border-b border-bistro-900/10 bg-[#110e0c]/85 sticky top-0 backdrop-blur z-10 flex items-center justify-between">
+                                <span id="phone-restaurant-title" class="font-serif font-bold text-sm text-white">The Daily Grind</span>
+                                <span class="text-[9px] px-2 py-0.5 bg-bistro-500/20 text-bistro-300 rounded-full font-bold border border-bistro-800/10">OPEN</span>
+                            </div>
+
+                            <!-- Interactive Promo Text Banner inside Phone -->
+                            <div id="phone-promo-banner" class="bg-gradient-to-r from-bistro-950 via-bistro-900 to-bistro-950 border-b border-bistro-900/20 text-bistro-300 font-bold text-[8px] py-2 px-3 tracking-widest text-center uppercase">
+                                WEEKEND BRUNCH SPECIALS
+                            </div>
+
+                            <!-- Simulated Food Categories inside Phone -->
+                            <div class="flex gap-2 px-4 py-3 overflow-x-auto border-b border-bistro-900/10 bg-[#110e0c] sticky top-10 z-10">
+                                <span class="px-3 py-1.5 bg-bistro-100 text-bistro-950 font-bold rounded-full shrink-0">Bestsellers</span>
+                                <span class="px-3 py-1.5 bg-bistro-950 text-bistro-300 font-medium rounded-full shrink-0 border border-bistro-900/30">Coffee Bar</span>
+                                <span class="px-3 py-1.5 bg-bistro-950 text-bistro-300 font-medium rounded-full shrink-0 border border-bistro-900/30">Seasonal Elixirs</span>
+                            </div>
+
+                            <!-- Live Changing Menu Items -->
+                            <div class="p-4 space-y-4 flex-1">
+                                <!-- Coffee Item Box -->
+                                <div id="item-coffee-box" class="p-3 bg-bistro-900/10 rounded-2xl border border-bistro-900/20 transition-all duration-300">
+                                    <div class="flex gap-3">
+                                        <div class="w-16 h-16 rounded-xl overflow-hidden shrink-0 relative bg-bistro-900/20">
+                                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=200" alt="Flat White" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="flex-1 text-left flex flex-col justify-between">
+                                            <div>
+                                                <div class="flex items-center justify-between">
+                                                    <span class="font-serif font-bold text-stone-100 text-sm">Flat White</span>
+                                                    <span id="phone-coffee-badge" class="bg-bistro-500/20 text-bistro-300 text-[8px] font-bold px-1.5 py-0.5 rounded uppercase border border-bistro-800/10 hidden">HAPPY HOUR</span>
+                                                </div>
+                                                <p class="text-[10px] text-stone-500 mt-0.5 leading-relaxed">Smooth custom espresso with perfect velvety microfoam.</p>
+                                            </div>
+                                            <div class="flex items-center justify-between mt-2">
+                                                <span class="font-serif font-black text-bistro-300" id="phone-coffee-price">$4.50</span>
+                                                <span id="phone-coffee-status" class="text-[9px] font-bold text-bistro-400 bg-bistro-950/40 border border-bistro-900/20 px-1.5 py-0.5 rounded">In Stock</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Avocado Toast Item Box -->
+                                <div id="item-toast-box" class="p-3 bg-bistro-900/10 rounded-2xl border border-bistro-900/20 transition-all duration-300">
+                                    <div class="flex gap-3">
+                                        <div class="w-16 h-16 rounded-xl overflow-hidden shrink-0 relative bg-bistro-900/20">
+                                            <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&q=80&w=200" alt="Avocado Toast" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="flex-1 text-left flex flex-col justify-between">
+                                            <div>
+                                                <div class="flex items-center justify-between">
+                                                    <span class="font-serif font-bold text-stone-100 text-sm">Smashed Avocado</span>
+                                                    <span id="phone-toast-badge" class="bg-bistro-500/20 text-bistro-300 text-[8px] font-bold px-1.5 py-0.5 rounded uppercase border border-bistro-800/10 hidden">HAPPY HOUR</span>
+                                                </div>
+                                                <p class="text-[10px] text-stone-500 mt-0.5 leading-relaxed">Hass avocados, cherry vine tomatoes, organic chili flake seeds.</p>
+                                            </div>
+                                            <div class="flex items-center justify-between mt-2">
+                                                <span class="font-serif font-black text-bistro-300" id="phone-toast-price">$12.00</span>
+                                                <span id="phone-toast-status" class="text-[9px] font-bold text-bistro-400 bg-bistro-950/40 border border-bistro-900/20 px-1.5 py-0.5 rounded">In Stock</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sticky Brand Footer inside Phone -->
+                            <div class="px-4 py-3 border-t border-bistro-900/10 text-center text-[9px] text-stone-600 bg-[#110e0c]">
+                                Curated securely by VibeTable Platform. All Rights Reserved.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="live-experience" class="py-24 bg-stone-950 border-t border-bistro-900/20 relative">
+        <div class="absolute -right-48 bottom-0 w-96 h-96 bg-bistro-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <span class="text-bistro-400 text-xs font-semibold uppercase tracking-widest bg-bistro-950/80 border border-bistro-900/40 px-3 py-1.5 rounded-full mb-4 inline-block">Product Showcase</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-light text-white tracking-tight">Interactive Live Menu Tour</h2>
+                <p class="text-stone-400 mt-4 text-base md:text-lg">
+                    This is a live, fully functional sample menu created for our partner coffee shops. Click, scroll, and test the micro-interactions directly in the responsive frames below.
+                </p>
+            </div>
+
+            <!-- Frame Switcher Controls -->
+            <div class="flex justify-center items-center gap-4 mb-12">
+                <button onclick="setPreviewFrame('mobile')" id="btn-preview-mobile" class="px-5 py-2.5 bg-bistro-100 text-bistro-950 font-semibold text-xs rounded-full flex items-center gap-2 shadow-[0_0_20px_rgba(225,205,184,0.15)] transition-all uppercase tracking-wider">
+                    <i class="fa-solid fa-mobile-screen-button"></i> Mobile View
+                </button>
+                <button onclick="setPreviewFrame('desktop')" id="btn-preview-desktop" class="px-5 py-2.5 bg-bistro-950 border border-bistro-900/40 text-stone-400 font-bold text-xs rounded-full flex items-center gap-2 hover:text-white hover:bg-bistro-900 transition-all uppercase tracking-wider">
+                    <i class="fa-solid fa-laptop"></i> Desktop / Tablet View
+                </button>
+            </div>
+
+            <!-- Responsive Device Containers -->
+            <div class="flex justify-center items-center">
+                
+                <!-- Mobile iPhone Frame (Correct Standardized 390x844 dimensions) -->
+                <div id="preview-mobile-frame" class="w-full max-w-[375px] sm:max-w-[390px] h-[780px] sm:h-[844px] rounded-[50px] border-[10px] border-bistro-900/60 bg-bistro-950 overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.8)] relative transition-all duration-500">
+                    <!-- Notch -->
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-bistro-900/60 rounded-b-2xl z-20 flex items-center justify-center">
+                        <div class="w-12 h-1.5 bg-bistro-950 rounded-full"></div>
+                    </div>
+                    <!-- Frame Embed -->
+                    <iframe src="https://coffee-shop-menu-sepia.vercel.app/" class="w-full h-full pt-6 bg-bistro-950 border-none" title="Live Mobile VibeTable Menu"></iframe>
+                </div>
+
+                <!-- Desktop / Tablet Frame -->
+                <div id="preview-desktop-frame" class="hidden w-full max-w-4xl h-[560px] rounded-3xl border-8 border-bistro-900/60 bg-bistro-950 overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.8)] relative transition-all duration-500">
+                    <!-- Frame Embed -->
+                    <iframe src="https://coffee-shop-menu-sepia.vercel.app/" class="w-full h-full bg-bistro-950 border-none" title="Live Desktop VibeTable Menu"></iframe>
+                </div>
+
+            </div>
+
+            <!-- Features Highlights from Sample Product -->
+            <div class="grid md:grid-cols-3 gap-6 mt-16 max-w-5xl mx-auto">
+                <div class="p-6 rounded-2xl bg-bistro-900/10 border border-bistro-900/20 flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-bistro-900/30 text-bistro-300 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-bolt-lightning text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-serif font-bold text-sm mb-1">Instant Category Swapping</h4>
+                        <p class="text-xs text-stone-500 leading-relaxed">Swipe through drinks, filter, cold beverages, or custom plates with absolute zero transitions latency.</p>
+                    </div>
+                </div>
+                <div class="p-6 rounded-2xl bg-bistro-900/10 border border-bistro-900/20 flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-bistro-900/30 text-bistro-300 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-moon text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-serif font-bold text-sm mb-1">Adaptive Color Mood</h4>
+                        <p class="text-xs text-stone-500 leading-relaxed">Aesthetics dynamically calibrate to fit table candles or sunlight ambient shifts throughout dining sessions.</p>
+                    </div>
+                </div>
+                <div class="p-6 rounded-2xl bg-bistro-900/10 border border-bistro-900/20 flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-bistro-900/30 text-bistro-300 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-basket-shopping text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-serif font-bold text-sm mb-1">Interactive Ticket Builder</h4>
+                        <p class="text-xs text-stone-500 leading-relaxed">Empower guests to compile their personalized order lists to simplify table-side or counter requests.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-24 max-w-7xl mx-auto px-6 relative">
+        <div class="absolute right-0 top-1/4 w-[500px] h-[500px] bg-bistro-500/5 blur-[150px] rounded-full pointer-events-none"></div>
+
+        <div class="text-center mb-20 max-w-3xl mx-auto">
+            <span class="text-bistro-400 text-xs font-semibold uppercase tracking-widest bg-bistro-950/80 border border-bistro-900/40 px-3 py-1.5 rounded-full mb-4 inline-block">The Premium Core</span>
+            <h2 class="text-3xl md:text-5xl font-serif font-light text-white tracking-tight leading-tight">Every Feature Tailored to Elevate the Hospitality Canvas</h2>
+            <p class="text-stone-400 mt-4 text-base md:text-lg">No software bloat, no tech complications. Just incredibly refined code optimized to make your kitchen, branding, and tables perform flawlessly.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Feature Card 1 -->
+            <div class="p-8 rounded-3xl bg-bistro-900/10 border border-bistro-900/20 hover:border-bistro-800/40 transition-all group">
+                <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-all">
+                    <i class="fa-solid fa-gauge-high text-lg"></i>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3">0.2s Load Speeds</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Designed to render cleanly instantly, bypassing poor restaurant basement receptions and keeping diners deeply engaged.
+                </p>
+            </div>
+
+            <!-- Feature Card 2 -->
+            <div class="p-8 rounded-3xl bg-bistro-900/10 border border-bistro-900/20 hover:border-bistro-800/40 transition-all group">
+                <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-all">
+                    <i class="fa-solid fa-crop-simple text-lg"></i>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3">Bespoke Tabletop QR Codes</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Custom vector templates matching your branding elements. High-definition files ready for wood, brass, acrylic, or linen stands.
+                </p>
+            </div>
+
+            <!-- Feature Card 3 -->
+            <div class="p-8 rounded-3xl bg-bistro-900/10 border border-bistro-900/20 hover:border-bistro-800/40 transition-all group">
+                <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-all">
+                    <i class="fa-solid fa-wine-glass text-lg"></i>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3">Chef's Highlights Integration</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Visually guide guest interest to signature dishes, vintage wines, or appetizers to effectively maximize average ticket results.
+                </p>
+            </div>
+
+            <!-- Feature Card 4 -->
+            <div class="p-8 rounded-3xl bg-bistro-900/10 border border-bistro-900/20 hover:border-bistro-800/40 transition-all group">
+                <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-all">
+                    <i class="fa-solid fa-power-off text-lg"></i>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3">Live Stock Toggling</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Ran out of the Ribeye or specialty croissants? Toggle them offline inside your settings in seconds to secure clean kitchen flows.
+                </p>
+            </div>
+
+            <!-- Feature Card 5 -->
+            <div class="p-8 rounded-3xl bg-bistro-900/10 border border-bistro-900/20 hover:border-bistro-800/40 transition-all group">
+                <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-all">
+                    <i class="fa-solid fa-chart-line text-lg"></i>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3">Clean Asset Analytics</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Gain privacy-centric, insightful counts of plate reviews, category swipes, and dining clicks without cookie popups.
+                </p>
+            </div>
+
+            <!-- Feature Card 6 -->
+            <div class="p-8 rounded-3xl bg-bistro-900/10 border border-bistro-900/20 hover:border-bistro-800/40 transition-all group">
+                <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-all">
+                    <i class="fa-solid fa-utensils text-lg"></i>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3">100% SEO Ready Structure</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Structured culinary metadata index your primary plates directly onto localized search platforms, driving natural food discoveries.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-bistro-900/10 border-y border-bistro-900/10">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-serif font-light text-white text-center mb-16 tracking-tight">The Pure Financial Comparison</h2>
+            <div class="overflow-x-auto rounded-2xl border border-bistro-900/20 bg-[#0d0a09]">
+                <table class="w-full text-left border-collapse min-w-[600px]">
+                    <thead>
+                        <tr class="border-b border-bistro-900/20">
+                            <th class="p-5 text-xs font-semibold text-stone-400 uppercase tracking-widest">Hospitality Metric</th>
+                            <th class="p-5 text-xs font-semibold text-stone-500 uppercase tracking-widest">Subscription SaaS Rental</th>
+                            <th class="p-5 text-xs font-semibold text-bistro-300 bg-bistro-500/5 uppercase tracking-widest">Our Private Asset Model</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-bistro-900/10 hover:bg-bistro-900/5 transition-colors">
+                            <td class="p-5 text-stone-300 font-medium">Ongoing Software Fee</td>
+                            <td class="p-5 text-stone-500">$149 / month (perpetual costs)</td>
+                            <td class="p-5 text-bistro-400 font-bold bg-bistro-500/5">$0.00 / month forever</td>
+                        </tr>
+                        <tr class="border-b border-bistro-900/10 hover:bg-bistro-900/5 transition-colors">
+                            <td class="p-5 text-stone-300 font-medium">Digital Asset Rights</td>
+                            <td class="p-5 text-stone-500">Rent-only. Stop paying, and your menu goes dark.</td>
+                            <td class="p-5 text-bistro-400 font-bold bg-bistro-500/5">100% complete brand ownership.</td>
+                        </tr>
+                        <tr class="border-b border-bistro-900/10 hover:bg-bistro-900/5 transition-colors">
+                            <td class="p-5 text-stone-300 font-medium">Bespoke Menu Updates</td>
+                            <td class="p-5 text-stone-500">Included (standard portal)</td>
+                            <td class="p-5 text-bistro-400 font-bold bg-bistro-500/5">Included (bespoke custom settings)</td>
+                        </tr>
+                        <tr class="border-b border-bistro-900/10 hover:bg-bistro-900/5 transition-colors">
+                            <td class="p-5 text-stone-300 font-medium">Aesthetic Quality</td>
+                            <td class="p-5 text-stone-500">Cookie-cutter template layouts</td>
+                            <td class="p-5 text-bistro-400 font-bold bg-bistro-500/5">Premium tailored visual luxury</td>
+                        </tr>
+                        <tr class="hover:bg-bistro-900/5 transition-colors">
+                            <td class="p-5 text-stone-300 font-medium">Speed Optimization</td>
+                            <td class="p-5 text-stone-500">Slow shared database loads</td>
+                            <td class="p-5 text-bistro-400 font-bold bg-bistro-500/5">Supercharged edge distribution (0.2s)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-24 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-bistro-500/5 blur-[160px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <span class="text-bistro-400 text-xs font-semibold uppercase tracking-widest bg-bistro-950/80 border border-bistro-900/40 px-3 py-1.5 rounded-full mb-4 inline-block">Transparent Assets</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-light text-white tracking-tight leading-tight">One Direct Investment. Save Thousands Instantly.</h2>
+                <p class="text-stone-400 mt-4 text-base md:text-lg">No platform overhead, no hidden transaction fees, no structural locks. Select an integration plan and claim absolute digital menu ownership.</p>
+            </div>
+
+            <!-- Savings Calculator Mini Tool -->
+            <div class="max-w-4xl mx-auto glass-panel border border-bistro-900/30 rounded-3xl p-6 md:p-8 mb-16 text-center">
+                <h4 class="text-lg font-serif font-bold text-stone-100 mb-6">Analyze Your Hard Cash Savings (vs. Standard $150/mo SaaS Solutions)</h4>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6">
+                    <button onclick="calculateSavings(1, this)" class="px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-bistro-500 text-bistro-950 shrink-0 duration-300 uppercase tracking-widest">
+                        1 Year Metrics
+                    </button>
+                    <button onclick="calculateSavings(3, this)" class="px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-stone-900 text-stone-400 hover:text-white hover:bg-stone-800 shrink-0 duration-300 uppercase tracking-widest">
+                        3 Year Metrics
+                    </button>
+                    <button onclick="calculateSavings(5, this)" class="px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-stone-900 text-stone-400 hover:text-white hover:bg-stone-800 shrink-0 duration-300 uppercase tracking-widest">
+                        5 Year Metrics
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center pt-4 border-t border-bistro-900/20">
+                    <div>
+                        <span class="text-[10px] text-stone-500 block uppercase tracking-wider font-semibold mb-1">Standard SaaS Fees</span>
+                        <span id="calc-saas-total" class="text-2xl font-serif font-bold text-red-400">$1,800.00</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-stone-500 block uppercase tracking-wider font-semibold mb-1">VibeTable Set-up Fees</span>
+                        <span id="calc-brand-total" class="text-2xl font-serif font-bold text-white">$1,499.00</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-stone-500 block uppercase tracking-wider font-semibold mb-1">Net Cash Retained</span>
+                        <span id="calc-net-retained" class="text-3xl font-serif font-extrabold text-bistro-300">$301.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Standard Packages Display -->
+            <div class="grid md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
+                <!-- Starter Package -->
+                <div class="p-8 rounded-3xl bg-bistro-950/20 border border-bistro-900/30 hover:border-bistro-800/40 transition-all flex flex-col justify-between glass-panel">
+                    <div>
+                        <h3 class="text-[10px] font-extrabold text-stone-500 uppercase tracking-widest mb-2">STARTER SETUP</h3>
+                        <div class="text-4xl font-serif font-bold text-white mb-1">$1,499</div>
+                        <div class="text-[9px] text-bistro-400 mb-6 font-semibold uppercase tracking-wider">One-time Fee Only</div>
+                        <p class="text-stone-400 text-xs leading-relaxed mb-8">
+                            Bespoke platform layout built for artisanal cafes, bakeries, or coffee bars wanting clean digital menu presentation.
+                        </p>
+                        
+                        <div class="space-y-4 border-t border-bistro-900/20 pt-6">
+                            <div class="flex items-start gap-3 text-xs text-stone-300">
+                                <i class="fa-solid fa-check text-bistro-400 mt-0.5 shrink-0"></i>
+                                <span>Complete personalized menu interface</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-xs text-stone-300">
+                                <i class="fa-solid fa-check text-bistro-400 mt-0.5 shrink-0"></i>
+                                <span>Unlimited menu categories & plates</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-xs text-stone-300">
+                                <i class="fa-solid fa-check text-bistro-400 mt-0.5 shrink-0"></i>
+                                <span>Tabletop QR Code Assets (High-Res Vector PDFs)</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-xs text-stone-300">
+                                <i class="fa-solid fa-check text-bistro-400 mt-0.5 shrink-0"></i>
+                                <span>Settings Dashboard to control active elements</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-xs text-stone-300">
+                                <i class="fa-solid fa-check text-bistro-400 mt-0.5 shrink-0"></i>
+                                <span>Google Maps & Social links connections</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-xs text-stone-300">
+                                <i class="fa-solid fa-check text-bistro-400 mt-0.5 shrink-0"></i>
+                                <span>30 Days Post-Deployment Technical Support</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="handlePurchase('Starter Tier', '$1,499')" class="w-full py-4 px-4 mt-8 rounded-xl bg-stone-900 border border-bistro-900/40 text-stone-200 hover:bg-stone-850 font-bold text-xs uppercase tracking-widest transition-colors">
+                        Select Starter System
+                    </button>
+                </div>
+
+                <!-- Professional Package -->
+                <div class="p-8 rounded-3xl bg-bistro-950/60 border-2 border-bistro-500 shadow-2xl relative flex flex-col justify-between transform md:scale-105">
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-bistro-500 text-bistro-950 text-[9px] font-black uppercase px-3.5 py-1 rounded-full tracking-wider shadow">
+                        Bistros & Restaurants Choice
+                    </div>
+                    <div>
+                        <h3 class="text-[10px] font-extrabold text-white uppercase tracking-widest mb-2 mt-2">PROFESSIONAL PLATFORM</h3>
+                        <div class="text-4xl font-serif font-bold text-white mb-1">$1,999</div>
+                        <div class="text-[9px] text-bistro-300 mb-6 font-semibold uppercase tracking-wider">One-time Fee Only</div>
+                        <p class="text-stone-300 text-xs leading-relaxed mb-8">
+                            Complete premium deployment with advanced settings panels optimized to elevate modern gastronomy spaces.
+                        </p>
+                        
+                        <div class="space-y-4 border-t border-bistro-800/40 pt-6">
+                            <div class="flex items-start gap-3 text-xs text-stone-200">
+                                <i class="fa-solid fa-check text-bistro-300 mt-0.5 shrink-0"></i>
+                                <span class="font-bold">Everything in Starter Package</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-xs text-stone-200">
+                                <i class="fa-solid fa-check text-bistro-300 mt-0.5 shrink-0"></i>
+                                <span>Interactive promo banners (Events, Brunches)</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-xs text-stone-200">
+                                <i class="fa-solid fa-check text-bistro-300 mt-0.5 shrink-0"></i>
+                                <span>Chef's Choice visual focus frames</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-xs text-stone-200">
+                                <i class="fa-solid fa-check text-bistro-300 mt-0.5 shrink-0"></i>
+                                <span>Google Analytics & SEO schema structured layout</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-xs text-stone-200">
+                                <i class="fa-solid fa-check text-bistro-300 mt-0.5 shrink-0"></i>
+                                <span>60 Days Priority Hospitality Support</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="handlePurchase('Professional System', '$1,999')" class="w-full py-4 px-4 mt-8 rounded-xl bg-bistro-500 text-stone-950 hover:bg-white font-extrabold text-xs uppercase tracking-widest transition-all shadow-[0_4px_20px_rgba(196,155,85,0.15)]">
+                        Select Professional System
+                    </button>
+                </div>
+
+                <!-- Business Package -->
+                <div class="p-8 rounded-3xl bg-bistro-950/20 border border-bistro-900/30 hover:border-bistro-800/40 transition-all flex flex-col justify-between glass-panel">
+                    <div>
+                        <h3 class="text-[10px] font-extrabold text-stone-500 uppercase tracking-widest mb-2">BUSINESS PLATFORM</h3>
+                        <div class="text-4xl font-serif font-bold text-white mb-1">$2,799</div>
+                        <div class="text-[9px] text-bistro-400 mb-6 font-semibold uppercase tracking-wider">One-time Fee Only</div>
+                        <p class="text-stone-400 text-xs leading-relaxed mb-8">
+                            Premium restaurant-group setup integrating table booking systems, multi-location, and marketing databases.
+                        </p>
+                        
+                        <div class="space-y-4 border-t border-bistro-900/20 pt-6">
+                            <div class="flex items-start gap-3 text-xs text-stone-300">
+                                <i class="fa-solid fa-check text-bistro-400 mt-0.5 shrink-0"></i>
+                                <span class="font-bold">Everything in Professional Package</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-xs text-stone-300">
+                                <i class="fa-solid fa-check text-bistro-400 mt-0.5 shrink-0"></i>
+                                <span>Reservation service links (Resy, OpenTable)</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-xs text-stone-300">
+                                <i class="fa-solid fa-check text-bistro-400 mt-0.5 shrink-0"></i>
+                                <span>Newsletter capture integration (Mailchimp/Klaviyo)</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-xs text-stone-300">
+                                <i class="fa-solid fa-check text-bistro-400 mt-0.5 shrink-0"></i>
+                                <span>Priority fast-track deployment (4 business days)</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-xs text-stone-300">
+                                <i class="fa-solid fa-check text-bistro-400 mt-0.5 shrink-0"></i>
+                                <span>90 Days Priority Support & Launch Guide Call</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="handlePurchase('Business Platform', '$2,799')" class="w-full py-4 px-4 mt-8 rounded-xl bg-stone-900 border border-bistro-900/40 text-stone-200 hover:bg-stone-850 font-bold text-xs uppercase tracking-widest transition-colors">
+                        Select Business Platform
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 max-w-4xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-bistro-400 text-xs font-semibold uppercase tracking-widest bg-bistro-950/80 border border-bistro-900/40 px-3 py-1.5 rounded-full mb-4 inline-block">Help & Clarity</span>
+            <h2 class="text-3xl md:text-5xl font-serif font-light text-white tracking-tight">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <div class="border border-bistro-900/20 rounded-2xl bg-bistro-900/5 overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left text-white font-serif font-bold text-base focus:outline-none hover:bg-bistro-900/10 transition-all">
+                    <span>Why a one-time payment instead of a subscription?</span>
+                    <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs"></i>
+                </button>
+                <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
+                        We believe restaurants should own their digital assets, just like their commercial grills or tables. Perpetual subscription fees represent an unnecessary profit leak. By paying us to design and deploy your custom system once, you secure full digital ownership forever.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="border border-bistro-900/20 rounded-2xl bg-bistro-900/5 overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left text-white font-serif font-bold text-base focus:outline-none hover:bg-bistro-900/10 transition-all">
+                    <span>Do I truly own the website code?</span>
+                    <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs"></i>
+                </button>
+                <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
+                        Yes, completely. Once deployment finishes, the customized software files belong entirely to you. Your digital assets run on modern, fast-hosting channels that require zero monthly costs for standard usage levels.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="border border-bistro-900/20 rounded-2xl bg-bistro-900/5 overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left text-white font-serif font-bold text-base focus:outline-none hover:bg-bistro-900/10 transition-all">
+                    <span>How can I update descriptions or plate pricing?</span>
+                    <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs"></i>
+                </button>
+                <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
+                        Every package incorporates a premium, easy-to-use Admin Dashboard. Built with a simple mobile-first UI, you can securely access your settings on your phone or tablet, modify prices, upload pictures, or toggle elements to "Out of Stock" in seconds.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="border border-bistro-900/20 rounded-2xl bg-bistro-900/5 overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left text-white font-serif font-bold text-base focus:outline-none hover:bg-bistro-900/10 transition-all">
+                    <span>Do my guests need to download a mobile app?</span>
+                    <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs"></i>
+                </button>
+                <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
+                        No. The custom platform is designed as an incredibly responsive, high-performance web asset. Scanning the tabletop QR code opens the menu inside the phone's native browser immediately in under 0.2 seconds.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 relative overflow-hidden border-t border-bistro-900/20">
+        <div class="absolute inset-0 bg-[radial-gradient(rgba(171,129,91,0.03)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-bistro-500/5 blur-[180px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-4xl md:text-6xl font-serif font-light text-white tracking-tight leading-tight mb-6">Upgrade Your Dining Experience Today.</h2>
+            <p class="text-stone-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                Join forward-thinking restaurants, boutique hotels, and specialty coffee groups choosing to own their digital assets rather than leasing them perpetually.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#playground" class="w-full sm:w-auto px-8 py-4 bg-bistro-500 text-stone-950 font-bold rounded-full hover:bg-white transition-all uppercase tracking-widest text-sm">
+                    Try Interactive Sandbox
+                </a>
+                <a href="#pricing" class="w-full sm:w-auto px-8 py-4 bg-bistro-950 border border-bistro-900 text-stone-200 rounded-full font-bold hover:bg-bistro-900 transition-all uppercase tracking-widest text-sm">
+                    Book System Installation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Purchase Prompt -->
+    <div id="purchase-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-stone-950 border border-bistro-900/30 p-8 rounded-3xl max-w-md w-full mx-6 relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-stone-500 hover:text-white transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="w-12 h-12 rounded-2xl bg-bistro-500/10 text-bistro-300 flex items-center justify-center mb-6 border border-bistro-900/20">
+                <i class="fa-solid fa-receipt text-xl"></i>
+            </div>
+            <h4 class="text-xl font-serif font-bold text-white mb-2">Book Your Free Installation Call</h4>
+            <p id="modal-package-details" class="text-stone-400 text-sm mb-6">Selected Package: Professional System ($1,999 one-time).</p>
+            
+            <form onsubmit="submitDemoForm(event)" class="space-y-4">
+                <div>
+                    <label class="text-[9px] text-bistro-400 block mb-1 uppercase tracking-widest font-bold">Your Name</label>
+                    <input type="text" required placeholder="Alexander Mercer" class="w-full bg-stone-900 border border-bistro-900/30 rounded-xl px-4 py-3 text-sm text-stone-100 focus:outline-none focus:border-bistro-400">
+                </div>
+                <div>
+                    <label class="text-[9px] text-bistro-400 block mb-1 uppercase tracking-widest font-bold">Restaurant Name</label>
+                    <input type="text" required placeholder="Lumina Bistro" class="w-full bg-stone-900 border border-bistro-900/30 rounded-xl px-4 py-3 text-sm text-stone-100 focus:outline-none focus:border-bistro-400">
+                </div>
+                <div>
+                    <label class="text-[9px] text-bistro-400 block mb-1 uppercase tracking-widest font-bold">Email Address</label>
+                    <input type="email" required placeholder="alex@luminabistro.com" class="w-full bg-stone-900 border border-bistro-900/30 rounded-xl px-4 py-3 text-sm text-stone-100 focus:outline-none focus:border-bistro-400">
+                </div>
+                <button type="submit" class="w-full py-4 bg-bistro-100 text-bistro-950 font-extrabold rounded-xl hover:bg-white uppercase tracking-widest text-xs transition-colors">
+                    Request Design Consultation
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-stone-950 border border-bistro-900/30 p-8 rounded-3xl max-w-sm w-full mx-6 text-center">
+            <div class="w-16 h-16 rounded-full bg-bistro-500/15 text-bistro-300 flex items-center justify-center mx-auto mb-6 border border-bistro-900/30 animate-pulse">
+                <i class="fa-solid fa-check text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-serif font-bold text-white mb-2">Request Filed Successfully</h4>
+            <p class="text-stone-400 text-sm mb-6">Our integration consultant will contact you within 24 hours to review your current menu assets and build parameters.</p>
+            <button onclick="closeSuccessModal()" class="w-full py-3 bg-stone-900 border border-bistro-900/40 text-stone-200 rounded-xl hover:bg-stone-850 font-bold transition-colors uppercase tracking-widest text-xs">
+                Return to Site
+            </button>
+        </div>
+    </div>
+
+    <footer class="border-t border-bistro-900/20 bg-black pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <!-- Direct brand image cropped as perfect circular icon for footers -->
+                        <div class="w-10 h-10 overflow-hidden rounded-full shadow-lg bg-black">
+                            <img src="ChatGPT Image Jun 26, 2026, 09_43_23 PM_2.png" alt="VibeTable Logo" class="w-full h-full object-cover rounded-full scale-[1.03]">
+                        </div>
+                        <span class="text-lg font-serif font-bold tracking-tight text-white">VibeTable</span>
+                    </div>
+                    <p class="text-stone-500 text-sm max-w-xs leading-relaxed">
+                        Providing custom culinary software platforms for design-centric venues, luxury boutique spaces, and fine-dining operators.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-white font-serif font-bold text-sm mb-4">Platform</h5>
+                    <ul class="space-y-3 text-sm text-stone-500">
+                        <li><a href="#problem" class="hover:text-white transition-colors">Why Own</a></li>
+                        <li><a href="#live-experience" class="hover:text-white transition-colors">Live Tour</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors">Investment</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-serif font-bold text-sm mb-4">Legal & Support</h5>
+                    <ul class="space-y-3 text-sm text-stone-500">
+                        <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Technical Support</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Service Standards</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-bistro-900/20 flex flex-col md:flex-row items-center justify-between text-xs text-stone-600">
+                <p>© 2026 VibeTable Platform Inc. Private software solutions remain the strict property of purchasing entities.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-stone-400 transition-colors"><i class="fa-brands fa-twitter text-base"></i></a>
+                    <a href="#" class="hover:text-stone-400 transition-colors"><i class="fa-brands fa-instagram text-base"></i></a>
+                    <a href="#" class="hover:text-stone-400 transition-colors"><i class="fa-brands fa-linkedin text-base"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Frame preview switching logic
+        function setPreviewFrame(type) {
+            const btnMobile = document.getElementById('btn-preview-mobile');
+            const btnDesktop = document.getElementById('btn-preview-desktop');
+            const frameMobile = document.getElementById('preview-mobile-frame');
+            const frameDesktop = document.getElementById('preview-desktop-frame');
+
+            if (type === 'mobile') {
+                btnMobile.className = "px-5 py-2.5 bg-bistro-100 text-bistro-950 font-semibold text-xs rounded-full flex items-center gap-2 shadow-[0_0_20px_rgba(225,205,184,0.15)] transition-all uppercase tracking-wider";
+                btnDesktop.className = "px-5 py-2.5 bg-bistro-950 border border-bistro-900/40 text-stone-400 font-bold text-xs rounded-full flex items-center gap-2 hover:text-white hover:bg-bistro-900 transition-all uppercase tracking-wider";
+                frameMobile.classList.remove('hidden');
+                frameDesktop.classList.add('hidden');
+            } else {
+                btnDesktop.className = "px-5 py-2.5 bg-bistro-100 text-bistro-950 font-semibold text-xs rounded-full flex items-center gap-2 shadow-[0_0_20px_rgba(225,205,184,0.15)] transition-all uppercase tracking-wider";
+                btnMobile.className = "px-5 py-2.5 bg-bistro-950 border border-bistro-900/40 text-stone-400 font-bold text-xs rounded-full flex items-center gap-2 hover:text-white hover:bg-bistro-900 transition-all uppercase tracking-wider";
+                frameDesktop.classList.remove('hidden');
+                frameMobile.classList.add('hidden');
+            }
+        }
+
+        // State variables for interactive demo sandbox
+        let sandboxState = {
+            restaurantTitle: 'The Daily Grind',
+            promoText: 'WEEKEND BRUNCH SPECIALS',
+            coffeePrice: 4.50,
+            toastPrice: 12.00,
+            isHappyHour: false,
+            isCoffeeSoldOut: false
+        };
+
+        // DOM elements for live updating demo
+        const phoneTitle = document.getElementById('phone-restaurant-title');
+        const phonePromo = document.getElementById('phone-promo-banner');
+        const phoneCoffeePrice = document.getElementById('phone-coffee-price');
+        const phoneToastPrice = document.getElementById('phone-toast-price');
+        
+        const phoneCoffeeBadge = document.getElementById('phone-coffee-badge');
+        const phoneToastBadge = document.getElementById('phone-toast-badge');
+        
+        const phoneCoffeeStatus = document.getElementById('phone-coffee-status');
+        const phoneToastStatus = document.getElementById('phone-toast-status');
+        const itemCoffeeBox = document.getElementById('item-coffee-box');
+        
+        const toastNotification = document.getElementById('phone-toast');
+        const toastNotificationText = document.getElementById('phone-toast-text');
+
+        // Show mock phone custom push notification
+        function triggerPhoneToast(message) {
+            toastNotificationText.innerText = message;
+            toastNotification.classList.remove('opacity-0', '-translate-y-20');
+            toastNotification.classList.add('opacity-100', 'translate-y-0');
+            
+            setTimeout(() => {
+                toastNotification.classList.remove('opacity-100', 'translate-y-0');
+                toastNotification.classList.add('opacity-0', '-translate-y-20');
+            }, 3000);
+        }
+
+        // Live Change Inputs
+        function updateMenuTitle(val) {
+            sandboxState.restaurantTitle = val || "The Daily Grind";
+            phoneTitle.innerText = sandboxState.restaurantTitle;
+        }
+
+        function updatePromoText(val) {
+            sandboxState.promoText = val || "WEEKEND BRUNCH SPECIALS";
+            phonePromo.innerText = sandboxState.promoText;
+        }
+
+        // Dynamic price adjustments
+        function updatePrice(item, val) {
+            const parsedVal = parseFloat(val) || 0;
+            if (item === 'coffee') {
+                sandboxState.coffeePrice = parsedVal;
+                phoneCoffeePrice.innerText = `$${parsedVal.toFixed(2)}`;
+            } else if (item === 'toast') {
+                sandboxState.toastPrice = parsedVal;
+                phoneToastPrice.innerText = `$${parsedVal.toFixed(2)}`;
+            }
+        }
+
+        // Interactive states inside phone
+        function triggerHappyHour() {
+            sandboxState.isHappyHour = !sandboxState.isHappyHour;
+            
+            if (sandboxState.isHappyHour) {
+                const discountedCoffee = (sandboxState.coffeePrice * 0.9);
+                const discountedToast = (sandboxState.toastPrice * 0.9);
+                
+                phoneCoffeePrice.innerText = `$${discountedCoffee.toFixed(2)}`;
+                phoneToastPrice.innerText = `$${discountedToast.toFixed(2)}`;
+                
+                phoneCoffeeBadge.classList.remove('hidden');
+                phoneToastBadge.classList.remove('hidden');
+                
+                triggerPhoneToast("Applying 10% Happy Hour promotion!");
+            } else {
+                phoneCoffeePrice.innerText = `$${sandboxState.coffeePrice.toFixed(2)}`;
+                phoneToastPrice.innerText = `$${sandboxState.toastPrice.toFixed(2)}`;
+                
+                phoneCoffeeBadge.classList.add('hidden');
+                phoneToastBadge.classList.add('hidden');
+                
+                triggerPhoneToast("Happy Hour promo cleared.");
+            }
+        }
+
+        // Out of stock toggles
+        function triggerSoldOut(item) {
+            if (item === 'coffee') {
+                sandboxState.isCoffeeSoldOut = !sandboxState.isCoffeeSoldOut;
+                if (sandboxState.isCoffeeSoldOut) {
+                    phoneCoffeeStatus.innerText = "Sold Out";
+                    phoneCoffeeStatus.className = "text-[9px] font-bold text-red-400 bg-red-950/40 border border-red-900/30 px-1.5 py-0.5 rounded";
+                    itemCoffeeBox.classList.add('opacity-40');
+                    triggerPhoneToast("Flat White is now flagged out-of-stock.");
+                } else {
+                    phoneCoffeeStatus.innerText = "In Stock";
+                    phoneCoffeeStatus.className = "text-[9px] font-bold text-bistro-400 bg-bistro-950/40 border border-bistro-900/20 px-1.5 py-0.5 rounded";
+                    itemCoffeeBox.classList.remove('opacity-40');
+                    triggerPhoneToast("Flat White is back in-stock.");
+                }
+            }
+        }
+
+        // Reset Simulator
+        function resetSimulator() {
+            sandboxState = {
+                restaurantTitle: 'The Daily Grind',
+                promoText: 'WEEKEND BRUNCH SPECIALS',
+                coffeePrice: 4.50,
+                toastPrice: 12.00,
+                isHappyHour: false,
+                isCoffeeSoldOut: false
+            };
+
+            document.getElementById('demo-title-input').value = 'The Daily Grind';
+            document.getElementById('demo-promo-input').value = 'WEEKEND BRUNCH SPECIALS';
+            document.getElementById('price-coffee').value = '4.50';
+            document.getElementById('price-toast').value = '12.00';
+
+            phoneTitle.innerText = 'The Daily Grind';
+            phonePromo.innerText = 'WEEKEND BRUNCH SPECIALS';
+            phoneCoffeePrice.innerText = '$4.50';
+            phoneToastPrice.innerText = '$12.00';
+
+            phoneCoffeeBadge.classList.add('hidden');
+            phoneToastBadge.classList.add('hidden');
+
+            phoneCoffeeStatus.innerText = "In Stock";
+            phoneCoffeeStatus.className = "text-[9px] font-bold text-bistro-400 bg-bistro-950/40 border border-bistro-900/20 px-1.5 py-0.5 rounded";
+            itemCoffeeBox.classList.remove('opacity-40');
+
+            triggerPhoneToast("Sandbox parameters reset.");
+        }
+
+        // Calculate Long Term Savings Calculator Logic
+        function calculateSavings(years, buttonElement) {
+            const buttons = buttonElement.parentNode.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.className = "px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-stone-900 text-stone-400 hover:text-white hover:bg-stone-800 shrink-0 duration-300 uppercase tracking-widest";
+            });
+            buttonElement.className = "px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-bistro-500 text-bistro-950 shrink-0 duration-300 uppercase tracking-widest";
+
+            const monthlyFee = 150.00;
+            const vibeTableSetup = 1499.00;
+            
+            const totalMonths = years * 12;
+            const saasTotal = monthlyFee * totalMonths;
+            const netSavings = saasTotal - vibeTableSetup;
+
+            document.getElementById('calc-saas-total').innerText = `$${saasTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            document.getElementById('calc-brand-total').innerText = `$${vibeTableSetup.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            document.getElementById('calc-net-retained').innerText = `$${netSavings.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            
+            if (netSavings < 0) {
+                document.getElementById('calc-net-retained').className = "text-3xl font-serif font-extrabold text-amber-500";
+            } else {
+                document.getElementById('calc-net-retained').className = "text-3xl font-serif font-extrabold text-bistro-300";
+            }
+        }
+
+        // FAQ Toggle
+        function toggleFaq(button) {
+            const accordionContent = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            if (accordionContent.style.maxHeight && accordionContent.style.maxHeight !== '0px') {
+                accordionContent.style.maxHeight = '0px';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Custom Modals
+        const purchaseModal = document.getElementById('purchase-modal');
+        const successModal = document.getElementById('success-modal');
+        const modalDetailsText = document.getElementById('modal-package-details');
+
+        function handlePurchase(tierName, price) {
+            modalDetailsText.innerText = `You selected the custom ${tierName} configuration pack for ${price} (one-time payment).`;
+            purchaseModal.classList.remove('opacity-0', 'pointer-events-none');
+            purchaseModal.classList.add('opacity-100');
+        }
+
+        function closeModal() {
+            purchaseModal.classList.add('opacity-0', 'pointer-events-none');
+            purchaseModal.classList.remove('opacity-100');
+        }
+
+        function submitDemoForm(event) {
+            event.preventDefault();
+            closeModal();
+            successModal.classList.remove('opacity-0', 'pointer-events-none');
+            successModal.classList.add('opacity-100');
+        }
+
+        function closeSuccessModal() {
+            successModal.classList.add('opacity-0', 'pointer-events-none');
+            successModal.classList.remove('opacity-100');
+        }
+    </script>
+</body>
+</html>
+```
+eof
+
+The landing page code is ready and compiled. You can now press the **Preview** button to test the responsive mobile layouts, the sandbox simulator, the price comparisons, and the live embedded interactive preview frame!
