@@ -2,17 +2,16 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <!-- Critical viewport declaration for mobile, tablet, and responsive fluid rendering on iOS/Android -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>VibeTable - Own Your Restaurant's Digital Menu</title>
     
-    <!-- VERBATIM: Using logo_bg.jpg as requested for favicon -->
-    <link rel="icon" type="image/jpeg" href="logo_bg.jpg">
+    <!-- Verified exact asset used for Favicon as instructed -->
+    <link rel="icon" type="image/jpeg" href="logo_no_bg_3.jpg">
 
     <!-- Tailwind CSS Engine -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Cormorant Garamond for luxurious serif elements, Inter for high-performance responsive UI -->
+    <!-- Google Fonts: Cormorant Garamond for elegant headings, Inter for high-performance UI -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -35,42 +34,46 @@
                             200: '#ede2d4',
                             300: '#e1cdb8',
                             400: '#cbab8f',
-                            500: '#c49b55', // Pure gold accent color matching logo visual theme
+                            500: '#c49b55', // Rich gold brand color from logo_no_bg_3.jpg
                             600: '#9b714e',
                             700: '#7e573a',
                             800: '#644129',
                             900: '#462b1b',
-                            950: '#0c0a09', // Deep roasted coffee bean background
+                            950: '#0c0a09', // Deep roasted coffee bean black
                         }
                     },
                     animation: {
-                        'pulse-slow': 'pulse 7s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float-slow': 'float 6s ease-in-out infinite',
-                        'float-medium': 'float 4s ease-in-out infinite',
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'float': 'float 4s ease-in-out infinite',
                     },
                     keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(24px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-12px)' },
+                            '50%': { transform: 'translateY(-10px)' },
                         }
                     }
                 }
             }
         }
     </script>
+    
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0c0a09;
-            color: #f5f5f4;
+            background-color: #0c0a09; /* Warm stone-950 coffee bean base */
+            color: #f5f5f4; /* Warm stone text */
             overflow-x: hidden;
             -webkit-tap-highlight-color: transparent;
         }
-        
-        /* Modern customizable sleek scrollbars for browsers */
+        /* Custom scrollbar to match sleek theme */
         ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
+            width: 8px;
+            height: 8px;
         }
         ::-webkit-scrollbar-track {
             background: #0c0a09;
@@ -78,27 +81,24 @@
         ::-webkit-scrollbar-thumb {
             background: #2e2520;
             border-radius: 9999px;
+            border: 2px solid #0c0a09;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #c49b55;
+            background: #46372f;
         }
-
-        /* Glassmorphism Panels */
+        /* Glassmorphism with slight champagne tint */
         .glass-panel {
             background: rgba(18, 14, 12, 0.75);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(196, 155, 85, 0.12);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(196, 155, 85, 0.15);
         }
-
-        /* Ambient organic noise grain */
+        /* Subtle paper fiber texture overlay */
         .bg-grain {
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.012;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.015;
             pointer-events: none;
         }
-
-        /* Soft hide scrollbar but maintain functionality */
         .scrollbar-none::-webkit-scrollbar {
             display: none;
         }
@@ -106,169 +106,154 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-
-        /* Custom interactive card focus border glow */
-        .interactive-glow:hover {
-            box-shadow: 0 0 25px rgba(196, 155, 85, 0.15);
-            border-color: rgba(196, 155, 85, 0.3);
-        }
     </style>
 </head>
 <body class="selection:bg-bistro-200 selection:text-bistro-950 antialiased">
 
-    <!-- Subtle organic texture layer -->
+    <!-- Subtle texture overlay -->
     <div class="fixed inset-0 bg-grain z-40"></div>
 
-    <!-- Background Lighting Elements -->
-    <div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-bistro-500/5 blur-[120px] pointer-events-none z-0"></div>
-    <div class="fixed bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-orange-900/5 blur-[120px] pointer-events-none z-0"></div>
-
-    <!-- Navigation Header -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-bistro-900/20 transition-all duration-300">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-bistro-900/30 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            
-            <!-- Branding block with custom requested logo image -->
             <div class="flex items-center gap-3">
-                <!-- VERBATIM: logo_bg.jpg used as the main visual brand mark -->
-                <div class="w-11 h-11 rounded-full overflow-hidden flex items-center justify-center border border-bistro-500/20 shadow-[0_0_15px_rgba(196,155,85,0.2)] bg-black transition-transform duration-300 hover:rotate-12">
-                    <img src="logo_bg.jpg" alt="VibeTable Logo" class="w-full h-full object-cover">
+                <!-- Precision Crop-Masked Logo Element using logo_no_bg_3.jpg verbatim -->
+                <div class="w-11 h-11 rounded-full overflow-hidden flex items-center justify-center shadow-[0_0_15px_rgba(196,155,85,0.3)] bg-black transition-transform duration-300 hover:rotate-12">
+                    <img src="logo_no_bg_3.jpg" alt="VibeTable Logo" class="w-full h-full object-cover rounded-full scale-[1.03]">
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col text-left">
                     <span class="text-xl font-serif font-bold tracking-tight text-white leading-none">VibeTable</span>
-                    <span class="text-[8px] font-sans uppercase tracking-widest text-bistro-500 font-black mt-1">Digital Menus</span>
+                    <span class="text-[8px] font-sans uppercase tracking-widest text-bistro-500 font-bold mt-1">Digital Menus</span>
                 </div>
             </div>
             
-            <!-- Desktop/Laptop/Tablet Navigation Links -->
+            <!-- Desktop/Laptop Navigation Links -->
             <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-400">
                 <a href="#problem" class="hover:text-bistro-300 transition-colors duration-200">Why VibeTable</a>
                 <a href="#live-experience" class="hover:text-bistro-300 transition-colors duration-200 flex items-center gap-1.5">
                     Live Demo 
-                    <span class="px-2 py-0.5 bg-bistro-500/10 text-bistro-400 text-[10px] rounded-full border border-bistro-500/20 font-bold uppercase tracking-wider animate-pulse">Interactive</span>
+                    <span class="px-1.5 py-0.5 bg-bistro-500/10 text-bistro-400 text-[10px] rounded border border-bistro-500/20 font-bold uppercase tracking-wider animate-pulse">Interactive</span>
                 </a>
                 <a href="#features" class="hover:text-bistro-300 transition-colors duration-200">Features</a>
                 <a href="#pricing" class="hover:text-bistro-300 transition-colors duration-200">Pricing</a>
                 <a href="#faq" class="hover:text-bistro-300 transition-colors duration-200">FAQ</a>
             </div>
 
-            <!-- Dynamic Action Elements / Responsive Toggle Button -->
-            <div class="flex items-center gap-3">
-                <a href="#pricing" class="hidden md:inline-flex text-xs uppercase font-bold tracking-wider text-bistro-400 hover:text-white transition-colors duration-200 mr-2">
-                    Calculator
+            <!-- Dynamic Header CTA Row -->
+            <div class="flex items-center gap-3 sm:gap-4">
+                <a href="#pricing" class="hidden sm:inline-flex text-xs uppercase font-semibold tracking-wider text-bistro-400 hover:text-white transition-colors duration-200">
+                    Cost Calculator
                 </a>
-                <a href="#playground" class="px-4 sm:px-5 py-2.5 bg-bistro-500 text-stone-950 font-bold text-xs sm:text-sm rounded-full hover:bg-white hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 shadow-[0_0_20px_rgba(196,155,85,0.3)]">
+                <a href="#playground" class="px-4 sm:px-5 py-2.5 bg-bistro-500 text-stone-950 font-bold text-xs sm:text-sm rounded-full hover:bg-white hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 shadow-[0_0_25px_rgba(196,155,85,0.25)]">
                     Build Yours
                 </a>
-                <!-- Touch-optimized mobile menu control -->
-                <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full bg-bistro-950/80 border border-bistro-900/40 text-stone-300 focus:outline-none hover:text-white transition-colors" aria-label="Toggle Navigation Drawer">
-                    <i id="menu-icon" class="fa-solid fa-bars text-base"></i>
+                <!-- Mobile Hamburger Button -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-bistro-900/20 border border-bistro-900/40 text-stone-300 focus:outline-none hover:text-white transition-colors" aria-label="Toggle Navigation Drawer">
+                    <i id="menu-icon" class="fa-solid fa-bars text-lg"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile/Tablet Drawer Navigation (Optimized for Android & iOS Touch Zones) -->
         <div id="mobile-menu" class="hidden lg:hidden border-t border-bistro-900/30 bg-bistro-950/95 backdrop-blur-xl px-6 py-6 space-y-4 transition-all duration-300">
-            <a href="#problem" onclick="toggleMobileMenu()" class="block py-2 text-base font-semibold text-stone-300 hover:text-bistro-400 transition-colors"><i class="fa-solid fa-circle-question mr-3 text-bistro-500"></i>Why VibeTable</a>
-            <a href="#live-experience" onclick="toggleMobileMenu()" class="block py-2 text-base font-semibold text-stone-300 hover:text-bistro-400 transition-colors flex items-center justify-between">
-                <span><i class="fa-solid fa-mobile-screen mr-3 text-bistro-500"></i>Live Demo</span>
+            <a href="#problem" onclick="toggleMobileMenu()" class="block text-base font-medium text-stone-300 hover:text-bistro-400 transition-colors"><i class="fa-solid fa-circle-question mr-3 text-bistro-500"></i>Why VibeTable</a>
+            <a href="#live-experience" onclick="toggleMobileMenu()" class="block text-base font-medium text-stone-300 hover:text-bistro-400 transition-colors flex items-center justify-between">
+                <span><i class="fa-solid fa-laptop mr-3 text-bistro-500"></i>Live Demo</span>
                 <span class="px-2 py-0.5 bg-bistro-500/10 text-bistro-400 text-[10px] rounded border border-bistro-500/20 font-bold uppercase tracking-wider">Interactive</span>
             </a>
-            <a href="#features" onclick="toggleMobileMenu()" class="block py-2 text-base font-semibold text-stone-300 hover:text-bistro-400 transition-colors"><i class="fa-solid fa-star mr-3 text-bistro-500"></i>Features</a>
-            <a href="#pricing" onclick="toggleMobileMenu()" class="block py-2 text-base font-semibold text-stone-300 hover:text-bistro-400 transition-colors"><i class="fa-solid fa-receipt mr-3 text-bistro-500"></i>Pricing</a>
-            <a href="#faq" onclick="toggleMobileMenu()" class="block py-2 text-base font-semibold text-stone-300 hover:text-bistro-400 transition-colors"><i class="fa-solid fa-circle-info mr-3 text-bistro-500"></i>FAQ</a>
+            <a href="#features" onclick="toggleMobileMenu()" class="block text-base font-medium text-stone-300 hover:text-bistro-400 transition-colors"><i class="fa-solid fa-star mr-3 text-bistro-500"></i>Features</a>
+            <a href="#pricing" onclick="toggleMobileMenu()" class="block text-base font-medium text-stone-300 hover:text-bistro-400 transition-colors"><i class="fa-solid fa-receipt mr-3 text-bistro-500"></i>Pricing</a>
+            <a href="#faq" onclick="toggleMobileMenu()" class="block text-base font-medium text-stone-300 hover:text-bistro-400 transition-colors"><i class="fa-solid fa-circle-info mr-3 text-bistro-500"></i>FAQ</a>
             <div class="pt-4 border-t border-bistro-900/20">
                 <a href="#pricing" onclick="toggleMobileMenu()" class="block text-center text-xs uppercase font-extrabold tracking-widest text-bistro-400 py-3 bg-bistro-900/20 rounded-xl border border-bistro-900/30">Cost Savings Calculator</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-16 md:pt-48 md:pb-32 overflow-hidden flex items-center justify-center min-h-[85vh]">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] sm:w-[600px] sm:h-[600px] md:w-[900px] md:h-[900px] rounded-full bg-bistro-500/10 blur-[90px] md:blur-[140px] pointer-events-none animate-pulse-slow"></div>
+    <section class="relative pt-36 pb-20 md:pt-48 md:pb-36 overflow-hidden flex items-center justify-center min-h-[85vh]">
+        <!-- Radial candle-light ambient gradients -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] sm:w-[600px] sm:h-[600px] md:w-[1000px] md:h-[1000px] rounded-full bg-bistro-500/10 blur-[120px] md:blur-[150px] pointer-events-none animate-pulse-slow"></div>
+        <div class="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[240px] sm:w-[400px] sm:h-[400px] md:w-[700px] md:h-[700px] rounded-full bg-orange-800/10 blur-[100px] md:blur-[120px] pointer-events-none animate-pulse-slow" style="animation-delay: 2s;"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div class="text-center max-w-4xl mx-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
+            <div class="text-center max-w-4xl mx-auto animate-fade-in-up">
                 
                 <!-- Tagline Badge -->
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bistro-950/90 border border-bistro-900/40 text-xs font-semibold text-bistro-300 mb-6 sm:mb-8 shadow-inner">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bistro-950/80 border border-bistro-900/40 text-xs font-semibold text-bistro-300 mb-6 sm:mb-8 shadow-inner">
                     <span class="flex h-2 w-2 rounded-full bg-bistro-500 animate-pulse"></span>
-                    <span class="font-sans uppercase tracking-widest text-[9px] sm:text-[10px] font-bold">Restaurant Menu System You Fully Own</span>
+                    <span class="font-sans uppercase tracking-wider text-[9px] sm:text-[10px]">Restaurant Menu System You Fully Own</span>
                 </div>
 
-                <!-- Main Bold Responsive Headline -->
-                <h1 class="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-light tracking-tight text-white mb-6 leading-[1.1] md:leading-[1.05]">
+                <!-- Main Bold Headline -->
+                <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-light tracking-tight text-white mb-6 sm:mb-8 leading-[1.1] md:leading-[1.05]">
                     Own Your Restaurant's <br>
                     <span class="font-serif italic text-transparent bg-clip-text bg-gradient-to-b from-bistro-300 to-bistro-500">Digital Menu.</span>
                 </h1>
 
                 <!-- Persuasive Subheadline -->
-                <p class="text-sm sm:text-base md:text-xl lg:text-2xl text-stone-400 font-sans max-w-3xl mx-auto mb-10 sm:mb-12 leading-relaxed px-2">
+                <p class="text-base sm:text-lg md:text-2xl text-stone-400 font-sans max-w-3xl mx-auto mb-10 sm:mb-12 leading-relaxed px-2">
                     Give customers a beautiful, warm, lightning-fast mobile menu experience. 
                     <span class="text-white font-medium">Zero monthly subscriptions.</span> No platform lock-in. Just one simple payment, forever.
                 </p>
 
-                <!-- Touch & Mouse Optimized CTA Row -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md sm:max-w-none mx-auto px-4">
-                    <a href="#live-experience" class="w-full sm:w-auto px-8 py-4 bg-bistro-100 text-bistro-950 rounded-full font-bold text-sm sm:text-base hover:bg-white transition-all duration-300 flex items-center justify-center gap-2 group hover:shadow-[0_0_30px_rgba(225,205,184,0.2)]">
+                <!-- Calls to Action -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 sm:mb-20 max-w-md sm:max-w-none mx-auto px-4">
+                    <a href="#live-experience" class="w-full sm:w-auto px-8 py-4 bg-bistro-100 text-bistro-950 rounded-full font-bold text-base hover:bg-white transition-all duration-300 flex items-center justify-center gap-2 group hover:shadow-[0_0_30px_rgba(225,205,184,0.2)]">
                         Explore Live Menu Tour <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
                     </a>
-                    <a href="#playground" class="w-full sm:w-auto px-8 py-4 bg-bistro-950 border border-bistro-900 text-stone-200 rounded-full font-bold text-sm sm:text-base hover:bg-bistro-900 hover:border-bistro-800 transition-all duration-300 flex items-center justify-center gap-2">
+                    <a href="#playground" class="w-full sm:w-auto px-8 py-4 bg-bistro-950 border border-bistro-900 text-stone-200 rounded-full font-bold text-base hover:bg-bistro-900 hover:border-bistro-800 transition-all duration-300 flex items-center justify-center gap-2">
                         Open Sandbox Builder
                     </a>
                 </div>
             </div>
 
-            <!-- Interactive Visual Preview Mockup Box (Laptops, Tablets, Smartphones adaptation) -->
-            <div class="relative mt-12 sm:mt-16 max-w-5xl mx-auto rounded-3xl border border-bistro-900/40 bg-bistro-950/30 p-4 sm:p-6 shadow-[0_30px_100px_rgba(0,0,0,0.85)] glass-panel transition-all duration-500 hover:border-bistro-500/20">
-                <div class="flex items-center justify-between border-b border-bistro-900/20 pb-4 mb-6">
+            <div class="relative mt-8 sm:mt-12 max-w-5xl mx-auto rounded-3xl border border-bistro-900/40 bg-bistro-950/20 p-4 sm:p-6 shadow-[0_30px_100px_rgba(0,0,0,0.85)] glass-panel transition-all duration-500 hover:border-bistro-500/30">
+                <div class="flex items-center justify-between border-b border-bistro-900/30 pb-4 mb-6">
                     <div class="flex items-center gap-2">
                         <span class="w-3 h-3 rounded-full bg-stone-800"></span>
                         <span class="w-3 h-3 rounded-full bg-bistro-700"></span>
                         <span class="w-3 h-3 rounded-full bg-bistro-500"></span>
                     </div>
                     <div class="px-3 sm:px-6 py-1 bg-bistro-950/80 rounded-lg text-[9px] sm:text-[10px] font-mono text-bistro-400 tracking-wider flex items-center gap-1.5 border border-bistro-900/30">
-                        <i class="fa-solid fa-microchip animate-pulse text-bistro-500"></i> VIBETABLE-PRESET_EST_2026
+                        <i class="fa-solid fa-microchip animate-pulse"></i> VIBETABLE-PRESET_EST_2026
                     </div>
                     <div class="w-3"></div>
                 </div>
 
                 <!-- Split Grid Layout -->
-                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                <div class="grid lg:grid-cols-12 gap-8 lg:gap-6 items-center">
                     <div class="lg:col-span-7 space-y-6 text-left px-2 sm:px-4">
-                        <div class="inline-block px-3 py-1 bg-bistro-900/40 border border-bistro-800/30 text-bistro-300 font-semibold rounded-lg uppercase tracking-wider font-sans text-[9px] sm:text-[10px]">Curation Mode</div>
+                        <div class="inline-block px-3 py-1 bg-bistro-900/40 border border-bistro-800/30 text-bistro-300 font-semibold rounded-lg uppercase tracking-wider font-sans text-[10px]">Curation Mode</div>
                         <h3 class="text-2xl sm:text-3xl md:text-4xl font-serif text-white leading-tight">Instant updates, striking styling, designed to enhance average ticket value.</h3>
                         <p class="text-stone-400 font-sans text-sm sm:text-base leading-relaxed">Our digital menus aren't clunky PDFs or cold industrial interfaces. They are warm hospitality canvases engineered to render your signature dishes as appetizing visual journeys—encouraging guests to explore, upgrade, and enjoy more.</p>
                         
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                             <div class="p-4 bg-bistro-950/40 border border-bistro-900/20 rounded-2xl flex items-start gap-3 hover:border-bistro-500/20 transition-all duration-300">
-                                <i class="fa-solid fa-hourglass text-bistro-400 mt-1"></i>
+                                <i class="fa-solid fa-hourglass text-bistro-400 mt-1 animate-pulse"></i>
                                 <div>
-                                    <div class="text-white font-semibold text-sm">0.2s Rendering</div>
-                                    <div class="text-[10px] text-stone-500 mt-0.5">Bespoke fast assets</div>
+                                    <div class="text-white font-medium text-sm">0.2s Rendering</div>
+                                    <div class="text-[10px] text-stone-500">Bespoke fast assets</div>
                                 </div>
                             </div>
                             <div class="p-4 bg-bistro-950/40 border border-bistro-900/20 rounded-2xl flex items-start gap-3 hover:border-bistro-500/20 transition-all duration-300">
                                 <i class="fa-solid fa-qrcode text-bistro-400 mt-1"></i>
                                 <div>
-                                    <div class="text-white font-semibold text-sm">Tabletop Art QR</div>
-                                    <div class="text-[10px] text-stone-500 mt-0.5">Elegant scan frames</div>
+                                    <div class="text-white font-medium text-sm">Tabletop Art QR</div>
+                                    <div class="text-[10px] text-stone-500">Elegant scan frames</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Touch Screen Phone mockup adapted flawlessly for fluid screens -->
+                    <!-- Beautiful simulated phone layout -->
                     <div class="lg:col-span-5 flex justify-center px-2">
-                        <div class="w-full max-w-[290px] sm:max-w-[340px] md:max-w-[360px] h-[580px] sm:h-[660px] rounded-[40px] border-[8px] border-bistro-900/60 bg-bistro-950 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative flex flex-col transition-transform duration-500 hover:scale-[1.02]">
-                            <!-- Notch -->
+                        <div class="w-full max-w-[340px] sm:max-w-[375px] h-[680px] sm:h-[760px] rounded-[40px] border-[8px] border-bistro-900/60 bg-bistro-950 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative flex flex-col transition-transform duration-500 hover:scale-[1.02]">
+                            <!-- Speaker/Camera Notch -->
                             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-bistro-900/60 rounded-b-xl z-20 flex items-center justify-center">
                                 <div class="w-10 h-1.5 bg-bistro-950 rounded-full"></div>
                             </div>
                             
-                            <!-- Phone Internal content frame -->
                             <div class="flex-1 overflow-y-auto flex flex-col text-xs pt-6 pb-4 scrollbar-none">
                                 <div class="p-4 flex items-center justify-between border-b border-bistro-900/20 bg-stone-950 sticky top-0 z-10">
-                                    <span class="font-serif font-bold text-white text-sm">Lumina Café</span>
+                                    <span class="font-serif font-bold text-white text-base">Lumina Café</span>
                                     <div class="px-2.5 py-0.5 bg-bistro-900/30 text-bistro-300 text-[10px] rounded-full flex items-center gap-1 border border-bistro-800/20">
                                         <i class="fa-solid fa-star text-bistro-400 text-[8px]"></i> 4.9 Reviews
                                     </div>
@@ -296,7 +281,7 @@
                                             <div class="font-serif font-bold text-stone-100 text-sm">Flat White</div>
                                             <div class="text-[10px] text-stone-500 mt-0.5 line-clamp-1">Velvety steamed microfoam over double espresso</div>
                                         </div>
-                                        <div class="text-right shrink-0">
+                                        <div class="text-right">
                                             <div class="font-serif font-bold text-bistro-300 text-xs">$4.50</div>
                                             <div class="text-[9px] text-stone-500">Aero / Hot</div>
                                         </div>
@@ -306,13 +291,22 @@
                                             <div class="font-serif font-bold text-stone-100 text-sm">Pistachio Latte</div>
                                             <div class="text-[10px] text-stone-500 mt-0.5 line-clamp-1">In-house premium pistachio cream, raw honey</div>
                                         </div>
-                                        <div class="text-right shrink-0">
+                                        <div class="text-right">
                                             <div class="font-serif font-bold text-bistro-300 text-xs">$5.25</div>
                                             <span class="bg-bistro-900/60 text-bistro-300 font-semibold text-[8px] px-1 py-0.5 rounded">NEW</span>
                                         </div>
                                     </div>
+                                    <div class="flex items-center justify-between p-3 bg-bistro-900/10 rounded-xl border border-bistro-900/20 hover:bg-bistro-900/20 transition-colors">
+                                        <div class="text-left max-w-[70%]">
+                                            <div class="font-serif font-bold text-stone-100 text-sm">Ceremonial Matcha</div>
+                                            <div class="text-[10px] text-stone-500 mt-0.5 line-clamp-1">Uji ceremonial whisked latte, organic macadamia</div>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="font-serif font-bold text-bistro-300 text-xs">$5.75</div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="px-3 py-2 border-t border-bistro-900/20 text-center mt-auto">
+                                <div class="px-3 py-2 border-t border-bistro-900/20 text-center">
                                     <p class="text-[9px] text-stone-600 font-mono">VibeTable Bespoke Assets. Table 12.</p>
                                 </div>
                             </div>
@@ -323,54 +317,52 @@
         </div>
     </section>
 
-    <!-- Trust Metrics Section -->
     <section class="py-12 border-b border-bistro-900/20 bg-stone-950/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <p class="text-center text-[10px] sm:text-xs font-semibold text-bistro-500 uppercase tracking-widest mb-8">
                 Empowering Bespoke Venues & Cafés Globally
             </p>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-center max-w-5xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center max-w-5xl mx-auto">
                 <div class="p-4 bg-bistro-950/40 border border-bistro-900/10 rounded-2xl transition-all duration-300 hover:border-bistro-500/20">
                     <div class="text-2xl sm:text-3xl md:text-4xl font-serif font-light text-white mb-1">98</div>
-                    <div class="text-[10px] sm:text-xs text-stone-500">Google Performance Score</div>
+                    <div class="text-[11px] sm:text-xs text-stone-500">Google Performance Score</div>
                 </div>
                 <div class="p-4 bg-bistro-950/40 border border-bistro-900/10 rounded-2xl transition-all duration-300 hover:border-bistro-500/20">
                     <div class="text-2xl sm:text-3xl md:text-4xl font-serif font-light text-white mb-1">100%</div>
-                    <div class="text-[10px] sm:text-xs text-stone-500">Organic Discovery Ready</div>
+                    <div class="text-[11px] sm:text-xs text-stone-500">Organic Discovery Ready</div>
                 </div>
                 <div class="p-4 bg-bistro-950/40 border border-bistro-900/10 rounded-2xl transition-all duration-300 hover:border-bistro-500/20">
                     <div class="text-2xl sm:text-3xl md:text-4xl font-serif font-light text-white mb-1">0</div>
-                    <div class="text-[10px] sm:text-xs text-stone-500">Monthly Maintenance Fees</div>
+                    <div class="text-[11px] sm:text-xs text-stone-500">Monthly Maintenance Fees</div>
                 </div>
                 <div class="p-4 bg-bistro-950/40 border border-bistro-900/10 rounded-2xl transition-all duration-300 hover:border-bistro-500/20">
                     <div class="text-2xl sm:text-3xl md:text-4xl font-serif font-light text-white mb-1">Unlimited</div>
-                    <div class="text-[10px] sm:text-xs text-stone-500">Dishes & Menu Iterations</div>
+                    <div class="text-[11px] sm:text-xs text-stone-500">Dishes & Menu Iterations</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Problem Section -->
-    <section id="problem" class="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <section id="problem" class="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 relative">
         <div class="absolute -left-48 top-1/4 w-96 h-96 bg-stone-900/20 blur-[120px] rounded-full pointer-events-none"></div>
         <div class="text-center mb-16 max-w-3xl mx-auto">
             <span class="text-bistro-400 text-xs font-semibold uppercase tracking-widest bg-bistro-950/80 border border-bistro-900/40 px-3 py-1.5 rounded-full mb-4 inline-block">The Hospitality Pain-Point</span>
-            <h2 class="text-2xl sm:text-4xl md:text-5xl font-serif font-light text-white tracking-tight leading-tight">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-white tracking-tight leading-tight">
                 Most Venues Lose Guests to Frustrating, Friction-filled Menus
             </h2>
-            <p class="text-stone-400 mt-4 text-xs sm:text-base md:text-lg">
+            <p class="text-stone-400 mt-4 text-sm sm:text-base md:text-lg">
                 Your menu is the ultimate sensory invitation. Yet, many restaurants break the dining flow by relying on rigid, clunky formats that leak potential revenue.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
             <!-- Problem Card 1 -->
             <div class="p-6 sm:p-8 rounded-3xl bg-bistro-900/5 border border-bistro-900/20 hover:border-bistro-500/30 transition-all duration-300 group hover:-translate-y-1">
                 <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all duration-300">
                     <i class="fa-solid fa-ban text-lg"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">Pinch-and-Zoom PDFs</h3>
-                <p class="text-stone-400 text-xs sm:text-sm leading-relaxed">
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">Pinch-and-Zoom PDFs</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
                     PDF menus are hostile to dynamic cellular screens. They force your guests to pinch, drag, and squint desperately just to analyze high-margin side orders.
                 </p>
             </div>
@@ -380,8 +372,8 @@
                 <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all duration-300">
                     <i class="fa-solid fa-file-invoice-dollar text-lg"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">The Perpetual Subscription Trap</h3>
-                <p class="text-stone-400 text-xs sm:text-sm leading-relaxed">
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">The Perpetual Subscription Trap</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
                     Software rentals lock you in forever—charging $99 to $249 every month. Over three years, you pay thousands of dollars for simple, passive hosting of your digital content.
                 </p>
             </div>
@@ -391,21 +383,20 @@
                 <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all duration-300">
                     <i class="fa-solid fa-print text-lg"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">Expensive Printed Waste</h3>
-                <p class="text-stone-400 text-xs sm:text-sm leading-relaxed">
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">Expensive Printed Waste</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
                     Update a single pricing point, shift seasonal ingredients, or run out of a vintage wine, and your premium, textured paper menu immediately becomes outdated.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Playground Sandbox Section -->
-    <section id="playground" class="py-20 md:py-28 bg-stone-950/80 border-t border-bistro-900/20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="playground" class="py-24 bg-stone-950 border-t border-bistro-900/20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-16 max-w-3xl mx-auto">
                 <span class="text-bistro-400 text-xs font-semibold uppercase tracking-widest bg-bistro-950/80 border border-bistro-900/40 px-3 py-1.5 rounded-full mb-4 inline-block">Bespoke Sandbox</span>
-                <h2 class="text-2xl sm:text-4xl md:text-5xl font-serif font-light text-white tracking-tight">The Live Sandbox Simulator</h2>
-                <p class="text-stone-400 mt-4 text-xs sm:text-base">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-white tracking-tight">The Live Sandbox Simulator</h2>
+                <p class="text-stone-400 mt-4 text-sm sm:text-base">
                     Modify the live-updating back-of-house parameters on the left, and watch the customer experience adjust instantaneously inside the preview device.
                 </p>
             </div>
@@ -417,11 +408,11 @@
                 <div class="lg:col-span-7 rounded-3xl border border-bistro-900/20 bg-bistro-950/30 p-5 sm:p-8 flex flex-col justify-between relative overflow-hidden glass-panel">
                     <div>
                         <div class="flex items-center gap-2 mb-6">
-                            <span class="w-3.5 h-3.5 rounded-full bg-stone-950 flex items-center justify-center text-[8px] text-bistro-400 border border-bistro-900/30"><i class="fa-solid fa-lock"></i></span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-stone-900 flex items-center justify-center text-[8px] text-bistro-400 border border-bistro-900/30"><i class="fa-solid fa-lock"></i></span>
                             <span class="text-[9px] sm:text-[10px] font-mono text-stone-500 uppercase tracking-wider">portal.vibetable.com/settings</span>
                         </div>
                         
-                        <h3 class="text-xl sm:text-2xl font-serif font-bold text-white mb-2">Configure Your Menu State</h3>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-2">Configure Your Menu State</h3>
                         <p class="text-stone-400 text-xs sm:text-sm mb-6 font-sans">Interact with these controllers to see how responsive the assets behave.</p>
                         
                         <!-- Control 1: Menu Title -->
@@ -432,7 +423,6 @@
                                    oninput="updateMenuTitle(this.value)">
                         </div>
 
-                        <!-- Control 2: Custom Promo Badge -->
                         <div class="space-y-2 mb-5">
                             <label class="text-[10px] font-bold text-bistro-400 uppercase tracking-widest block">Headline Promo Text</label>
                             <input id="demo-promo-input" type="text" value="WEEKEND BRUNCH SPECIALS" 
@@ -489,7 +479,7 @@
 
                 <!-- Simulation Preview Side -->
                 <div class="lg:col-span-5 flex justify-center items-center mt-4 lg:mt-0 px-2">
-                    <div class="w-full max-w-[290px] sm:max-w-[340px] md:max-w-[360px] h-[580px] sm:h-[660px] rounded-[50px] border-[10px] border-bistro-900/60 bg-bistro-950 overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.85)] relative flex flex-col transition-all duration-300">
+                    <div class="w-full max-w-[340px] sm:max-w-[375px] h-[720px] sm:h-[780px] rounded-[50px] border-[10px] border-bistro-900/60 bg-bistro-950 overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.85)] relative flex flex-col transition-all duration-300">
                         <!-- Dynamic Toast Alert System inside Phone -->
                         <div id="phone-toast" class="absolute top-12 left-4 right-4 bg-bistro-950/95 border border-bistro-500/30 text-stone-100 text-[10px] px-3 py-2.5 rounded-xl shadow-2xl z-40 transform -translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2">
                             <i class="fa-solid fa-circle-info text-bistro-400 animate-bounce"></i>
@@ -501,7 +491,6 @@
                             <div class="w-12 h-1.5 bg-bistro-950 rounded-full"></div>
                         </div>
 
-                        <!-- Customer App Content Screen -->
                         <div class="flex-1 overflow-y-auto flex flex-col text-xs pt-8 pb-4 bg-[#110e0c] scrollbar-none">
                             <!-- Café Logo & Navigation Header inside Phone -->
                             <div class="p-4 border-b border-bistro-900/10 bg-[#110e0c]/90 sticky top-0 backdrop-blur-md z-10 flex items-center justify-between">
@@ -580,20 +569,19 @@
         </div>
     </section>
 
-    <!-- Product Showcase Live Experience -->
     <section id="live-experience" class="py-20 md:py-28 bg-stone-950 border-t border-bistro-900/20 relative">
         <div class="absolute -right-48 bottom-0 w-96 h-96 bg-bistro-500/5 blur-[120px] rounded-full pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-16 max-w-3xl mx-auto">
                 <span class="text-bistro-400 text-xs font-semibold uppercase tracking-widest bg-bistro-950/80 border border-bistro-900/40 px-3 py-1.5 rounded-full mb-4 inline-block">Product Showcase</span>
-                <h2 class="text-2xl sm:text-4xl md:text-5xl font-serif font-light text-white tracking-tight">Interactive Live Menu Tour</h2>
-                <p class="text-stone-400 mt-4 text-xs sm:text-base md:text-lg">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-white tracking-tight">Interactive Live Menu Tour</h2>
+                <p class="text-stone-400 mt-4 text-sm sm:text-base md:text-lg">
                     This is a live, fully functional sample menu created for our partner coffee shops. Click, scroll, and test the micro-interactions directly in the responsive frames below.
                 </p>
             </div>
 
             <!-- Frame Switcher Controls -->
-            <div class="flex justify-center items-center gap-3 sm:gap-4 mb-12 bg-bistro-900/10 p-2 rounded-full border border-bistro-900/30 max-w-xs mx-auto">
+            <div class="flex justify-center items-center gap-3 sm:gap-4 mb-12 bg-bistro-900/10 p-2 rounded-full border border-bistro-900/30 max-w-sm mx-auto">
                 <button onclick="setPreviewFrame('mobile')" id="btn-preview-mobile" class="flex-1 px-4 py-2.5 bg-bistro-100 text-bistro-950 font-semibold text-xs rounded-full flex items-center justify-center gap-2 shadow-md transition-all duration-300 uppercase tracking-wider">
                     <i class="fa-solid fa-mobile-screen-button"></i> Mobile
                 </button>
@@ -605,8 +593,8 @@
             <!-- Responsive Device Containers -->
             <div class="flex justify-center items-center px-2">
                 
-                <!-- Mobile Frame -->
-                <div id="preview-mobile-frame" class="w-full max-w-[290px] sm:max-w-[340px] md:max-w-[360px] h-[580px] sm:h-[660px] rounded-[50px] border-[10px] border-bistro-900/60 bg-bistro-950 overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.85)] relative transition-all duration-500">
+                <!-- Mobile iPhone Frame (Correct Standardized 390x844 dimensions) -->
+                <div id="preview-mobile-frame" class="w-full max-w-[340px] sm:max-w-[380px] h-[680px] sm:h-[760px] rounded-[50px] border-[10px] border-bistro-900/60 bg-bistro-950 overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.85)] relative transition-all duration-500">
                     <!-- Notch -->
                     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-bistro-900/60 rounded-b-2xl z-20 flex items-center justify-center">
                         <div class="w-12 h-1.5 bg-bistro-950 rounded-full"></div>
@@ -616,7 +604,7 @@
                 </div>
 
                 <!-- Desktop / Tablet Frame -->
-                <div id="preview-desktop-frame" class="hidden w-full max-w-4xl h-[480px] sm:h-[520px] rounded-3xl border-[8px] border-bistro-900/60 bg-bistro-950 overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.85)] relative transition-all duration-500 animate-fade-in-up">
+                <div id="preview-desktop-frame" class="hidden w-full max-w-4xl h-[520px] rounded-3xl border-[8px] border-bistro-900/60 bg-bistro-950 overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.85)] relative transition-all duration-500">
                     <!-- Frame Embed -->
                     <iframe src="https://coffee-shop-menu-sepia.vercel.app/" class="w-full h-full bg-bistro-950 border-none" title="Live Desktop VibeTable Menu"></iframe>
                 </div>
@@ -656,14 +644,13 @@
         </div>
     </section>
 
-    <!-- Core Features Section -->
-    <section id="features" class="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <section id="features" class="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 relative">
         <div class="absolute right-0 top-1/4 w-[500px] h-[500px] bg-bistro-500/5 blur-[150px] rounded-full pointer-events-none"></div>
 
         <div class="text-center mb-16 max-w-3xl mx-auto">
             <span class="text-bistro-400 text-xs font-semibold uppercase tracking-widest bg-bistro-950/80 border border-bistro-900/40 px-3 py-1.5 rounded-full mb-4 inline-block">The Premium Core</span>
-            <h2 class="text-2xl sm:text-4xl md:text-5xl font-serif font-light text-white tracking-tight leading-tight">Every Feature Tailored to Elevate the Hospitality Canvas</h2>
-            <p class="text-stone-400 mt-4 text-xs sm:text-base md:text-lg">No software bloat, no tech complications. Just incredibly refined code optimized to make your kitchen, branding, and tables perform flawlessly.</p>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-white tracking-tight leading-tight">Every Feature Tailored to Elevate the Hospitality Canvas</h2>
+            <p class="text-stone-400 mt-4 text-sm sm:text-base md:text-lg">No software bloat, no tech complications. Just incredibly refined code optimized to make your kitchen, branding, and tables perform flawlessly.</p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -672,8 +659,8 @@
                 <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all duration-300">
                     <i class="fa-solid fa-gauge-high text-lg"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">0.2s Load Speeds</h3>
-                <p class="text-stone-400 text-xs sm:text-sm leading-relaxed">
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">0.2s Load Speeds</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
                     Designed to render cleanly instantly, bypassing poor restaurant basement receptions and keeping diners deeply engaged.
                 </p>
             </div>
@@ -683,8 +670,8 @@
                 <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all duration-300">
                     <i class="fa-solid fa-crop-simple text-lg"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">Bespoke Tabletop QR Codes</h3>
-                <p class="text-stone-400 text-xs sm:text-sm leading-relaxed">
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">Bespoke Tabletop QR Codes</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
                     Custom vector templates matching your branding elements. High-definition files ready for wood, brass, acrylic, or linen stands.
                 </p>
             </div>
@@ -694,8 +681,8 @@
                 <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all duration-300">
                     <i class="fa-solid fa-wine-glass text-lg"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">Chef's Highlights Integration</h3>
-                <p class="text-stone-400 text-xs sm:text-sm leading-relaxed">
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">Chef's Highlights Integration</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
                     Visually guide guest interest to signature dishes, vintage wines, or appetizers to effectively maximize average ticket results.
                 </p>
             </div>
@@ -705,8 +692,8 @@
                 <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all duration-300">
                     <i class="fa-solid fa-power-off text-lg"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">Live Stock Toggling</h3>
-                <p class="text-stone-400 text-xs sm:text-sm leading-relaxed">
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">Live Stock Toggling</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
                     Ran out of the Ribeye or specialty croissants? Toggle them offline inside your settings in seconds to secure clean kitchen flows.
                 </p>
             </div>
@@ -716,8 +703,8 @@
                 <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all duration-300">
                     <i class="fa-solid fa-chart-line text-lg"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">Clean Asset Analytics</h3>
-                <p class="text-stone-400 text-xs sm:text-sm leading-relaxed">
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">Clean Asset Analytics</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
                     Gain privacy-centric, insightful counts of plate reviews, category swipes, and dining clicks without cookie popups.
                 </p>
             </div>
@@ -727,19 +714,18 @@
                 <div class="w-12 h-12 rounded-2xl bg-bistro-900/30 text-bistro-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all duration-300">
                     <i class="fa-solid fa-utensils text-lg"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">100% SEO Ready Structure</h3>
-                <p class="text-stone-400 text-xs sm:text-sm leading-relaxed">
+                <h3 class="text-xl font-serif font-bold text-stone-100 mb-3 group-hover:text-bistro-400 transition-colors">100% SEO Ready Structure</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
                     Structured culinary metadata index your primary plates directly onto localized search platforms, driving natural food discoveries.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Financial Comparison Section -->
     <section class="py-20 bg-bistro-900/10 border-y border-bistro-900/20 shadow-inner">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl sm:text-4xl md:text-5xl font-serif font-light text-white text-center mb-12 tracking-tight">The Pure Financial Comparison</h2>
-            <div class="overflow-x-auto rounded-3xl border border-bistro-900/20 bg-[#0d0a09] shadow-2xl scrollbar-none">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-white text-center mb-12 tracking-tight">The Pure Financial Comparison</h2>
+            <div class="overflow-x-auto rounded-3xl border border-bistro-900/20 bg-[#0d0a09] shadow-2xl">
                 <table class="w-full text-left border-collapse min-w-[620px]">
                     <thead>
                         <tr class="border-b border-bistro-900/20 bg-stone-950">
@@ -780,22 +766,21 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
     <section id="pricing" class="py-20 md:py-28 relative overflow-hidden">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-bistro-500/5 blur-[160px] rounded-full pointer-events-none"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
             <div class="text-center mb-16 max-w-3xl mx-auto">
                 <span class="text-bistro-400 text-xs font-semibold uppercase tracking-widest bg-bistro-950/80 border border-bistro-900/40 px-3 py-1.5 rounded-full mb-4 inline-block">Transparent Assets</span>
-                <h2 class="text-2xl sm:text-4xl md:text-5xl font-serif font-light text-white tracking-tight leading-tight">One Direct Investment. Save Thousands Instantly.</h2>
-                <p class="text-stone-400 mt-4 text-xs sm:text-base md:text-lg">No platform overhead, no hidden transaction fees, no structural locks. Select an integration plan and claim absolute digital menu ownership.</p>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-white tracking-tight leading-tight">One Direct Investment. Save Thousands Instantly.</h2>
+                <p class="text-stone-400 mt-4 text-sm sm:text-base md:text-lg">No platform overhead, no hidden transaction fees, no structural locks. Select an integration plan and claim absolute digital menu ownership.</p>
             </div>
 
             <!-- Savings Calculator Mini Tool -->
             <div class="max-w-4xl mx-auto glass-panel border border-bistro-900/40 rounded-3xl p-5 sm:p-8 mb-16 text-center shadow-xl">
-                <h4 class="text-sm sm:text-lg font-serif font-bold text-stone-100 mb-6">Analyze Your Hard Cash Savings (vs. Standard $150/mo SaaS Solutions)</h4>
+                <h4 class="text-base sm:text-lg font-serif font-bold text-stone-100 mb-6">Analyze Your Hard Cash Savings (vs. Standard $150/mo SaaS Solutions)</h4>
                 
-                <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 max-w-sm sm:max-w-md mx-auto">
+                <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 max-w-md mx-auto">
                     <button onclick="calculateSavings(1, this)" class="flex-1 px-4 py-2.5 rounded-xl text-xs font-bold transition-all bg-bistro-500 text-bistro-950 duration-300 uppercase tracking-widest shadow">
                         1 Year
                     </button>
@@ -949,11 +934,10 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section id="faq" class="py-20 md:py-28 max-w-4xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-16">
             <span class="text-bistro-400 text-xs font-semibold uppercase tracking-widest bg-bistro-950/80 border border-bistro-900/40 px-3 py-1.5 rounded-full mb-4 inline-block">Help & Clarity</span>
-            <h2 class="text-2xl sm:text-4xl md:text-5xl font-serif font-light text-white tracking-tight">Frequently Asked Questions</h2>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-white tracking-tight">Frequently Asked Questions</h2>
         </div>
 
         <div class="space-y-4 px-2">
@@ -964,7 +948,7 @@
                     <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs ml-3"></i>
                 </button>
                 <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                    <p class="px-6 pb-5 text-stone-400 text-xs sm:text-sm leading-relaxed">
+                    <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
                         We believe restaurants should own their digital assets, just like their commercial grills or tables. Perpetual subscription fees represent an unnecessary profit leak. By paying us to design and deploy your custom system once, you secure full digital ownership forever.
                     </p>
                 </div>
@@ -977,7 +961,7 @@
                     <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs ml-3"></i>
                 </button>
                 <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                    <p class="px-6 pb-5 text-stone-400 text-xs sm:text-sm leading-relaxed">
+                    <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
                         Yes, completely. Once deployment finishes, the customized software files belong entirely to you. Your digital assets run on modern, fast-hosting channels that require zero monthly costs for standard usage levels.
                     </p>
                 </div>
@@ -990,7 +974,7 @@
                     <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs ml-3"></i>
                 </button>
                 <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                    <p class="px-6 pb-5 text-stone-400 text-xs sm:text-sm leading-relaxed">
+                    <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
                         Every package incorporates a premium, easy-to-use Admin Dashboard. Built with a simple mobile-first UI, you can securely access your settings on your phone or tablet, modify prices, upload pictures, or toggle elements to "Out of Stock" in seconds.
                     </p>
                 </div>
@@ -1003,7 +987,7 @@
                     <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs ml-3"></i>
                 </button>
                 <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                    <p class="px-6 pb-5 text-stone-400 text-xs sm:text-sm leading-relaxed">
+                    <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
                         No. The custom platform is designed as an incredibly responsive, high-performance web asset. Scanning the tabletop QR code opens the menu inside the phone's native browser immediately in under 0.2 seconds.
                     </p>
                 </div>
@@ -1011,17 +995,16 @@
         </div>
     </section>
 
-    <!-- Bottom Call-To-Action Banner -->
-    <section class="py-24 md:py-32 relative overflow-hidden border-t border-bistro-900/20 bg-stone-950/50">
+    <section class="py-24 md:py-32 relative overflow-hidden border-t border-bistro-900/20">
         <div class="absolute inset-0 bg-[radial-gradient(rgba(171,129,91,0.03)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-bistro-500/5 blur-[180px] rounded-full pointer-events-none"></div>
 
         <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center">
             <h2 class="text-3xl sm:text-4xl md:text-6xl font-serif font-light text-white tracking-tight leading-tight mb-6">Upgrade Your Dining Experience Today.</h2>
-            <p class="text-stone-400 text-xs sm:text-base md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed px-2">
+            <p class="text-stone-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed px-2">
                 Join forward-thinking restaurants, boutique hotels, and specialty coffee groups choosing to own their digital assets rather than leasing them perpetually.
             </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md sm:max-w-none mx-auto px-4 font-sans">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md sm:max-w-none mx-auto px-4">
                 <a href="#playground" class="w-full sm:w-auto px-8 py-4 bg-bistro-500 text-stone-950 font-bold rounded-full hover:bg-white hover:scale-[1.02] transition-all duration-300 uppercase tracking-widest text-xs sm:text-sm shadow-lg">
                     Try Interactive Sandbox
                 </a>
@@ -1032,10 +1015,9 @@
         </div>
     </section>
 
-    <!-- Modal Purchase Prompt -->
     <div id="purchase-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
         <div class="bg-stone-950 border border-bistro-900/40 p-6 sm:p-8 rounded-3xl max-w-md w-full mx-4 relative shadow-2xl">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-stone-500 hover:text-white transition-colors" aria-label="Close dialog">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-stone-500 hover:text-white transition-colors">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
             <div class="w-12 h-12 rounded-2xl bg-bistro-500/10 text-bistro-300 flex items-center justify-center mb-6 border border-bistro-900/30">
@@ -1072,21 +1054,20 @@
             </div>
             <h4 class="text-xl font-serif font-bold text-white mb-2">Request Filed Successfully</h4>
             <p class="text-stone-400 text-xs sm:text-sm mb-6 leading-relaxed">Our integration consultant will contact you within 24 hours to review your current menu assets and build parameters.</p>
-            <button onclick="closeSuccessModal()" class="w-full py-3 bg-stone-900 border border-bistro-900/40 text-stone-200 rounded-xl hover:bg-stone-800 font-bold transition-all duration-200 uppercase tracking-widest text-xs">
+            <button onclick="closeSuccessModal()" class="w-full py-3 bg-stone-900 border border-bistro-900/40 text-stone-200 rounded-xl hover:bg-stone-850 font-bold transition-all duration-200 uppercase tracking-widest text-xs">
                 Return to Site
             </button>
         </div>
     </div>
 
-    <!-- Main Page Footer -->
-    <footer class="border-t border-bistro-900/20 bg-black pt-16 pb-10 relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-16 text-left font-sans">
+    <footer class="border-t border-bistro-900/20 bg-black pt-16 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-16 text-left">
                 <div class="sm:col-span-2">
                     <div class="flex items-center gap-3 mb-6">
-                        <!-- VERBATIM: logo_bg.jpg used as the main visual brand mark in footer -->
-                        <div class="w-10 h-10 overflow-hidden rounded-full shadow-lg bg-black border border-bistro-500/20">
-                            <img src="logo_bg.jpg" alt="VibeTable Logo" class="w-full h-full object-cover">
+                        <!-- Direct brand image logo_no_bg_3.jpg cropped as circular icon for footer -->
+                        <div class="w-10 h-10 overflow-hidden rounded-full shadow-lg bg-black flex items-center justify-center">
+                            <img src="logo_no_bg_3.jpg" alt="VibeTable Logo" class="w-full h-full object-cover rounded-full scale-[1.03]">
                         </div>
                         <span class="text-lg font-serif font-bold tracking-tight text-white">VibeTable</span>
                     </div>
@@ -1115,30 +1096,29 @@
             <div class="pt-8 border-t border-bistro-900/20 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-xs text-stone-600">
                 <p>© 2026 VibeTable Platform Inc. Private software solutions remain the strict property of purchasing entities.</p>
                 <div class="flex gap-6">
-                    <a href="#" class="hover:text-stone-400 transition-colors duration-200"><i class="fa-brands fa-twitter text-base"></i></a>
-                    <a href="#" class="hover:text-stone-400 transition-colors duration-200"><i class="fa-brands fa-instagram text-base"></i></a>
-                    <a href="#" class="hover:text-stone-400 transition-colors duration-200"><i class="fa-brands fa-linkedin text-base"></i></a>
+                    <a href="#" class="hover:text-stone-400 transition-colors duration-200" aria-label="Twitter"><i class="fa-brands fa-twitter text-base"></i></a>
+                    <a href="#" class="hover:text-stone-400 transition-colors duration-200" aria-label="Instagram"><i class="fa-brands fa-indigo text-base"></i></a>
+                    <a href="#" class="hover:text-stone-400 transition-colors duration-200" aria-label="LinkedIn"><i class="fa-brands fa-linkedin text-base"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Application Logic & Calculations -->
     <script>
-        // Mobile Navigation toggle
+        // Mobile menu responsive drawer logic
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('menu-icon');
             if(menu.classList.contains('hidden')) {
                 menu.classList.remove('hidden');
-                icon.className = "fa-solid fa-xmark text-lg text-bistro-500";
+                icon.className = "fa-solid fa-xmark text-lg";
             } else {
                 menu.classList.add('hidden');
                 icon.className = "fa-solid fa-bars text-lg";
             }
         }
 
-        // Live Demo Display toggling mechanism
+        // Frame preview switching logic
         function setPreviewFrame(type) {
             const btnMobile = document.getElementById('btn-preview-mobile');
             const btnDesktop = document.getElementById('btn-preview-desktop');
@@ -1158,7 +1138,7 @@
             }
         }
 
-        // Live Sandbox State Control parameters
+        // State variables for interactive demo sandbox
         let sandboxState = {
             restaurantTitle: 'The Daily Grind',
             promoText: 'WEEKEND BRUNCH SPECIALS',
@@ -1168,7 +1148,7 @@
             isCoffeeSoldOut: false
         };
 
-        // Static visual bindings
+        // DOM elements for live updating demo
         const phoneTitle = document.getElementById('phone-restaurant-title');
         const phonePromo = document.getElementById('phone-promo-banner');
         const phoneCoffeePrice = document.getElementById('phone-coffee-price');
@@ -1184,7 +1164,7 @@
         const toastNotification = document.getElementById('phone-toast');
         const toastNotificationText = document.getElementById('phone-toast-text');
 
-        // Notification handler
+        // Show mock phone custom push notification
         function triggerPhoneToast(message) {
             toastNotificationText.innerText = message;
             toastNotification.classList.remove('opacity-0', '-translate-y-20');
@@ -1196,17 +1176,19 @@
             }, 3000);
         }
 
-        // Bind custom inputs directly to simulated iOS/Android window
+        // Live Change Inputs
         function updateMenuTitle(val) {
             sandboxState.restaurantTitle = val || "The Daily Grind";
             phoneTitle.innerText = sandboxState.restaurantTitle;
         }
 
+        // Live Change Promo Text
         function updatePromoText(val) {
             sandboxState.promoText = val || "WEEKEND BRUNCH SPECIALS";
             phonePromo.innerText = sandboxState.promoText;
         }
 
+        // Dynamic price adjustments
         function updatePrice(item, val) {
             const parsedVal = parseFloat(val) || 0;
             if (item === 'coffee') {
@@ -1218,7 +1200,7 @@
             }
         }
 
-        // Simulated trigger events
+        // Interactive states inside phone
         function triggerHappyHour() {
             sandboxState.isHappyHour = !sandboxState.isHappyHour;
             
@@ -1244,6 +1226,7 @@
             }
         }
 
+        // Out of stock toggles
         function triggerSoldOut(item) {
             if (item === 'coffee') {
                 sandboxState.isCoffeeSoldOut = !sandboxState.isCoffeeSoldOut;
@@ -1261,6 +1244,7 @@
             }
         }
 
+        // Reset Simulator Parameters
         function resetSimulator() {
             sandboxState = {
                 restaurantTitle: 'The Daily Grind',
@@ -1291,7 +1275,7 @@
             triggerPhoneToast("Sandbox parameters reset.");
         }
 
-        // Live calculator formula
+        // Calculate Long Term Savings Calculator Logic
         function calculateSavings(years, buttonElement) {
             const buttons = buttonElement.parentNode.querySelectorAll('button');
             buttons.forEach(btn => {
@@ -1317,7 +1301,7 @@
             }
         }
 
-        // Accordion visibility controls
+        // FAQ Toggle UI Accordion
         function toggleFaq(button) {
             const accordionContent = button.nextElementSibling;
             const icon = button.querySelector('i');
@@ -1331,7 +1315,7 @@
             }
         }
 
-        // Pure modal triggers without alert dependencies
+        // Custom Modal UI Control triggers
         const purchaseModal = document.getElementById('purchase-modal');
         const successModal = document.getElementById('success-modal');
         const modalDetailsText = document.getElementById('modal-package-details');
@@ -1359,13 +1343,13 @@
             successModal.classList.remove('opacity-100');
         }
 
-        // Active scroll header effect
+        // Navbar blur behavior on page scroll
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
-            if (window.scrollY > 45) {
-                nav.classList.add('shadow-xl', 'bg-stone-950/95');
+            if (window.scrollY > 40) {
+                nav.classList.add('shadow-xl', 'bg-stone-950/90');
             } else {
-                nav.classList.remove('shadow-xl', 'bg-stone-950/95');
+                nav.classList.remove('shadow-xl', 'bg-stone-950/90');
             }
         });
     </script>
