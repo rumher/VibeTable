@@ -148,9 +148,8 @@
                     Live Demo 
                     <span class="px-1.5 py-0.5 bg-bistro-500/10 text-bistro-400 text-[10px] rounded border border-bistro-500/20 font-bold uppercase tracking-wider animate-pulse">Interactive</span>
                 </a>
-                <a href="#/features" id="nav-features" class="hover:text-bistro-300 transition-colors duration-200">Core Features</a>
+                <a href="#/features" id="nav-features" class="hover:text-bistro-300 transition-colors duration-200">Features & FAQ</a>
                 <a href="#/pricing" id="nav-pricing" class="hover:text-bistro-300 transition-colors duration-200">Packages</a>
-                <a href="#/faq" id="nav-faq" class="hover:text-bistro-300 transition-colors duration-200">FAQ</a>
             </div>
 
             <!-- Dynamic Header CTA Row -->
@@ -176,9 +175,8 @@
                 <span><i class="fa-solid fa-laptop mr-3 text-bistro-500"></i>Live Demo</span>
                 <span class="px-2 py-0.5 bg-bistro-500/10 text-bistro-400 text-[10px] rounded border border-bistro-500/20 font-bold uppercase tracking-wider">Interactive</span>
             </a>
-            <a href="#/features" onclick="toggleMobileMenu()" class="block text-base font-medium text-stone-300 hover:text-bistro-400 transition-colors"><i class="fa-solid fa-star mr-3 text-bistro-500"></i>Features</a>
+            <a href="#/features" onclick="toggleMobileMenu()" class="block text-base font-medium text-stone-300 hover:text-bistro-400 transition-colors"><i class="fa-solid fa-star mr-3 text-bistro-500"></i>Features & FAQ</a>
             <a href="#/pricing" onclick="toggleMobileMenu()" class="block text-base font-medium text-stone-300 hover:text-bistro-400 transition-colors"><i class="fa-solid fa-receipt mr-3 text-bistro-500"></i>Packages & Pricing</a>
-            <a href="#/faq" onclick="toggleMobileMenu()" class="block text-base font-medium text-stone-300 hover:text-bistro-400 transition-colors"><i class="fa-solid fa-circle-info mr-3 text-bistro-500"></i>FAQ</a>
             <div class="pt-4 border-t border-bistro-900/20">
                 <a href="#/pricing" onclick="toggleMobileMenu()" class="block text-center text-xs uppercase font-extrabold tracking-widest text-bistro-400 py-3 bg-bistro-900/20 rounded-xl border border-bistro-900/30">Cost Savings Calculator</a>
             </div>
@@ -709,7 +707,7 @@
         </div>
     </main>
 
-    <!-- PAGE VIEW 4: CORE FEATURES -->
+    <!-- PAGE VIEW 4: CORE FEATURES & FAQ (COMBINED) -->
     <main id="view-features" class="spa-view hidden relative pt-36 pb-20 md:pt-48 md:pb-36 min-h-[85vh]">
         <div class="absolute right-0 top-1/4 w-[500px] h-[500px] bg-bistro-500/5 blur-[150px] rounded-full pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
@@ -787,64 +785,97 @@
                 </div>
             </div>
 
-            <div class="border-t border-bistro-900/20 pt-16">
-                <h3 class="text-2xl sm:text-3xl font-serif font-light text-white text-center mb-10">Optional Performance Add-ons</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left font-sans">
-                    <!-- Branding & Domain Card -->
-                    <div class="p-6 rounded-2xl bg-bistro-900/10 border border-bistro-900/30">
-                        <h4 class="text-bistro-400 font-serif font-bold text-lg mb-4 flex items-center gap-2"><i class="fa-solid fa-globe"></i> Branding & Domains</h4>
-                        <ul class="space-y-3 text-xs sm:text-sm">
-                            <li class="flex justify-between border-b border-bistro-900/15 pb-2">
-                                <span class="text-stone-300">Custom Domain Connection</span>
-                                <span class="text-white font-bold">$99</span>
-                            </li>
-                            <li class="flex justify-between border-b border-bistro-900/15 pb-2">
-                                <span class="text-stone-300">Domain Registration & Setup</span>
-                                <span class="text-white font-bold">Starting at $30/year</span>
-                            </li>
-                            <li class="flex justify-between pb-1">
-                                <span class="text-stone-300">Business Email Setup</span>
-                                <span class="text-white font-bold">$99</span>
-                            </li>
-                        </ul>
+            <!-- FAQ Section embedded elegantly right below Core Features grid -->
+            <div class="border-t border-bistro-900/20 pt-16 max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="text-bistro-400 text-xs font-semibold uppercase tracking-widest bg-bistro-950/80 border border-bistro-900/40 px-3 py-1.5 rounded-full mb-4 inline-block">Help & Clarity</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-light text-white tracking-tight">Frequently Asked Questions</h2>
+                </div>
+
+                <div class="space-y-4 px-2">
+                    <!-- FAQ Item 1 -->
+                    <div class="border border-bistro-900/20 rounded-2xl bg-bistro-900/5 overflow-hidden transition-all duration-300 hover:border-bistro-500/20">
+                        <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left text-white font-serif font-bold text-base sm:text-lg focus:outline-none hover:bg-bistro-900/10 transition-all duration-200">
+                            <span>Is this a subscription?</span>
+                            <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs ml-3"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
+                                No. You pay once for the website and digital menu development. There are no recurring platform or software subscription fees.
+                            </p>
+                        </div>
                     </div>
 
-                    <!-- Additional Services Card -->
-                    <div class="p-6 rounded-2xl bg-bistro-900/10 border border-bistro-900/30">
-                        <h4 class="text-bistro-400 font-serif font-bold text-lg mb-4 flex items-center gap-2"><i class="fa-solid fa-sliders"></i> Additional Support & Customizations</h4>
-                        <ul class="space-y-3 text-xs sm:text-sm">
-                            <li class="flex justify-between border-b border-bistro-900/15 pb-2">
-                                <span class="text-stone-300">Additional Website Page</span>
-                                <span class="text-white font-bold">$150/page</span>
-                            </li>
-                            <li class="flex justify-between border-b border-bistro-900/15 pb-2">
-                                <span class="text-stone-300">Additional Restaurant Location</span>
-                                <span class="text-white font-bold">$299</span>
-                            </li>
-                            <li class="flex justify-between border-b border-bistro-900/15 pb-2">
-                                <span class="text-stone-300">Additional Language Option</span>
-                                <span class="text-white font-bold">$249</span>
-                            </li>
-                            <li class="flex justify-between border-b border-bistro-900/15 pb-2">
-                                <span class="text-stone-300">Custom Animations Integration</span>
-                                <span class="text-white font-bold">Starting at $199</span>
-                            </li>
-                            <li class="flex justify-between border-b border-bistro-900/15 pb-2">
-                                <span class="text-stone-300">Additional Design Revisions</span>
-                                <span class="text-white font-bold">Starting at $149</span>
-                            </li>
-                            <li class="flex justify-between pb-1">
-                                <span class="text-stone-300 font-semibold text-bistro-300">Rush Delivery (3–5 Business Days)</span>
-                                <span class="text-bistro-400 font-bold">+25% total</span>
-                            </li>
-                        </ul>
+                    <!-- FAQ Item 2 -->
+                    <div class="border border-bistro-900/20 rounded-2xl bg-bistro-900/5 overflow-hidden transition-all duration-300 hover:border-bistro-500/20">
+                        <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left text-white font-serif font-bold text-base sm:text-lg focus:outline-none hover:bg-bistro-900/10 transition-all duration-200">
+                            <span>Can I update my menu myself?</span>
+                            <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs ml-3"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
+                                Yes. Every package includes an admin dashboard for updating menu items, prices, descriptions, and images.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="border border-bistro-900/20 rounded-2xl bg-bistro-900/5 overflow-hidden transition-all duration-300 hover:border-bistro-500/20">
+                        <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left text-white font-serif font-bold text-base sm:text-lg focus:outline-none hover:bg-bistro-900/10 transition-all duration-200">
+                            <span>Can customers scan a QR code?</span>
+                            <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs ml-3"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
+                                Absolutely. Every website includes a QR code that opens your menu instantly on any smartphone.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="border border-bistro-900/20 rounded-2xl bg-bistro-900/5 overflow-hidden transition-all duration-300 hover:border-bistro-500/20">
+                        <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left text-white font-serif font-bold text-base sm:text-lg focus:outline-none hover:bg-bistro-900/10 transition-all duration-200">
+                            <span>Do my guests need an app?</span>
+                            <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs ml-3"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
+                                No. Everything works directly in the customer's web browser.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="border border-bistro-900/20 rounded-2xl bg-bistro-900/5 overflow-hidden transition-all duration-300 hover:border-bistro-500/20">
+                        <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left text-white font-serif font-bold text-base sm:text-lg focus:outline-none hover:bg-bistro-900/10 transition-all duration-200">
+                            <span>Can I use my own domain?</span>
+                            <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs ml-3"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
+                                Yes. I can connect your existing domain or help you register a new one.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 6 -->
+                    <div class="border border-bistro-900/20 rounded-2xl bg-bistro-900/5 overflow-hidden transition-all duration-300 hover:border-bistro-500/20">
+                        <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left text-white font-serif font-bold text-base sm:text-lg focus:outline-none hover:bg-bistro-900/10 transition-all duration-200">
+                            <span>Can I upgrade later?</span>
+                            <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs ml-3"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
+                                Yes. You only pay the difference between your current package and your upgraded package.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- PAGE VIEW 5: PRICING -->
+    <!-- PAGE VIEW 5: PRICING & PACKAGES -->
     <main id="view-pricing" class="spa-view hidden relative pt-36 pb-20 md:pt-48 md:pb-36 min-h-[85vh]">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-bistro-500/5 blur-[160px] rounded-full pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
@@ -945,7 +976,7 @@
                     </button>
                 </div>
 
-                <!-- Package 2: Growth (Highlighted) -->
+                <!-- Package 2: Growth -->
                 <div class="p-6 rounded-3xl bg-bistro-950/60 border-2 border-bistro-500 shadow-[0_0_40px_rgba(196,155,85,0.25)] relative flex flex-col justify-between transform lg:scale-105 z-10 transition-transform duration-300 hover:scale-[1.07] hover:shadow-[0_0_50px_rgba(196,155,85,0.35)]">
                     <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-bistro-500 text-bistro-950 text-[10px] font-black uppercase px-4 py-1 rounded-full tracking-wider shadow">
                         ⭐ Most Popular
@@ -1070,7 +1101,6 @@
 
                 <!-- Package 4: Business -->
                 <div class="p-6 rounded-3xl bg-stone-900/10 border border-stone-800/40 opacity-90 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 relative overflow-hidden">
-                    <!-- Subtle diagonal ribbon -->
                     <div class="absolute top-4 -right-12 bg-bistro-800 text-stone-200 text-[8px] font-black uppercase py-1 px-12 rotate-45 tracking-wider">
                         Coming Soon
                     </div>
@@ -1113,14 +1143,13 @@
                         Notify Me
                     </button>
                 </div>
-
             </div>
 
             <!-- Package Comparison Table Section -->
             <div class="border-t border-bistro-900/20 pt-16">
                 <h2 class="text-3xl sm:text-4xl font-serif font-light text-white text-center mb-12 tracking-tight">Granular Package Comparison</h2>
                 
-                <div class="overflow-x-auto rounded-3xl border border-bistro-900/20 bg-[#0d0a09] shadow-2xl scrollbar-none">
+                <div class="overflow-x-auto rounded-3xl border border-bistro-900/20 bg-[#0d0a09] shadow-2xl scrollbar-none mb-20">
                     <table class="w-full text-left border-collapse min-w-[720px] font-sans">
                         <thead>
                             <tr class="border-b border-bistro-900/20 bg-stone-950 text-[11px] font-semibold tracking-widest text-stone-400 uppercase">
@@ -1240,94 +1269,60 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-        </div>
-    </main>
 
-    <!-- PAGE VIEW 6: FAQ -->
-    <main id="view-faq" class="spa-view hidden relative pt-36 pb-20 md:pt-48 md:pb-36 min-h-[85vh]">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 w-full">
-            <div class="text-center mb-16">
-                <span class="text-bistro-400 text-xs font-semibold uppercase tracking-widest bg-bistro-950/80 border border-bistro-900/40 px-3 py-1.5 rounded-full mb-4 inline-block">Help & Clarity</span>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-white tracking-tight">Frequently Asked Questions</h2>
-            </div>
+                <!-- Integrated Optional Performance Add-ons -->
+                <div class="border-t border-bistro-900/20 pt-16">
+                    <h3 class="text-2xl sm:text-3xl font-serif font-light text-white text-center mb-10">Optional Performance Add-ons</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left font-sans">
+                        <!-- Branding & Domain Card -->
+                        <div class="p-6 rounded-2xl bg-bistro-900/10 border border-bistro-900/30">
+                            <h4 class="text-bistro-400 font-serif font-bold text-lg mb-4 flex items-center gap-2"><i class="fa-solid fa-globe"></i> Branding & Domains</h4>
+                            <ul class="space-y-3 text-xs sm:text-sm">
+                                <li class="flex justify-between border-b border-bistro-900/15 pb-2">
+                                    <span class="text-stone-300">Custom Domain Connection</span>
+                                    <span class="text-white font-bold">$99</span>
+                                </li>
+                                <li class="flex justify-between border-b border-bistro-900/15 pb-2">
+                                    <span class="text-stone-300">Domain Registration & Setup</span>
+                                    <span class="text-white font-bold">Starting at $30/year</span>
+                                </li>
+                                <li class="flex justify-between pb-1">
+                                    <span class="text-stone-300">Business Email Setup</span>
+                                    <span class="text-white font-bold">$99</span>
+                                </li>
+                            </ul>
+                        </div>
 
-            <div class="space-y-4 px-2">
-                <!-- FAQ Item 1 -->
-                <div class="border border-bistro-900/20 rounded-2xl bg-bistro-900/5 overflow-hidden transition-all duration-300 hover:border-bistro-500/20">
-                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left text-white font-serif font-bold text-base sm:text-lg focus:outline-none hover:bg-bistro-900/10 transition-all duration-200">
-                        <span>Is this a subscription?</span>
-                        <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs ml-3"></i>
-                    </button>
-                    <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                        <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
-                            No. You pay once for the website and digital menu development. There are no recurring platform or software subscription fees.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="border border-bistro-900/20 rounded-2xl bg-bistro-900/5 overflow-hidden transition-all duration-300 hover:border-bistro-500/20">
-                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left text-white font-serif font-bold text-base sm:text-lg focus:outline-none hover:bg-bistro-900/10 transition-all duration-200">
-                        <span>Can I update my menu myself?</span>
-                        <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs ml-3"></i>
-                    </button>
-                    <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                        <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
-                            Yes. Every package includes an admin dashboard for updating menu items, prices, descriptions, and images.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="border border-bistro-900/20 rounded-2xl bg-bistro-900/5 overflow-hidden transition-all duration-300 hover:border-bistro-500/20">
-                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left text-white font-serif font-bold text-base sm:text-lg focus:outline-none hover:bg-bistro-900/10 transition-all duration-200">
-                        <span>Can customers scan a QR code?</span>
-                        <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs ml-3"></i>
-                    </button>
-                    <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                        <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
-                            Absolutely. Every website includes a QR code that opens your menu instantly on any smartphone.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="border border-bistro-900/20 rounded-2xl bg-bistro-900/5 overflow-hidden transition-all duration-300 hover:border-bistro-500/20">
-                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left text-white font-serif font-bold text-base sm:text-lg focus:outline-none hover:bg-bistro-900/10 transition-all duration-200">
-                        <span>Do my guests need an app?</span>
-                        <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs ml-3"></i>
-                    </button>
-                    <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                        <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
-                            No. Everything works directly in the customer's web browser.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 5 -->
-                <div class="border border-bistro-900/20 rounded-2xl bg-bistro-900/5 overflow-hidden transition-all duration-300 hover:border-bistro-500/20">
-                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left text-white font-serif font-bold text-base sm:text-lg focus:outline-none hover:bg-bistro-900/10 transition-all duration-200">
-                        <span>Can I use my own domain?</span>
-                        <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs ml-3"></i>
-                    </button>
-                    <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                        <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
-                            Yes. I can connect your existing domain or help you register a new one.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 6 -->
-                <div class="border border-bistro-900/20 rounded-2xl bg-bistro-900/5 overflow-hidden transition-all duration-300 hover:border-bistro-500/20">
-                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left text-white font-serif font-bold text-base sm:text-lg focus:outline-none hover:bg-bistro-900/10 transition-all duration-200">
-                        <span>Can I upgrade later?</span>
-                        <i class="fa-solid fa-chevron-down text-bistro-400 transition-transform duration-300 text-xs ml-3"></i>
-                    </button>
-                    <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                        <p class="px-6 pb-5 text-stone-400 text-sm leading-relaxed">
-                            Yes. You only pay the difference between your current package and your upgraded package.
-                        </p>
+                        <!-- Additional Services Card -->
+                        <div class="p-6 rounded-2xl bg-bistro-900/10 border border-bistro-900/30">
+                            <h4 class="text-bistro-400 font-serif font-bold text-lg mb-4 flex items-center gap-2"><i class="fa-solid fa-sliders"></i> Additional Support & Customizations</h4>
+                            <ul class="space-y-3 text-xs sm:text-sm">
+                                <li class="flex justify-between border-b border-bistro-900/15 pb-2">
+                                    <span class="text-stone-300">Additional Website Page</span>
+                                    <span class="text-white font-bold">$150/page</span>
+                                </li>
+                                <li class="flex justify-between border-b border-bistro-900/15 pb-2">
+                                    <span class="text-stone-300">Additional Restaurant Location</span>
+                                    <span class="text-white font-bold">$299</span>
+                                </li>
+                                <li class="flex justify-between border-b border-bistro-900/15 pb-2">
+                                    <span class="text-stone-300">Additional Language Option</span>
+                                    <span class="text-white font-bold">$249</span>
+                                </li>
+                                <li class="flex justify-between border-b border-bistro-900/15 pb-2">
+                                    <span class="text-stone-300">Custom Animations Integration</span>
+                                    <span class="text-white font-bold">Starting at $199</span>
+                                </li>
+                                <li class="flex justify-between border-b border-bistro-900/15 pb-2">
+                                    <span class="text-stone-300">Additional Design Revisions</span>
+                                    <span class="text-white font-bold">Starting at $149</span>
+                                </li>
+                                <li class="flex justify-between pb-1">
+                                    <span class="text-stone-300 font-semibold text-bistro-300">Rush Delivery (3–5 Business Days)</span>
+                                    <span class="text-bistro-400 font-bold">+25% total</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1458,8 +1453,8 @@
                 '#/why-vibetable': 'view-why',
                 '#/demo': 'view-demo',
                 '#/features': 'view-features',
-                '#/pricing': 'view-pricing',
-                '#/faq': 'view-faq'
+                '#/faq': 'view-features', // Redirect both paths to the unified Features & FAQ page
+                '#/pricing': 'view-pricing'
             };
             
             // Fallback route check
@@ -1491,8 +1486,8 @@
                 '#/why-vibetable': 'nav-why',
                 '#/demo': 'nav-demo',
                 '#/features': 'nav-features',
-                '#/pricing': 'nav-pricing',
-                '#/faq': 'nav-faq'
+                '#/faq': 'nav-features', // Map FAQ active state to unified menu tab
+                '#/pricing': 'nav-pricing'
             };
             
             // Reset state parameters
