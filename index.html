@@ -69,7 +69,7 @@
     </script>
     
     <style>
-        /* Design Tokens supporting Light/Dark System Modes */
+        /* Design Tokens supporting Light/Dark System Modes with enhanced light mode text contrast */
         :root {
             --bg-color: #0c0a09;
             --bg-color-rgb: 12, 10, 9;
@@ -77,25 +77,35 @@
             --title-color: #ffffff;
             --panel-bg: rgba(18, 14, 12, 0.75);
             --border-color: rgba(196, 155, 85, 0.15);
-            --subtext-color: #8c857f;
+            --subtext-color: #a8a29e;
             --gold-glow: rgba(196, 155, 85, 0.12);
             --accent-gold: #c49b55;
             --card-bg: rgba(18, 14, 12, 0.4);
             --invert-brightness: brightness(1);
+            
+            --subtle-bg: rgba(255, 255, 255, 0.03);
+            --input-bg: rgba(255, 255, 255, 0.05);
+            --badge-bg: rgba(196, 155, 85, 0.12);
+            --table-header-bg: rgba(255, 255, 255, 0.03);
         }
         
         .light-theme {
             --bg-color: #fbf9f6;
             --bg-color-rgb: 251, 249, 246;
-            --text-color: #44403c;
-            --title-color: #1c1917;
-            --panel-bg: rgba(255, 255, 255, 0.8);
-            --border-color: rgba(196, 155, 85, 0.25);
-            --subtext-color: #78716c;
-            --gold-glow: rgba(196, 155, 85, 0.08);
-            --accent-gold: #b2863d;
-            --card-bg: rgba(255, 255, 255, 0.7);
-            --invert-brightness: brightness(0.9);
+            --text-color: #383530; /* Much darker stone-800 for absolute reading comfort */
+            --title-color: #1a1816; /* Near black high contrast headings */
+            --panel-bg: rgba(255, 255, 255, 0.85);
+            --border-color: rgba(160, 115, 50, 0.22); /* Enhanced visibility gold borders */
+            --subtext-color: #57534e; /* Stone-700 for crystal-clear legibility */
+            --gold-glow: rgba(160, 115, 50, 0.06);
+            --accent-gold: #a07332; /* Rich dark warm brass gold for light-background accessibility */
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --invert-brightness: brightness(0.92);
+            
+            --subtle-bg: rgba(0, 0, 0, 0.02);
+            --input-bg: rgba(0, 0, 0, 0.03);
+            --badge-bg: rgba(160, 115, 50, 0.1);
+            --table-header-bg: rgba(0, 0, 0, 0.04);
         }
 
         body {
@@ -104,7 +114,7 @@
             color: var(--text-color);
             overflow-x: hidden;
             -webkit-tap-highlight-color: transparent;
-            transition: background-color 0.4s ease, color 0.4s ease;
+            transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         /* Semantic styles mapped to custom light/dark theme variables */
@@ -112,6 +122,8 @@
         .text-theme-text { color: var(--text-color); }
         .text-theme-subtext { color: var(--subtext-color); }
         .border-theme { border-color: var(--border-color); }
+        .text-theme-gold { color: var(--accent-gold); }
+        
         .panel-theme {
             background: var(--panel-bg);
             border-color: var(--border-color);
@@ -119,6 +131,24 @@
         .card-theme {
             background-color: var(--card-bg);
             border-color: var(--border-color);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .bg-theme-subtle { background-color: var(--subtle-bg); }
+        .bg-theme-input { background-color: var(--input-bg); }
+        .bg-theme-badge { background-color: var(--badge-bg); }
+        .bg-theme-table-header { background-color: var(--table-header-bg); }
+
+        /* Popular card specialized styling transitions */
+        .popular-card-theme {
+            background-color: rgba(18, 14, 12, 0.6);
+            border: 2px solid #c49b55;
+            box-shadow: 0 10px 40px rgba(196, 155, 85, 0.08);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .light-theme .popular-card-theme {
+            background-color: #ffffff;
+            border-color: #a07332;
+            box-shadow: 0 10px 40px rgba(160, 115, 50, 0.12);
         }
 
         /* Custom scrollbar matching sleek theme */
@@ -181,30 +211,30 @@
                 </div>
                 <div class="flex flex-col text-left">
                     <span class="text-lg sm:text-xl font-serif font-bold tracking-tight text-theme-title leading-none">VibeTable</span>
-                    <span class="text-[8px] font-sans uppercase tracking-widest text-bistro-500 font-bold mt-1">Digital Sites</span>
+                    <span class="text-[8px] font-sans uppercase tracking-widest text-theme-gold font-bold mt-1">Digital Sites</span>
                 </div>
             </a>
             
             <!-- Desktop Links (with SPA Frag Routing) -->
             <div class="hidden lg:flex items-center gap-6 text-sm font-medium text-theme-subtext">
-                <a href="#/home" id="nav-home" class="hover:text-bistro-400 transition-colors duration-200">Home</a>
-                <a href="#/why-vibetable" id="nav-why" class="hover:text-bistro-400 transition-colors duration-200">Why VibeTable</a>
-                <a href="#/demo" id="nav-demo" class="hover:text-bistro-400 transition-colors duration-200 flex items-center gap-1.5">
+                <a href="#/home" id="nav-home" class="hover:text-theme-gold transition-colors duration-200">Home</a>
+                <a href="#/why-vibetable" id="nav-why" class="hover:text-theme-gold transition-colors duration-200">Why VibeTable</a>
+                <a href="#/demo" id="nav-demo" class="hover:text-theme-gold transition-colors duration-200 flex items-center gap-1.5">
                     Live Demo 
-                    <span class="px-1.5 py-0.5 bg-bistro-500/10 text-bistro-500 text-[9px] rounded border border-bistro-500/20 font-bold uppercase tracking-wider animate-pulse">Interactive</span>
+                    <span class="px-1.5 py-0.5 bg-theme-badge text-theme-gold text-[9px] rounded border border-theme font-bold uppercase tracking-wider animate-pulse">Interactive</span>
                 </a>
-                <a href="#/features" id="nav-features" class="hover:text-bistro-400 transition-colors duration-200">Features & FAQ</a>
-                <a href="#/pricing" id="nav-pricing" class="hover:text-bistro-400 transition-colors duration-200">Packages</a>
+                <a href="#/features" id="nav-features" class="hover:text-theme-gold transition-colors duration-200">Features & FAQ</a>
+                <a href="#/pricing" id="nav-pricing" class="hover:text-theme-gold transition-colors duration-200">Packages</a>
             </div>
 
             <!-- Dynamic Header CTA Row & Light/Dark Switcher -->
             <div class="flex items-center gap-2 sm:gap-3">
                 <!-- Light/Dark Toggle Button -->
-                <button onclick="toggleTheme()" class="w-10 h-10 flex items-center justify-center rounded-xl bg-stone-900/10 dark:bg-stone-100/10 border border-theme hover:bg-bistro-500/10 text-bistro-500 transition-all" aria-label="Toggle Theme Preference">
+                <button onclick="toggleTheme()" class="w-10 h-10 flex items-center justify-center rounded-xl bg-stone-900/10 dark:bg-stone-100/10 border border-theme hover:bg-theme-badge text-theme-gold transition-all" aria-label="Toggle Theme Preference">
                     <i id="theme-btn-icon" class="fa-solid fa-moon text-sm"></i>
                 </button>
 
-                <a href="#/pricing" class="hidden sm:inline-flex text-xs uppercase font-semibold tracking-wider text-bistro-500 hover:text-bistro-600 transition-colors duration-200 mr-1">
+                <a href="#/pricing" class="hidden sm:inline-flex text-xs uppercase font-semibold tracking-wider text-theme-gold hover:opacity-80 transition-opacity duration-200 mr-1">
                     Savings Tool
                 </a>
                 
@@ -213,25 +243,25 @@
                 </a>
                 
                 <!-- Mobile Hamburger Button -->
-                <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-stone-500/10 border border-theme text-bistro-500 focus:outline-none hover:text-theme-title transition-colors" aria-label="Toggle Navigation Drawer">
+                <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-stone-500/10 border border-theme text-theme-gold focus:outline-none hover:text-theme-title transition-colors" aria-label="Toggle Navigation Drawer">
                     <i id="menu-icon" class="fa-solid fa-bars text-lg"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Slide-out Menu Links (Touch Optimized Tap Targets) -->
-        <div id="mobile-menu" class="hidden lg:hidden border-t border-theme bg-stone-950/95 dark:bg-white/95 backdrop-blur-xl px-5 py-6 space-y-3 transition-all duration-300">
-            <a href="#/home" onclick="toggleMobileMenu()" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-bistro-500/10 font-medium text-theme-text transition-colors"><i class="fa-solid fa-house mr-3 text-bistro-500"></i>Home</a>
-            <a href="#/why-vibetable" onclick="toggleMobileMenu()" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-bistro-500/10 font-medium text-theme-text transition-colors"><i class="fa-solid fa-circle-question mr-3 text-bistro-500"></i>Why VibeTable</a>
-            <a href="#/demo" onclick="toggleMobileMenu()" class="flex items-center justify-between text-base py-2.5 px-3 rounded-lg hover:bg-bistro-500/10 font-medium text-theme-text transition-colors">
-                <span><i class="fa-solid fa-laptop mr-3 text-bistro-500"></i>Live Demo</span>
-                <span class="px-2 py-0.5 bg-bistro-500/10 text-bistro-500 text-[10px] rounded border border-bistro-500/20 font-bold uppercase tracking-wider">Interactive</span>
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-theme panel-theme backdrop-blur-xl px-5 py-6 space-y-3 transition-all duration-300">
+            <a href="#/home" onclick="toggleMobileMenu()" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors"><i class="fa-solid fa-house mr-3 text-theme-gold"></i>Home</a>
+            <a href="#/why-vibetable" onclick="toggleMobileMenu()" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors"><i class="fa-solid fa-circle-question mr-3 text-theme-gold"></i>Why VibeTable</a>
+            <a href="#/demo" onclick="toggleMobileMenu()" class="flex items-center justify-between text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors">
+                <span><i class="fa-solid fa-laptop mr-3 text-theme-gold"></i>Live Demo</span>
+                <span class="px-2 py-0.5 bg-theme-badge text-theme-gold text-[10px] rounded border border-theme font-bold uppercase tracking-wider">Interactive</span>
             </a>
-            <a href="#/features" onclick="toggleMobileMenu()" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-bistro-500/10 font-medium text-theme-text transition-colors"><i class="fa-solid fa-star mr-3 text-bistro-500"></i>Features & FAQ</a>
-            <a href="#/pricing" onclick="toggleMobileMenu()" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-bistro-500/10 font-medium text-theme-text transition-colors"><i class="fa-solid fa-receipt mr-3 text-bistro-500"></i>Packages & Pricing</a>
+            <a href="#/features" onclick="toggleMobileMenu()" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors"><i class="fa-solid fa-star mr-3 text-theme-gold"></i>Features & FAQ</a>
+            <a href="#/pricing" onclick="toggleMobileMenu()" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors"><i class="fa-solid fa-receipt mr-3 text-theme-gold"></i>Packages & Pricing</a>
             
             <div class="pt-3 border-t border-theme">
-                <a href="#/pricing" onclick="toggleMobileMenu()" class="block text-center text-xs uppercase font-extrabold tracking-widest text-bistro-500 py-3 bg-bistro-500/10 rounded-xl border border-bistro-500/20">Cost Savings Calculator</a>
+                <a href="#/pricing" onclick="toggleMobileMenu()" class="block text-center text-xs uppercase font-extrabold tracking-widest text-theme-gold py-3 bg-theme-badge rounded-xl border border-theme">Cost Savings Calculator</a>
             </div>
         </div>
     </nav>
@@ -245,9 +275,9 @@
             <div class="text-center max-w-4xl mx-auto">
                 
                 <!-- Tagline Badge -->
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full card-theme border text-xs font-semibold text-bistro-500 mb-6 shadow-inner">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full card-theme border text-xs font-semibold text-theme-gold mb-6 shadow-sm">
                     <span class="flex h-2 w-2 rounded-full bg-bistro-500 animate-pulse"></span>
-                    <span class="font-sans uppercase tracking-wider text-[9px] sm:text-[10px]">Zero Monthly Platform Fees • Direct Dashboard Control</span>
+                    <span class="font-sans uppercase tracking-wider text-[9px] sm:text-[10px] font-bold">Zero Monthly Platform Fees • Direct Dashboard Control</span>
                 </div>
 
                 <!-- Main Bold Headline -->
@@ -257,7 +287,7 @@
                 </h1>
 
                 <!-- Persuasive Subheadline (AIO Indexable Copy) -->
-                <p class="text-sm sm:text-base md:text-lg text-theme-text font-sans max-w-2xl mx-auto mb-8 leading-relaxed px-1">
+                <p class="text-sm sm:text-base md:text-lg text-theme-subtext font-sans max-w-2xl mx-auto mb-8 leading-relaxed px-1">
                     Trade restrictive monthly software subscriptions for a custom, fast-loading restaurant website. Seamlessly update prices, categories, and ingredients through your private dashboard. No commission fees, ever.
                 </p>
 
@@ -266,31 +296,31 @@
                     <a href="#/pricing" class="w-full sm:w-auto px-7 py-3.5 bg-bistro-500 text-stone-950 rounded-full font-bold text-sm hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(196,155,85,0.25)] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
                         View Packages <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
-                    <a href="#/demo" class="w-full sm:w-auto px-7 py-3.5 bg-stone-900 border border-theme text-stone-200 rounded-full font-semibold text-sm hover:bg-stone-850 hover:text-white active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
+                    <a href="#/demo" class="w-full sm:w-auto px-7 py-3.5 bg-theme-subtle border border-theme text-theme-text rounded-full font-semibold text-sm hover:opacity-90 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
                         See Live Demo
                     </a>
                 </div>
 
                 <!-- Benefits Row (Concise / Clean Layout for Mobile Screens) -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-left max-w-4xl mx-auto pb-6 border-b border-theme px-1 text-xs">
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-bistro-500"></i> <span class="text-theme-text font-medium">One-Time Payment</span></div>
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-bistro-500"></i> <span class="text-theme-text font-medium">No Subscription Fees</span></div>
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-bistro-500"></i> <span class="text-theme-text font-medium">Mobile-Optimized</span></div>
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-bistro-500"></i> <span class="text-theme-text font-medium">QR Code Ready</span></div>
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-bistro-500"></i> <span class="text-theme-text font-medium">Admin Dashboard</span></div>
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-bistro-500"></i> <span class="text-theme-text font-medium">Unlimited Menu display</span></div>
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-bistro-500"></i> <span class="text-theme-text font-medium">Fast Edge Loading</span></div>
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-bistro-500"></i> <span class="text-theme-text font-medium">Instant Updates</span></div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">One-Time Payment</span></div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">No Subscription Fees</span></div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">Mobile-Optimized</span></div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">QR Code Ready</span></div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">Admin Dashboard</span></div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">Unlimited Menu display</span></div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">Fast Edge Loading</span></div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">Instant Updates</span></div>
                 </div>
             </div>
 
             <!-- Adaptive Visual Split Section -->
-            <div class="relative mt-10 max-w-5xl mx-auto rounded-2xl border border-theme p-4 shadow-[0_15px_60px_rgba(0,0,0,0.15)] panel-theme transition-all duration-300">
+            <div class="relative mt-10 max-w-5xl mx-auto rounded-2xl border border-theme p-4 shadow-xl panel-theme transition-all duration-300">
                 <div class="grid lg:grid-cols-12 gap-6 items-center">
                     
                     <!-- Content side -->
                     <div class="lg:col-span-7 space-y-4 text-left px-1">
-                        <span class="inline-block px-2.5 py-0.5 bg-bistro-500/10 border border-bistro-500/20 text-bistro-500 text-[10px] font-bold uppercase rounded">Aesthetics & Speed</span>
+                        <span class="inline-block px-2.5 py-0.5 bg-theme-badge border border-theme text-theme-gold text-[10px] font-bold uppercase rounded">Aesthetics & Speed</span>
                         <h3 class="text-2xl sm:text-3xl font-serif text-theme-title font-light leading-tight">Fast delivery interfaces that drive customer ticket values.</h3>
                         <p class="text-theme-subtext text-xs sm:text-sm leading-relaxed">
                             No complex apps to download or sluggish PDFs to open. Our mobile menu platforms deliver instant loading speeds (under 0.2s) even on weak venue receptions, guiding diners to high-margin dishes dynamically.
@@ -298,14 +328,14 @@
                         
                         <div class="grid grid-cols-2 gap-3 pt-2">
                             <div class="p-3 card-theme border rounded-xl flex items-start gap-2.5">
-                                <i class="fa-solid fa-bolt text-bistro-500 mt-0.5 shrink-0"></i>
+                                <i class="fa-solid fa-bolt text-theme-gold mt-0.5 shrink-0"></i>
                                 <div>
                                     <div class="text-theme-title font-bold text-xs">Edge Network Speed</div>
                                     <div class="text-[10px] text-theme-subtext">Optimized performance</div>
                                 </div>
                             </div>
                             <div class="p-3 card-theme border rounded-xl flex items-start gap-2.5">
-                                <i class="fa-solid fa-qrcode text-bistro-500 mt-0.5 shrink-0"></i>
+                                <i class="fa-solid fa-qrcode text-theme-gold mt-0.5 shrink-0"></i>
                                 <div>
                                     <div class="text-theme-title font-bold text-xs">Tabletop scan codes</div>
                                     <div class="text-[10px] text-theme-subtext">Zero ordering friction</div>
@@ -382,7 +412,7 @@
         <div class="absolute -left-48 top-1/4 w-80 h-80 bg-bistro-500/5 blur-[120px] rounded-full pointer-events-none"></div>
         <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 w-full">
             <div class="text-center mb-10 max-w-2xl mx-auto">
-                <span class="text-bistro-500 text-xs font-semibold uppercase tracking-widest bg-bistro-500/10 border border-bistro-500/20 px-3 py-1.5 rounded-full mb-3 inline-block">The Ownership Model</span>
+                <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">The Ownership Model</span>
                 <h2 class="text-2xl sm:text-4xl font-serif text-theme-title tracking-tight leading-tight">Stop renting. Claim your digital properties.</h2>
                 <p class="text-theme-subtext mt-3 text-xs sm:text-sm">
                     SaaS providers lease restrictive templates with perpetual monthly fees. VibeTable delivers complete digital asset ownership, preventing monthly overhead leakages.
@@ -391,8 +421,8 @@
 
             <!-- Problem Cards Grid -->
             <div class="grid md:grid-cols-3 gap-5">
-                <div class="p-5 rounded-2xl bg-stone-500/5 border border-theme hover:border-bistro-500/30 transition-all duration-300 group">
-                    <div class="w-10 h-10 rounded-xl bg-bistro-500/10 text-bistro-500 flex items-center justify-center mb-4 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all">
+                <div class="p-5 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/30 transition-all duration-300 group">
+                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all">
                         <i class="fa-solid fa-ban text-sm"></i>
                     </div>
                     <h3 class="text-lg font-serif font-bold text-theme-title mb-2">No Pinch-to-Zoom PDFs</h3>
@@ -401,8 +431,8 @@
                     </p>
                 </div>
 
-                <div class="p-5 rounded-2xl bg-stone-500/5 border border-theme hover:border-bistro-500/30 transition-all duration-300 group">
-                    <div class="w-10 h-10 rounded-xl bg-bistro-500/10 text-bistro-500 flex items-center justify-center mb-4 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all">
+                <div class="p-5 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/30 transition-all duration-300 group">
+                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all">
                         <i class="fa-solid fa-file-invoice-dollar text-sm"></i>
                     </div>
                     <h3 class="text-lg font-serif font-bold text-theme-title mb-2">Eliminate monthly SaaS fees</h3>
@@ -411,12 +441,12 @@
                     </p>
                 </div>
 
-                <div class="p-5 rounded-2xl bg-stone-500/5 border border-theme hover:border-bistro-500/30 transition-all duration-300 group">
-                    <div class="w-10 h-10 rounded-xl bg-bistro-500/10 text-bistro-500 flex items-center justify-center mb-4 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all">
+                <div class="p-5 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/30 transition-all duration-300 group">
+                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all">
                         <i class="fa-solid fa-print text-sm"></i>
                     </div>
                     <h3 class="text-lg font-serif font-bold text-theme-title mb-2">Reduce Printed Overhead</h3>
-                    <p class="text-stone-400 text-xs leading-relaxed">
+                    <p class="text-theme-subtext text-xs leading-relaxed">
                         Instantly publish dynamic adjustments, season-based ingredients, or run-out flags on your dishes without ordering expensive paper reprints.
                     </p>
                 </div>
@@ -426,34 +456,34 @@
             <div class="mt-12 max-w-4xl mx-auto">
                 <h3 class="text-xl sm:text-2xl font-serif text-theme-title text-center mb-6">Subscription SaaS vs. VibeTable Ownership</h3>
                 <!-- Swipe indicator for mobile views -->
-                <div class="flex items-center justify-center gap-1.5 text-bistro-500 text-[10px] uppercase tracking-wider font-bold mb-3 md:hidden">
+                <div class="flex items-center justify-center gap-1.5 text-theme-gold text-[10px] uppercase tracking-wider font-bold mb-3 md:hidden">
                     <i class="fa-solid fa-left-right animate-pulse"></i> Swipe horizontally to view full metrics
                 </div>
                 
-                <div class="overflow-x-auto rounded-2xl border border-theme bg-stone-950/40 backdrop-blur shadow-lg">
+                <div class="overflow-x-auto rounded-2xl border border-theme bg-theme-subtle backdrop-blur shadow-lg">
                     <table class="w-full text-left border-collapse min-w-[580px] text-xs">
                         <thead>
-                            <tr class="border-b border-theme bg-stone-900/30">
+                            <tr class="border-b border-theme bg-theme-table-header">
                                 <th class="p-4 font-semibold text-theme-title">Core Metrics</th>
                                 <th class="p-4 font-semibold text-theme-subtext">SaaS Platform Rental</th>
-                                <th class="p-4 font-semibold text-bistro-500">VibeTable Direct Asset</th>
+                                <th class="p-4 font-semibold text-theme-gold">VibeTable Direct Asset</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-stone-900/30 text-theme-text">
+                        <tbody class="divide-y divide-stone-900/10 dark:divide-white/10 text-theme-text">
                             <tr>
                                 <td class="p-4 font-medium text-theme-title">Monthly software fee</td>
-                                <td class="p-4 text-stone-500">$150.00 / month</td>
-                                <td class="p-4 text-bistro-500 font-bold">$0.00 forever</td>
+                                <td class="p-4 text-theme-subtext">$150.00 / month</td>
+                                <td class="p-4 text-theme-gold font-bold">$0.00 forever</td>
                             </tr>
                             <tr>
                                 <td class="p-4 font-medium text-theme-title">Menu updates control</td>
-                                <td class="p-4 text-stone-500">Basic portal template</td>
-                                <td class="p-4 text-bistro-500 font-bold">In-house admin dashboard</td>
+                                <td class="p-4 text-theme-subtext">Basic portal template</td>
+                                <td class="p-4 text-theme-gold font-bold">In-house admin dashboard</td>
                             </tr>
                             <tr>
                                 <td class="p-4 font-medium text-theme-title">Brand and asset rights</td>
-                                <td class="p-4 text-stone-500">None (leased template)</td>
-                                <td class="p-4 text-bistro-500 font-bold">100% proprietary code owner</td>
+                                <td class="p-4 text-theme-subtext">None (leased template)</td>
+                                <td class="p-4 text-theme-gold font-bold">100% proprietary code owner</td>
                             </tr>
                         </tbody>
                     </table>
@@ -466,7 +496,7 @@
     <main id="view-demo" class="spa-view hidden relative pt-24 pb-12 md:pt-36 md:pb-24 min-h-[85vh]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
             <div class="text-center mb-10 max-w-2xl mx-auto">
-                <span class="text-bistro-500 text-xs font-semibold uppercase tracking-widest bg-bistro-500/10 border border-bistro-500/20 px-3 py-1.5 rounded-full mb-3 inline-block">Interactive sandbox</span>
+                <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">Interactive sandbox</span>
                 <h2 class="text-2xl sm:text-4xl font-serif text-theme-title leading-tight">Live administrative portal simulation</h2>
                 <p class="text-theme-subtext mt-3 text-xs sm:text-sm">
                     Make real-time changes using the back-of-house (BOH) controls on the left, and see how the visitor experience adjusts instantaneously inside the client preview device on the right.
@@ -477,44 +507,44 @@
             <div class="grid lg:grid-cols-12 gap-6 items-stretch mb-12">
                 
                 <!-- BOH Controller side -->
-                <div class="lg:col-span-7 rounded-2xl border border-theme bg-stone-500/5 p-4 sm:p-6 flex flex-col justify-between">
+                <div class="lg:col-span-7 rounded-2xl border border-theme bg-theme-subtle p-4 sm:p-6 flex flex-col justify-between">
                     <div class="space-y-4">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="w-3.5 h-3.5 rounded-full bg-bistro-500/10 flex items-center justify-center text-[8px] text-bistro-500 border border-bistro-500/20"><i class="fa-solid fa-lock"></i></span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-theme-badge flex items-center justify-center text-[8px] text-theme-gold border border-theme"><i class="fa-solid fa-lock"></i></span>
                             <span class="text-[9px] font-mono text-theme-subtext uppercase tracking-wider">portal.vibetable.com/settings</span>
                         </div>
                         
-                        <div class="space-y-1">
-                            <label class="text-[10px] font-bold text-bistro-500 uppercase tracking-widest block">Restaurant name</label>
+                        <div class="space-y-1 text-left">
+                            <label class="text-[10px] font-bold text-theme-gold uppercase tracking-widest block">Restaurant name</label>
                             <input id="demo-title-input" type="text" value="The Daily Grind" 
-                                   class="w-full bg-stone-900/30 border border-theme rounded-lg px-3 py-2 text-xs text-theme-title focus:outline-none focus:border-bistro-500 transition-colors"
+                                   class="w-full bg-theme-input border border-theme rounded-lg px-3 py-2 text-xs text-theme-title focus:outline-none focus:border-bistro-500 transition-colors"
                                    oninput="updateMenuTitle(this.value)">
                         </div>
 
-                        <div class="space-y-1">
-                            <label class="text-[10px] font-bold text-bistro-500 uppercase tracking-widest block">Announcement headline</label>
+                        <div class="space-y-1 text-left">
+                            <label class="text-[10px] font-bold text-theme-gold uppercase tracking-widest block">Announcement headline</label>
                             <input id="demo-promo-input" type="text" value="WEEKEND BRUNCH SPECIALS" 
-                                   class="w-full bg-stone-900/30 border border-theme rounded-lg px-3 py-2 text-xs text-theme-title focus:outline-none focus:border-bistro-500 transition-colors"
+                                   class="w-full bg-theme-input border border-theme rounded-lg px-3 py-2 text-xs text-theme-title focus:outline-none focus:border-bistro-500 transition-colors"
                                    oninput="updatePromoText(this.value)">
                         </div>
 
                         <!-- Live Adjust Pricing targets -->
-                        <div class="space-y-2">
-                            <label class="text-[10px] font-bold text-bistro-500 uppercase tracking-widest block">In-house live pricing adjustments</label>
+                        <div class="space-y-2 text-left">
+                            <label class="text-[10px] font-bold text-theme-gold uppercase tracking-widest block">In-house live pricing adjustments</label>
                             <div class="grid grid-cols-2 gap-3">
-                                <div class="bg-stone-900/40 p-2.5 rounded-xl border border-theme">
+                                <div class="bg-theme-subtle p-2.5 rounded-xl border border-theme">
                                     <span class="text-[9px] text-theme-subtext block">Flat White Espresso</span>
                                     <div class="flex items-center gap-1.5 mt-1">
-                                        <span class="text-xs text-bistro-500 font-bold">$</span>
+                                        <span class="text-xs text-theme-gold font-bold">$</span>
                                         <input id="price-coffee" type="number" step="0.25" value="4.50" 
                                                class="w-full bg-transparent text-xs text-theme-title focus:outline-none font-bold"
                                                oninput="updatePrice('coffee', this.value)">
                                     </div>
                                 </div>
-                                <div class="bg-stone-900/40 p-2.5 rounded-xl border border-theme">
+                                <div class="bg-theme-subtle p-2.5 rounded-xl border border-theme">
                                     <span class="text-[9px] text-theme-subtext block">Smashed Avocado Toast</span>
                                     <div class="flex items-center gap-1.5 mt-1">
-                                        <span class="text-xs text-bistro-500 font-bold">$</span>
+                                        <span class="text-xs text-theme-gold font-bold">$</span>
                                         <input id="price-toast" type="number" step="0.50" value="12.00" 
                                                class="w-full bg-transparent text-xs text-theme-title focus:outline-none font-bold"
                                                oninput="updatePrice('toast', this.value)">
@@ -524,16 +554,16 @@
                         </div>
 
                         <!-- Automated live event triggers -->
-                        <div class="space-y-2 pt-1">
-                            <label class="text-[10px] font-bold text-bistro-500 uppercase tracking-widest block">Simulated Event Rules</label>
+                        <div class="space-y-2 pt-1 text-left">
+                            <label class="text-[10px] font-bold text-theme-gold uppercase tracking-widest block">Simulated Event Rules</label>
                             <div class="flex flex-wrap gap-2">
-                                <button onclick="triggerHappyHour()" class="px-3 py-1.5 bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 hover:bg-bistro-500 hover:text-stone-950 text-[10px] font-bold rounded transition-all uppercase">
+                                <button onclick="triggerHappyHour()" class="px-3 py-1.5 bg-theme-badge border border-theme text-theme-gold hover:bg-bistro-500 hover:text-stone-950 text-[10px] font-bold rounded transition-all uppercase">
                                     Happy hour (10% Off)
                                 </button>
                                 <button onclick="triggerSoldOut('coffee')" class="px-3 py-1.5 bg-red-500/10 border border-red-500/30 text-red-500 hover:bg-red-500 hover:text-white text-[10px] font-bold rounded transition-all uppercase">
                                     Toggle Sold Out
                                 </button>
-                                <button onclick="resetSimulator()" class="px-3 py-1.5 bg-stone-500/10 border border-theme text-theme-text hover:bg-stone-500 hover:text-stone-950 text-[10px] font-bold rounded transition-all uppercase ml-auto">
+                                <button onclick="resetSimulator()" class="px-3 py-1.5 bg-theme-badge border border-theme text-theme-text hover:bg-stone-500 hover:text-stone-950 text-[10px] font-bold rounded transition-all uppercase ml-auto">
                                     Reset Settings
                                 </button>
                             </div>
@@ -541,9 +571,9 @@
                     </div>
                 </div>
 
-                <!-- Simulation visual target -->
+                <!-- Simulation visual target with synced color tokens -->
                 <div class="lg:col-span-5 flex justify-center items-center">
-                    <div class="w-full max-w-[280px] sm:max-w-[320px] h-[520px] sm:h-[620px] rounded-[36px] border-[6px] border-stone-900 bg-[#110e0c] overflow-hidden shadow-2xl relative flex flex-col transition-all duration-300">
+                    <div id="simulated-phone-container" class="w-full max-w-[280px] sm:max-w-[320px] h-[520px] sm:h-[620px] rounded-[36px] border-[6px] border-stone-900 bg-[#0c0a09] overflow-hidden shadow-2xl relative flex flex-col transition-all duration-300">
                         <!-- Dynamic notification indicator inside simulation -->
                         <div id="phone-toast" class="absolute top-10 left-3.5 right-3.5 bg-stone-950/95 border border-bistro-500/30 text-stone-100 text-[9px] px-2.5 py-1.5 rounded-lg shadow-xl z-40 transform -translate-y-16 opacity-0 transition-all duration-300 flex items-center gap-1.5">
                             <i class="fa-solid fa-bell text-bistro-500 animate-bounce"></i>
@@ -555,14 +585,14 @@
                             <div class="w-8 h-1 bg-black rounded-full"></div>
                         </div>
 
-                        <!-- Screen elements -->
-                        <div class="flex-1 overflow-y-auto flex flex-col text-xs pt-6 pb-3 scrollbar-none bg-[#0c0a09]">
-                            <div class="p-3 border-b border-stone-850 bg-stone-950 sticky top-0 z-10 flex items-center justify-between">
-                                <span id="phone-restaurant-title" class="font-serif font-bold text-white">The Daily Grind</span>
+                        <!-- Screen elements mapping the dynamic body color style sheet overrides -->
+                        <div id="simulated-phone-screen" class="flex-1 overflow-y-auto flex flex-col text-xs pt-6 pb-3 scrollbar-none bg-[#0c0a09] transition-colors duration-300">
+                            <div id="simulated-phone-header" class="p-3 border-b border-stone-850 bg-stone-950 sticky top-0 z-10 flex items-center justify-between transition-colors">
+                                <span id="phone-restaurant-title" class="font-serif font-bold text-white transition-colors">The Daily Grind</span>
                                 <span class="text-[8px] px-1.5 py-0.5 bg-emerald-500/10 text-emerald-400 rounded border border-emerald-500/20 uppercase font-bold">Open</span>
                             </div>
 
-                            <div id="phone-promo-banner" class="bg-stone-900 border-b border-stone-850 text-bistro-500 font-bold text-[8px] py-1.5 px-2 tracking-wider text-center uppercase">
+                            <div id="phone-promo-banner" class="bg-stone-900 border-b border-stone-850 text-bistro-500 font-bold text-[8px] py-1.5 px-2 tracking-wider text-center uppercase transition-colors">
                                 WEEKEND BRUNCH SPECIALS
                             </div>
 
@@ -575,11 +605,11 @@
                                         </div>
                                         <div class="flex-1 text-left flex flex-col justify-between">
                                             <div class="flex justify-between items-start">
-                                                <span class="font-serif font-bold text-stone-100 text-[11px]">Flat White</span>
+                                                <span id="phone-coffee-label" class="font-serif font-bold text-stone-100 text-[11px] transition-colors">Flat White</span>
                                                 <span id="phone-coffee-badge" class="bg-bistro-500/20 text-bistro-300 text-[7px] font-bold px-1 rounded uppercase border border-bistro-500/30 hidden">Happy Hour</span>
                                             </div>
                                             <div class="flex items-center justify-between mt-1">
-                                                <span class="font-serif font-black text-bistro-300 text-[11px]" id="phone-coffee-price">$4.50</span>
+                                                <span class="font-serif font-black text-theme-gold text-[11px]" id="phone-coffee-price">$4.50</span>
                                                 <span id="phone-coffee-status" class="text-[8px] font-bold text-stone-400">In Stock</span>
                                             </div>
                                         </div>
@@ -594,16 +624,19 @@
                                         </div>
                                         <div class="flex-1 text-left flex flex-col justify-between">
                                             <div class="flex justify-between items-start">
-                                                <span class="font-serif font-bold text-stone-100 text-[11px]">Smashed Avocado</span>
+                                                <span id="phone-toast-label" class="font-serif font-bold text-stone-100 text-[11px] transition-colors">Smashed Avocado</span>
                                                 <span id="phone-toast-badge" class="bg-bistro-500/20 text-bistro-300 text-[7px] font-bold px-1 rounded uppercase border border-bistro-500/30 hidden">Happy Hour</span>
                                             </div>
                                             <div class="flex items-center justify-between mt-1">
-                                                <span class="font-serif font-black text-bistro-300 text-[11px]" id="phone-toast-price">$12.00</span>
+                                                <span class="font-serif font-black text-theme-gold text-[11px]" id="phone-toast-price">$12.00</span>
                                                 <span id="phone-toast-status" class="text-[8px] font-bold text-stone-400">In Stock</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="px-2.5 py-1 border-t border-stone-850 text-center" id="phone-footer-block">
+                                <p class="text-[8px] text-stone-600 font-mono">Powered by VibeTable Platform</p>
                             </div>
                         </div>
                     </div>
@@ -620,7 +653,7 @@
                 </div>
 
                 <!-- Toggle Controls -->
-                <div class="flex justify-center items-center gap-2 mb-8 bg-bistro-500/10 p-1 rounded-full border border-bistro-500/20 max-w-xs mx-auto">
+                <div class="flex justify-center items-center gap-2 mb-8 bg-theme-badge p-1 rounded-full border border-theme max-w-xs mx-auto">
                     <button onclick="setPreviewFrame('mobile')" id="btn-preview-mobile" class="flex-1 py-2 bg-bistro-500 text-stone-950 font-bold text-xs rounded-full uppercase transition-all shadow-md">
                         Mobile
                     </button>
@@ -649,7 +682,7 @@
     <main id="view-features" class="spa-view hidden relative pt-24 pb-12 md:pt-36 md:pb-24 min-h-[85vh]">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 w-full">
             <div class="text-center mb-10 max-w-2xl mx-auto">
-                <span class="text-bistro-500 text-xs font-semibold uppercase tracking-widest bg-bistro-500/10 border border-bistro-500/20 px-3 py-1.5 rounded-full mb-3 inline-block">The Technology Stack</span>
+                <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">The Technology Stack</span>
                 <h2 class="text-2xl sm:text-4xl font-serif text-theme-title">Engineered for absolute direct control</h2>
                 <p class="text-theme-subtext mt-3 text-xs sm:text-sm">
                     No software bloating, no complex server steps. High-performance culinary code optimized to scale your visibility across localized dynamic search.
@@ -658,8 +691,8 @@
 
             <!-- Features list Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
-                <div class="p-5 sm:p-6 rounded-2xl bg-stone-500/5 border border-theme hover:border-bistro-500/20 transition-all duration-300">
-                    <div class="w-10 h-10 rounded-xl bg-bistro-500/10 text-bistro-500 flex items-center justify-center mb-4">
+                <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
                         <i class="fa-solid fa-gauge-high text-sm"></i>
                     </div>
                     <h3 class="text-base font-bold text-theme-title mb-2">0.2s Global rendering</h3>
@@ -668,8 +701,8 @@
                     </p>
                 </div>
 
-                <div class="p-5 sm:p-6 rounded-2xl bg-stone-500/5 border border-theme hover:border-bistro-500/20 transition-all duration-300">
-                    <div class="w-10 h-10 rounded-xl bg-bistro-500/10 text-bistro-500 flex items-center justify-center mb-4">
+                <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
                         <i class="fa-solid fa-qrcode text-sm"></i>
                     </div>
                     <h3 class="text-base font-bold text-theme-title mb-2">Tabletop vector QR assets</h3>
@@ -678,8 +711,8 @@
                     </p>
                 </div>
 
-                <div class="p-5 sm:p-6 rounded-2xl bg-stone-500/5 border border-theme hover:border-bistro-500/20 transition-all duration-300">
-                    <div class="w-10 h-10 rounded-xl bg-bistro-500/10 text-bistro-500 flex items-center justify-center mb-4">
+                <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
                         <i class="fa-solid fa-wine-glass text-sm"></i>
                     </div>
                     <h3 class="text-base font-bold text-theme-title mb-2">Chef's highlights module</h3>
@@ -688,8 +721,8 @@
                     </p>
                 </div>
 
-                <div class="p-5 sm:p-6 rounded-2xl bg-stone-500/5 border border-theme hover:border-bistro-500/20 transition-all duration-300">
-                    <div class="w-10 h-10 rounded-xl bg-bistro-500/10 text-bistro-500 flex items-center justify-center mb-4">
+                <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
                         <i class="fa-solid fa-toggle-on text-sm"></i>
                     </div>
                     <h3 class="text-base font-bold text-theme-title mb-2">Live ingredients toggles</h3>
@@ -698,8 +731,8 @@
                     </p>
                 </div>
 
-                <div class="p-5 sm:p-6 rounded-2xl bg-stone-500/5 border border-theme hover:border-bistro-500/20 transition-all duration-300">
-                    <div class="w-10 h-10 rounded-xl bg-bistro-500/10 text-bistro-500 flex items-center justify-center mb-4">
+                <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
                         <i class="fa-solid fa-chart-pie text-sm"></i>
                     </div>
                     <h3 class="text-base font-bold text-theme-title mb-2">In-house click analytics</h3>
@@ -708,8 +741,8 @@
                     </p>
                 </div>
 
-                <div class="p-5 sm:p-6 rounded-2xl bg-stone-500/5 border border-theme hover:border-bistro-500/20 transition-all duration-300">
-                    <div class="w-10 h-10 rounded-xl bg-bistro-500/10 text-bistro-500 flex items-center justify-center mb-4">
+                <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
                         <i class="fa-solid fa-magnifying-glass text-sm"></i>
                     </div>
                     <h3 class="text-base font-bold text-theme-title mb-2">Localized SEO Schema</h3>
@@ -722,15 +755,15 @@
             <!-- Integrated FAQs -->
             <div class="border-t border-theme pt-12 max-w-3xl mx-auto">
                 <div class="text-center mb-8">
-                    <span class="text-bistro-500 text-xs font-semibold uppercase tracking-widest bg-bistro-500/10 border border-bistro-500/20 px-3 py-1.5 rounded-full mb-3 inline-block">Direct Answers</span>
+                    <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">Direct Answers</span>
                     <h2 class="text-2xl sm:text-3xl font-serif text-theme-title">Frequently Asked Questions</h2>
                 </div>
 
-                <div class="space-y-3.5">
-                    <div class="border border-theme rounded-xl bg-stone-500/5 overflow-hidden">
-                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-bistro-500/5 transition-all">
+                <div class="space-y-3.5 text-left">
+                    <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
                             <span>Is VibeTable a monthly subscription?</span>
-                            <i class="fa-solid fa-chevron-down text-bistro-500 transition-transform text-xs ml-3"></i>
+                            <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
                         </button>
                         <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                             <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
@@ -739,10 +772,10 @@
                         </div>
                     </div>
 
-                    <div class="border border-theme rounded-xl bg-stone-500/5 overflow-hidden">
-                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-bistro-500/5 transition-all">
+                    <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
                             <span>Can I perform menu modifications myself?</span>
-                            <i class="fa-solid fa-chevron-down text-bistro-500 transition-transform text-xs ml-3"></i>
+                            <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
                         </button>
                         <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                             <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
@@ -751,10 +784,10 @@
                         </div>
                     </div>
 
-                    <div class="border border-theme rounded-xl bg-stone-500/5 overflow-hidden">
-                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-bistro-500/5 transition-all">
+                    <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
                             <span>How do diners interact with the QR codes?</span>
-                            <i class="fa-solid fa-chevron-down text-bistro-500 transition-transform text-xs ml-3"></i>
+                            <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
                         </button>
                         <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                             <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
@@ -763,10 +796,10 @@
                         </div>
                     </div>
 
-                    <div class="border border-theme rounded-xl bg-stone-500/5 overflow-hidden">
-                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-bistro-500/5 transition-all">
+                    <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
                             <span>Can I configure my existing web domain name?</span>
-                            <i class="fa-solid fa-chevron-down text-bistro-500 transition-transform text-xs ml-3"></i>
+                            <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
                         </button>
                         <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                             <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
@@ -775,10 +808,10 @@
                         </div>
                     </div>
 
-                    <div class="border border-theme rounded-xl bg-stone-500/5 overflow-hidden">
-                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-bistro-500/5 transition-all">
+                    <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
                             <span>Can I upgrade my package selection later?</span>
-                            <i class="fa-solid fa-chevron-down text-bistro-500 transition-transform text-xs ml-3"></i>
+                            <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
                         </button>
                         <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                             <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
@@ -795,7 +828,7 @@
     <main id="view-pricing" class="spa-view hidden relative pt-24 pb-12 md:pt-36 md:pb-24 min-h-[85vh]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
             <div class="text-center mb-10 max-w-2xl mx-auto">
-                <span class="text-bistro-500 text-xs font-semibold uppercase tracking-widest bg-bistro-500/10 border border-bistro-500/20 px-3 py-1.5 rounded-full mb-3 inline-block">Integration Tiers</span>
+                <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">Integration Tiers</span>
                 <h2 class="text-2xl sm:text-4xl font-serif text-theme-title tracking-tight leading-tight">One direct investment. Zero platform overhead.</h2>
                 <p class="text-theme-subtext mt-3 text-xs sm:text-sm">
                     Reclaim control over your marketing channels. Select the ideal system parameters for your venue with clear, upfront launch pricing.
@@ -807,9 +840,9 @@
                 <h4 class="text-sm font-serif font-bold text-theme-title mb-4">Calculate Your Financial Savings (vs. Standard $150/mo SaaS rentals)</h4>
                 
                 <div class="flex flex-wrap justify-center gap-2 mb-4 max-w-xs mx-auto">
-                    <button onclick="calculateSavings(1, this)" class="flex-1 py-1.5 rounded-lg text-[10px] font-bold bg-bistro-500 text-stone-950 uppercase">1 Year</button>
-                    <button onclick="calculateSavings(3, this)" class="flex-1 py-1.5 rounded-lg text-[10px] font-bold bg-stone-900 border border-theme text-theme-subtext uppercase">3 Years</button>
-                    <button onclick="calculateSavings(5, this)" class="flex-1 py-1.5 rounded-lg text-[10px] font-bold bg-stone-900 border border-theme text-theme-subtext uppercase">5 Years</button>
+                    <button id="btn-savings-1" onclick="calculateSavings(1, this)" class="flex-1 py-1.5 rounded-lg text-[10px] font-bold bg-bistro-500 text-stone-950 uppercase">1 Year</button>
+                    <button id="btn-savings-3" onclick="calculateSavings(3, this)" class="flex-1 py-1.5 rounded-lg text-[10px] font-bold bg-theme-input border border-theme text-theme-subtext hover:text-theme-title transition-colors uppercase">3 Years</button>
+                    <button id="btn-savings-5" onclick="calculateSavings(5, this)" class="flex-1 py-1.5 rounded-lg text-[10px] font-bold bg-theme-input border border-theme text-theme-subtext hover:text-theme-title transition-colors uppercase">5 Years</button>
                 </div>
 
                 <div class="grid grid-cols-3 gap-3 pt-4 border-t border-theme text-center text-xs">
@@ -821,22 +854,22 @@
                         <span class="text-[9px] text-theme-subtext block uppercase font-bold">VibeTable Growth Setup</span>
                         <span id="calc-brand-total" class="text-sm sm:text-base font-bold text-theme-title">$999.00</span>
                     </div>
-                    <div class="p-2 bg-bistro-500/10 border border-bistro-500/30 rounded-lg">
-                        <span class="text-[9px] text-bistro-500 block uppercase font-bold">Total Saved</span>
-                        <span id="calc-net-retained" class="text-sm sm:text-base font-black text-bistro-500">$801.00</span>
+                    <div class="p-2 bg-theme-badge border border-theme rounded-lg">
+                        <span class="text-[9px] text-theme-gold block uppercase font-bold">Total Saved</span>
+                        <span id="calc-net-retained" class="text-sm sm:text-base font-black text-theme-gold">$801.00</span>
                     </div>
                 </div>
             </div>
 
             <!-- Dynamic Pricing Columns (4-Card layout stacked nicely on mobile viewports) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch max-w-7xl mx-auto mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch max-w-7xl mx-auto mb-12 text-left">
                 
                 <!-- Package 1: Essential -->
-                <div class="p-5 rounded-2xl bg-stone-500/5 border border-theme hover:border-bistro-500/20 transition-all duration-300 flex flex-col justify-between relative">
+                <div class="p-5 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 flex flex-col justify-between relative">
                     <div class="space-y-4">
                         <div class="flex justify-between items-center">
-                            <span class="px-2 py-0.5 bg-stone-900/40 border border-theme text-[9px] font-bold rounded uppercase text-theme-subtext">Starter</span>
-                            <span class="px-1.5 py-0.5 bg-bistro-500/15 text-bistro-500 text-[8px] font-bold rounded uppercase">Launch Discount</span>
+                            <span class="px-2 py-0.5 bg-theme-input border border-theme text-[9px] font-bold rounded uppercase text-theme-subtext">Starter</span>
+                            <span class="px-1.5 py-0.5 bg-theme-badge text-theme-gold text-[8px] font-bold rounded uppercase">Launch Discount</span>
                         </div>
                         <div>
                             <h3 class="text-lg font-serif font-bold text-theme-title">Essential</h3>
@@ -845,7 +878,7 @@
                         <div class="py-2">
                             <div class="text-[10px] text-stone-500 line-through">USD $1,000</div>
                             <div class="text-2xl font-serif font-bold text-theme-title">USD $799</div>
-                            <span class="text-[8px] text-bistro-500 uppercase font-bold">One-time installation</span>
+                            <span class="text-[8px] text-theme-gold uppercase font-bold">One-time installation</span>
                         </div>
                         <div class="space-y-3 pt-3 border-t border-theme text-[10px] text-theme-text">
                             <div>
@@ -856,25 +889,25 @@
                                 <span class="font-bold text-theme-title uppercase block text-[9px]">Administrative Controls</span>
                                 <p class="text-theme-subtext">Modify pricing structure, change menu titles, edit active category items, and toggle display states.</p>
                             </div>
-                            <div class="p-2 bg-stone-900/30 rounded border border-theme text-[9px] italic text-theme-subtext">
+                            <div class="p-2 bg-theme-input rounded border border-theme text-[9px] italic text-theme-subtext">
                                 Note: Adding new categories or items dynamically requires higher tiers.
                             </div>
                         </div>
                     </div>
-                    <button onclick="handlePurchase('Essential Package', 'USD $799')" class="w-full py-2.5 mt-6 rounded-lg bg-stone-900 border border-theme text-theme-text hover:bg-stone-850 hover:text-white text-xs font-bold uppercase transition-all">
+                    <button onclick="handlePurchase('Essential Package', 'USD $799')" class="w-full py-2.5 mt-6 rounded-lg bg-theme-input border border-theme text-theme-text hover:bg-stone-800 hover:text-white transition-colors text-xs font-bold uppercase transition-all">
                         Choose Essential
                     </button>
                 </div>
 
                 <!-- Package 2: Growth (Highlighted Premium Glow) -->
-                <div class="p-5 rounded-2xl bg-stone-500/10 border-2 border-bistro-500 shadow-[0_0_30px_rgba(196,155,85,0.15)] flex flex-col justify-between relative transform lg:scale-105 z-10">
+                <div class="p-5 rounded-2xl popular-card-theme flex flex-col justify-between relative transform lg:scale-105 z-10">
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-bistro-500 text-stone-950 text-[8px] font-black uppercase px-2.5 py-0.5 rounded-full">
                         Most Popular
                     </div>
                     <div class="space-y-4">
                         <div class="flex justify-between items-center mt-1">
-                            <span class="px-2 py-0.5 bg-stone-900/40 border border-theme text-[9px] font-bold rounded uppercase text-bistro-500">Growth</span>
-                            <span class="px-1.5 py-0.5 bg-bistro-500/15 text-bistro-500 text-[8px] font-bold rounded uppercase">Launch Discount</span>
+                            <span class="px-2 py-0.5 bg-theme-input border border-theme text-[9px] font-bold rounded uppercase text-theme-gold">Growth</span>
+                            <span class="px-1.5 py-0.5 bg-theme-badge text-theme-gold text-[8px] font-bold rounded uppercase">Launch Discount</span>
                         </div>
                         <div>
                             <h3 class="text-lg font-serif font-bold text-theme-title">Growth</h3>
@@ -883,11 +916,11 @@
                         <div class="py-2">
                             <div class="text-[10px] text-stone-500 line-through">USD $1,300</div>
                             <div class="text-2xl font-serif font-bold text-theme-title">USD $999</div>
-                            <span class="text-[8px] text-bistro-500 uppercase font-bold">One-time installation</span>
+                            <span class="text-[8px] text-theme-gold uppercase font-bold">One-time installation</span>
                         </div>
-                        <div class="space-y-3 pt-3 border-t border-bistro-500/30 text-[10px] text-theme-text">
+                        <div class="space-y-3 pt-3 border-t border-theme text-[10px] text-theme-text">
                             <div>
-                                <span class="font-bold text-bistro-500 uppercase block text-[9px]">Everything in Essential Plus</span>
+                                <span class="font-bold text-theme-gold uppercase block text-[9px]">Everything in Essential Plus</span>
                                 <span class="font-bold text-theme-title uppercase block text-[9px] mt-1.5">Extended Pages</span>
                                 <p class="text-theme-subtext">Up to 3 Custom Web Pages (Menu catalog, Brand history, Contact portals).</p>
                             </div>
@@ -897,17 +930,17 @@
                             </div>
                         </div>
                     </div>
-                    <button onclick="handlePurchase('Growth Package', 'USD $999')" class="w-full py-2.5 mt-6 rounded-lg bg-bistro-500 text-stone-950 hover:bg-white text-xs font-black uppercase transition-all shadow">
+                    <button onclick="handlePurchase('Growth Package', 'USD $999')" class="w-full py-2.5 mt-6 rounded-lg bg-bistro-500 text-stone-950 hover:opacity-90 text-xs font-black uppercase transition-all shadow">
                         Choose Growth
                     </button>
                 </div>
 
                 <!-- Package 3: Premium -->
-                <div class="p-5 rounded-2xl bg-stone-500/5 border border-theme hover:border-bistro-500/20 transition-all duration-300 flex flex-col justify-between relative">
+                <div class="p-5 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 flex flex-col justify-between relative">
                     <div class="space-y-4">
                         <div class="flex justify-between items-center">
-                            <span class="px-2 py-0.5 bg-stone-900/40 border border-theme text-[9px] font-bold rounded uppercase text-theme-subtext">Premium</span>
-                            <span class="px-1.5 py-0.5 bg-bistro-500/15 text-bistro-500 text-[8px] font-bold rounded uppercase">Launch Discount</span>
+                            <span class="px-2 py-0.5 bg-theme-input border border-theme text-[9px] font-bold rounded uppercase text-theme-subtext">Premium</span>
+                            <span class="px-1.5 py-0.5 bg-theme-badge text-theme-gold text-[8px] font-bold rounded uppercase">Launch Discount</span>
                         </div>
                         <div>
                             <h3 class="text-lg font-serif font-bold text-theme-title">Premium</h3>
@@ -916,7 +949,7 @@
                         <div class="py-2">
                             <div class="text-[10px] text-stone-500 line-through">USD $1,500</div>
                             <div class="text-2xl font-serif font-bold text-theme-title">USD $1,199</div>
-                            <span class="text-[8px] text-bistro-500 uppercase font-bold">One-time installation</span>
+                            <span class="text-[8px] text-theme-gold uppercase font-bold">One-time installation</span>
                         </div>
                         <div class="space-y-3 pt-3 border-t border-theme text-[10px] text-theme-text">
                             <div>
@@ -930,32 +963,32 @@
                             </div>
                         </div>
                     </div>
-                    <button onclick="handlePurchase('Premium Package', 'USD $1,199')" class="w-full py-2.5 mt-6 rounded-lg bg-stone-900 border border-theme text-theme-text hover:bg-stone-850 hover:text-white text-xs font-bold uppercase transition-all">
+                    <button onclick="handlePurchase('Premium Package', 'USD $1,199')" class="w-full py-2.5 mt-6 rounded-lg bg-theme-input border border-theme text-theme-text hover:bg-stone-800 hover:text-white transition-colors text-xs font-bold uppercase transition-all">
                         Choose Premium
                     </button>
                 </div>
 
                 <!-- Package 4: Business (Coming Soon) -->
-                <div class="p-5 rounded-2xl bg-stone-950/40 border border-theme/50 opacity-80 flex flex-col justify-between relative overflow-hidden">
+                <div class="p-5 rounded-2xl bg-theme-subtle border border-theme/50 opacity-80 flex flex-col justify-between relative overflow-hidden">
                     <div class="absolute top-3 -right-10 bg-bistro-500 text-stone-950 text-[7px] font-black uppercase py-0.5 px-8 rotate-45">
                         Soon
                     </div>
                     <div class="space-y-4">
                         <div class="flex justify-between items-center">
-                            <span class="px-2 py-0.5 bg-stone-900/40 border border-theme text-[9px] font-bold rounded uppercase text-stone-500">Business</span>
-                            <span class="px-1.5 py-0.5 bg-stone-900 text-stone-500 text-[8px] font-bold rounded uppercase">Launch List</span>
+                            <span class="px-2 py-0.5 bg-theme-input border border-theme text-[9px] font-bold rounded uppercase text-theme-subtext">Business</span>
+                            <span class="px-1.5 py-0.5 bg-theme-badge text-theme-subtext text-[8px] font-bold rounded uppercase">Launch List</span>
                         </div>
                         <div>
-                            <h3 class="text-lg font-serif font-bold text-stone-400">Business</h3>
-                            <p class="text-stone-500 text-[10px] mt-1">Multi-branch commerce stack with full database capabilities.</p>
+                            <h3 class="text-lg font-serif font-bold text-theme-title opacity-60">Business</h3>
+                            <p class="text-theme-subtext text-[10px] mt-1">Multi-branch commerce stack with full database capabilities.</p>
                         </div>
                         <div class="py-2">
                             <div class="text-[10px] text-stone-600 line-through">USD $1,900</div>
-                            <div class="text-2xl font-serif font-bold text-stone-500">USD $1,399</div>
-                            <span class="text-[8px] text-stone-500 uppercase font-bold">Planned release</span>
+                            <div class="text-2xl font-serif font-bold text-theme-subtext">USD $1,399</div>
+                            <span class="text-[8px] text-theme-subtext uppercase font-bold">Planned release</span>
                         </div>
-                        <div class="space-y-2 pt-3 border-t border-theme/30 text-[9px] text-stone-500">
-                            <p class="font-bold text-stone-400 uppercase">AIO Release Roadmap</p>
+                        <div class="space-y-2 pt-3 border-t border-theme/30 text-[9px] text-theme-subtext">
+                            <p class="font-bold text-theme-title uppercase opacity-80">AIO Release Roadmap</p>
                             <ul class="space-y-1">
                                 <li>• Customer Loyalty Accounts</li>
                                 <li>• Dynamic Seat Layout Managers</li>
@@ -964,7 +997,7 @@
                             </ul>
                         </div>
                     </div>
-                    <button onclick="handleNotify()" class="w-full py-2.5 mt-6 rounded-lg bg-stone-900 border border-theme/40 text-stone-400 hover:text-white text-xs font-bold uppercase transition-all">
+                    <button onclick="handleNotify()" class="w-full py-2.5 mt-6 rounded-lg bg-theme-input border border-theme/40 text-theme-subtext hover:text-theme-title transition-colors text-xs font-bold uppercase transition-all">
                         Notify Me
                     </button>
                 </div>
@@ -975,70 +1008,70 @@
                 <h3 class="text-xl sm:text-2xl font-serif text-theme-title text-center mb-4">Granular metrics comparison</h3>
                 
                 <!-- Slide indicator visual helper for mobile layouts -->
-                <div class="flex items-center justify-center gap-1.5 text-bistro-500 text-[10px] uppercase tracking-wider font-bold mb-3 lg:hidden">
+                <div class="flex items-center justify-center gap-1.5 text-theme-gold text-[10px] uppercase tracking-wider font-bold mb-3 lg:hidden">
                     <i class="fa-solid fa-left-right animate-pulse"></i> Slide horizontally to view features comparison
                 </div>
                 
-                <div class="overflow-x-auto rounded-2xl border border-theme bg-stone-950/40 backdrop-blur shadow-xl mb-12">
+                <div class="overflow-x-auto rounded-2xl border border-theme bg-theme-subtle backdrop-blur shadow-xl mb-12">
                     <table class="w-full text-left border-collapse min-w-[700px] text-xs">
                         <thead>
-                            <tr class="border-b border-theme bg-stone-900/30 text-[10px] uppercase tracking-wider text-theme-subtext">
+                            <tr class="border-b border-theme bg-theme-table-header text-[10px] uppercase tracking-wider text-theme-subtext">
                                 <th class="p-4">Platform Capabilities</th>
                                 <th class="p-4 text-center">Essential</th>
-                                <th class="p-4 text-center bg-bistro-500/5 text-bistro-500">Growth</th>
+                                <th class="p-4 text-center bg-theme-badge text-theme-gold">Growth</th>
                                 <th class="p-4 text-center">Premium</th>
                                 <th class="p-4 text-center">Business</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-stone-900/30 text-theme-text">
+                        <tbody class="divide-y divide-stone-900/10 dark:divide-white/10 text-theme-text">
                             <tr>
                                 <td class="p-4 font-medium text-theme-title">Custom design web pages</td>
                                 <td class="p-4 text-center">1 Page</td>
-                                <td class="p-4 text-center bg-bistro-500/5 font-semibold text-bistro-500">Up to 3 Pages</td>
+                                <td class="p-4 text-center bg-theme-badge font-semibold text-theme-gold">Up to 3 Pages</td>
                                 <td class="p-4 text-center">Up to 5 Pages</td>
-                                <td class="p-4 text-center text-stone-500">Unlimited</td>
+                                <td class="p-4 text-center text-theme-subtext">Unlimited</td>
                             </tr>
                             <tr>
                                 <td class="p-4 font-medium text-theme-title">Dashboard panels tier</td>
                                 <td class="p-4 text-center">Basic control</td>
-                                <td class="p-4 text-center bg-bistro-500/5 font-semibold text-bistro-500">Enhanced</td>
+                                <td class="p-4 text-center bg-theme-badge font-semibold text-theme-gold">Enhanced</td>
                                 <td class="p-4 text-center">Complete</td>
-                                <td class="p-4 text-center text-stone-500">Enterprise Stack</td>
+                                <td class="p-4 text-center text-theme-subtext">Enterprise Stack</td>
                             </tr>
                             <tr>
                                 <td class="p-4 font-medium text-theme-title">Change ingredient prices</td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-bistro-500"></i></td>
-                                <td class="p-4 text-center bg-bistro-500/5"><i class="fa-solid fa-check text-bistro-500"></i></td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-bistro-500"></i></td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-bistro-500"></i></td>
+                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                <td class="p-4 text-center bg-theme-badge"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
                             </tr>
                             <tr>
                                 <td class="p-4 font-medium text-theme-title">Inject dynamic items</td>
-                                <td class="p-4 text-center text-stone-500">—</td>
-                                <td class="p-4 text-center bg-bistro-500/5"><i class="fa-solid fa-check text-bistro-500"></i></td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-bistro-500"></i></td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-bistro-500"></i></td>
+                                <td class="p-4 text-center text-theme-subtext">—</td>
+                                <td class="p-4 text-center bg-theme-badge"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
                             </tr>
                             <tr>
                                 <td class="p-4 font-medium text-theme-title">Bespoke categorization</td>
-                                <td class="p-4 text-center text-stone-500">—</td>
-                                <td class="p-4 text-center bg-bistro-500/5 text-stone-500">—</td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-bistro-500"></i></td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-bistro-500"></i></td>
+                                <td class="p-4 text-center text-theme-subtext">—</td>
+                                <td class="p-4 text-center bg-theme-badge text-theme-subtext">—</td>
+                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
                             </tr>
                             <tr>
                                 <td class="p-4 font-medium text-theme-title">Interactive Pre-order checkout</td>
-                                <td class="p-4 text-center text-stone-500">—</td>
-                                <td class="p-4 text-center bg-bistro-500/5 text-stone-500">—</td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-bistro-500"></i></td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-bistro-500"></i></td>
+                                <td class="p-4 text-center text-theme-subtext">—</td>
+                                <td class="p-4 text-center bg-theme-badge text-theme-subtext">—</td>
+                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
                             </tr>
                             <tr>
                                 <td class="p-4 font-medium text-theme-title">Upsell suggestions engine</td>
-                                <td class="p-4 text-center text-stone-500">—</td>
-                                <td class="p-4 text-center bg-bistro-500/5 text-stone-500">—</td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-bistro-500"></i></td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-bistro-500"></i></td>
+                                <td class="p-4 text-center text-theme-subtext">—</td>
+                                <td class="p-4 text-center bg-theme-badge text-theme-subtext">—</td>
+                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1050,14 +1083,14 @@
                 <h3 class="text-xl sm:text-2xl font-serif text-theme-title text-center mb-8">Performance add-ons & support modifications</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left text-xs">
                     
-                    <div class="p-5 rounded-xl bg-stone-500/5 border border-theme">
-                        <h4 class="text-bistro-500 font-serif font-bold text-sm mb-3 flex items-center gap-2"><i class="fa-solid fa-globe"></i> Domains & integrations</h4>
+                    <div class="p-5 rounded-xl bg-theme-subtle border border-theme">
+                        <h4 class="text-theme-gold font-serif font-bold text-sm mb-3 flex items-center gap-2"><i class="fa-solid fa-globe"></i> Domains & integrations</h4>
                         <ul class="space-y-2.5">
-                            <li class="flex justify-between border-b border-stone-900/30 pb-1.5">
+                            <li class="flex justify-between border-b border-stone-900/10 dark:border-white/10 pb-1.5">
                                 <span class="text-theme-text">Custom domain name configuration</span>
                                 <span class="text-theme-title font-bold">$99</span>
                             </li>
-                            <li class="flex justify-between border-b border-stone-900/30 pb-1.5">
+                            <li class="flex justify-between border-b border-stone-900/10 dark:border-white/10 pb-1.5">
                                 <span class="text-theme-text">Proprietary domain registration</span>
                                 <span class="text-theme-title font-bold">From $30/yr</span>
                             </li>
@@ -1068,14 +1101,14 @@
                         </ul>
                     </div>
 
-                    <div class="p-5 rounded-xl bg-stone-500/5 border border-theme">
-                        <h4 class="text-bistro-500 font-serif font-bold text-sm mb-3 flex items-center gap-2"><i class="fa-solid fa-sliders"></i> Specialized enhancements</h4>
+                    <div class="p-5 rounded-xl bg-theme-subtle border border-theme">
+                        <h4 class="text-theme-gold font-serif font-bold text-sm mb-3 flex items-center gap-2"><i class="fa-solid fa-sliders"></i> Specialized enhancements</h4>
                         <ul class="space-y-2.5">
-                            <li class="flex justify-between border-b border-stone-900/30 pb-1.5">
+                            <li class="flex justify-between border-b border-stone-900/10 dark:border-white/10 pb-1.5">
                                 <span class="text-theme-text">Additional landing design page</span>
                                 <span class="text-theme-title font-bold">$150/page</span>
                             </li>
-                            <li class="flex justify-between border-b border-stone-900/30 pb-1.5">
+                            <li class="flex justify-between border-b border-stone-900/10 dark:border-white/10 pb-1.5">
                                 <span class="text-theme-text">Multi-lingual support integrations</span>
                                 <span class="text-theme-title font-bold">$249</span>
                             </li>
@@ -1104,7 +1137,7 @@
                 <a href="#/pricing" class="w-full sm:w-auto px-8 py-3.5 bg-bistro-500 text-stone-950 font-bold rounded-full hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(196,155,85,0.25)] transition-all uppercase text-xs">
                     Get Started Today
                 </a>
-                <a onclick="handleGeneralConsultation()" class="cursor-pointer w-full sm:w-auto px-8 py-3.5 bg-stone-900 border border-theme text-stone-200 rounded-full font-bold hover:bg-stone-850 transition-all uppercase text-xs">
+                <a onclick="handleGeneralConsultation()" class="cursor-pointer w-full sm:w-auto px-8 py-3.5 bg-theme-subtle border border-theme text-theme-text rounded-full font-bold hover:opacity-80 transition-all uppercase text-xs">
                     Book a Consultation
                 </a>
             </div>
@@ -1112,31 +1145,31 @@
     </section>
 
     <!-- Interactive Purchase Dialog (Secure Form Targets) -->
-    <div id="purchase-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
-        <div class="bg-stone-950 border border-theme p-5 sm:p-6 rounded-2xl max-w-md w-full mx-4 relative shadow-2xl">
-            <button onclick="closeModal()" class="absolute top-3.5 right-3.5 text-stone-500 hover:text-white transition-colors" aria-label="Close form dialog">
+    <div id="purchase-modal" class="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+        <div class="panel-theme border p-5 sm:p-6 rounded-2xl max-w-md w-full mx-4 relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-3.5 right-3.5 text-theme-subtext hover:text-theme-title transition-colors" aria-label="Close form dialog">
                 <i class="fa-solid fa-xmark text-base"></i>
             </button>
-            <div class="w-10 h-10 rounded-xl bg-bistro-500/10 text-bistro-500 flex items-center justify-center mb-4 border border-bistro-500/20">
+            <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4 border border-theme">
                 <i class="fa-solid fa-receipt text-lg"></i>
             </div>
-            <h4 class="text-lg font-serif font-bold text-white mb-1.5" id="modal-heading-text">Book your setup call</h4>
-            <p id="modal-package-details" class="text-stone-400 text-[10px] sm:text-xs mb-4">Plan parameter selected: Essential Setup ($799 One-time fee).</p>
+            <h4 class="text-lg font-serif font-bold text-theme-title mb-1.5" id="modal-heading-text">Book your setup call</h4>
+            <p id="modal-package-details" class="text-theme-subtext text-[10px] sm:text-xs mb-4">Plan parameter selected: Essential Setup ($799 One-time fee).</p>
             
             <form onsubmit="submitDemoForm(event)" class="space-y-3 text-left">
                 <div>
-                    <label class="text-[9px] text-bistro-500 block mb-1 uppercase tracking-widest font-bold">Your Name</label>
-                    <input type="text" required placeholder="Alexander Mercer" class="w-full bg-stone-900 border border-theme rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-bistro-500 transition-colors">
+                    <label class="text-[9px] text-theme-gold block mb-1 uppercase tracking-widest font-bold">Your Name</label>
+                    <input type="text" required placeholder="Alexander Mercer" class="w-full bg-theme-input border border-theme rounded-lg px-3 py-2 text-xs text-theme-title focus:outline-none focus:border-bistro-500 transition-colors">
                 </div>
                 <div>
-                    <label class="text-[9px] text-bistro-500 block mb-1 uppercase tracking-widest font-bold">Restaurant Name</label>
-                    <input type="text" required placeholder="Lumina Cafe" class="w-full bg-stone-900 border border-theme rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-bistro-500 transition-colors">
+                    <label class="text-[9px] text-theme-gold block mb-1 uppercase tracking-widest font-bold">Restaurant Name</label>
+                    <input type="text" required placeholder="Lumina Cafe" class="w-full bg-theme-input border border-theme rounded-lg px-3 py-2 text-xs text-theme-title focus:outline-none focus:border-bistro-500 transition-colors">
                 </div>
                 <div>
-                    <label class="text-[9px] text-bistro-500 block mb-1 uppercase tracking-widest font-bold">Your Email</label>
-                    <input type="email" required placeholder="alex@lumina.com" class="w-full bg-stone-900 border border-theme rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-bistro-500 transition-colors">
+                    <label class="text-[9px] text-theme-gold block mb-1 uppercase tracking-widest font-bold">Your Email</label>
+                    <input type="email" required placeholder="alex@lumina.com" class="w-full bg-theme-input border border-theme rounded-lg px-3 py-2 text-xs text-theme-title focus:outline-none focus:border-bistro-500 transition-colors">
                 </div>
-                <button type="submit" class="w-full py-3 bg-bistro-500 text-stone-950 font-black rounded-lg hover:bg-white uppercase text-xs tracking-wider transition-all shadow-md">
+                <button type="submit" class="w-full py-3 bg-bistro-500 text-stone-950 font-black rounded-lg hover:opacity-90 uppercase text-xs tracking-wider transition-all shadow-md">
                     Submit setup inquiry
                 </button>
             </form>
@@ -1144,26 +1177,26 @@
     </div>
 
     <!-- Success Modal display -->
-    <div id="success-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
-        <div class="bg-stone-950 border border-theme p-6 rounded-2xl max-w-sm w-full mx-4 text-center shadow-2xl">
-            <div class="w-12 h-12 rounded-full bg-bistro-500/15 text-bistro-500 flex items-center justify-center mx-auto mb-4 border border-bistro-500/30">
+    <div id="success-modal" class="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+        <div class="panel-theme border p-6 rounded-2xl max-w-sm w-full mx-4 text-center shadow-2xl">
+            <div class="w-12 h-12 rounded-full bg-theme-badge text-theme-gold flex items-center justify-center mx-auto mb-4 border border-theme">
                 <i class="fa-solid fa-check text-xl animate-bounce"></i>
             </div>
-            <h4 class="text-lg font-serif font-bold text-white mb-1.5" id="success-heading">Request filed successfully</h4>
-            <p class="text-stone-400 text-xs mb-5 leading-relaxed" id="success-body-text">An integration consultant will respond within 24 hours to coordinate your digital menu onboarding checklist.</p>
-            <button onclick="closeSuccessModal()" class="w-full py-2 bg-stone-900 border border-theme text-stone-200 rounded-lg hover:bg-stone-850 text-xs font-bold uppercase transition-all">
+            <h4 class="text-lg font-serif font-bold text-theme-title mb-1.5" id="success-heading">Request filed successfully</h4>
+            <p class="text-theme-subtext text-xs mb-5 leading-relaxed" id="success-body-text">An integration consultant will respond within 24 hours to coordinate your digital menu onboarding checklist.</p>
+            <button onclick="closeSuccessModal()" class="w-full py-2 bg-theme-input border border-theme text-theme-title rounded-lg hover:bg-theme-badge text-xs font-bold uppercase transition-all">
                 Close dialog
             </button>
         </div>
     </div>
 
     <!-- Page Footer -->
-    <footer class="border-t border-theme bg-stone-950/40 pt-12 pb-8 relative z-10 text-xs">
+    <footer class="border-t border-theme bg-theme-subtle pt-12 pb-8 relative z-10 text-xs">
         <div class="max-w-6xl mx-auto px-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-10 text-left">
                 <div class="sm:col-span-2">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-8 h-8 overflow-hidden rounded-full border border-bistro-500/30 bg-black flex items-center justify-center shrink-0">
+                        <div class="w-8 h-8 overflow-hidden rounded-full border border-theme bg-black flex items-center justify-center shrink-0">
                             <img src="images/VT_logo_transparent_bg.png" alt="VibeTable Logo" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/100x100/c49b55/ffffff?text=VT'">
                         </div>
                         <span class="text-base font-serif font-bold text-theme-title">VibeTable</span>
@@ -1175,17 +1208,17 @@
                 <div>
                     <h5 class="text-theme-title font-bold mb-3 uppercase tracking-wider text-[10px]">Platform</h5>
                     <ul class="space-y-2 text-theme-subtext">
-                        <li><a href="#/why-vibetable" class="hover:text-bistro-500 transition-colors">Why Own</a></li>
-                        <li><a href="#/demo" class="hover:text-bistro-500 transition-colors">Interactive Demo</a></li>
-                        <li><a href="#/pricing" class="hover:text-bistro-500 transition-colors">Investment plans</a></li>
+                        <li><a href="#/why-vibetable" class="hover:text-theme-gold transition-colors">Why Own</a></li>
+                        <li><a href="#/demo" class="hover:text-theme-gold transition-colors">Interactive Demo</a></li>
+                        <li><a href="#/pricing" class="hover:text-theme-gold transition-colors">Investment plans</a></li>
                     </ul>
                 </div>
                 <div>
                     <h5 class="text-theme-title font-bold mb-3 uppercase tracking-wider text-[10px]">Onboarding</h5>
                     <ul class="space-y-2 text-theme-subtext">
-                        <li><a href="#/features" class="hover:text-bistro-500 transition-colors">Platform features</a></li>
-                        <li><a href="#/features" class="hover:text-bistro-500 transition-colors">Onboarding FAQ</a></li>
-                        <li><a href="#" class="hover:text-bistro-500 transition-colors">On-demand support</a></li>
+                        <li><a href="#/features" class="hover:text-theme-gold transition-colors">Platform features</a></li>
+                        <li><a href="#/features" class="hover:text-theme-gold transition-colors">Onboarding FAQ</a></li>
+                        <li><a href="#" class="hover:text-theme-gold transition-colors">On-demand support</a></li>
                     </ul>
                 </div>
             </div>
@@ -1193,9 +1226,9 @@
             <div class="pt-6 border-t border-theme flex flex-col sm:flex-row items-center justify-between gap-3 text-theme-subtext text-[10px] text-center">
                 <p>© 2026 VibeTable Platform Inc. Private platforms are properties of purchasing entities.</p>
                 <div class="flex gap-4">
-                    <a href="#" class="hover:text-bistro-500 transition-colors" aria-label="Twitter connection"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#" class="hover:text-bistro-500 transition-colors" aria-label="Instagram page"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="hover:text-bistro-500 transition-colors" aria-label="LinkedIn network"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-theme-gold transition-colors" aria-label="Twitter connection"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="hover:text-theme-gold transition-colors" aria-label="Instagram page"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-theme-gold transition-colors" aria-label="LinkedIn network"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
@@ -1242,7 +1275,7 @@
             Object.values(menuMapping).forEach(id => {
                 const navLink = document.getElementById(id);
                 if (navLink) {
-                    navLink.classList.remove('text-bistro-500', 'font-semibold');
+                    navLink.classList.remove('text-theme-gold', 'font-semibold');
                     navLink.classList.add('text-theme-subtext');
                 }
             });
@@ -1250,7 +1283,7 @@
             const activeId = menuMapping[currentHash] || 'nav-home';
             const activeLink = document.getElementById(activeId);
             if (activeLink) {
-                activeLink.classList.add('text-bistro-500', 'font-semibold');
+                activeLink.classList.add('text-theme-gold', 'font-semibold');
                 activeLink.classList.remove('text-theme-subtext');
             }
         }
@@ -1264,7 +1297,7 @@
             const icon = document.getElementById('menu-icon');
             if (menu.classList.contains('hidden')) {
                 menu.classList.remove('hidden');
-                icon.className = "fa-solid fa-xmark text-lg text-bistro-500";
+                icon.className = "fa-solid fa-xmark text-lg text-theme-gold";
             } else {
                 menu.classList.add('hidden');
                 icon.className = "fa-solid fa-bars text-lg";
@@ -1300,10 +1333,57 @@
                 body.classList.remove('light-theme');
                 btnIcon.className = "fa-solid fa-moon text-sm";
                 localStorage.setItem('theme-preference', 'dark');
+                syncSimulatedPhoneTheme('dark');
             } else {
                 body.classList.add('light-theme');
                 btnIcon.className = "fa-solid fa-sun text-sm";
                 localStorage.setItem('theme-preference', 'light');
+                syncSimulatedPhoneTheme('light');
+            }
+        }
+
+        // Sync simulated mock phone UI theme dynamically with active page mode
+        function syncSimulatedPhoneTheme(mode) {
+            const phoneContainer = document.getElementById('simulated-phone-container');
+            const phoneScreen = document.getElementById('simulated-phone-screen');
+            const phoneHeader = document.getElementById('simulated-phone-header');
+            const phonePromo = document.getElementById('phone-promo-banner');
+            const coffeeBox = document.getElementById('item-coffee-box');
+            const toastBox = document.getElementById('item-toast-box');
+            
+            const coffeeLabel = document.getElementById('phone-coffee-label');
+            const toastLabel = document.getElementById('phone-toast-label');
+            const coffeePrice = document.getElementById('phone-coffee-price');
+            const toastPrice = document.getElementById('phone-toast-price');
+            const restaurantTitle = document.getElementById('phone-restaurant-title');
+            const phoneFooter = document.getElementById('phone-footer-block');
+
+            if (mode === 'light') {
+                phoneContainer.className = "w-full max-w-[280px] sm:max-w-[320px] h-[520px] sm:h-[620px] rounded-[36px] border-[6px] border-stone-300 bg-[#fbf9f6] overflow-hidden shadow-2xl relative flex flex-col transition-all duration-300";
+                phoneScreen.className = "flex-1 overflow-y-auto flex flex-col text-xs pt-6 pb-3 scrollbar-none bg-[#fbf9f6] transition-colors duration-300";
+                phoneHeader.className = "p-3 border-b border-stone-200 bg-white/90 sticky top-0 z-10 flex items-center justify-between transition-colors";
+                phonePromo.className = "bg-stone-100 border-b border-stone-200 text-[#a07332] font-bold text-[8px] py-1.5 px-2 tracking-wider text-center uppercase transition-colors";
+                
+                coffeeBox.className = "p-2 bg-white rounded-xl border border-stone-200 shadow-sm transition-all";
+                toastBox.className = "p-2 bg-white rounded-xl border border-stone-200 shadow-sm transition-all";
+                
+                coffeeLabel.className = "font-serif font-bold text-stone-900 text-[11px] transition-colors";
+                toastLabel.className = "font-serif font-bold text-stone-900 text-[11px] transition-colors";
+                restaurantTitle.className = "font-serif font-bold text-stone-900 transition-colors";
+                phoneFooter.className = "px-2.5 py-1 border-t border-stone-200 text-center";
+            } else {
+                phoneContainer.className = "w-full max-w-[280px] sm:max-w-[320px] h-[520px] sm:h-[620px] rounded-[36px] border-[6px] border-stone-900 bg-[#0c0a09] overflow-hidden shadow-2xl relative flex flex-col transition-all duration-300";
+                phoneScreen.className = "flex-1 overflow-y-auto flex flex-col text-xs pt-6 pb-3 scrollbar-none bg-[#0c0a09] transition-colors duration-300";
+                phoneHeader.className = "p-3 border-b border-stone-850 bg-stone-950 sticky top-0 z-10 flex items-center justify-between transition-colors";
+                phonePromo.className = "bg-stone-900 border-b border-stone-850 text-bistro-500 font-bold text-[8px] py-1.5 px-2 tracking-wider text-center uppercase transition-colors";
+                
+                coffeeBox.className = "p-2 bg-stone-900/50 rounded-xl border border-stone-850 transition-all";
+                toastBox.className = "p-2 bg-stone-900/50 rounded-xl border border-stone-850 transition-all";
+                
+                coffeeLabel.className = "font-serif font-bold text-stone-100 text-[11px] transition-colors";
+                toastLabel.className = "font-serif font-bold text-stone-100 text-[11px] transition-colors";
+                restaurantTitle.className = "font-serif font-bold text-white transition-colors";
+                phoneFooter.className = "px-2.5 py-1 border-t border-stone-850 text-center";
             }
         }
 
@@ -1314,6 +1394,7 @@
             if (preferredTheme === 'light') {
                 document.body.classList.add('light-theme');
                 if (btnIcon) btnIcon.className = "fa-solid fa-sun text-sm";
+                setTimeout(() => syncSimulatedPhoneTheme('light'), 50);
             }
         })();
 
@@ -1437,7 +1518,7 @@
         function calculateSavings(years, btn) {
             const buttons = btn.parentNode.querySelectorAll('button');
             buttons.forEach(b => {
-                b.className = "flex-1 py-1.5 rounded-lg text-[10px] font-bold bg-stone-900 border border-theme text-theme-subtext uppercase";
+                b.className = "flex-1 py-1.5 rounded-lg text-[10px] font-bold bg-theme-input border border-theme text-theme-subtext hover:text-theme-title transition-colors uppercase";
             });
             btn.className = "flex-1 py-1.5 rounded-lg text-[10px] font-bold bg-bistro-500 text-stone-950 uppercase";
 
