@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    
+    <!-- Advanced Copywriting & AIO/SEO Meta Tags -->
+    <meta name="description" content="A restaurant website with the restraint of your dining room. Reservation-first design, an editable wine list and tasting menu, no monthly platform fees.">
+    <meta name="author" content="VibeTable Platform Inc.">
+    <link rel="canonical" href="https://www.vibetable.site/for/fine-dining/">
+    
+    <!-- Open Graph / Facebook Social Sharing Protocols -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.vibetable.site/for/fine-dining/">
+    <meta property="og:title" content="Website Builder for Fine Dining Restaurants | VibeTable">
+    <meta property="og:description" content="Reservation-first design with an editable wine list and tasting menu. No monthly fees. Unified aesthetic restraint.">
+    <meta property="og:image" content="https://www.vibetable.site/images/og-preview.png">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.vibetable.site/for/fine-dining/">
+    <meta name="twitter:title" content="Website Builder for Fine Dining Restaurants | VibeTable">
+    <meta name="twitter:description" content="Reservation-first design with an editable wine list and tasting menu. No monthly fees. Unified aesthetic restraint.">
+    <meta name="twitter:image" content="https://www.vibetable.site/images/og-preview.png">
+
+    <title>Website Builder for Fine Dining Restaurants | VibeTable</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../images/VT_logo_transparent_bg.png">
+    <link rel="apple-touch-icon" href="../../images/VT_logo_transparent_bg.png">
+
+    <!-- Tailwind CSS Engine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cormorant Garamond, Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Rich Search Snippets: Software Application & FAQ Structured Schemas -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VibeTable for Fine Dining",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Fine dining restaurant website builder with reservation-first design and editable tasting menus, one-time payment, no monthly fees.",
+      "offers": {
+        "@type": "Offer",
+        "price": "799.00",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I update my tasting menu seasonally?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Courses, wine pairings, and pricing are editable from your dashboard, so a menu change ahead of a new season doesn't require rebuilding the page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the site integrate with our reservation system?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Your reservation widget links to the booking provider you already use, so the site directs guests straight into your existing flow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the design feel appropriately upscale, not templated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Fine dining builds are typography-led and photography-forward rather than built from a generic restaurant template, so the site reads as considered as the dining room itself."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                    },
+                    colors: {
+                        bistro: {
+                            50: '#fdfcfb',
+                            100: '#f8f4ef',
+                            200: '#ede2d4',
+                            300: '#e1cdb8',
+                            400: '#cbab8f',
+                            500: '#c49b55',
+                            600: '#9b714e',
+                            700: '#7e573a',
+                            800: '#644129',
+                            900: '#462b1b',
+                            950: '#0c0a09',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(24px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        :root {
+            --bg-color: #0c0a09;
+            --text-color: #d6d3d1;
+            --title-color: #ffffff;
+            --panel-bg: rgba(18, 14, 12, 0.85);
+            --border-color: rgba(196, 155, 85, 0.15);
+            --subtext-color: #a8a29e;
+            --gold-glow: rgba(196, 155, 85, 0.12);
+            --accent-gold: #c49b55;
+            --card-bg: rgba(18, 14, 12, 0.4);
+            
+            --subtle-bg: rgba(255, 255, 255, 0.03);
+            --badge-bg: rgba(196, 155, 85, 0.12);
+        }
+        
+        .light-theme {
+            --bg-color: #fbf9f6;
+            --text-color: #383530;
+            --title-color: #1a1816;
+            --panel-bg: rgba(255, 255, 255, 0.95);
+            --border-color: rgba(160, 115, 50, 0.22);
+            --subtext-color: #57534e;
+            --gold-glow: rgba(160, 115, 50, 0.06);
+            --accent-gold: #a07332;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            
+            --subtle-bg: rgba(0, 0, 0, 0.02);
+            --badge-bg: rgba(160, 115, 50, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+            transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .text-theme-title { color: var(--title-color); }
+        .text-theme-text { color: var(--text-color); }
+        .text-theme-subtext { color: var(--subtext-color); }
+        .border-theme { border-color: var(--border-color); }
+        .text-theme-gold { color: var(--accent-gold); }
+        
+        .panel-theme {
+            background: var(--panel-bg);
+            border-color: var(--border-color);
+        }
+        .card-theme {
+            background-color: var(--card-bg);
+            border-color: var(--border-color);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .bg-theme-subtle { background-color: var(--subtle-bg); }
+        .bg-theme-badge { background-color: var(--badge-bg); }
+
+        .bg-grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.015;
+            pointer-events: none;
+        }
+
+        .fancy-card-animate {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+        .fancy-card-animate:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px var(--gold-glow);
+            border-color: var(--accent-gold) !important;
+        }
+        .fancy-card-animate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 9999px 9999px 0 0;
+        }
+        .fancy-card-animate:hover::before {
+            opacity: 1;
+        }
+
+        /* Dropdown transition definitions */
+        .dropdown-menu {
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .dropdown-container:hover .dropdown-menu {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="selection:bg-bistro-200 selection:text-bistro-950 antialiased">
+
+    <!-- Subtle texture overlay -->
+    <div class="fixed inset-0 bg-grain z-40"></div>
+
+    <!-- Responsive Header Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 panel-theme border-b backdrop-blur-xl transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="https://www.vibetable.site/#/home" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center shadow-[0_0_15px_rgba(196,155,85,0.3)] bg-black transition-transform duration-300 hover:rotate-12 shrink-0">
+                    <img src="../../images/VT_logo_transparent_bg.png" alt="VibeTable Logo" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/100x100/c49b55/ffffff?text=VT'">
+                </div>
+                <div class="flex flex-col text-left">
+                    <span class="text-lg sm:text-xl font-serif font-bold tracking-tight text-theme-title leading-none">VibeTable</span>
+                    <span class="text-[8px] font-sans uppercase tracking-widest text-theme-gold font-bold mt-1">Digital Sites</span>
+                </div>
+            </a>
+            
+            <div class="hidden lg:flex items-center gap-6 text-sm font-medium text-theme-subtext">
+                <a href="https://www.vibetable.site/#/home" class="hover:text-theme-gold transition-colors duration-200">Home</a>
+                <a href="https://www.vibetable.site/#/why-vibetable" class="hover:text-theme-gold transition-colors duration-200">Why VibeTable</a>
+                
+                <!-- Solutions Dropdown -->
+                <div class="relative dropdown-container h-20 flex items-center cursor-pointer">
+                    <span class="text-theme-gold font-semibold transition-colors duration-200 flex items-center gap-1">
+                        Solutions <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
+                    </span>
+                    <div class="dropdown-menu absolute top-[75px] left-1/2 -translate-x-1/2 w-56 rounded-xl border border-theme panel-theme backdrop-blur-xl p-2 shadow-xl space-y-1">
+                        <a href="/for/cafes/" class="flex items-center gap-2.5 px-3 py-2 text-xs rounded-lg hover:bg-theme-badge text-theme-text hover:text-theme-gold transition-colors">
+                            <i class="fa-solid fa-mug-saucer w-4 text-center text-theme-gold"></i> Cafes & Coffee Shops
+                        </a>
+                        <a href="/for/food-trucks/" class="flex items-center gap-2.5 px-3 py-2 text-xs rounded-lg hover:bg-theme-badge text-theme-text hover:text-theme-gold transition-colors">
+                            <i class="fa-solid fa-truck-pickup w-4 text-center text-theme-gold"></i> Food Trucks
+                        </a>
+                        <a href="/for/fine-dining/" class="flex items-center gap-2.5 px-3 py-2 text-xs rounded-lg bg-theme-badge text-theme-gold transition-colors">
+                            <i class="fa-solid fa-utensils w-4 text-center text-theme-gold"></i> Fine Dining
+                        </a>
+                    </div>
+                </div>
+
+                <a href="https://www.vibetable.site/#/demo" class="hover:text-theme-gold transition-colors duration-200">Live Demo</a>
+                <a href="https://www.vibetable.site/#/features" class="hover:text-theme-gold transition-colors duration-200">Features & FAQ</a>
+                <a href="https://www.vibetable.site/#/pricing" class="hover:text-theme-gold transition-colors duration-200">Packages</a>
+            </div>
+
+            <div class="flex items-center gap-2 sm:gap-3">
+                <button onclick="toggleTheme()" class="w-10 h-10 flex items-center justify-center rounded-xl bg-stone-900/10 dark:bg-stone-100/10 border border-theme hover:bg-theme-badge text-theme-gold transition-all" aria-label="Toggle Theme Preference">
+                    <i id="theme-btn-icon" class="fa-solid fa-moon text-sm"></i>
+                </button>
+                <a href="https://www.vibetable.site/#/pricing" class="px-4 py-2 bg-bistro-500 text-stone-950 font-bold text-xs sm:text-sm rounded-full hover:bg-stone-950 hover:text-white transition-all duration-300 shadow-md">
+                    View Packages
+                </a>
+                <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-stone-500/10 border border-theme text-theme-gold focus:outline-none hover:text-theme-title transition-colors" aria-label="Toggle Navigation Drawer">
+                    <i id="menu-icon" class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-theme panel-theme backdrop-blur-xl px-5 py-6 space-y-3 transition-all duration-300">
+            <a href="https://www.vibetable.site/#/home" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors"><i class="fa-solid fa-house mr-3 text-theme-gold"></i>Home</a>
+            <a href="https://www.vibetable.site/#/why-vibetable" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors"><i class="fa-solid fa-circle-question mr-3 text-theme-gold"></i>Why VibeTable</a>
+            
+            <div class="space-y-1">
+                <button onclick="toggleMobileSolutions()" class="w-full flex items-center justify-between text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors">
+                    <span><i class="fa-solid fa-layer-group mr-3 text-theme-gold"></i>Solutions Profiles</span>
+                    <i id="solutions-mobile-chevron" class="fa-solid fa-chevron-down text-xs text-theme-gold transition-transform duration-200"></i>
+                </button>
+                <div id="solutions-mobile-sub" class="pl-8 pr-2 py-1 space-y-2.5 border-l border-theme/40 ml-6">
+                    <a href="/for/cafes/" class="block text-sm text-theme-subtext hover:text-theme-gold py-1">Cafes & Coffee Shops</a>
+                    <a href="/for/food-trucks/" class="block text-sm text-theme-subtext hover:text-theme-gold py-1">Food Trucks</a>
+                    <a href="/for/fine-dining/" class="block text-sm text-theme-gold font-semibold py-1">Fine Dining</a>
+                </div>
+            </div>
+
+            <a href="https://www.vibetable.site/#/demo" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors"><i class="fa-solid fa-laptop mr-3 text-theme-gold"></i>Live Demo</a>
+            <a href="https://www.vibetable.site/#/features" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors"><i class="fa-solid fa-star mr-3 text-theme-gold"></i>Features & FAQ</a>
+            <a href="https://www.vibetable.site/#/pricing" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors"><i class="fa-solid fa-receipt mr-3 text-theme-gold"></i>Packages & Pricing</a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main id="app-content" class="relative pt-24 pb-12 md:pt-36 md:pb-24 min-h-[85vh]">
+        <!-- Glow gradient -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[500px] sm:h-[500px] md:w-[800px] md:h-[800px] rounded-full bg-bistro-500/10 blur-[100px] pointer-events-none animate-pulse-slow"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Area -->
+                <div class="lg:col-span-7 text-left space-y-6">
+                    <span class="eyebrow inline-block">For Fine Dining</span>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif font-light tracking-tight text-theme-title leading-tight">
+                        A website with the same restraint as your <span class="italic text-transparent bg-clip-text bg-gradient-to-b from-bistro-400 to-bistro-500">dining room</span>
+                    </h1>
+                    <p class="text-sm sm:text-base md:text-lg text-theme-subtext leading-relaxed font-sans max-w-2xl">
+                        Your guests decide on you before they arrive. VibeTable builds a reservation-first site with a tasting menu you can revise yourself each season, without it ever looking like a template.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                        <a href="https://www.vibetable.site/#/pricing" class="w-full sm:w-auto px-7 py-3.5 bg-bistro-500 text-stone-950 rounded-full font-bold text-sm text-center hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(196,155,85,0.25)] transition-all uppercase duration-300">
+                            See Fine Dining Packages
+                        </a>
+                        <a href="https://www.vibetable.site/#/demo" class="w-full sm:w-auto px-7 py-3.5 bg-theme-subtle border border-theme text-theme-text rounded-full font-semibold text-center text-sm hover:opacity-90 active:scale-[0.98] transition-all duration-300">
+                            View Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Reserve Card component -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="w-full max-w-md bg-stone-950 border border-theme rounded-2xl p-6 shadow-2xl relative overflow-hidden transition-all duration-300 fancy-card-animate">
+                        <!-- Top board brass header badge -->
+                        <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-bistro-600 via-bistro-400 to-bistro-600"></div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <span class="text-[8px] uppercase tracking-widest font-bold text-theme-gold">Terminal Preview</span>
+                                <h3 class="font-serif text-xl font-bold text-theme-title mt-2 leading-tight">Reserve a Table</h3>
+                            </div>
+                            <span class="px-2 py-0.5 bg-bistro-500/10 text-bistro-400 text-[9px] rounded-full border border-bistro-500/20 font-serif font-bold">Wednesday, Nov 4</span>
+                        </div>
+                        
+                        <div class="space-y-3 font-sans text-xs">
+                            <div class="flex justify-between py-2 border-b border-stone-850">
+                                <span class="text-stone-400">Party size</span>
+                                <span class="text-stone-100 font-bold">2 guests</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-stone-850">
+                                <span class="text-stone-400">Time selection</span>
+                                <span class="text-stone-100 font-bold">7:30 PM</span>
+                            </div>
+                            <div class="flex justify-between py-2">
+                                <span class="text-stone-400">Tasting course</span>
+                                <span class="text-bistro-400 font-serif font-bold">Autumn, 6 courses</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <section class="mt-20 border-t border-theme pt-16">
+                <div class="text-left max-w-2xl mb-12">
+                    <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">Considered, Not Templated</span>
+                    <h2 class="text-3xl font-serif text-theme-title">Built for how guests actually decide</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-6 rounded-xl bg-theme-subtle border border-theme fancy-card-animate text-left">
+                        <span class="font-serif text-theme-gold text-lg font-bold block mb-2">I. Reservations, first</span>
+                        <h3 class="text-base font-serif font-bold text-theme-title mb-2">Sleek Booking Widget</h3>
+                        <p class="text-theme-subtext text-xs leading-relaxed">
+                            Your booking widget connects to the reservation provider you already use, placed where a guest expects it, not buried in a navigation menu.
+                        </p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-theme-subtle border border-theme fancy-card-animate text-left">
+                        <span class="font-serif text-theme-gold text-lg font-bold block mb-2">II. Seasonal tasting menus</span>
+                        <h3 class="text-base font-serif font-bold text-theme-title mb-2">Revise with Ease</h3>
+                        <p class="text-theme-subtext text-xs leading-relaxed">
+                            Revise courses, wine pairings, and pricing yourself ahead of a new season from your secure dashboard, without commissioning a website redesign.
+                        </p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-theme-subtle border border-theme fancy-card-animate text-left">
+                        <span class="font-serif text-theme-gold text-lg font-bold block mb-2">III. Photography-forward</span>
+                        <h3 class="text-base font-serif font-bold text-theme-title mb-2">Considered Spacing</h3>
+                        <p class="text-theme-subtext text-xs leading-relaxed">
+                            Modern typography and imagery carry the page, so the site reads as considered as the room itself, not assembled from a generic template.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Case Study quote card -->
+            <section class="mt-16 border-t border-theme pt-16">
+                <div class="p-8 md:p-12 rounded-2xl bg-gradient-to-br from-stone-900/40 via-stone-950/60 to-stone-900/40 border border-theme relative overflow-hidden text-center fancy-card-animate max-w-4xl mx-auto">
+                    <p class="font-serif italic text-lg sm:text-xl md:text-2xl text-theme-title leading-relaxed max-w-2xl mx-auto">
+                        "Guests used to call to ask if we still did the tasting menu. Now the site tells them exactly what's on it this month, and reservations went up without us changing anything else."
+                    </p>
+                    <p class="text-[10px] text-theme-gold font-bold uppercase tracking-widest mt-6">
+                        Illustrative example based on common fine dining onboarding feedback
+                    </p>
+                </div>
+            </section>
+
+            <!-- FAQs -->
+            <section class="mt-16 border-t border-theme pt-16 max-w-3xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">Direct Answers</span>
+                    <h2 class="text-3xl font-serif text-theme-title">What Restaurateurs Ask Before Switching</h2>
+                </div>
+                <div class="space-y-3.5 text-left">
+                    <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
+                            <span>Can I update my tasting menu seasonally?</span>
+                            <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
+                                Yes. Courses, wine pairings, and pricing are editable from your dashboard, so a menu change ahead of a new season doesn't require rebuilding the page.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
+                            <span>Does the site integrate with our reservation system?</span>
+                            <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
+                                Yes. Your reservation widget links to the booking provider you already use (e.g., OpenTable, Resy, SevenRooms), so the site directs guests straight into your existing flow.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
+                            <span>Will the design feel appropriately upscale, not templated?</span>
+                            <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
+                                Yes. Fine dining builds are typography-led and photography-forward rather than built from a generic restaurant template, so the site reads as considered as the dining room itself.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final CTA -->
+            <section class="mt-16 pt-16 border-t border-theme text-center">
+                <h2 class="text-3xl sm:text-4xl font-serif text-theme-title mb-4 leading-tight">Give your restaurant a site worthy of the room</h2>
+                <p class="text-sm text-theme-subtext max-w-md mx-auto mb-8">One-time setup, your own dashboard, zero monthly platform fees.</p>
+                <a href="https://www.vibetable.site/#/pricing" class="px-8 py-3.5 bg-bistro-500 text-stone-950 font-bold rounded-full hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(196,155,85,0.25)] transition-all uppercase text-xs">
+                    Get Started Today
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Page Footer -->
+    <footer class="border-t border-theme bg-theme-subtle pt-12 pb-8 relative z-10 text-xs text-left">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+                <div class="sm:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 overflow-hidden rounded-full border border-theme bg-black flex items-center justify-center shrink-0">
+                            <img src="../../images/VT_logo_transparent_bg.png" alt="VibeTable Logo" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/100x100/c49b55/ffffff?text=VT'">
+                        </div>
+                        <span class="text-base font-serif font-bold text-theme-title">VibeTable</span>
+                    </div>
+                    <p class="text-theme-subtext leading-relaxed max-w-xs">
+                        Custom restaurant websites engineered for design-centric venues, luxury cafes, and high-performance dining entities globally.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-theme-title font-bold mb-3 uppercase tracking-wider text-[10px]">Solutions for</h5>
+                    <ul class="space-y-2 text-theme-subtext font-medium">
+                        <li><a href="/for/cafes/" class="hover:text-theme-gold transition-colors flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[8px] opacity-60"></i> Cafes & Coffee Shops</a></li>
+                        <li><a href="/for/food-trucks/" class="hover:text-theme-gold transition-colors flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[8px] opacity-60"></i> Food Trucks</a></li>
+                        <li><a href="/for/fine-dining/" class="text-theme-gold flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[8px]"></i> Fine Dining</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-theme-title font-bold mb-3 uppercase tracking-wider text-[10px]">Platform</h5>
+                    <ul class="space-y-2 text-theme-subtext">
+                        <li><a href="https://www.vibetable.site/#/why-vibetable" class="hover:text-theme-gold transition-colors">Why Own</a></li>
+                        <li><a href="https://www.vibetable.site/#/demo" class="hover:text-theme-gold transition-colors">Interactive Demo</a></li>
+                        <li><a href="https://www.vibetable.site/#/pricing" class="hover:text-theme-gold transition-colors">Investment plans</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-6 border-t border-theme flex flex-col sm:flex-row items-center justify-between gap-3 text-theme-subtext text-[10px] text-center">
+                <p>© 2026 VibeTable Platform Inc. Private platforms are properties of purchasing entities.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-theme-gold transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="hover:text-theme-gold transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-theme-gold transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.className = "fa-solid fa-xmark text-lg text-theme-gold";
+            } else {
+                menu.classList.add('hidden');
+                icon.className = "fa-solid fa-bars text-lg";
+            }
+        }
+
+        function toggleMobileSolutions() {
+            const subMenu = document.getElementById('solutions-mobile-sub');
+            const chevron = document.getElementById('solutions-mobile-chevron');
+            if (subMenu.classList.contains('hidden')) {
+                subMenu.classList.remove('hidden');
+                chevron.style.transform = 'rotate(180deg)';
+            } else {
+                subMenu.classList.add('hidden');
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const btnIcon = document.getElementById('theme-btn-icon');
+            if (body.classList.contains('light-theme')) {
+                body.classList.remove('light-theme');
+                btnIcon.className = "fa-solid fa-moon text-sm";
+                localStorage.setItem('theme-preference', 'dark');
+            } else {
+                body.classList.add('light-theme');
+                btnIcon.className = "fa-solid fa-sun text-sm";
+                localStorage.setItem('theme-preference', 'light');
+            }
+        }
+
+        (function() {
+            const preferredTheme = localStorage.getItem('theme-preference');
+            const btnIcon = document.getElementById('theme-btn-icon');
+            if (preferredTheme === 'light') {
+                document.body.classList.add('light-theme');
+                if (btnIcon) btnIcon.className = "fa-solid fa-sun text-sm";
+            }
+        })();
+
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
+</body>
+</html>
