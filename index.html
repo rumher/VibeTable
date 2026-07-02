@@ -4,10 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     
-    <!-- Advanced Copywriting & AIO/SEO Meta Tags for local search extraction -->
+    <!-- Advanced Copywriting & AIO/SEO Meta Tags -->
     <meta name="description" content="Own your restaurant's digital presence. VibeTable builds fast, modern restaurant websites with built-in digital menu management dashboards. One-time payment, zero subscriptions.">
-    <meta name="keywords" content="restaurant website design, digital menu management, QR code menu, café website builder, no monthly fee menu, menu management dashboard">
     <meta name="author" content="VibeTable Platform Inc.">
+    
+    <!-- Open Graph / Facebook Social Sharing Protocols -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vibetable.site/">
+    <meta property="og:title" content="VibeTable - Modern Restaurant Websites with Built-In Menu Management">
+    <meta property="og:description" content="Trade restrictive monthly software subscriptions for a custom, fast-loading restaurant website. Direct menu management dashboard. Zero monthly platform fees.">
+    <meta property="og:image" content="https://vibetable.site/images/og-preview.png">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vibetable.site/">
+    <meta name="twitter:title" content="VibeTable - Modern Restaurant Websites with Built-In Menu Management">
+    <meta name="twitter:description" content="Trade restrictive monthly software subscriptions for a custom, fast-loading restaurant website. Direct menu management dashboard. Zero monthly platform fees.">
+    <meta name="twitter:image" content="https://vibetable.site/images/og-preview.png">
+
     <title>VibeTable - Modern Restaurant Websites with Built-In Menu Management</title>
     
     <!-- Favicon -->
@@ -25,6 +39,56 @@
     <!-- FontAwesome for Premium Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Google Rich Search Snippets: Software Application & FAQ Structured Schemas -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VibeTable",
+      "operatingSystem": "All",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "799.00",
+        "priceCurrency": "USD"
+      },
+      "description": "Own your restaurant's digital presence. VibeTable builds fast, modern restaurant websites with built-in digital menu management dashboards. One-time payment, zero subscriptions."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is VibeTable a monthly subscription?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. VibeTable functions on an absolute ownership model. You invest once to configure and deploy your custom restaurant website and digital menu system. There are no ongoing software rentals or platform fee cycles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I perform menu modifications myself?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every tier includes access to an administrative dashboard layout, permitting you to adjust plate pricing, descriptions, stock availability, and image properties securely on any mobile device."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do diners interact with the QR codes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your venue receives print-ready, high-resolution vector tabletop QR assets. Diners simply scan the QR frame with their mobile devices to instantly launch your elegant web menu page. No browser warnings, no manual application downloads."
+          }
+        }
+      ]
+    }
+    </script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -75,7 +139,7 @@
             --bg-color-rgb: 12, 10, 9;
             --text-color: #d6d3d1;
             --title-color: #ffffff;
-            --panel-bg: rgba(18, 14, 12, 0.75);
+            --panel-bg: rgba(18, 14, 12, 0.85);
             --border-color: rgba(196, 155, 85, 0.15);
             --subtext-color: #a8a29e;
             --gold-glow: rgba(196, 155, 85, 0.12);
@@ -94,7 +158,7 @@
             --bg-color-rgb: 251, 249, 246;
             --text-color: #383530; /* Much darker stone-800 for absolute reading comfort */
             --title-color: #1a1816; /* Near black high contrast headings */
-            --panel-bg: rgba(255, 255, 255, 0.85);
+            --panel-bg: rgba(255, 255, 255, 0.95);
             --border-color: rgba(160, 115, 50, 0.22); /* Enhanced visibility gold borders */
             --subtext-color: #57534e; /* Stone-700 for crystal-clear legibility */
             --gold-glow: rgba(160, 115, 50, 0.06);
@@ -221,6 +285,19 @@
         .fancy-card-animate:hover::before {
             opacity: 1;
         }
+
+        /* Dropdown transition definitions */
+        .dropdown-menu {
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .dropdown-container:hover .dropdown-menu {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
     </style>
 </head>
 <body class="selection:bg-bistro-200 selection:text-bistro-950 antialiased">
@@ -242,10 +319,29 @@
                 </div>
             </a>
             
-            <!-- Desktop Links (with SPA Frag Routing) -->
+            <!-- Desktop Links (with SPA Frag Routing & SEO Solutions Dropdown) -->
             <div class="hidden lg:flex items-center gap-6 text-sm font-medium text-theme-subtext">
                 <a href="#/home" id="nav-home" class="hover:text-theme-gold transition-colors duration-200">Home</a>
                 <a href="#/why-vibetable" id="nav-why" class="hover:text-theme-gold transition-colors duration-200">Why VibeTable</a>
+                
+                <!-- Solutions Dropdown to hold targeted static directory crawl pathways -->
+                <div class="relative dropdown-container h-20 flex items-center cursor-pointer">
+                    <span class="hover:text-theme-gold transition-colors duration-200 flex items-center gap-1">
+                        Solutions <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
+                    </span>
+                    <div class="dropdown-menu absolute top-[75px] left-1/2 -translate-x-1/2 w-56 rounded-xl border border-theme panel-theme backdrop-blur-xl p-2 shadow-xl space-y-1">
+                        <a href="/for/cafes/" class="flex items-center gap-2.5 px-3 py-2 text-xs rounded-lg hover:bg-theme-badge text-theme-text hover:text-theme-gold transition-colors">
+                            <i class="fa-solid fa-mug-saucer w-4 text-center text-theme-gold"></i> Cafes & Coffee Shops
+                        </a>
+                        <a href="/for/food-trucks/" class="flex items-center gap-2.5 px-3 py-2 text-xs rounded-lg hover:bg-theme-badge text-theme-text hover:text-theme-gold transition-colors">
+                            <i class="fa-solid fa-truck-pickup w-4 text-center text-theme-gold"></i> Food Trucks
+                        </a>
+                        <a href="/for/fine-dining/" class="flex items-center gap-2.5 px-3 py-2 text-xs rounded-lg hover:bg-theme-badge text-theme-text hover:text-theme-gold transition-colors">
+                            <i class="fa-solid fa-utensils w-4 text-center text-theme-gold"></i> Fine Dining
+                        </a>
+                    </div>
+                </div>
+
                 <a href="#/demo" id="nav-demo" class="hover:text-theme-gold transition-colors duration-200 flex items-center gap-1.5">
                     Live Demo 
                     <span class="px-1.5 py-0.5 bg-theme-badge text-theme-gold text-[9px] rounded border border-theme font-bold uppercase tracking-wider animate-pulse">Interactive</span>
@@ -276,975 +372,1003 @@
             </div>
         </div>
 
-        <!-- Mobile Slide-out Menu Links (Touch Optimized Tap Targets) -->
+        <!-- Mobile Slide-out Menu Links (Touch Optimized Tap Targets with solutions toggle) -->
         <div id="mobile-menu" class="hidden lg:hidden border-t border-theme panel-theme backdrop-blur-xl px-5 py-6 space-y-3 transition-all duration-300">
-            <a href="#/home" onclick="toggleMobileMenu()" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors"><i class="fa-solid fa-house mr-3 text-theme-gold"></i>Home</a>
-            <a href="#/why-vibetable" onclick="toggleMobileMenu()" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors"><i class="fa-solid fa-circle-question mr-3 text-theme-gold"></i>Why VibeTable</a>
+            <a href="#/home" onclick="toggleMobileMenu()" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors">
+                <i class="fa-solid fa-house mr-3 text-theme-gold"></i>Home
+            </a>
+            <a href="#/why-vibetable" onclick="toggleMobileMenu()" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors">
+                <i class="fa-solid fa-circle-question mr-3 text-theme-gold"></i>Why VibeTable
+            </a>
+            
+            <!-- Mobile Specific Solutions Collapsible -->
+            <div class="space-y-1">
+                <button onclick="toggleMobileSolutions()" class="w-full flex items-center justify-between text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors">
+                    <span><i class="fa-solid fa-layer-group mr-3 text-theme-gold"></i>Solutions Profiles</span>
+                    <i id="solutions-mobile-chevron" class="fa-solid fa-chevron-down text-xs text-theme-gold transition-transform duration-200"></i>
+                </button>
+                <div id="solutions-mobile-sub" class="hidden pl-8 pr-2 py-1 space-y-2.5 border-l border-theme/40 ml-6">
+                    <a href="/for/cafes/" class="block text-sm text-theme-subtext hover:text-theme-gold py-1">Cafes & Coffee Shops</a>
+                    <a href="/for/food-trucks/" class="block text-sm text-theme-subtext hover:text-theme-gold py-1">Food Trucks</a>
+                    <a href="/for/fine-dining/" class="block text-sm text-theme-subtext hover:text-theme-gold py-1">Fine Dining</a>
+                </div>
+            </div>
+
             <a href="#/demo" onclick="toggleMobileMenu()" class="flex items-center justify-between text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors">
                 <span><i class="fa-solid fa-laptop mr-3 text-theme-gold"></i>Live Demo</span>
                 <span class="px-2 py-0.5 bg-theme-badge text-theme-gold text-[10px] rounded border border-theme font-bold uppercase tracking-wider">Interactive</span>
             </a>
-            <a href="#/features" onclick="toggleMobileMenu()" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors"><i class="fa-solid fa-star mr-3 text-theme-gold"></i>Features & FAQ</a>
-            <a href="#/pricing" onclick="toggleMobileMenu()" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors"><i class="fa-solid fa-receipt mr-3 text-theme-gold"></i>Packages & Pricing</a>
+            <a href="#/features" onclick="toggleMobileMenu()" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors">
+                <i class="fa-solid fa-star mr-3 text-theme-gold"></i>Features & FAQ
+            </a>
+            <a href="#/pricing" onclick="toggleMobileMenu()" class="flex items-center text-base py-2.5 px-3 rounded-lg hover:bg-theme-badge font-medium text-theme-text transition-colors">
+                <i class="fa-solid fa-receipt mr-3 text-theme-gold"></i>Packages & Pricing
+            </a>
             
             <div class="pt-3 border-t border-theme">
-                <a href="#/pricing" onclick="toggleMobileMenu()" class="block text-center text-xs uppercase font-extrabold tracking-widest text-theme-gold py-3 bg-theme-badge rounded-xl border border-theme">Cost Savings Calculator</a>
+                <a href="#/pricing" onclick="toggleMobileMenu()" class="block text-center text-xs uppercase font-extrabold tracking-widest text-theme-gold py-3 bg-theme-badge rounded-xl border border-theme">
+                    Cost Savings Calculator
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- PAGE VIEW 1: HOME PAGE -->
-    <main id="view-home" class="spa-view relative pt-24 pb-12 md:pt-36 md:pb-24 min-h-[85vh]">
-        <!-- Radial Candle-light Ambient Gradients -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[500px] sm:h-[500px] md:w-[800px] md:h-[800px] rounded-full bg-bistro-500/10 blur-[100px] pointer-events-none animate-pulse-slow"></div>
+    <!-- Semantic Standardized Global Content Wrapper -->
+    <main id="app-content" class="relative min-h-[85vh]">
+        
+        <!-- VIEW 1: HOME PAGE -->
+        <section id="view-home" class="spa-view relative pt-24 pb-12 md:pt-36 md:pb-24">
+            <!-- Radial Candle-light Ambient Gradients -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[500px] sm:h-[500px] md:w-[800px] md:h-[800px] rounded-full bg-bistro-500/10 blur-[100px] pointer-events-none animate-pulse-slow"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
-            <div class="text-center max-w-4xl mx-auto">
-                
-                <!-- Tagline Badge -->
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full card-theme border text-xs font-semibold text-theme-gold mb-6 shadow-sm">
-                    <span class="flex h-2 w-2 rounded-full bg-bistro-500 animate-pulse"></span>
-                    <span class="font-sans uppercase tracking-wider text-[9px] sm:text-[10px] font-bold">Zero Monthly Platform Fees • Direct Dashboard Control</span>
-                </div>
-
-                <!-- Main Bold Headline -->
-                <h1 class="text-3xl sm:text-5xl md:text-7xl font-serif font-light tracking-tight text-theme-title mb-6 leading-[1.15] md:leading-[1.08]">
-                    Modern Restaurant Websites with <br>
-                    <span class="font-serif italic text-transparent bg-clip-text bg-gradient-to-b from-bistro-400 to-bistro-500">Built-In Menu Management</span>
-                </h1>
-
-                <!-- Persuasive Subheadline (AIO Indexable Copy) -->
-                <p class="text-sm sm:text-base md:text-lg text-theme-subtext font-sans max-w-2xl mx-auto mb-8 leading-relaxed px-1">
-                    Trade restrictive monthly software subscriptions for a custom, fast-loading restaurant website. Seamlessly update prices, categories, and ingredients through your private dashboard. No commission fees, ever.
-                </p>
-
-                <!-- Responsive Calls to Action -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10 max-w-sm sm:max-w-none mx-auto px-2">
-                    <a href="#/pricing" class="w-full sm:w-auto px-7 py-3.5 bg-bistro-500 text-stone-950 rounded-full font-bold text-sm hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(196,155,85,0.25)] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
-                        View Packages <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
-                    <a href="#/demo" class="w-full sm:w-auto px-7 py-3.5 bg-theme-subtle border border-theme text-theme-text rounded-full font-semibold text-sm hover:opacity-90 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
-                        See Live Demo
-                    </a>
-                </div>
-
-                <!-- Benefits Row (Concise / Clean Layout for Mobile Screens) -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-left max-w-4xl mx-auto pb-6 border-b border-theme px-1 text-xs">
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">One-Time Payment</span></div>
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">No Subscription Fees</span></div>
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">Mobile-Optimized</span></div>
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">QR Code Ready</span></div>
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">Admin Dashboard</span></div>
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">Unlimited Menu display</span></div>
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">Fast Edge Loading</span></div>
-                    <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">Instant Updates</span></div>
-                </div>
-            </div>
-
-            <!-- Adaptive Visual Split Section -->
-            <div class="relative mt-10 max-w-5xl mx-auto rounded-2xl border border-theme p-4 shadow-xl panel-theme transition-all duration-300 fancy-card-animate">
-                <div class="grid lg:grid-cols-12 gap-6 items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
+                <div class="text-center max-w-4xl mx-auto">
                     
-                    <!-- Content side -->
-                    <div class="lg:col-span-7 space-y-4 text-left px-1">
-                        <span class="inline-block px-2.5 py-0.5 bg-theme-badge border border-theme text-theme-gold text-[10px] font-bold uppercase rounded">Aesthetics & Speed</span>
-                        <h3 class="text-2xl sm:text-3xl font-serif text-theme-title font-light leading-tight">Fast delivery interfaces that drive customer ticket values.</h3>
-                        <p class="text-theme-subtext text-xs sm:text-sm leading-relaxed">
-                            No complex apps to download or sluggish PDFs to open. Our mobile menu platforms deliver instant loading speeds (under 0.2s) even on weak venue receptions, guiding diners to high-margin dishes dynamically.
-                        </p>
+                    <!-- Tagline Badge -->
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full card-theme border text-xs font-semibold text-theme-gold mb-6 shadow-sm">
+                        <span class="flex h-2 w-2 rounded-full bg-bistro-500 animate-pulse"></span>
+                        <span class="font-sans uppercase tracking-wider text-[9px] sm:text-[10px] font-bold">Zero Monthly Platform Fees • Direct Dashboard Control</span>
+                    </div>
+
+                    <!-- Main Bold Headline -->
+                    <h1 class="text-3xl sm:text-5xl md:text-7xl font-serif font-light tracking-tight text-theme-title mb-6 leading-[1.15] md:leading-[1.08]">
+                        Modern Restaurant Websites with <br>
+                        <span class="font-serif italic text-transparent bg-clip-text bg-gradient-to-b from-bistro-400 to-bistro-500">Built-In Menu Management</span>
+                    </h1>
+
+                    <!-- Persuasive Subheadline (AIO Indexable Copy) -->
+                    <p class="text-sm sm:text-base md:text-lg text-theme-subtext font-sans max-w-2xl mx-auto mb-8 leading-relaxed px-1">
+                        Trade restrictive monthly software subscriptions for a custom, fast-loading restaurant website. Seamlessly update prices, categories, and ingredients through your private dashboard. No commission fees, ever.
+                    </p>
+
+                    <!-- Responsive Calls to Action -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10 max-w-sm sm:max-w-none mx-auto px-2">
+                        <a href="#/pricing" class="w-full sm:w-auto px-7 py-3.5 bg-bistro-500 text-stone-950 rounded-full font-bold text-sm hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(196,155,85,0.25)] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
+                            View Packages <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#/demo" class="w-full sm:w-auto px-7 py-3.5 bg-theme-subtle border border-theme text-theme-text rounded-full font-semibold text-sm hover:opacity-90 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
+                            See Live Demo
+                        </a>
+                    </div>
+
+                    <!-- Benefits Row (Concise / Clean Layout for Mobile Screens) -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-left max-w-4xl mx-auto pb-6 border-b border-theme px-1 text-xs">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">One-Time Payment</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">No Subscription Fees</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">Mobile-Optimized</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">QR Code Ready</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">Admin Dashboard</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">Unlimited Menu display</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">Fast Edge Loading</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-theme-gold"></i> <span class="text-theme-text font-medium">Instant Updates</span></div>
+                    </div>
+                </div>
+
+                <!-- Adaptive Visual Split Section -->
+                <div class="relative mt-10 max-w-5xl mx-auto rounded-2xl border border-theme p-4 shadow-xl panel-theme transition-all duration-300 fancy-card-animate">
+                    <div class="grid lg:grid-cols-12 gap-6 items-center">
                         
-                        <div class="grid grid-cols-2 gap-3 pt-2">
-                            <div class="p-3 card-theme border rounded-xl flex items-start gap-2.5 fancy-card-animate">
-                                <i class="fa-solid fa-bolt text-theme-gold mt-0.5 shrink-0"></i>
-                                <div>
-                                    <div class="text-theme-title font-bold text-xs">Edge Network Speed</div>
-                                    <div class="text-[10px] text-theme-subtext">Optimized performance</div>
+                        <!-- Content side -->
+                        <div class="lg:col-span-7 space-y-4 text-left px-1">
+                            <span class="inline-block px-2.5 py-0.5 bg-theme-badge border border-theme text-theme-gold text-[10px] font-bold uppercase rounded">Aesthetics & Speed</span>
+                            <h3 class="text-2xl sm:text-3xl font-serif text-theme-title font-light leading-tight">Fast delivery interfaces that drive customer ticket values.</h3>
+                            <p class="text-theme-subtext text-xs sm:text-sm leading-relaxed">
+                                No complex apps to download or sluggish PDFs to open. Our mobile menu platforms deliver instant loading speeds (under 0.2s) even on weak venue receptions, guiding diners to high-margin dishes dynamically.
+                            </p>
+                            
+                            <div class="grid grid-cols-2 gap-3 pt-2">
+                                <div class="p-3 card-theme border rounded-xl flex items-start gap-2.5 fancy-card-animate">
+                                    <i class="fa-solid fa-bolt text-theme-gold mt-0.5 shrink-0"></i>
+                                    <div>
+                                        <div class="text-theme-title font-bold text-xs">Edge Network Speed</div>
+                                        <div class="text-[10px] text-theme-subtext">Optimized performance</div>
+                                    </div>
+                                </div>
+                                <div class="p-3 card-theme border rounded-xl flex items-start gap-2.5 fancy-card-animate">
+                                    <i class="fa-solid fa-qrcode text-theme-gold mt-0.5 shrink-0"></i>
+                                    <div>
+                                        <div class="text-theme-title font-bold text-xs">Tabletop scan codes</div>
+                                        <div class="text-[10px] text-theme-subtext">Zero ordering friction</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="p-3 card-theme border rounded-xl flex items-start gap-2.5 fancy-card-animate">
-                                <i class="fa-solid fa-qrcode text-theme-gold mt-0.5 shrink-0"></i>
-                                <div>
-                                    <div class="text-theme-title font-bold text-xs">Tabletop scan codes</div>
-                                    <div class="text-[10px] text-theme-subtext">Zero ordering friction</div>
+                        </div>
+                        
+                        <!-- Simulated phone view (Fluid responsive wrapper) -->
+                        <div class="lg:col-span-5 flex justify-center">
+                            <div class="w-full max-w-[280px] sm:max-w-[320px] h-[520px] sm:h-[620px] rounded-[36px] border-[6px] border-stone-900 bg-stone-950 overflow-hidden shadow-2xl relative flex flex-col">
+                                <!-- Notch -->
+                                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-4.5 bg-stone-900 rounded-b-xl z-20 flex items-center justify-center">
+                                    <div class="w-8 h-1 bg-black rounded-full"></div>
+                                </div>
+                                
+                                <div class="flex-1 overflow-y-auto flex flex-col text-xs pt-6 pb-3 scrollbar-none">
+                                    <div class="p-3 flex items-center justify-between border-b border-stone-850 bg-stone-900 sticky top-0 z-10">
+                                        <span class="font-serif font-bold text-white text-sm">Lumina Café</span>
+                                        <div class="px-2 py-0.5 bg-bistro-500/10 text-bistro-400 text-[9px] rounded-full flex items-center gap-1 border border-bistro-500/20">
+                                            <i class="fa-solid fa-star text-[8px]"></i> 4.9 Reviews
+                                        </div>
+                                    </div>
+                                    <div class="p-2.5">
+                                        <div class="w-full h-24 bg-stone-900 rounded-lg overflow-hidden relative flex items-center justify-center">
+                                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=400" alt="Espresso" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                                            <div class="absolute bottom-1.5 left-2 text-left">
+                                                <span class="bg-bistro-500 text-stone-950 font-extrabold text-[8px] px-1 py-0.5 rounded tracking-wide mr-1 uppercase">Best Seller</span>
+                                                <p class="text-white font-serif font-bold text-xs leading-none">Morning Espresso</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex gap-1.5 px-2.5 pb-2 overflow-x-auto text-[9px] scrollbar-none">
+                                        <span class="px-2 py-0.5 bg-bistro-100 text-bistro-950 font-bold rounded-full shrink-0">Coffee Bar</span>
+                                        <span class="px-2 py-0.5 bg-stone-900 text-stone-300 font-medium rounded-full shrink-0">Bakeries</span>
+                                        <span class="px-2 py-0.5 bg-stone-900 text-stone-300 font-medium rounded-full shrink-0">Elixirs</span>
+                                    </div>
+                                    
+                                    <div class="p-2.5 space-y-2.5 flex-1">
+                                        <div class="flex items-center justify-between p-2.5 bg-stone-900/40 rounded-xl border border-stone-850">
+                                            <div class="text-left max-w-[70%]">
+                                                <div class="font-serif font-bold text-stone-100 text-xs">Flat White</div>
+                                                <div class="text-[9px] text-stone-500 mt-0.5 line-clamp-1">Velvety steamed microfoam, espresso</div>
+                                            </div>
+                                            <div class="text-right">
+                                                <div class="font-serif font-bold text-bistro-400 text-xs">$4.50</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between p-2.5 bg-stone-900/40 rounded-xl border border-stone-850">
+                                            <div class="text-left max-w-[70%]">
+                                                <div class="font-serif font-bold text-stone-100 text-xs">Pistachio Latte</div>
+                                                <div class="text-[9px] text-stone-500 mt-0.5 line-clamp-1">Premium pistachio syrup, raw honey</div>
+                                            </div>
+                                            <div class="text-right">
+                                                <div class="font-serif font-bold text-bistro-400 text-xs">$5.25</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="px-2.5 py-1 border-t border-stone-850 text-center">
+                                        <p class="text-[8px] text-stone-600 font-mono">Powered by VibeTable Platform</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 2: WHY VIBETABLE -->
+        <section id="view-why" class="spa-view hidden relative pt-24 pb-12 md:pt-36 md:pb-24">
+            <div class="absolute -left-48 top-1/4 w-80 h-80 bg-bistro-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
+                <div class="text-center mb-10 max-w-2xl mx-auto">
+                    <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">The Ownership Model</span>
+                    <h2 class="text-2xl sm:text-4xl font-serif text-theme-title tracking-tight leading-tight">Stop renting. Claim your digital properties.</h2>
+                    <p class="text-theme-subtext mt-3 text-xs sm:text-sm">
+                        SaaS providers lease restrictive templates with perpetual monthly fees. VibeTable delivers complete digital asset ownership, preventing monthly overhead leakages.
+                    </p>
+                </div>
+
+                <!-- Problem Cards Grid -->
+                <div class="grid md:grid-cols-3 gap-5">
+                    <div class="p-5 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/30 transition-all duration-300 group fancy-card-animate">
+                        <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all">
+                            <i class="fa-solid fa-ban text-sm"></i>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-theme-title mb-2">No Pinch-to-Zoom PDFs</h3>
+                        <p class="text-theme-subtext text-xs leading-relaxed">
+                            PDF menus damage your diner's browsing flow. Our interfaces scale dynamically to standard cellular displays, optimizing organic visual discovery.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/30 transition-all duration-300 group fancy-card-animate">
+                        <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all">
+                            <i class="fa-solid fa-file-invoice-dollar text-sm"></i>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-theme-title mb-2">Eliminate monthly SaaS fees</h3>
+                        <p class="text-theme-subtext text-xs leading-relaxed">
+                            Rent platforms cost thousands of dollars over multiple years. With our private asset model, you invest once and pay zero monthly hosting bills.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/30 transition-all duration-300 group fancy-card-animate">
+                        <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all">
+                            <i class="fa-solid fa-print text-sm"></i>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-theme-title mb-2">Reduce Printed Overhead</h3>
+                        <p class="text-theme-subtext text-xs leading-relaxed">
+                            Instantly publish dynamic adjustments, season-based ingredients, or run-out flags on your dishes without ordering expensive paper reprints.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5 Premium Testimonials Section -->
+                <div class="mt-20">
+                    <div class="text-center mb-8">
+                        <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">Real Operators, Real Results</span>
+                        <h3 class="text-2xl sm:text-3xl font-serif text-theme-title tracking-tight leading-tight">Trusted by Culinary Innovators</h3>
+                        <p class="text-theme-subtext mt-2 text-xs sm:text-sm max-w-xl mx-auto">
+                            See how restaurants, coffee shops, bistros, bakeries, and mobile food trucks upgraded to high-performance, commission-free direct menu management.
+                        </p>
+                    </div>
+
+                    <!-- Grid layout optimized for tablet & mobile flex columns -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-8 text-left">
+                        
+                        <!-- Testimonial 1 (Restaurant) -->
+                        <div class="p-4 rounded-xl bg-theme-subtle border border-theme flex flex-col justify-between fancy-card-animate">
+                            <div class="space-y-3">
+                                <div class="flex gap-0.5 text-theme-gold text-[10px]">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-theme-text text-[11px] leading-relaxed italic">
+                                    "We cut our third-party digital menu SaaS contract, saving over $1,800 every year. Diners love the loading speeds, especially down in our lower stone dining tavern."
+                                </p>
+                            </div>
+                            <div class="pt-3 border-t border-theme/40 mt-4">
+                                <div class="font-serif font-bold text-theme-title text-[11px]">Chef Marcella D.</div>
+                                <div class="text-[9px] text-theme-gold font-medium uppercase tracking-wider">La Piazza Trattoria</div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 (Bistro) -->
+                        <div class="p-4 rounded-xl bg-theme-subtle border border-theme flex flex-col justify-between fancy-card-animate">
+                            <div class="space-y-3">
+                                <div class="flex gap-0.5 text-theme-gold text-[10px]">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-theme-text text-[11px] leading-relaxed italic">
+                                    "Highlighting our high-margin vintage wine pairs directly next to target plates boosted average table ticket sizes by 18% during our initial month."
+                                </p>
+                            </div>
+                            <div class="pt-3 border-t border-theme/40 mt-4">
+                                <div class="font-serif font-bold text-theme-title text-[11px]">Clara Sterling</div>
+                                <div class="text-[9px] text-theme-gold font-medium uppercase tracking-wider">Gilded Thistle Bistro</div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 (Café & Bakery) -->
+                        <div class="p-4 rounded-xl bg-theme-subtle border border-theme flex flex-col justify-between fancy-card-animate">
+                            <div class="space-y-3">
+                                <div class="flex gap-0.5 text-theme-gold text-[10px]">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-theme-text text-[11px] leading-relaxed italic">
+                                    "Updating morning pastry stock states from my phone while managing sourdough prep prevents morning line bottlenecks completely. No more visual menu confusion."
+                                </p>
+                            </div>
+                            <div class="pt-3 border-t border-theme/40 mt-4">
+                                <div class="font-serif font-bold text-theme-title text-[11px]">Liam O'Connor</div>
+                                <div class="text-[9px] text-theme-gold font-medium uppercase tracking-wider">Solas Café & Bakery</div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 (Coffee Shop) -->
+                        <div class="p-4 rounded-xl bg-theme-subtle border border-theme flex flex-col justify-between fancy-card-animate">
+                            <div class="space-y-3">
+                                <div class="flex gap-0.5 text-theme-gold text-[10px]">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-theme-text text-[11px] leading-relaxed italic">
+                                    "Pinch-zoom PDFs were a huge hurdle for our older morning crowd. VibeTable's mobile architecture displays beautifully and matches our clean marble coffee bar."
+                                </p>
+                            </div>
+                            <div class="pt-3 border-t border-theme/40 mt-4">
+                                <div class="font-serif font-bold text-theme-title text-[11px]">Jada Jenkins</div>
+                                <div class="text-[9px] text-theme-gold font-medium uppercase tracking-wider">Roast & Co. Coffee</div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 5 (Food Truck) -->
+                        <div class="p-4 rounded-xl bg-theme-subtle border border-theme flex flex-col justify-between fancy-card-animate">
+                            <div class="space-y-3">
+                                <div class="flex gap-0.5 text-theme-gold text-[10px]">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-theme-text text-[11px] leading-relaxed italic">
+                                    "Cellular dropouts at outdoor parks are normal. VibeTable's ultralight codebase keeps loading for customers even with only one signal bar. Best setup ever."
+                                </p>
+                            </div>
+                            <div class="pt-3 border-t border-theme/40 mt-4">
+                                <div class="font-serif font-bold text-theme-title text-[11px]">Kenji Chen</div>
+                                <div class="text-[9px] text-theme-gold font-medium uppercase tracking-wider">Bao On The Run</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Financial Comparison -->
+                <div class="mt-16 max-w-4xl mx-auto">
+                    <h3 class="text-xl sm:text-2xl font-serif text-theme-title text-center mb-6">Subscription SaaS vs. VibeTable Ownership</h3>
+                    <!-- Swipe indicator for mobile views -->
+                    <div class="flex items-center justify-center gap-1.5 text-theme-gold text-[10px] uppercase tracking-wider font-bold mb-3 md:hidden">
+                        <i class="fa-solid fa-left-right animate-pulse"></i> Swipe horizontally to view full metrics
+                    </div>
                     
-                    <!-- Simulated phone view (Fluid responsive wrapper) -->
-                    <div class="lg:col-span-5 flex justify-center">
-                        <div class="w-full max-w-[280px] sm:max-w-[320px] h-[520px] sm:h-[620px] rounded-[36px] border-[6px] border-stone-900 bg-stone-950 overflow-hidden shadow-2xl relative flex flex-col">
-                            <!-- Notch -->
-                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-4.5 bg-stone-900 rounded-b-xl z-20 flex items-center justify-center">
-                                <div class="w-8 h-1 bg-black rounded-full"></div>
+                    <div class="overflow-x-auto rounded-2xl border border-theme bg-theme-subtle backdrop-blur shadow-lg">
+                        <table class="w-full text-left border-collapse min-w-[580px] text-xs">
+                            <thead>
+                                <tr class="border-b border-theme bg-theme-table-header">
+                                    <th class="p-4 font-semibold text-theme-title">Core Metrics</th>
+                                    <th class="p-4 font-semibold text-theme-subtext">SaaS Platform Rental</th>
+                                    <th class="p-4 font-semibold text-theme-gold">VibeTable Direct Asset</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-stone-900/10 dark:divide-white/10 text-theme-text">
+                                <tr>
+                                    <td class="p-4 font-medium text-theme-title">Monthly software fee</td>
+                                    <td class="p-4 text-theme-subtext">$150.00 / month</td>
+                                    <td class="p-4 text-theme-gold font-bold">$0.00 forever</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-medium text-theme-title">Menu updates control</td>
+                                    <td class="p-4 text-theme-subtext">Basic portal template</td>
+                                    <td class="p-4 text-theme-gold font-bold">In-house admin dashboard</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-medium text-theme-title">Brand and asset rights</td>
+                                    <td class="p-4 text-theme-subtext">None (leased template)</td>
+                                    <td class="p-4 text-theme-gold font-bold">100% proprietary code owner</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 3: LIVE DEMO & PLAYGROUND -->
+        <section id="view-demo" class="spa-view hidden relative pt-24 pb-12 md:pt-36 md:pb-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
+                <div class="text-center mb-10 max-w-2xl mx-auto">
+                    <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">Interactive sandbox</span>
+                    <h2 class="text-2xl sm:text-4xl font-serif text-theme-title leading-tight">Live administrative portal simulation</h2>
+                    <p class="text-theme-subtext mt-3 text-xs sm:text-sm">
+                        Make real-time changes using the back-of-house (BOH) controls on the left, and see how the visitor experience adjusts instantaneously inside the client preview device on the right.
+                    </p>
+                </div>
+
+                <!-- Interactive split panel layout -->
+                <div class="grid lg:grid-cols-12 gap-6 items-stretch mb-12">
+                    
+                    <!-- BOH Controller side -->
+                    <div class="lg:col-span-7 rounded-2xl border border-theme bg-theme-subtle p-4 sm:p-6 flex flex-col justify-between fancy-card-animate">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="w-3.5 h-3.5 rounded-full bg-theme-badge flex items-center justify-center text-[8px] text-theme-gold border border-theme"><i class="fa-solid fa-lock"></i></span>
+                                <span class="text-[9px] font-mono text-theme-subtext uppercase tracking-wider">portal.vibetable.com/settings</span>
                             </div>
                             
-                            <div class="flex-1 overflow-y-auto flex flex-col text-xs pt-6 pb-3 scrollbar-none">
-                                <div class="p-3 flex items-center justify-between border-b border-stone-850 bg-stone-900 sticky top-0 z-10">
-                                    <span class="font-serif font-bold text-white text-sm">Lumina Café</span>
-                                    <div class="px-2 py-0.5 bg-bistro-500/10 text-bistro-400 text-[9px] rounded-full flex items-center gap-1 border border-bistro-500/20">
-                                        <i class="fa-solid fa-star text-[8px]"></i> 4.9 Reviews
-                                    </div>
-                                </div>
-                                <div class="p-2.5">
-                                    <div class="w-full h-24 bg-stone-900 rounded-lg overflow-hidden relative flex items-center justify-center">
-                                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=400" alt="Espresso" class="absolute inset-0 w-full h-full object-cover opacity-60">
-                                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                                        <div class="absolute bottom-1.5 left-2 text-left">
-                                            <span class="bg-bistro-500 text-stone-950 font-extrabold text-[8px] px-1 py-0.5 rounded tracking-wide mr-1 uppercase">Best Seller</span>
-                                            <p class="text-white font-serif font-bold text-xs leading-none">Morning Espresso</p>
+                            <div class="space-y-1 text-left">
+                                <label class="text-[10px] font-bold text-theme-gold uppercase tracking-widest block">Restaurant name</label>
+                                <input id="demo-title-input" type="text" value="The Daily Grind" 
+                                       class="w-full bg-theme-input border border-theme rounded-lg px-3 py-2 text-xs text-theme-title focus:outline-none focus:border-bistro-500 transition-colors"
+                                       oninput="updateMenuTitle(this.value)">
+                            </div>
+
+                            <div class="space-y-1 text-left">
+                                <label class="text-[10px] font-bold text-theme-gold uppercase tracking-widest block">Announcement headline</label>
+                                <input id="demo-promo-input" type="text" value="WEEKEND BRUNCH SPECIALS" 
+                                       class="w-full bg-theme-input border border-theme rounded-lg px-3 py-2 text-xs text-theme-title focus:outline-none focus:border-bistro-500 transition-colors"
+                                       oninput="updatePromoText(this.value)">
+                            </div>
+
+                            <!-- Live Adjust Pricing targets -->
+                            <div class="space-y-2 text-left">
+                                <label class="text-[10px] font-bold text-theme-gold uppercase tracking-widest block">In-house live pricing adjustments</label>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div class="bg-theme-subtle p-2.5 rounded-xl border border-theme">
+                                        <span class="text-[9px] text-theme-subtext block">Flat White Espresso</span>
+                                        <div class="flex items-center gap-1.5 mt-1">
+                                            <span class="text-xs text-theme-gold font-bold">$</span>
+                                            <input id="price-coffee" type="number" step="0.25" value="4.50" 
+                                                   class="w-full bg-transparent text-xs text-theme-title focus:outline-none font-bold"
+                                                   oninput="updatePrice('coffee', this.value)">
                                         </div>
                                     </div>
-                                </div>
-                                
-                                <div class="flex gap-1.5 px-2.5 pb-2 overflow-x-auto text-[9px] scrollbar-none">
-                                    <span class="px-2 py-0.5 bg-bistro-100 text-bistro-950 font-bold rounded-full shrink-0">Coffee Bar</span>
-                                    <span class="px-2 py-0.5 bg-stone-900 text-stone-300 font-medium rounded-full shrink-0">Bakeries</span>
-                                    <span class="px-2 py-0.5 bg-stone-900 text-stone-300 font-medium rounded-full shrink-0">Elixirs</span>
-                                </div>
-                                
-                                <div class="p-2.5 space-y-2.5 flex-1">
-                                    <div class="flex items-center justify-between p-2.5 bg-stone-900/40 rounded-xl border border-stone-850">
-                                        <div class="text-left max-w-[70%]">
-                                            <div class="font-serif font-bold text-stone-100 text-xs">Flat White</div>
-                                            <div class="text-[9px] text-stone-500 mt-0.5 line-clamp-1">Velvety steamed microfoam, espresso</div>
-                                        </div>
-                                        <div class="text-right">
-                                            <div class="font-serif font-bold text-bistro-400 text-xs">$4.50</div>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center justify-between p-2.5 bg-stone-900/40 rounded-xl border border-stone-850">
-                                        <div class="text-left max-w-[70%]">
-                                            <div class="font-serif font-bold text-stone-100 text-xs">Pistachio Latte</div>
-                                            <div class="text-[9px] text-stone-500 mt-0.5 line-clamp-1">Premium pistachio syrup, raw honey</div>
-                                        </div>
-                                        <div class="text-right">
-                                            <div class="font-serif font-bold text-bistro-400 text-xs">$5.25</div>
+                                    <div class="bg-theme-subtle p-2.5 rounded-xl border border-theme">
+                                        <span class="text-[9px] text-theme-subtext block">Smashed Avocado Toast</span>
+                                        <div class="flex items-center gap-1.5 mt-1">
+                                            <span class="text-xs text-theme-gold font-bold">$</span>
+                                            <input id="price-toast" type="number" step="0.50" value="12.00" 
+                                                   class="w-full bg-transparent text-xs text-theme-title focus:outline-none font-bold"
+                                                   oninput="updatePrice('toast', this.value)">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="px-2.5 py-1 border-t border-stone-850 text-center">
+                            </div>
+
+                            <!-- Automated live event triggers -->
+                            <div class="space-y-2 pt-1 text-left">
+                                <label class="text-[10px] font-bold text-theme-gold uppercase tracking-widest block">Simulated Event Rules</label>
+                                <div class="flex flex-wrap gap-2">
+                                    <button onclick="triggerHappyHour()" class="px-3 py-1.5 bg-theme-badge border border-theme text-theme-gold hover:bg-bistro-500 hover:text-stone-950 text-[10px] font-bold rounded transition-all uppercase">
+                                        Happy hour (10% Off)
+                                    </button>
+                                    <button onclick="triggerSoldOut('coffee')" class="px-3 py-1.5 bg-red-500/10 border border-red-500/30 text-red-500 hover:bg-red-500 hover:text-white text-[10px] font-bold rounded transition-all uppercase">
+                                        Toggle Sold Out
+                                    </button>
+                                    <button onclick="resetSimulator()" class="px-3 py-1.5 bg-theme-badge border border-theme text-theme-text hover:bg-stone-500 hover:text-stone-950 text-[10px] font-bold rounded transition-all uppercase ml-auto">
+                                        Reset Settings
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Simulation visual target with synced color tokens -->
+                    <div class="lg:col-span-5 flex justify-center items-center">
+                        <div id="simulated-phone-container" class="w-full max-w-[280px] sm:max-w-[320px] h-[520px] sm:h-[620px] rounded-[36px] border-[6px] border-stone-900 bg-[#0c0a09] overflow-hidden shadow-2xl relative flex flex-col transition-all duration-300">
+                            <!-- Dynamic notification indicator inside simulation -->
+                            <div id="phone-toast" class="absolute top-10 left-3.5 right-3.5 bg-stone-950/95 border border-bistro-500/30 text-stone-100 text-[9px] px-2.5 py-1.5 rounded-lg shadow-xl z-40 transform -translate-y-16 opacity-0 transition-all duration-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-bell text-bistro-500 animate-bounce"></i>
+                                <span id="phone-toast-text" class="font-sans leading-none">Settings Updated.</span>
+                            </div>
+
+                            <!-- Camera notch -->
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-4 bg-stone-900 rounded-b-xl z-20 flex items-center justify-center">
+                                <div class="w-8 h-1 bg-black rounded-full"></div>
+                            </div>
+
+                            <!-- Screen elements mapping the dynamic body color style sheet overrides -->
+                            <div id="simulated-phone-screen" class="flex-1 overflow-y-auto flex flex-col text-xs pt-6 pb-3 scrollbar-none bg-[#0c0a09] transition-colors duration-300">
+                                <div id="simulated-phone-header" class="p-3 border-b border-stone-850 bg-stone-950 sticky top-0 z-10 flex items-center justify-between transition-colors">
+                                    <span id="phone-restaurant-title" class="font-serif font-bold text-white transition-colors">The Daily Grind</span>
+                                    <span class="text-[8px] px-1.5 py-0.5 bg-emerald-500/10 text-emerald-400 rounded border border-emerald-500/20 uppercase font-bold">Open</span>
+                                </div>
+
+                                <div id="phone-promo-banner" class="bg-stone-900 border-b border-stone-850 text-bistro-500 font-bold text-[8px] py-1.5 px-2 tracking-wider text-center uppercase transition-colors">
+                                    WEEKEND BRUNCH SPECIALS
+                                </div>
+
+                                <div class="p-3 space-y-3 flex-1">
+                                    <!-- Coffee element -->
+                                    <div id="item-coffee-box" class="p-2 bg-stone-900/50 rounded-xl border border-stone-850 transition-all">
+                                        <div class="flex gap-2.5">
+                                            <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-stone-800">
+                                                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=200" alt="Flat White" class="w-full h-full object-cover">
+                                            </div>
+                                            <div class="flex-1 text-left flex flex-col justify-between">
+                                                <div class="flex justify-between items-start">
+                                                    <span id="phone-coffee-label" class="font-serif font-bold text-stone-100 text-[11px] transition-colors">Flat White</span>
+                                                    <span id="phone-coffee-badge" class="bg-bistro-500/20 text-bistro-300 text-[7px] font-bold px-1 rounded uppercase border border-bistro-500/30 hidden">Happy Hour</span>
+                                                </div>
+                                                <div class="flex items-center justify-between mt-1">
+                                                    <span class="font-serif font-black text-theme-gold text-[11px]" id="phone-coffee-price">$4.50</span>
+                                                    <span id="phone-coffee-status" class="text-[8px] font-bold text-stone-400">In Stock</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Avocado Element -->
+                                    <div id="item-toast-box" class="p-2 bg-stone-900/50 rounded-xl border border-stone-850 transition-all">
+                                        <div class="flex gap-2.5">
+                                            <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-stone-800">
+                                                <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&q=80&w=200" alt="Toast" class="w-full h-full object-cover">
+                                            </div>
+                                            <div class="flex-1 text-left flex flex-col justify-between">
+                                                <div class="flex justify-between items-start">
+                                                    <span id="phone-toast-label" class="font-serif font-bold text-stone-100 text-[11px] transition-colors">Smashed Avocado</span>
+                                                    <span id="phone-toast-badge" class="bg-bistro-500/20 text-bistro-300 text-[7px] font-bold px-1 rounded uppercase border border-bistro-500/30 hidden">Happy Hour</span>
+                                                </div>
+                                                <div class="flex items-center justify-between mt-1">
+                                                    <span class="font-serif font-black text-theme-gold text-[11px]" id="phone-toast-price">$12.00</span>
+                                                    <span id="phone-toast-status" class="text-[8px] font-bold text-stone-400">In Stock</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="px-2.5 py-1 border-t border-stone-850 text-center" id="phone-footer-block">
                                     <p class="text-[8px] text-stone-600 font-mono">Powered by VibeTable Platform</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </main>
 
-    <!-- PAGE VIEW 2: WHY VIBETABLE -->
-    <main id="view-why" class="spa-view hidden relative pt-24 pb-12 md:pt-36 md:pb-24 min-h-[85vh]">
-        <div class="absolute -left-48 top-1/4 w-80 h-80 bg-bistro-500/5 blur-[120px] rounded-full pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
-            <div class="text-center mb-10 max-w-2xl mx-auto">
-                <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">The Ownership Model</span>
-                <h2 class="text-2xl sm:text-4xl font-serif text-theme-title tracking-tight leading-tight">Stop renting. Claim your digital properties.</h2>
-                <p class="text-theme-subtext mt-3 text-xs sm:text-sm">
-                    SaaS providers lease restrictive templates with perpetual monthly fees. VibeTable delivers complete digital asset ownership, preventing monthly overhead leakages.
-                </p>
-            </div>
-
-            <!-- Problem Cards Grid -->
-            <div class="grid md:grid-cols-3 gap-5">
-                <div class="p-5 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/30 transition-all duration-300 group fancy-card-animate">
-                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all">
-                        <i class="fa-solid fa-ban text-sm"></i>
+                <!-- Live Experience Embed section -->
+                <div class="border-t border-theme pt-12">
+                    <div class="text-center mb-6 max-w-2xl mx-auto">
+                        <h3 class="text-2xl sm:text-3xl font-serif text-theme-title">Live multi-device client experience</h3>
+                        <p class="text-theme-subtext text-xs sm:text-sm mt-2">
+                            Explore how a real active menu renders natively on mobile or desktop viewport profiles.
+                        </p>
                     </div>
-                    <h3 class="text-lg font-serif font-bold text-theme-title mb-2">No Pinch-to-Zoom PDFs</h3>
-                    <p class="text-theme-subtext text-xs leading-relaxed">
-                        PDF menus damage your diner's browsing flow. Our interfaces scale dynamically to standard cellular displays, optimizing organic visual discovery.
-                    </p>
-                </div>
 
-                <div class="p-5 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/30 transition-all duration-300 group fancy-card-animate">
-                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all">
-                        <i class="fa-solid fa-file-invoice-dollar text-sm"></i>
+                    <!-- Toggle Controls -->
+                    <div class="flex justify-center items-center gap-2 mb-8 bg-theme-badge p-1 rounded-full border border-theme max-w-xs mx-auto">
+                        <button onclick="setPreviewFrame('mobile')" id="btn-preview-mobile" class="flex-1 py-2 bg-bistro-500 text-stone-950 font-bold text-xs rounded-full uppercase transition-all shadow-md">
+                            Mobile
+                        </button>
+                        <button onclick="setPreviewFrame('desktop')" id="btn-preview-desktop" class="flex-1 py-2 bg-transparent text-theme-subtext font-bold text-xs rounded-full uppercase transition-all">
+                            Desktop
+                        </button>
                     </div>
-                    <h3 class="text-lg font-serif font-bold text-theme-title mb-2">Eliminate monthly SaaS fees</h3>
-                    <p class="text-theme-subtext text-xs leading-relaxed">
-                        Rent platforms cost thousands of dollars over multiple years. With our private asset model, you invest once and pay zero monthly hosting bills.
-                    </p>
-                </div>
 
-                <div class="p-5 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/30 transition-all duration-300 group fancy-card-animate">
-                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4 group-hover:bg-bistro-500 group-hover:text-stone-950 transition-all">
-                        <i class="fa-solid fa-print text-sm"></i>
+                    <!-- Preview targets -->
+                    <div class="flex justify-center items-center">
+                        <!-- Mobile Viewport -->
+                        <div id="preview-mobile-frame" class="w-full max-w-[280px] sm:max-w-[320px] h-[520px] sm:h-[620px] rounded-[40px] border-[8px] border-stone-900 overflow-hidden shadow-2xl relative transition-all duration-300">
+                            <iframe src="https://coffee-shop-menu-sepia.vercel.app/" class="w-full h-full pt-4 bg-stone-950 border-none" title="VibeTable Live Mobile Preview"></iframe>
+                        </div>
+
+                        <!-- Desktop Viewport -->
+                        <div id="preview-desktop-frame" class="hidden w-full max-w-4xl h-[420px] sm:h-[500px] rounded-2xl border-[6px] border-stone-900 overflow-hidden shadow-2xl relative transition-all duration-300">
+                            <iframe src="https://coffee-shop-menu-sepia.vercel.app/" class="w-full h-full bg-stone-950 border-none" title="VibeTable Live Desktop Preview"></iframe>
+                        </div>
                     </div>
-                    <h3 class="text-lg font-serif font-bold text-theme-title mb-2">Reduce Printed Overhead</h3>
-                    <p class="text-theme-subtext text-xs leading-relaxed">
-                        Instantly publish dynamic adjustments, season-based ingredients, or run-out flags on your dishes without ordering expensive paper reprints.
-                    </p>
                 </div>
             </div>
+        </section>
 
-            <!-- 5 Premium Testimonials Section -->
-            <div class="mt-20">
-                <div class="text-center mb-8">
-                    <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">Real Operators, Real Results</span>
-                    <h3 class="text-2xl sm:text-3xl font-serif text-theme-title tracking-tight leading-tight">Trusted by Culinary Innovators</h3>
-                    <p class="text-theme-subtext mt-2 text-xs sm:text-sm max-w-xl mx-auto">
-                        See how restaurants, coffee shops, bistros, bakeries, and mobile food trucks upgraded to high-performance, commission-free direct menu management.
+        <!-- VIEW 4: CORE FEATURES & FAQ -->
+        <section id="view-features" class="spa-view hidden relative pt-24 pb-12 md:pt-36 md:pb-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 w-full">
+                <div class="text-center mb-10 max-w-2xl mx-auto">
+                    <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">The Technology Stack</span>
+                    <h2 class="text-2xl sm:text-4xl font-serif text-theme-title">Engineered for absolute direct control</h2>
+                    <p class="text-theme-subtext mt-3 text-xs sm:text-sm">
+                        No software bloating, no complex server steps. High-performance culinary code optimized to scale your visibility across localized dynamic search.
                     </p>
                 </div>
 
-                <!-- Grid layout optimized for tablet & mobile flex columns -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-8 text-left">
+                <!-- Features list Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
+                    <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 fancy-card-animate">
+                        <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-gauge-high text-sm"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-theme-title mb-2">0.2s Global rendering</h3>
+                        <p class="text-theme-subtext text-xs leading-relaxed">
+                            Instant load performance bypasses weak basement signals or poor local cells, preserving diner attention.
+                        </p>
+                    </div>
+
+                    <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 fancy-card-animate">
+                        <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-qrcode text-sm"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-theme-title mb-2">Tabletop vector QR assets</h3>
+                        <p class="text-theme-subtext text-xs leading-relaxed">
+                            Custom print-ready high-definition QR assets designed to match luxury linen, brass, wood, or acrylic stands.
+                        </p>
+                    </div>
+
+                    <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 fancy-card-animate">
+                        <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-wine-glass text-sm"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-theme-title mb-2">Chef's highlights module</h3>
+                        <p class="text-theme-subtext text-xs leading-relaxed">
+                            Visually focus customer eyes on high-margin appetizers, premium side pairings, or signature plates dynamically.
+                        </p>
+                    </div>
+
+                    <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 fancy-card-animate">
+                        <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-toggle-on text-sm"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-theme-title mb-2">Live ingredients toggles</h3>
+                        <p class="text-theme-subtext text-xs leading-relaxed">
+                            Flag items out-of-stock or sold-out instantly during peak services to guarantee clean communication with guests.
+                        </p>
+                    </div>
+
+                    <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 fancy-card-animate">
+                        <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-chart-pie text-sm"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-theme-title mb-2">In-house click analytics</h3>
+                        <p class="text-theme-subtext text-xs leading-relaxed">
+                            Understand which drinks, seasonal filters, or pairing plates get browsed most, with 100% GDPR-compliant client metrics.
+                        </p>
+                    </div>
+
+                    <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 fancy-card-animate">
+                        <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-theme-title mb-2">Localized SEO Schema</h3>
+                        <p class="text-theme-subtext text-xs leading-relaxed">
+                            Built-in structured metadata index your menu items directly on search engines, optimizing organic local visibility.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Integrated FAQs -->
+                <div class="border-t border-theme pt-12 max-w-3xl mx-auto">
+                    <div class="text-center mb-8">
+                        <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">Direct Answers</span>
+                        <h2 class="text-2xl sm:text-3xl font-serif text-theme-title">Frequently Asked Questions</h2>
+                    </div>
+
+                    <div class="space-y-3.5 text-left">
+                        <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
+                            <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
+                                <span>Is VibeTable a monthly subscription?</span>
+                                <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
+                            </button>
+                            <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
+                                    No. VibeTable functions on an absolute ownership model. You invest once to configure and deploy your custom restaurant website and digital menu system. There are no ongoing software rentals or platform fee cycles.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
+                            <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
+                                <span>Can I perform menu modifications myself?</span>
+                                <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
+                            </button>
+                            <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
+                                    Yes. Every tier includes access to an administrative dashboard layout, permitting you to adjust plate pricing, descriptions, stock availability, and image properties securely on any mobile device.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
+                            <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
+                                <span>How do diners interact with the QR codes?</span>
+                                <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
+                            </button>
+                            <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
+                                    Your venue receives print-ready, high-resolution vector tabletop QR assets. Diners simply scan the QR frame with their mobile devices to instantly launch your elegant web menu page. No browser warnings, no manual application downloads.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
+                            <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
+                                <span>Can I configure my existing web domain name?</span>
+                                <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
+                            </button>
+                            <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
+                                    Yes. We can link your proprietary domain directly or guide you in registering new address parameters for your dining business brand.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
+                            <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
+                                <span>Can I upgrade my package selection later?</span>
+                                <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
+                            </button>
+                            <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
+                                    Absolutely. You can transition to a higher plan level at any point, simply covering the price difference between your active tier and the new selected system tier.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 5: PRICING & PACKAGES -->
+        <section id="view-pricing" class="spa-view hidden relative pt-24 pb-12 md:pt-36 md:pb-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
+                <div class="text-center mb-10 max-w-2xl mx-auto">
+                    <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">Integration Tiers</span>
+                    <h2 class="text-2xl sm:text-4xl font-serif text-theme-title tracking-tight leading-tight">One direct investment. Zero platform overhead.</h2>
+                    <p class="text-theme-subtext mt-3 text-xs sm:text-sm">
+                        Reclaim control over your marketing channels. Select the ideal system parameters for your venue with clear, upfront launch pricing.
+                    </p>
+                </div>
+
+                <!-- Hard cash savings utility tool -->
+                <div class="max-w-3xl mx-auto panel-theme border rounded-2xl p-5 mb-12 text-center shadow-md fancy-card-animate">
+                    <h4 class="text-sm font-serif font-bold text-theme-title mb-4">Calculate Your Financial Savings (vs. Standard $150/mo SaaS rentals)</h4>
                     
-                    <!-- Testimonial 1 (Restaurant) -->
-                    <div class="p-4 rounded-xl bg-theme-subtle border border-theme flex flex-col justify-between fancy-card-animate">
-                        <div class="space-y-3">
-                            <div class="flex gap-0.5 text-theme-gold text-[10px]">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="text-theme-text text-[11px] leading-relaxed italic">
-                                "We cut our third-party digital menu SaaS contract, saving over $1,800 every year. Diners love the loading speeds, especially down in our lower stone dining tavern."
-                            </p>
-                        </div>
-                        <div class="pt-3 border-t border-theme/40 mt-4">
-                            <div class="font-serif font-bold text-theme-title text-[11px]">Chef Marcella D.</div>
-                            <div class="text-[9px] text-theme-gold font-medium uppercase tracking-wider">La Piazza Trattoria</div>
-                        </div>
+                    <div class="flex flex-wrap justify-center gap-2 mb-4 max-w-xs mx-auto">
+                        <button id="btn-savings-1" onclick="calculateSavings(1, this)" class="flex-1 py-1.5 rounded-lg text-[10px] font-bold bg-bistro-500 text-stone-950 uppercase">1 Year</button>
+                        <button id="btn-savings-3" onclick="calculateSavings(3, this)" class="flex-1 py-1.5 rounded-lg text-[10px] font-bold bg-theme-input border border-theme text-theme-subtext hover:text-theme-title transition-colors uppercase">3 Years</button>
+                        <button id="btn-savings-5" onclick="calculateSavings(5, this)" class="flex-1 py-1.5 rounded-lg text-[10px] font-bold bg-theme-input border border-theme text-theme-subtext hover:text-theme-title transition-colors uppercase">5 Years</button>
                     </div>
 
-                    <!-- Testimonial 2 (Bistro) -->
-                    <div class="p-4 rounded-xl bg-theme-subtle border border-theme flex flex-col justify-between fancy-card-animate">
-                        <div class="space-y-3">
-                            <div class="flex gap-0.5 text-theme-gold text-[10px]">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="text-theme-text text-[11px] leading-relaxed italic">
-                                "Highlighting our high-margin vintage wine pairs directly next to target plates boosted average table ticket sizes by 18% during our initial month."
-                            </p>
+                    <div class="grid grid-cols-3 gap-3 pt-4 border-t border-theme text-center text-xs">
+                        <div class="p-2 card-theme border rounded-lg">
+                            <span class="text-[9px] text-theme-subtext block uppercase font-bold">Standard SaaS Fees</span>
+                            <span id="calc-saas-total" class="text-sm sm:text-base font-bold text-red-500">$1,800.00</span>
                         </div>
-                        <div class="pt-3 border-t border-theme/40 mt-4">
-                            <div class="font-serif font-bold text-theme-title text-[11px]">Clara Sterling</div>
-                            <div class="text-[9px] text-theme-gold font-medium uppercase tracking-wider">Gilded Thistle Bistro</div>
+                        <div class="p-2 card-theme border rounded-lg">
+                            <span class="text-[9px] text-theme-subtext block uppercase font-bold">VibeTable Growth Setup</span>
+                            <span id="calc-brand-total" class="text-sm sm:text-base font-bold text-theme-title">$999.00</span>
                         </div>
-                    </div>
-
-                    <!-- Testimonial 3 (Café & Bakery) -->
-                    <div class="p-4 rounded-xl bg-theme-subtle border border-theme flex flex-col justify-between fancy-card-animate">
-                        <div class="space-y-3">
-                            <div class="flex gap-0.5 text-theme-gold text-[10px]">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="text-theme-text text-[11px] leading-relaxed italic">
-                                "Updating morning pastry stock states from my phone while managing sourdough prep prevents morning line bottlenecks completely. No more visual menu confusion."
-                            </p>
-                        </div>
-                        <div class="pt-3 border-t border-theme/40 mt-4">
-                            <div class="font-serif font-bold text-theme-title text-[11px]">Liam O'Connor</div>
-                            <div class="text-[9px] text-theme-gold font-medium uppercase tracking-wider">Solas Café & Bakery</div>
+                        <div class="p-2 bg-theme-badge border border-theme rounded-lg">
+                            <span class="text-[9px] text-theme-gold block uppercase font-bold">Total Saved</span>
+                            <span id="calc-net-retained" class="text-sm sm:text-base font-black text-theme-gold">$801.00</span>
                         </div>
                     </div>
-
-                    <!-- Testimonial 4 (Coffee Shop) -->
-                    <div class="p-4 rounded-xl bg-theme-subtle border border-theme flex flex-col justify-between fancy-card-animate">
-                        <div class="space-y-3">
-                            <div class="flex gap-0.5 text-theme-gold text-[10px]">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="text-theme-text text-[11px] leading-relaxed italic">
-                                "Pinch-zoom PDFs were a huge hurdle for our older morning crowd. VibeTable's mobile architecture displays beautifully and matches our clean marble coffee bar."
-                            </p>
-                        </div>
-                        <div class="pt-3 border-t border-theme/40 mt-4">
-                            <div class="font-serif font-bold text-theme-title text-[11px]">Jada Jenkins</div>
-                            <div class="text-[9px] text-theme-gold font-medium uppercase tracking-wider">Roast & Co. Coffee</div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 5 (Food Truck) -->
-                    <div class="p-4 rounded-xl bg-theme-subtle border border-theme flex flex-col justify-between fancy-card-animate">
-                        <div class="space-y-3">
-                            <div class="flex gap-0.5 text-theme-gold text-[10px]">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="text-theme-text text-[11px] leading-relaxed italic">
-                                "Cellular dropouts at outdoor parks are normal. VibeTable's ultralight codebase keeps loading for customers even with only one signal bar. Best setup ever."
-                            </p>
-                        </div>
-                        <div class="pt-3 border-t border-theme/40 mt-4">
-                            <div class="font-serif font-bold text-theme-title text-[11px]">Kenji Chen</div>
-                            <div class="text-[9px] text-theme-gold font-medium uppercase tracking-wider">Bao On The Run</div>
-                        </div>
-                    </div>
-
                 </div>
-            </div>
 
-            <!-- Financial Comparison -->
-            <div class="mt-16 max-w-4xl mx-auto">
-                <h3 class="text-xl sm:text-2xl font-serif text-theme-title text-center mb-6">Subscription SaaS vs. VibeTable Ownership</h3>
-                <!-- Swipe indicator for mobile views -->
-                <div class="flex items-center justify-center gap-1.5 text-theme-gold text-[10px] uppercase tracking-wider font-bold mb-3 md:hidden">
-                    <i class="fa-solid fa-left-right animate-pulse"></i> Swipe horizontally to view full metrics
-                </div>
-                
-                <div class="overflow-x-auto rounded-2xl border border-theme bg-theme-subtle backdrop-blur shadow-lg">
-                    <table class="w-full text-left border-collapse min-w-[580px] text-xs">
-                        <thead>
-                            <tr class="border-b border-theme bg-theme-table-header">
-                                <th class="p-4 font-semibold text-theme-title">Core Metrics</th>
-                                <th class="p-4 font-semibold text-theme-subtext">SaaS Platform Rental</th>
-                                <th class="p-4 font-semibold text-theme-gold">VibeTable Direct Asset</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-stone-900/10 dark:divide-white/10 text-theme-text">
-                            <tr>
-                                <td class="p-4 font-medium text-theme-title">Monthly software fee</td>
-                                <td class="p-4 text-theme-subtext">$150.00 / month</td>
-                                <td class="p-4 text-theme-gold font-bold">$0.00 forever</td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium text-theme-title">Menu updates control</td>
-                                <td class="p-4 text-theme-subtext">Basic portal template</td>
-                                <td class="p-4 text-theme-gold font-bold">In-house admin dashboard</td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium text-theme-title">Brand and asset rights</td>
-                                <td class="p-4 text-theme-subtext">None (leased template)</td>
-                                <td class="p-4 text-theme-gold font-bold">100% proprietary code owner</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- PAGE VIEW 3: LIVE DEMO & PLAYGROUND -->
-    <main id="view-demo" class="spa-view hidden relative pt-24 pb-12 md:pt-36 md:pb-24 min-h-[85vh]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
-            <div class="text-center mb-10 max-w-2xl mx-auto">
-                <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">Interactive sandbox</span>
-                <h2 class="text-2xl sm:text-4xl font-serif text-theme-title leading-tight">Live administrative portal simulation</h2>
-                <p class="text-theme-subtext mt-3 text-xs sm:text-sm">
-                    Make real-time changes using the back-of-house (BOH) controls on the left, and see how the visitor experience adjusts instantaneously inside the client preview device on the right.
-                </p>
-            </div>
-
-            <!-- Interactive split panel layout -->
-            <div class="grid lg:grid-cols-12 gap-6 items-stretch mb-12">
-                
-                <!-- BOH Controller side -->
-                <div class="lg:col-span-7 rounded-2xl border border-theme bg-theme-subtle p-4 sm:p-6 flex flex-col justify-between fancy-card-animate">
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="w-3.5 h-3.5 rounded-full bg-theme-badge flex items-center justify-center text-[8px] text-theme-gold border border-theme"><i class="fa-solid fa-lock"></i></span>
-                            <span class="text-[9px] font-mono text-theme-subtext uppercase tracking-wider">portal.vibetable.com/settings</span>
+                <!-- Dynamic Pricing Columns (4-Card layout stacked nicely on mobile viewports) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch max-w-7xl mx-auto mb-12 text-left">
+                    
+                    <!-- Package 1: Essential -->
+                    <div class="p-5 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 flex flex-col justify-between relative fancy-card-animate">
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="px-2 py-0.5 bg-theme-input border border-theme text-[9px] font-bold rounded uppercase text-theme-subtext">Starter</span>
+                                <span class="px-1.5 py-0.5 bg-theme-badge text-theme-gold text-[8px] font-bold rounded uppercase">Launch Discount</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-serif font-bold text-theme-title">Essential</h3>
+                                <p class="text-theme-subtext text-[10px] mt-1">Sleek menu system for boutique bakeries or specialty coffee roasters.</p>
+                            </div>
+                            <div class="py-2">
+                                <div class="text-[10px] text-stone-500 line-through">USD $1,000</div>
+                                <div class="text-2xl font-serif font-bold text-theme-title">USD $799</div>
+                                <span class="text-[8px] text-theme-gold uppercase font-bold">One-time installation</span>
+                            </div>
+                            <div class="space-y-3 pt-3 border-t border-theme text-[10px] text-theme-text">
+                                <div>
+                                    <span class="font-bold text-theme-title uppercase block text-[9px]">Website Pages</span>
+                                    <p class="text-theme-subtext">1 Custom Branded Responsive Layout Page, QR Code Menu integrations.</p>
+                                </div>
+                                <div>
+                                    <span class="font-bold text-theme-title uppercase block text-[9px]">Administrative Controls</span>
+                                    <p class="text-theme-subtext">Modify pricing structure, change menu titles, edit active category items, and toggle display states.</p>
+                                </div>
+                                <div class="p-2 bg-theme-input rounded border border-theme text-[9px] italic text-theme-subtext">
+                                    Note: Adding new categories or items dynamically requires higher tiers.
+                                </div>
+                            </div>
                         </div>
+                        <button onclick="handlePurchase('Essential Package', 'USD $799')" class="w-full py-2.5 mt-6 rounded-lg bg-theme-input border border-theme text-theme-text hover:bg-stone-800 hover:text-white transition-colors text-xs font-bold uppercase transition-all">
+                            Choose Essential
+                        </button>
+                    </div>
+
+                    <!-- Package 2: Growth (Highlighted Premium Glow) -->
+                    <div class="p-5 rounded-2xl popular-card-theme flex flex-col justify-between relative transform lg:scale-105 z-10 fancy-card-animate">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-bistro-500 text-stone-950 text-[8px] font-black uppercase px-2.5 py-0.5 rounded-full z-20">
+                            Most Popular
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="px-2 py-0.5 bg-theme-input border border-theme text-[9px] font-bold rounded uppercase text-theme-gold">Growth</span>
+                                <span class="px-1.5 py-0.5 bg-theme-badge text-theme-gold text-[8px] font-bold rounded uppercase">Launch Discount</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-serif font-bold text-theme-title">Growth</h3>
+                                <p class="text-theme-subtext text-[10px] mt-1">Complete system for active bistros and local dining bars.</p>
+                            </div>
+                            <div class="py-2">
+                                <div class="text-[10px] text-stone-500 line-through">USD $1,300</div>
+                                <div class="text-2xl font-serif font-bold text-theme-title">USD $999</div>
+                                <span class="text-[8px] text-theme-gold uppercase font-bold">One-time installation</span>
+                            </div>
+                            <div class="space-y-3 pt-3 border-t border-theme text-[10px] text-theme-text">
+                                <div>
+                                    <span class="font-bold text-theme-gold uppercase block text-[9px]">Everything in Essential Plus</span>
+                                    <span class="font-bold text-theme-title uppercase block text-[9px] mt-1.5">Extended Pages</span>
+                                    <p class="text-theme-subtext">Up to 3 Custom Web Pages (Menu catalog, Brand history, Contact portals).</p>
+                                </div>
+                                <div>
+                                    <span class="font-bold text-theme-title uppercase block text-[9px]">Enhanced BOH Admin</span>
+                                    <p class="text-theme-subtext">Add new dishes, manage Corkboards, moderate customer reviews, upload ambient vibe photos.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="handlePurchase('Growth Package', 'USD $999')" class="w-full py-2.5 mt-6 rounded-lg bg-bistro-500 text-stone-950 hover:opacity-90 text-xs font-black uppercase transition-all shadow">
+                            Choose Growth
+                        </button>
+                    </div>
+
+                    <!-- Package 3: Premium -->
+                    <div class="p-5 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 flex flex-col justify-between relative fancy-card-animate">
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="px-2 py-0.5 bg-theme-input border border-theme text-[9px] font-bold rounded uppercase text-theme-subtext">Premium</span>
+                                <span class="px-1.5 py-0.5 bg-theme-badge text-theme-gold text-[8px] font-bold rounded uppercase">Launch Discount</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-serif font-bold text-theme-title">Premium</h3>
+                                <p class="text-theme-subtext text-[10px] mt-1">High-end solution with reservation, catering, and smart pre-order systems.</p>
+                            </div>
+                            <div class="py-2">
+                                <div class="text-[10px] text-stone-500 line-through">USD $1,500</div>
+                                <div class="text-2xl font-serif font-bold text-theme-title">USD $1,199</div>
+                                <span class="text-[8px] text-theme-gold uppercase font-bold">One-time installation</span>
+                            </div>
+                            <div class="space-y-3 pt-3 border-t border-theme text-[10px] text-theme-text">
+                                <div>
+                                    <span class="font-bold text-theme-title uppercase block text-[9px]">Everything in Growth Plus</span>
+                                    <span class="font-bold text-theme-title uppercase block text-[9px] mt-1.5">Complete Site Stack</span>
+                                    <p class="text-theme-subtext">Up to 5 Fully Branded Web Pages, Reservations structure, Catering inquiry filters, Newsletter setup.</p>
+                                </div>
+                                <div>
+                                    <span class="font-bold text-theme-title uppercase block text-[9px]">Pre-Order & Upsell</span>
+                                    <p class="text-theme-subtext">Interactive order bag, dynamic recommendations ("Add a beverage?", "Pair with dessert").</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="handlePurchase('Premium Package', 'USD $1,199')" class="w-full py-2.5 mt-6 rounded-lg bg-theme-input border border-theme text-theme-text hover:bg-stone-800 hover:text-white transition-colors text-xs font-bold uppercase transition-all">
+                            Choose Premium
+                        </button>
+                    </div>
+
+                    <!-- Package 4: Business (Coming Soon) -->
+                    <div class="p-5 rounded-2xl bg-theme-subtle border border-theme/50 opacity-85 flex flex-col justify-between relative overflow-hidden fancy-card-animate">
+                        <!-- PREMIUM CORNER RIBBON: Optimized parameters to prevent cropping layout box boundaries -->
+                        <div class="absolute top-5 -right-12 bg-bistro-500 text-stone-950 text-[8px] font-black uppercase tracking-widest py-1.5 w-36 text-center rotate-45 shadow-md z-20">
+                            Soon
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="px-2 py-0.5 bg-theme-input border border-theme text-[9px] font-bold rounded uppercase text-theme-subtext">Business</span>
+                                <span class="px-1.5 py-0.5 bg-theme-badge text-theme-subtext text-[8px] font-bold rounded uppercase">Launch List</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-serif font-bold text-theme-title opacity-65">Business</h3>
+                                <p class="text-theme-subtext text-[10px] mt-1">Multi-branch commerce stack with full database capabilities.</p>
+                            </div>
+                            <div class="py-2">
+                                <div class="text-[10px] text-stone-600 line-through">USD $1,900</div>
+                                <div class="text-2xl font-serif font-bold text-theme-subtext">USD $1,399</div>
+                                <span class="text-[8px] text-theme-subtext uppercase font-bold">Planned release</span>
+                            </div>
+                            <div class="space-y-2 pt-3 border-t border-theme/30 text-[9px] text-theme-subtext">
+                                <p class="font-bold text-theme-title uppercase opacity-85">AIO Release Roadmap</p>
+                                <ul class="space-y-1">
+                                    <li>• Customer Loyalty Accounts</li>
+                                    <li>• Dynamic Seat Layout Managers</li>
+                                    <li>• Online Transaction Processing</li>
+                                    <li>• Multi-Location Operations Panels</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button onclick="handleNotify()" class="w-full py-2.5 mt-6 rounded-lg bg-theme-input border border-theme/40 text-theme-subtext hover:text-theme-title transition-colors text-xs font-bold uppercase transition-all">
+                            Notify Me
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile-Optimized Comparison Table -->
+                <div class="border-t border-theme pt-12">
+                    <h3 class="text-xl sm:text-2xl font-serif text-theme-title text-center mb-4">Granular metrics comparison</h3>
+                    
+                    <!-- Slide indicator visual helper for mobile layouts -->
+                    <div class="flex items-center justify-center gap-1.5 text-theme-gold text-[10px] uppercase tracking-wider font-bold mb-3 lg:hidden">
+                        <i class="fa-solid fa-left-right animate-pulse"></i> Slide horizontally to view features comparison
+                    </div>
+                    
+                    <div class="overflow-x-auto rounded-2xl border border-theme bg-theme-subtle backdrop-blur shadow-xl mb-12">
+                        <table class="w-full text-left border-collapse min-w-[700px] text-xs">
+                            <thead>
+                                <tr class="border-b border-theme bg-theme-table-header text-[10px] uppercase tracking-wider text-theme-subtext">
+                                    <th class="p-4">Platform Capabilities</th>
+                                    <th class="p-4 text-center">Essential</th>
+                                    <th class="p-4 text-center bg-theme-badge text-theme-gold">Growth</th>
+                                    <th class="p-4 text-center">Premium</th>
+                                    <th class="p-4 text-center">Business</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-stone-900/10 dark:divide-white/10 text-theme-text">
+                                <tr>
+                                    <td class="p-4 font-medium text-theme-title">Custom design web pages</td>
+                                    <td class="p-4 text-center">1 Page</td>
+                                    <td class="p-4 text-center bg-theme-badge font-semibold text-theme-gold">Up to 3 Pages</td>
+                                    <td class="p-4 text-center">Up to 5 Pages</td>
+                                    <td class="p-4 text-center text-theme-subtext">Unlimited</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-medium text-theme-title">Dashboard panels tier</td>
+                                    <td class="p-4 text-center">Basic control</td>
+                                    <td class="p-4 text-center bg-theme-badge font-semibold text-theme-gold">Enhanced</td>
+                                    <td class="p-4 text-center">Complete</td>
+                                    <td class="p-4 text-center text-theme-subtext">Enterprise Stack</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-medium text-theme-title">Change ingredient prices</td>
+                                    <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                    <td class="p-4 text-center bg-theme-badge"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                    <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                    <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-medium text-theme-title">Inject dynamic items</td>
+                                    <td class="p-4 text-center text-theme-subtext">—</td>
+                                    <td class="p-4 text-center bg-theme-badge"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                    <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                    <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-medium text-theme-title">Bespoke categorization</td>
+                                    <td class="p-4 text-center text-theme-subtext">—</td>
+                                    <td class="p-4 text-center bg-theme-badge text-theme-subtext">—</td>
+                                    <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                    <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-medium text-theme-title">Interactive Pre-order checkout</td>
+                                    <td class="p-4 text-center text-theme-subtext">—</td>
+                                    <td class="p-4 text-center bg-theme-badge text-theme-subtext">—</td>
+                                    <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                    <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-medium text-theme-title">Upsell suggestions engine</td>
+                                    <td class="p-4 text-center text-theme-subtext">—</td>
+                                    <td class="p-4 text-center bg-theme-badge text-theme-subtext">—</td>
+                                    <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                    <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Optional Add-ons section -->
+                <div class="border-t border-theme pt-12">
+                    <h3 class="text-xl sm:text-2xl font-serif text-theme-title text-center mb-8">Performance add-ons & support modifications</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left text-xs">
                         
-                        <div class="space-y-1 text-left">
-                            <label class="text-[10px] font-bold text-theme-gold uppercase tracking-widest block">Restaurant name</label>
-                            <input id="demo-title-input" type="text" value="The Daily Grind" 
-                                   class="w-full bg-theme-input border border-theme rounded-lg px-3 py-2 text-xs text-theme-title focus:outline-none focus:border-bistro-500 transition-colors"
-                                   oninput="updateMenuTitle(this.value)">
+                        <div class="p-5 rounded-xl bg-theme-subtle border border-theme fancy-card-animate">
+                            <h4 class="text-theme-gold font-serif font-bold text-sm mb-3 flex items-center gap-2"><i class="fa-solid fa-globe"></i> Domains & integrations</h4>
+                            <ul class="space-y-2.5">
+                                <li class="flex justify-between border-b border-stone-900/10 dark:border-white/10 pb-1.5">
+                                    <span class="text-theme-text">Custom domain name configuration</span>
+                                    <span class="text-theme-title font-bold">$99</span>
+                                </li>
+                                <li class="flex justify-between border-b border-stone-900/10 dark:border-white/10 pb-1.5">
+                                    <span class="text-theme-text">Proprietary domain registration</span>
+                                    <span class="text-theme-title font-bold">From $30/yr</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-theme-text">Google Business Email architecture</span>
+                                    <span class="text-theme-title font-bold">$99</span>
+                                </li>
+                            </ul>
                         </div>
 
-                        <div class="space-y-1 text-left">
-                            <label class="text-[10px] font-bold text-theme-gold uppercase tracking-widest block">Announcement headline</label>
-                            <input id="demo-promo-input" type="text" value="WEEKEND BRUNCH SPECIALS" 
-                                   class="w-full bg-theme-input border border-theme rounded-lg px-3 py-2 text-xs text-theme-title focus:outline-none focus:border-bistro-500 transition-colors"
-                                   oninput="updatePromoText(this.value)">
-                        </div>
-
-                        <!-- Live Adjust Pricing targets -->
-                        <div class="space-y-2 text-left">
-                            <label class="text-[10px] font-bold text-theme-gold uppercase tracking-widest block">In-house live pricing adjustments</label>
-                            <div class="grid grid-cols-2 gap-3">
-                                <div class="bg-theme-subtle p-2.5 rounded-xl border border-theme">
-                                    <span class="text-[9px] text-theme-subtext block">Flat White Espresso</span>
-                                    <div class="flex items-center gap-1.5 mt-1">
-                                        <span class="text-xs text-theme-gold font-bold">$</span>
-                                        <input id="price-coffee" type="number" step="0.25" value="4.50" 
-                                               class="w-full bg-transparent text-xs text-theme-title focus:outline-none font-bold"
-                                               oninput="updatePrice('coffee', this.value)">
-                                    </div>
-                                </div>
-                                <div class="bg-theme-subtle p-2.5 rounded-xl border border-theme">
-                                    <span class="text-[9px] text-theme-subtext block">Smashed Avocado Toast</span>
-                                    <div class="flex items-center gap-1.5 mt-1">
-                                        <span class="text-xs text-theme-gold font-bold">$</span>
-                                        <input id="price-toast" type="number" step="0.50" value="12.00" 
-                                               class="w-full bg-transparent text-xs text-theme-title focus:outline-none font-bold"
-                                               oninput="updatePrice('toast', this.value)">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Automated live event triggers -->
-                        <div class="space-y-2 pt-1 text-left">
-                            <label class="text-[10px] font-bold text-theme-gold uppercase tracking-widest block">Simulated Event Rules</label>
-                            <div class="flex flex-wrap gap-2">
-                                <button onclick="triggerHappyHour()" class="px-3 py-1.5 bg-theme-badge border border-theme text-theme-gold hover:bg-bistro-500 hover:text-stone-950 text-[10px] font-bold rounded transition-all uppercase">
-                                    Happy hour (10% Off)
-                                </button>
-                                <button onclick="triggerSoldOut('coffee')" class="px-3 py-1.5 bg-red-500/10 border border-red-500/30 text-red-500 hover:bg-red-500 hover:text-white text-[10px] font-bold rounded transition-all uppercase">
-                                    Toggle Sold Out
-                                </button>
-                                <button onclick="resetSimulator()" class="px-3 py-1.5 bg-theme-badge border border-theme text-theme-text hover:bg-stone-500 hover:text-stone-950 text-[10px] font-bold rounded transition-all uppercase ml-auto">
-                                    Reset Settings
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Simulation visual target with synced color tokens -->
-                <div class="lg:col-span-5 flex justify-center items-center">
-                    <div id="simulated-phone-container" class="w-full max-w-[280px] sm:max-w-[320px] h-[520px] sm:h-[620px] rounded-[36px] border-[6px] border-stone-900 bg-[#0c0a09] overflow-hidden shadow-2xl relative flex flex-col transition-all duration-300">
-                        <!-- Dynamic notification indicator inside simulation -->
-                        <div id="phone-toast" class="absolute top-10 left-3.5 right-3.5 bg-stone-950/95 border border-bistro-500/30 text-stone-100 text-[9px] px-2.5 py-1.5 rounded-lg shadow-xl z-40 transform -translate-y-16 opacity-0 transition-all duration-300 flex items-center gap-1.5">
-                            <i class="fa-solid fa-bell text-bistro-500 animate-bounce"></i>
-                            <span id="phone-toast-text" class="font-sans leading-none">Settings Updated.</span>
-                        </div>
-
-                        <!-- Camera notch -->
-                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-4 bg-stone-900 rounded-b-xl z-20 flex items-center justify-center">
-                            <div class="w-8 h-1 bg-black rounded-full"></div>
-                        </div>
-
-                        <!-- Screen elements mapping the dynamic body color style sheet overrides -->
-                        <div id="simulated-phone-screen" class="flex-1 overflow-y-auto flex flex-col text-xs pt-6 pb-3 scrollbar-none bg-[#0c0a09] transition-colors duration-300">
-                            <div id="simulated-phone-header" class="p-3 border-b border-stone-850 bg-stone-950 sticky top-0 z-10 flex items-center justify-between transition-colors">
-                                <span id="phone-restaurant-title" class="font-serif font-bold text-white transition-colors">The Daily Grind</span>
-                                <span class="text-[8px] px-1.5 py-0.5 bg-emerald-500/10 text-emerald-400 rounded border border-emerald-500/20 uppercase font-bold">Open</span>
-                            </div>
-
-                            <div id="phone-promo-banner" class="bg-stone-900 border-b border-stone-850 text-bistro-500 font-bold text-[8px] py-1.5 px-2 tracking-wider text-center uppercase transition-colors">
-                                WEEKEND BRUNCH SPECIALS
-                            </div>
-
-                            <div class="p-3 space-y-3 flex-1">
-                                <!-- Coffee element -->
-                                <div id="item-coffee-box" class="p-2 bg-stone-900/50 rounded-xl border border-stone-850 transition-all">
-                                    <div class="flex gap-2.5">
-                                        <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-stone-800">
-                                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=200" alt="Flat White" class="w-full h-full object-cover">
-                                        </div>
-                                        <div class="flex-1 text-left flex flex-col justify-between">
-                                            <div class="flex justify-between items-start">
-                                                <span id="phone-coffee-label" class="font-serif font-bold text-stone-100 text-[11px] transition-colors">Flat White</span>
-                                                <span id="phone-coffee-badge" class="bg-bistro-500/20 text-bistro-300 text-[7px] font-bold px-1 rounded uppercase border border-bistro-500/30 hidden">Happy Hour</span>
-                                            </div>
-                                            <div class="flex items-center justify-between mt-1">
-                                                <span class="font-serif font-black text-theme-gold text-[11px]" id="phone-coffee-price">$4.50</span>
-                                                <span id="phone-coffee-status" class="text-[8px] font-bold text-stone-400">In Stock</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Avocado Element -->
-                                <div id="item-toast-box" class="p-2 bg-stone-900/50 rounded-xl border border-stone-850 transition-all">
-                                    <div class="flex gap-2.5">
-                                        <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-stone-800">
-                                            <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&q=80&w=200" alt="Toast" class="w-full h-full object-cover">
-                                        </div>
-                                        <div class="flex-1 text-left flex flex-col justify-between">
-                                            <div class="flex justify-between items-start">
-                                                <span id="phone-toast-label" class="font-serif font-bold text-stone-100 text-[11px] transition-colors">Smashed Avocado</span>
-                                                <span id="phone-toast-badge" class="bg-bistro-500/20 text-bistro-300 text-[7px] font-bold px-1 rounded uppercase border border-bistro-500/30 hidden">Happy Hour</span>
-                                            </div>
-                                            <div class="flex items-center justify-between mt-1">
-                                                <span class="font-serif font-black text-theme-gold text-[11px]" id="phone-toast-price">$12.00</span>
-                                                <span id="phone-toast-status" class="text-[8px] font-bold text-stone-400">In Stock</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="px-2.5 py-1 border-t border-stone-850 text-center" id="phone-footer-block">
-                                <p class="text-[8px] text-stone-600 font-mono">Powered by VibeTable Platform</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Live Experience Embed section -->
-            <div class="border-t border-theme pt-12">
-                <div class="text-center mb-6 max-w-2xl mx-auto">
-                    <h3 class="text-2xl sm:text-3xl font-serif text-theme-title">Live multi-device client experience</h3>
-                    <p class="text-theme-subtext text-xs sm:text-sm mt-2">
-                        Explore how a real active menu renders natively on mobile or desktop viewport profiles.
-                    </p>
-                </div>
-
-                <!-- Toggle Controls -->
-                <div class="flex justify-center items-center gap-2 mb-8 bg-theme-badge p-1 rounded-full border border-theme max-w-xs mx-auto">
-                    <button onclick="setPreviewFrame('mobile')" id="btn-preview-mobile" class="flex-1 py-2 bg-bistro-500 text-stone-950 font-bold text-xs rounded-full uppercase transition-all shadow-md">
-                        Mobile
-                    </button>
-                    <button onclick="setPreviewFrame('desktop')" id="btn-preview-desktop" class="flex-1 py-2 bg-transparent text-theme-subtext font-bold text-xs rounded-full uppercase transition-all">
-                        Desktop
-                    </button>
-                </div>
-
-                <!-- Preview targets -->
-                <div class="flex justify-center items-center">
-                    <!-- Mobile Viewport -->
-                    <div id="preview-mobile-frame" class="w-full max-w-[280px] sm:max-w-[320px] h-[520px] sm:h-[620px] rounded-[40px] border-[8px] border-stone-900 overflow-hidden shadow-2xl relative transition-all duration-300">
-                        <iframe src="https://coffee-shop-menu-sepia.vercel.app/" class="w-full h-full pt-4 bg-stone-950 border-none" title="VibeTable Live Mobile Preview"></iframe>
-                    </div>
-
-                    <!-- Desktop Viewport -->
-                    <div id="preview-desktop-frame" class="hidden w-full max-w-4xl h-[420px] sm:h-[500px] rounded-2xl border-[6px] border-stone-900 overflow-hidden shadow-2xl relative transition-all duration-300">
-                        <iframe src="https://coffee-shop-menu-sepia.vercel.app/" class="w-full h-full bg-stone-950 border-none" title="VibeTable Live Desktop Preview"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- PAGE VIEW 4: CORE FEATURES & FAQ -->
-    <main id="view-features" class="spa-view hidden relative pt-24 pb-12 md:pt-36 md:pb-24 min-h-[85vh]">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 w-full">
-            <div class="text-center mb-10 max-w-2xl mx-auto">
-                <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">The Technology Stack</span>
-                <h2 class="text-2xl sm:text-4xl font-serif text-theme-title">Engineered for absolute direct control</h2>
-                <p class="text-theme-subtext mt-3 text-xs sm:text-sm">
-                    No software bloating, no complex server steps. High-performance culinary code optimized to scale your visibility across localized dynamic search.
-                </p>
-            </div>
-
-            <!-- Features list Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
-                <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 fancy-card-animate">
-                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
-                        <i class="fa-solid fa-gauge-high text-sm"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-theme-title mb-2">0.2s Global rendering</h3>
-                    <p class="text-theme-subtext text-xs leading-relaxed">
-                        Instant load performance bypasses weak basement signals or poor local cells, preserving diner attention.
-                    </p>
-                </div>
-
-                <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 fancy-card-animate">
-                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
-                        <i class="fa-solid fa-qrcode text-sm"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-theme-title mb-2">Tabletop vector QR assets</h3>
-                    <p class="text-theme-subtext text-xs leading-relaxed">
-                        Custom print-ready high-definition QR assets designed to match luxury linen, brass, wood, or acrylic stands.
-                    </p>
-                </div>
-
-                <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 fancy-card-animate">
-                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
-                        <i class="fa-solid fa-wine-glass text-sm"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-theme-title mb-2">Chef's highlights module</h3>
-                    <p class="text-theme-subtext text-xs leading-relaxed">
-                        Visually focus customer eyes on high-margin appetizers, premium side pairings, or signature plates dynamically.
-                    </p>
-                </div>
-
-                <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 fancy-card-animate">
-                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
-                        <i class="fa-solid fa-toggle-on text-sm"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-theme-title mb-2">Live ingredients toggles</h3>
-                    <p class="text-theme-subtext text-xs leading-relaxed">
-                        Flag items out-of-stock or sold-out instantly during peak services to guarantee clean communication with guests.
-                    </p>
-                </div>
-
-                <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 fancy-card-animate">
-                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
-                        <i class="fa-solid fa-chart-pie text-sm"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-theme-title mb-2">In-house click analytics</h3>
-                    <p class="text-theme-subtext text-xs leading-relaxed">
-                        Understand which drinks, seasonal filters, or pairing plates get browsed most, with 100% GDPR-compliant client metrics.
-                    </p>
-                </div>
-
-                <div class="p-5 sm:p-6 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 fancy-card-animate">
-                    <div class="w-10 h-10 rounded-xl bg-theme-badge text-theme-gold flex items-center justify-center mb-4">
-                        <i class="fa-solid fa-magnifying-glass text-sm"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-theme-title mb-2">Localized SEO Schema</h3>
-                    <p class="text-theme-subtext text-xs leading-relaxed">
-                        Built-in structured metadata index your menu items directly on search engines, optimizing organic local visibility.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Integrated FAQs -->
-            <div class="border-t border-theme pt-12 max-w-3xl mx-auto">
-                <div class="text-center mb-8">
-                    <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">Direct Answers</span>
-                    <h2 class="text-2xl sm:text-3xl font-serif text-theme-title">Frequently Asked Questions</h2>
-                </div>
-
-                <div class="space-y-3.5 text-left">
-                    <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
-                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
-                            <span>Is VibeTable a monthly subscription?</span>
-                            <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
-                        </button>
-                        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
-                                No. VibeTable functions on an absolute ownership model. You invest once to configure and deploy your custom restaurant website and digital menu system. There are no ongoing software rentals or platform fee cycles.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
-                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
-                            <span>Can I perform menu modifications myself?</span>
-                            <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
-                        </button>
-                        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
-                                Yes. Every tier includes access to an administrative dashboard layout, permitting you to adjust plate pricing, descriptions, stock availability, and image properties securely on any mobile device.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
-                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
-                            <span>How do diners interact with the QR codes?</span>
-                            <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
-                        </button>
-                        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
-                                Your venue receives print-ready, high-resolution vector tabletop QR assets. Diners simply scan the QR frame with their mobile devices to instantly launch your elegant web menu page. No browser warnings, no manual application downloads.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
-                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
-                            <span>Can I configure my existing web domain name?</span>
-                            <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
-                        </button>
-                        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
-                                Yes. We can link your proprietary domain directly or guide you in registering new address parameters for your dining business brand.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="border border-theme rounded-xl bg-theme-subtle overflow-hidden">
-                        <button onclick="toggleFaq(this)" class="w-full px-5 py-4 flex items-center justify-between text-left text-theme-title font-serif font-bold text-sm sm:text-base focus:outline-none hover:bg-theme-badge transition-all">
-                            <span>Can I upgrade my package selection later?</span>
-                            <i class="fa-solid fa-chevron-down text-theme-gold transition-transform text-xs ml-3"></i>
-                        </button>
-                        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <p class="px-5 pb-4 text-theme-subtext text-xs leading-relaxed">
-                                Absolutely. You can transition to a higher plan level at any point, simply covering the price difference between your active tier and the new selected system tier.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- PAGE VIEW 5: PRICING & PACKAGES -->
-    <main id="view-pricing" class="spa-view hidden relative pt-24 pb-12 md:pt-36 md:pb-24 min-h-[85vh]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
-            <div class="text-center mb-10 max-w-2xl mx-auto">
-                <span class="text-theme-gold text-xs font-semibold uppercase tracking-widest bg-theme-badge border border-theme px-3 py-1.5 rounded-full mb-3 inline-block">Integration Tiers</span>
-                <h2 class="text-2xl sm:text-4xl font-serif text-theme-title tracking-tight leading-tight">One direct investment. Zero platform overhead.</h2>
-                <p class="text-theme-subtext mt-3 text-xs sm:text-sm">
-                    Reclaim control over your marketing channels. Select the ideal system parameters for your venue with clear, upfront launch pricing.
-                </p>
-            </div>
-
-            <!-- Hard cash savings utility tool -->
-            <div class="max-w-3xl mx-auto panel-theme border rounded-2xl p-5 mb-12 text-center shadow-md fancy-card-animate">
-                <h4 class="text-sm font-serif font-bold text-theme-title mb-4">Calculate Your Financial Savings (vs. Standard $150/mo SaaS rentals)</h4>
-                
-                <div class="flex flex-wrap justify-center gap-2 mb-4 max-w-xs mx-auto">
-                    <button id="btn-savings-1" onclick="calculateSavings(1, this)" class="flex-1 py-1.5 rounded-lg text-[10px] font-bold bg-bistro-500 text-stone-950 uppercase">1 Year</button>
-                    <button id="btn-savings-3" onclick="calculateSavings(3, this)" class="flex-1 py-1.5 rounded-lg text-[10px] font-bold bg-theme-input border border-theme text-theme-subtext hover:text-theme-title transition-colors uppercase">3 Years</button>
-                    <button id="btn-savings-5" onclick="calculateSavings(5, this)" class="flex-1 py-1.5 rounded-lg text-[10px] font-bold bg-theme-input border border-theme text-theme-subtext hover:text-theme-title transition-colors uppercase">5 Years</button>
-                </div>
-
-                <div class="grid grid-cols-3 gap-3 pt-4 border-t border-theme text-center text-xs">
-                    <div class="p-2 card-theme border rounded-lg">
-                        <span class="text-[9px] text-theme-subtext block uppercase font-bold">Standard SaaS Fees</span>
-                        <span id="calc-saas-total" class="text-sm sm:text-base font-bold text-red-500">$1,800.00</span>
-                    </div>
-                    <div class="p-2 card-theme border rounded-lg">
-                        <span class="text-[9px] text-theme-subtext block uppercase font-bold">VibeTable Growth Setup</span>
-                        <span id="calc-brand-total" class="text-sm sm:text-base font-bold text-theme-title">$999.00</span>
-                    </div>
-                    <div class="p-2 bg-theme-badge border border-theme rounded-lg">
-                        <span class="text-[9px] text-theme-gold block uppercase font-bold">Total Saved</span>
-                        <span id="calc-net-retained" class="text-sm sm:text-base font-black text-theme-gold">$801.00</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dynamic Pricing Columns (4-Card layout stacked nicely on mobile viewports) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch max-w-7xl mx-auto mb-12 text-left">
-                
-                <!-- Package 1: Essential -->
-                <div class="p-5 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 flex flex-col justify-between relative fancy-card-animate">
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center">
-                            <span class="px-2 py-0.5 bg-theme-input border border-theme text-[9px] font-bold rounded uppercase text-theme-subtext">Starter</span>
-                            <span class="px-1.5 py-0.5 bg-theme-badge text-theme-gold text-[8px] font-bold rounded uppercase">Launch Discount</span>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-serif font-bold text-theme-title">Essential</h3>
-                            <p class="text-theme-subtext text-[10px] mt-1">Sleek menu system for boutique bakeries or specialty coffee roasters.</p>
-                        </div>
-                        <div class="py-2">
-                            <div class="text-[10px] text-stone-500 line-through">USD $1,000</div>
-                            <div class="text-2xl font-serif font-bold text-theme-title">USD $799</div>
-                            <span class="text-[8px] text-theme-gold uppercase font-bold">One-time installation</span>
-                        </div>
-                        <div class="space-y-3 pt-3 border-t border-theme text-[10px] text-theme-text">
-                            <div>
-                                <span class="font-bold text-theme-title uppercase block text-[9px]">Website Pages</span>
-                                <p class="text-theme-subtext">1 Custom Branded Responsive Layout Page, QR Code Menu integrations.</p>
-                            </div>
-                            <div>
-                                <span class="font-bold text-theme-title uppercase block text-[9px]">Administrative Controls</span>
-                                <p class="text-theme-subtext">Modify pricing structure, change menu titles, edit active category items, and toggle display states.</p>
-                            </div>
-                            <div class="p-2 bg-theme-input rounded border border-theme text-[9px] italic text-theme-subtext">
-                                Note: Adding new categories or items dynamically requires higher tiers.
-                            </div>
-                        </div>
-                    </div>
-                    <button onclick="handlePurchase('Essential Package', 'USD $799')" class="w-full py-2.5 mt-6 rounded-lg bg-theme-input border border-theme text-theme-text hover:bg-stone-800 hover:text-white transition-colors text-xs font-bold uppercase transition-all">
-                        Choose Essential
-                    </button>
-                </div>
-
-                <!-- Package 2: Growth (Highlighted Premium Glow) -->
-                <div class="p-5 rounded-2xl popular-card-theme flex flex-col justify-between relative transform lg:scale-105 z-10 fancy-card-animate">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-bistro-500 text-stone-950 text-[8px] font-black uppercase px-2.5 py-0.5 rounded-full z-20">
-                        Most Popular
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center mt-1">
-                            <span class="px-2 py-0.5 bg-theme-input border border-theme text-[9px] font-bold rounded uppercase text-theme-gold">Growth</span>
-                            <span class="px-1.5 py-0.5 bg-theme-badge text-theme-gold text-[8px] font-bold rounded uppercase">Launch Discount</span>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-serif font-bold text-theme-title">Growth</h3>
-                            <p class="text-theme-subtext text-[10px] mt-1">Complete system for active bistros and local dining bars.</p>
-                        </div>
-                        <div class="py-2">
-                            <div class="text-[10px] text-stone-500 line-through">USD $1,300</div>
-                            <div class="text-2xl font-serif font-bold text-theme-title">USD $999</div>
-                            <span class="text-[8px] text-theme-gold uppercase font-bold">One-time installation</span>
-                        </div>
-                        <div class="space-y-3 pt-3 border-t border-theme text-[10px] text-theme-text">
-                            <div>
-                                <span class="font-bold text-theme-gold uppercase block text-[9px]">Everything in Essential Plus</span>
-                                <span class="font-bold text-theme-title uppercase block text-[9px] mt-1.5">Extended Pages</span>
-                                <p class="text-theme-subtext">Up to 3 Custom Web Pages (Menu catalog, Brand history, Contact portals).</p>
-                            </div>
-                            <div>
-                                <span class="font-bold text-theme-title uppercase block text-[9px]">Enhanced BOH Admin</span>
-                                <p class="text-theme-subtext">Add new dishes, manage Corkboards, moderate customer reviews, upload ambient vibe photos.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button onclick="handlePurchase('Growth Package', 'USD $999')" class="w-full py-2.5 mt-6 rounded-lg bg-bistro-500 text-stone-950 hover:opacity-90 text-xs font-black uppercase transition-all shadow">
-                        Choose Growth
-                    </button>
-                </div>
-
-                <!-- Package 3: Premium -->
-                <div class="p-5 rounded-2xl bg-theme-subtle border border-theme hover:border-bistro-500/20 transition-all duration-300 flex flex-col justify-between relative fancy-card-animate">
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center">
-                            <span class="px-2 py-0.5 bg-theme-input border border-theme text-[9px] font-bold rounded uppercase text-theme-subtext">Premium</span>
-                            <span class="px-1.5 py-0.5 bg-theme-badge text-theme-gold text-[8px] font-bold rounded uppercase">Launch Discount</span>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-serif font-bold text-theme-title">Premium</h3>
-                            <p class="text-theme-subtext text-[10px] mt-1">High-end solution with reservation, catering, and smart pre-order systems.</p>
-                        </div>
-                        <div class="py-2">
-                            <div class="text-[10px] text-stone-500 line-through">USD $1,500</div>
-                            <div class="text-2xl font-serif font-bold text-theme-title">USD $1,199</div>
-                            <span class="text-[8px] text-theme-gold uppercase font-bold">One-time installation</span>
-                        </div>
-                        <div class="space-y-3 pt-3 border-t border-theme text-[10px] text-theme-text">
-                            <div>
-                                <span class="font-bold text-theme-title uppercase block text-[9px]">Everything in Growth Plus</span>
-                                <span class="font-bold text-theme-title uppercase block text-[9px] mt-1.5">Complete Site Stack</span>
-                                <p class="text-theme-subtext">Up to 5 Fully Branded Web Pages, Reservations structure, Catering inquiry filters, Newsletter setup.</p>
-                            </div>
-                            <div>
-                                <span class="font-bold text-theme-title uppercase block text-[9px]">Pre-Order & Upsell</span>
-                                <p class="text-theme-subtext">Interactive order bag, dynamic recommendations ("Add a beverage?", "Pair with dessert").</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button onclick="handlePurchase('Premium Package', 'USD $1,199')" class="w-full py-2.5 mt-6 rounded-lg bg-theme-input border border-theme text-theme-text hover:bg-stone-800 hover:text-white transition-colors text-xs font-bold uppercase transition-all">
-                        Choose Premium
-                    </button>
-                </div>
-
-                <!-- Package 4: Business (Coming Soon) -->
-                <div class="p-5 rounded-2xl bg-theme-subtle border border-theme/50 opacity-85 flex flex-col justify-between relative overflow-hidden fancy-card-animate">
-                    <!-- REPAIRED PREMIUM CORNER RIBBON: Optimized parameters to prevent cropping layout box boundaries -->
-                    <div class="absolute top-5 -right-12 bg-bistro-500 text-stone-950 text-[8px] font-black uppercase tracking-widest py-1.5 w-36 text-center rotate-45 shadow-md z-20">
-                        Soon
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center">
-                            <span class="px-2 py-0.5 bg-theme-input border border-theme text-[9px] font-bold rounded uppercase text-theme-subtext">Business</span>
-                            <span class="px-1.5 py-0.5 bg-theme-badge text-theme-subtext text-[8px] font-bold rounded uppercase">Launch List</span>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-serif font-bold text-theme-title opacity-65">Business</h3>
-                            <p class="text-theme-subtext text-[10px] mt-1">Multi-branch commerce stack with full database capabilities.</p>
-                        </div>
-                        <div class="py-2">
-                            <div class="text-[10px] text-stone-600 line-through">USD $1,900</div>
-                            <div class="text-2xl font-serif font-bold text-theme-subtext">USD $1,399</div>
-                            <span class="text-[8px] text-theme-subtext uppercase font-bold">Planned release</span>
-                        </div>
-                        <div class="space-y-2 pt-3 border-t border-theme/30 text-[9px] text-theme-subtext">
-                            <p class="font-bold text-theme-title uppercase opacity-85">AIO Release Roadmap</p>
-                            <ul class="space-y-1">
-                                <li>• Customer Loyalty Accounts</li>
-                                <li>• Dynamic Seat Layout Managers</li>
-                                <li>• Online Transaction Processing</li>
-                                <li>• Multi-Location Operations Panels</li>
+                        <div class="p-5 rounded-xl bg-theme-subtle border border-theme fancy-card-animate">
+                            <h4 class="text-theme-gold font-serif font-bold text-sm mb-3 flex items-center gap-2"><i class="fa-solid fa-sliders"></i> Specialized enhancements</h4>
+                            <ul class="space-y-2.5">
+                                <li class="flex justify-between border-b border-stone-900/10 dark:border-white/10 pb-1.5">
+                                    <span class="text-theme-text">Additional landing design page</span>
+                                    <span class="text-theme-title font-bold">$150/page</span>
+                                </li>
+                                <li class="flex justify-between border-b border-stone-900/10 dark:border-white/10 pb-1.5">
+                                    <span class="text-theme-text">Multi-lingual support integrations</span>
+                                    <span class="text-theme-title font-bold">$249</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-theme-text">Rush system setup (3-5 Business Days)</span>
+                                    <span class="text-theme-title font-bold">+25% total</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
-                    <button onclick="handleNotify()" class="w-full py-2.5 mt-6 rounded-lg bg-theme-input border border-theme/40 text-theme-subtext hover:text-theme-title transition-colors text-xs font-bold uppercase transition-all">
-                        Notify Me
-                    </button>
                 </div>
             </div>
-
-            <!-- Mobile-Optimized Comparison Table -->
-            <div class="border-t border-theme pt-12">
-                <h3 class="text-xl sm:text-2xl font-serif text-theme-title text-center mb-4">Granular metrics comparison</h3>
-                
-                <!-- Slide indicator visual helper for mobile layouts -->
-                <div class="flex items-center justify-center gap-1.5 text-theme-gold text-[10px] uppercase tracking-wider font-bold mb-3 lg:hidden">
-                    <i class="fa-solid fa-left-right animate-pulse"></i> Slide horizontally to view features comparison
-                </div>
-                
-                <div class="overflow-x-auto rounded-2xl border border-theme bg-theme-subtle backdrop-blur shadow-xl mb-12">
-                    <table class="w-full text-left border-collapse min-w-[700px] text-xs">
-                        <thead>
-                            <tr class="border-b border-theme bg-theme-table-header text-[10px] uppercase tracking-wider text-theme-subtext">
-                                <th class="p-4">Platform Capabilities</th>
-                                <th class="p-4 text-center">Essential</th>
-                                <th class="p-4 text-center bg-theme-badge text-theme-gold">Growth</th>
-                                <th class="p-4 text-center">Premium</th>
-                                <th class="p-4 text-center">Business</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-stone-900/10 dark:divide-white/10 text-theme-text">
-                            <tr>
-                                <td class="p-4 font-medium text-theme-title">Custom design web pages</td>
-                                <td class="p-4 text-center">1 Page</td>
-                                <td class="p-4 text-center bg-theme-badge font-semibold text-theme-gold">Up to 3 Pages</td>
-                                <td class="p-4 text-center">Up to 5 Pages</td>
-                                <td class="p-4 text-center text-theme-subtext">Unlimited</td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium text-theme-title">Dashboard panels tier</td>
-                                <td class="p-4 text-center">Basic control</td>
-                                <td class="p-4 text-center bg-theme-badge font-semibold text-theme-gold">Enhanced</td>
-                                <td class="p-4 text-center">Complete</td>
-                                <td class="p-4 text-center text-theme-subtext">Enterprise Stack</td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium text-theme-title">Change ingredient prices</td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
-                                <td class="p-4 text-center bg-theme-badge"><i class="fa-solid fa-check text-theme-gold"></i></td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium text-theme-title">Inject dynamic items</td>
-                                <td class="p-4 text-center text-theme-subtext">—</td>
-                                <td class="p-4 text-center bg-theme-badge"><i class="fa-solid fa-check text-theme-gold"></i></td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium text-theme-title">Bespoke categorization</td>
-                                <td class="p-4 text-center text-theme-subtext">—</td>
-                                <td class="p-4 text-center bg-theme-badge text-theme-subtext">—</td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium text-theme-title">Interactive Pre-order checkout</td>
-                                <td class="p-4 text-center text-theme-subtext">—</td>
-                                <td class="p-4 text-center bg-theme-badge text-theme-subtext">—</td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium text-theme-title">Upsell suggestions engine</td>
-                                <td class="p-4 text-center text-theme-subtext">—</td>
-                                <td class="p-4 text-center bg-theme-badge text-theme-subtext">—</td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
-                                <td class="p-4 text-center"><i class="fa-solid fa-check text-theme-gold"></i></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Optional Add-ons section -->
-            <div class="border-t border-theme pt-12">
-                <h3 class="text-xl sm:text-2xl font-serif text-theme-title text-center mb-8">Performance add-ons & support modifications</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left text-xs">
-                    
-                    <div class="p-5 rounded-xl bg-theme-subtle border border-theme fancy-card-animate">
-                        <h4 class="text-theme-gold font-serif font-bold text-sm mb-3 flex items-center gap-2"><i class="fa-solid fa-globe"></i> Domains & integrations</h4>
-                        <ul class="space-y-2.5">
-                            <li class="flex justify-between border-b border-stone-900/10 dark:border-white/10 pb-1.5">
-                                <span class="text-theme-text">Custom domain name configuration</span>
-                                <span class="text-theme-title font-bold">$99</span>
-                            </li>
-                            <li class="flex justify-between border-b border-stone-900/10 dark:border-white/10 pb-1.5">
-                                <span class="text-theme-text">Proprietary domain registration</span>
-                                <span class="text-theme-title font-bold">From $30/yr</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span class="text-theme-text">Google Business Email architecture</span>
-                                <span class="text-theme-title font-bold">$99</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="p-5 rounded-xl bg-theme-subtle border border-theme fancy-card-animate">
-                        <h4 class="text-theme-gold font-serif font-bold text-sm mb-3 flex items-center gap-2"><i class="fa-solid fa-sliders"></i> Specialized enhancements</h4>
-                        <ul class="space-y-2.5">
-                            <li class="flex justify-between border-b border-stone-900/10 dark:border-white/10 pb-1.5">
-                                <span class="text-theme-text">Additional landing design page</span>
-                                <span class="text-theme-title font-bold">$150/page</span>
-                            </li>
-                            <li class="flex justify-between border-b border-stone-900/10 dark:border-white/10 pb-1.5">
-                                <span class="text-theme-text">Multi-lingual support integrations</span>
-                                <span class="text-theme-title font-bold">$249</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span class="text-theme-text">Rush system setup (3-5 Business Days)</span>
-                                <span class="text-theme-title font-bold">+25% total</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
     </main>
 
     <!-- Global CTA banner -->
@@ -1330,19 +1454,20 @@
                     </p>
                 </div>
                 <div>
+                    <!-- SEO Directory Internal Link Architecture mapping the Playbook Tiers -->
+                    <h5 class="text-theme-title font-bold mb-3 uppercase tracking-wider text-[10px]">Solutions for</h5>
+                    <ul class="space-y-2 text-theme-subtext font-medium">
+                        <li><a href="/for/cafes/" class="hover:text-theme-gold transition-colors flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[8px] opacity-60"></i> Cafes & Coffee Shops</a></li>
+                        <li><a href="/for/food-trucks/" class="hover:text-theme-gold transition-colors flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[8px] opacity-60"></i> Food Trucks</a></li>
+                        <li><a href="/for/fine-dining/" class="hover:text-theme-gold transition-colors flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[8px] opacity-60"></i> Fine Dining</a></li>
+                    </ul>
+                </div>
+                <div>
                     <h5 class="text-theme-title font-bold mb-3 uppercase tracking-wider text-[10px]">Platform</h5>
                     <ul class="space-y-2 text-theme-subtext">
                         <li><a href="#/why-vibetable" class="hover:text-theme-gold transition-colors">Why Own</a></li>
                         <li><a href="#/demo" class="hover:text-theme-gold transition-colors">Interactive Demo</a></li>
                         <li><a href="#/pricing" class="hover:text-theme-gold transition-colors">Investment plans</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="text-theme-title font-bold mb-3 uppercase tracking-wider text-[10px]">Onboarding</h5>
-                    <ul class="space-y-2 text-theme-subtext">
-                        <li><a href="#/features" class="hover:text-theme-gold transition-colors">Platform features</a></li>
-                        <li><a href="#/features" class="hover:text-theme-gold transition-colors">Onboarding FAQ</a></li>
-                        <li><a href="#" class="hover:text-theme-gold transition-colors">On-demand support</a></li>
                     </ul>
                 </div>
             </div>
@@ -1425,6 +1550,19 @@
             } else {
                 menu.classList.add('hidden');
                 icon.className = "fa-solid fa-bars text-lg";
+            }
+        }
+
+        // Mobile Solutions toggle handler
+        function toggleMobileSolutions() {
+            const subMenu = document.getElementById('solutions-mobile-sub');
+            const chevron = document.getElementById('solutions-mobile-chevron');
+            if (subMenu.classList.contains('hidden')) {
+                subMenu.classList.remove('hidden');
+                chevron.style.transform = 'rotate(180deg)';
+            } else {
+                subMenu.classList.add('hidden');
+                chevron.style.transform = 'rotate(0deg)';
             }
         }
 
