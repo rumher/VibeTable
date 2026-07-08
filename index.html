@@ -7,7 +7,6 @@
     <meta name="description" content="VibeTable Digital Menus Philippines — Premium multi-tenant QR code menu platform for cafes and restaurants in Northern and Central Luzon. Integrated with GCash, Maya, and PayMongo.">
     <meta name="author" content="VibeTable Philippines">
     
-    <!-- SEO & Discoverability Meta Elements -->
     <meta property="og:title" content="VibeTable – QR Code Digital Menu Philippines | GCash & Maya Ready">
     <meta property="og:description" content="Premium multi-tenant QR code menu platform for cafes and restaurants in Northern and Central Luzon. Blazing-fast 0.2s edge load times, basement-signal-proof.">
     <meta property="og:type" content="website">
@@ -25,13 +24,11 @@
     <link rel="apple-touch-icon" href="images/VT_logo_transparent_bg.png">
     <link rel="shortcut icon" href="images/VT_logo_transparent_bg.png">
     
-    <!-- Preconnect & Preloads for Web Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;600;700&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600;750;800&display=swap" as="style">
     
-    <!-- Optimized Google Fonts Import -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600;750;800&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -53,12 +50,12 @@
                             200: '#ede2d4',
                             300: '#e1cdb8',
                             400: '#cbab8f',
-                            500: 'var(--accent-gold)', // Connected dynamically to our active custom CSS variables!
+                            500: 'var(--accent-gold)', 
                             600: '#9b714e',
                             700: '#7e573a',
                             800: '#644129',
                             900: '#462b1b',
-                            950: '#0c0a09', // Deep roasted coffee black
+                            950: '#0c0a09', 
                         }
                     }
                 }
@@ -67,7 +64,6 @@
     </script>
     
     <style>
-        /* Custom Theme Variables supporting seamless light/dark mode */
         :root {
             --bg-color: #0c0a09;
             --text-color: #d6d3d1;
@@ -87,7 +83,7 @@
             --title-color: #1a1816; 
             --panel-bg: rgba(255, 255, 255, 0.95);
             --border-color: rgba(138, 95, 31, 0.22); 
-            --accent-gold: #8a5f1f; /* Compliant WCAG AA standard gold */
+            --accent-gold: #8a5f1f; 
             --card-bg: rgba(255, 255, 255, 0.8);
             --glass-glow: rgba(138, 95, 31, 0.04);
             --input-bg: rgba(0, 0, 0, 0.04);
@@ -96,16 +92,16 @@
 
         /* Intelligent Contrast Adapters for Light Theme elements */
         .light-theme .text-stone-400 {
-            color: #57534e !important; /* High-contrast stone-600 */
+            color: #57534e !important; 
         }
         .light-theme .text-stone-500 {
-            color: #44403c !important; /* High-contrast stone-700 */
+            color: #44403c !important; 
         }
         .light-theme .text-stone-600 {
-            color: #292524 !important; /* High-contrast stone-800 */
+            color: #292524 !important; 
         }
         .light-theme .text-stone-300 {
-            color: #1c1917 !important; /* High-contrast stone-900 */
+            color: #1c1917 !important; 
         }
         .light-theme .bg-stone-900 {
             background-color: #eae6df !important;
@@ -141,10 +137,9 @@
         }
         .light-theme .footer-hotline-label,
         .light-theme .footer-email-label {
-            color: #1c1917 !important; /* Fixed to use the same high-contrast stone-900 */
+            color: #1c1917 !important; 
         }
 
-        /* ALWAYS-DARK SCOPING: Protects dark sections from light-theme overrides */
         .always-dark, 
         .always-dark * {
             --bg-color: #0c0a09 !important;
@@ -214,6 +209,36 @@
             background-color: #1c1917 !important;
         }
 
+        /* STRICT SPECIFICITY IMMUNITY FOR TIER C IN LIGHT MODE */
+        .light-theme .always-dark .bg-stone-950,
+        .always-dark .bg-stone-950 {
+            background-color: #0c0a09 !important;
+        }
+        .light-theme .always-dark .text-white,
+        .always-dark .text-white {
+            color: #ffffff !important;
+        }
+        .light-theme .always-dark .text-stone-300,
+        .always-dark .text-stone-300 {
+            color: #d6d3d1 !important;
+        }
+        .light-theme .always-dark .text-stone-400,
+        .always-dark .text-stone-400 {
+            color: #a8a29e !important;
+        }
+        .light-theme .always-dark .text-stone-500,
+        .always-dark .text-stone-500 {
+            color: #78716c !important;
+        }
+        .light-theme .always-dark .border-stone-900,
+        .always-dark .border-stone-900 {
+            border-color: #1c1917 !important;
+        }
+        .light-theme .always-dark .bg-stone-900\/20,
+        .always-dark .bg-stone-900\/20 {
+            background-color: rgba(28, 25, 23, 0.2) !important;
+        }
+
         /* Simulated phone light theme contrast overrides */
         .light-theme #phone-container {
             border-color: #dfd9ce !important;
@@ -260,7 +285,7 @@
             overflow-x: hidden;
             transition: background-color 0.4s ease, color 0.4s ease;
             margin: 0;
-            padding-bottom: 74px; /* Buffer room for sticky mobile call bar + floating triggers */
+            padding-bottom: 74px; 
         }
         @media (min-width: 640px) {
             body { padding-bottom: 0; }
@@ -292,7 +317,6 @@
             box-shadow: 0 12px 30px var(--glass-glow);
         }
 
-        /* Interactive slide transformations */
         .spa-view { animation: viewFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         
         @keyframes viewFadeIn {
@@ -342,13 +366,28 @@
             animation: wa-pulse-glow 2.5s infinite ease-in-out;
         }
 
-        /* Utility helper for cleaning browser scroll scrolls */
+        @keyframes tier-c-border-pulse {
+            0%, 100% {
+                background-position: 0% 50%;
+                box-shadow: 0 0 25px rgba(196, 155, 85, 0.25);
+            }
+            50% {
+                background-position: 100% 50%;
+                box-shadow: 0 0 45px rgba(245, 158, 11, 0.45);
+            }
+        }
+        .tier-c-gradient-glow {
+            background: linear-gradient(270deg, #c49b55, #f59e0b, #d97706, #c49b55);
+            background-size: 600% 600%;
+            animation: tier-c-border-pulse 6s ease infinite;
+        }
+
         .scrollbar-none {
             -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        .scrollbar-none::-webkit-scrollbar {
-            display: none;
+        /* Modular-level transition for simulator draft indicators */
+        .draft-active-glow {
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
+            border-color: rgba(245, 158, 11, 0.4) !important;
         }
     </style>
 </head>
@@ -359,7 +398,6 @@
         <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] rounded-full bg-bistro-500/10 blur-[120px] opacity-35 animate-pulse-slow"></div>
     </div>
 
-    <!-- Navigation Bar with Expanded Spacing (h-24 and high-density pad extensions) -->
     <nav id="navbar" class="sticky top-0 z-50 backdrop-blur-xl border-b panel-theme transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
             
@@ -367,7 +405,6 @@
                 <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-bistro-500 shadow-[0_0_15px_rgba(196,155,85,0.35)] bg-stone-950 p-0.5 transition-transform duration-300 hover:rotate-12">
                     <img src="images/VT_logo_transparent_bg.png" alt="VibeTable logo" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/100x100/c49b55/ffffff?text=VT'">
                 </div>
-                <!-- Enhanced subheading spacing between primary title and subtitle (reduced vertical spacing margin to mt-0.5) -->
                 <div class="flex flex-col text-left justify-center">
                     <span class="text-xl sm:text-2xl font-serif font-bold tracking-tight text-theme-title leading-none">VibeTable</span>
                     <span class="text-[9px] font-mono uppercase tracking-widest text-bistro-500 font-extrabold mt-0.5 block leading-none">DIGITAL MENUS</span>
@@ -393,7 +430,7 @@
 
             <!-- Header Action Block -->
             <div class="flex items-center gap-5">
-                <button onclick="toggleTheme()" class="w-11 h-11 flex items-center justify-center rounded-xl border border-theme hover:bg-bistro-500/10 text-theme-gold transition-all" style="min-height: 44px; min-width: 44px;" aria-label="Toggle Theme Preference">
+                <button onclick="toggleTheme()" class="w-11 h-11 flex items-center justify-center rounded-xl border border-theme hover:bg-bistro-500/10 text-theme-gold transition-all active:scale-95 transition-transform" style="min-height: 44px; min-width: 44px;" aria-label="Toggle Theme Preference">
                     <span id="theme-icon-container">
                         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -402,7 +439,7 @@
                 </button>
 
                 <!-- Clean Primary Header Hotline Link -->
-                <a href="tel:+639927628293" class="hidden sm:inline-flex items-center gap-2.5 px-6 py-3 border-2 border-bistro-500 text-bistro-500 hover:bg-bistro-500 hover:text-stone-950 font-bold text-xs uppercase tracking-wider rounded-full transition-all duration-300" style="min-height: 44px;">
+                <a href="tel:+639927628293" class="hidden sm:inline-flex items-center gap-2.5 px-6 py-3 border-2 border-bistro-500 text-bistro-500 hover:bg-bistro-500 hover:text-stone-950 font-bold text-xs uppercase tracking-wider rounded-full transition-all duration-300 active:scale-95" style="min-height: 44px;">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92v3a2 2 0 0 1-2.18 2"></path>
                     </svg>
@@ -463,19 +500,19 @@
                 </h1>
 
                 <p class="text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed text-stone-400">
-                    Empower your restaurant from San Juan surf spots to Baguio peaks. Serve premium digital dining catalogs at extreme edge speeds <strong class="text-bistro-500">(0.2s)</strong>, bypassing poor cellular signals with zero pinch-to-zoom dropouts.
+                    San Juan beach cafes to Baguio peaks. Serve high-performance, rapid-loading dining catalogs that bypass cellular dead zones. No apps, no signal lag, 100% interactive checkouts.
                 </p>
 
-                <!-- Elevated mobile-first hero conversion block with contact numbers -->
+                <!-- Elevated mobile-first hero conversion block -->
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto mb-12">
-                    <a href="#view-pricing" class="w-full sm:w-auto px-8 py-4 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-bold rounded-full text-xs uppercase tracking-wider transition-all shadow-xl flex items-center justify-center gap-2" style="min-height: 48px;">
+                    <a href="#view-pricing" class="w-full sm:w-auto px-8 py-4 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-bold rounded-full text-xs uppercase tracking-wider transition-all shadow-xl flex items-center justify-center gap-2 active:scale-95 transition-transform" style="min-height: 48px;">
                         Explore Local Plans 
                         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
                     </a>
-                    <a href="#view-demo" class="w-full sm:w-auto px-8 py-4 border border-theme rounded-full font-bold text-xs uppercase tracking-wider hover:bg-bistro-500/10 text-theme-title flex items-center justify-center gap-2" style="min-height: 48px;">
+                    <a href="#view-demo" class="w-full sm:w-auto px-8 py-4 border border-theme rounded-full font-bold text-xs uppercase tracking-wider hover:bg-bistro-500/10 text-theme-title flex items-center justify-center gap-2 active:scale-95 transition-transform" style="min-height: 48px;">
                         Launch Demo & Admin Sandbox 
                         <svg class="w-4 h-4 text-bistro-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <circle cx="12" cy="12" r="10"></circle>
@@ -521,7 +558,6 @@
                 <div class="grid md:grid-cols-3 gap-6 lg:gap-8 text-left">
                     <div class="p-6 sm:p-8 rounded-2xl border border-theme bg-theme-subtle card-theme theme-card-hover">
                         <div class="w-12 h-12 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center mb-6">
-                            <!-- Network Signal Vector -->
                             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
                                 <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
@@ -531,13 +567,12 @@
                         </div>
                         <h3 class="text-lg font-serif font-bold mb-3 text-theme-title">Basement Signal Proof</h3>
                         <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
-                            Specialty cafes in deep stone structures or mountain hotels load menus beautifully. Our light-weight edge architecture bypasses 1-bar connection throttling completely.
+                            Bypasses low network cellular throttling in deep stone structures or mountain hotels. Your menu loads instantly.
                         </p>
                     </div>
 
                     <div class="p-6 sm:p-8 rounded-2xl border border-theme bg-theme-subtle card-theme theme-card-hover">
                         <div class="w-12 h-12 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center mb-6">
-                            <!-- Localized Payments Vector -->
                             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect>
                                 <line x1="2" y1="10" x2="22" y2="10"></line>
@@ -545,13 +580,12 @@
                         </div>
                         <h3 class="text-lg font-serif font-bold mb-3 text-theme-title">Localized Checkout Links</h3>
                         <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
-                            Equipped with direct payment integrations. Accept customer transactions immediately through GCash, Maya, and credit card API routing.
+                            Equipped with direct payment integrations. Accept customer transactions instantly through GCash, Maya, and credit card API routing.
                         </p>
                     </div>
 
                     <div class="p-6 sm:p-8 rounded-2xl border border-theme bg-theme-subtle card-theme theme-card-hover">
                         <div class="w-12 h-12 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center mb-6">
-                            <!-- Printer Vector -->
                             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <polyline points="6 9 6 2 18 2 18 9"></polyline>
                                 <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
@@ -560,7 +594,7 @@
                         </div>
                         <h3 class="text-lg font-serif font-bold mb-3 text-theme-title">Acrylic Stand Bundles</h3>
                         <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
-                            No simple home-printed cards. We provide custom vector QR files optimized directly for high-durability acrylic stands tailored to fit premier rustic wood, marble, or brass tabletop setups.
+                            High-durability acrylic stands tailored to fit premium wood, marble, or brass tabletop setups.
                         </p>
                     </div>
                 </div>
@@ -577,9 +611,6 @@
                             5X Sales Engine
                         </span> for Luzon Cafes
                     </h2>
-                    <p class="text-xs sm:text-sm text-stone-400 mt-4 leading-relaxed max-w-2xl mx-auto">
-                        Philippine cafes lose valuable sales to slow loading menus, dead cellular spots, and kitchen ordering errors. VibeTable resolves the entire service stack — from scan to GCash payment verified.
-                    </p>
                 </div>
 
                 <!-- Two Column Intro Grid -->
@@ -587,13 +618,13 @@
                     <div class="p-6 sm:p-8 rounded-2xl border border-theme bg-theme-subtle card-theme">
                         <h3 class="text-lg font-serif font-bold mb-3 text-theme-title">0.2s load, anywhere in the store</h3>
                         <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
-                            VibeTable isn't another slow and bloated PDF file on a drive. It's built for La Union surf spots, Baguio peak hotels, and Pangasinan dining establishments. Your menu loads in under 0.2 seconds on our Luzon edge node mirrors — even with 1-bar mobile connection levels.
+                            VibeTable is built for speed. No bloated PDF files or slow loading drives. It renders instantly on local Luzon edge node mirrors—even with low cellular signal.
                         </p>
                     </div>
                     <div class="p-6 sm:p-8 rounded-2xl border border-theme bg-theme-subtle card-theme">
                         <h3 class="text-lg font-serif font-bold mb-3 text-theme-title">Instant BOH control = more profit</h3>
                         <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
-                            With integrated GCash & Maya gateways, guests order and complete payments in 3 simple taps. Back-of-house admins gain instant stock control: toggle longganisa off, slide Happy Hour deals active, or deploy rainy day promos instantly on all table screens.
+                            With integrated GCash & Maya gateways, guests order and pay in seconds. Back-of-house admins gain instant stock control: toggle items sold out, deploy happy hour, or push live promos.
                         </p>
                     </div>
                 </div>
@@ -615,16 +646,13 @@
                                 </div>
                                 <h4 class="text-base font-serif font-bold text-theme-title">Speed-to-Sale</h4>
                             </div>
-                            <p class="text-xs sm:text-sm text-stone-400 mb-4 leading-normal">Win the initial 3-second attention threshold. Zero buffering, no app installs.</p>
+                            <p class="text-xs sm:text-sm text-stone-400 mb-4 leading-normal">Win customers in under 3 seconds. Zero buffering, no app downloads required.</p>
                             <ul class="space-y-2 text-xs text-stone-500 border-t border-theme/20 pt-3">
                                 <li class="flex items-center gap-2">
                                     <span class="text-bistro-500">✓</span> <span>Basement-signal proof edge caching</span>
                                 </li>
                                 <li class="flex items-center gap-2">
                                     <span class="text-bistro-500">✓</span> <span>High durability acrylic QR stands included</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-bistro-500">✓</span> <span>One-tap Sold Out sync to client device</span>
                                 </li>
                             </ul>
                         </div>
@@ -641,13 +669,10 @@
                             <p class="text-xs sm:text-sm text-stone-400 mb-4 leading-normal">Price dynamically like a modern merchant, bypassing slow reprint fees.</p>
                             <ul class="space-y-2 text-xs text-stone-500 border-t border-theme/20 pt-3">
                                 <li class="flex items-center gap-2">
-                                    <span class="text-bistro-500">✓</span> <span>Instant pricing changes via mobile terminal</span>
+                                    <span class="text-bistro-500">✓</span> <span>Instant pricing updates via mobile</span>
                                 </li>
                                 <li class="flex items-center gap-2">
                                     <span class="text-bistro-500">✓</span> <span>Automated Happy Hour timers</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-bistro-500">✓</span> <span>Bundling combos, promos, & addons</span>
                                 </li>
                             </ul>
                         </div>
@@ -669,9 +694,6 @@
                                 <li class="flex items-center gap-2">
                                     <span class="text-bistro-500">✓</span> <span>Simulated table-side order bags</span>
                                 </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-bistro-500">✓</span> <span>Boosted merchant & waitstaff output</span>
-                                </li>
                             </ul>
                         </div>
 
@@ -687,13 +709,10 @@
                             <p class="text-xs sm:text-sm text-stone-400 mb-4 leading-normal">Own your customer relationships, reviews, and slow-period traffic.</p>
                             <ul class="space-y-2 text-xs text-stone-500 border-t border-theme/20 pt-3">
                                 <li class="flex items-center gap-2">
-                                    <span class="text-bistro-500">✓</span> <span>Private feedback portal routing complaints</span>
+                                    <span class="text-bistro-500">✓</span> <span>Private feedback portal routing</span>
                                 </li>
                                 <li class="flex items-center gap-2">
-                                    <span class="text-bistro-500">✓</span> <span>Built-in table reservation calendar system</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-bistro-500">✓</span> <span>Community notices and promo billboard walls</span>
+                                    <span class="text-bistro-500">✓</span> <span>Built-in table reservation system</span>
                                 </li>
                             </ul>
                         </div>
@@ -710,13 +729,10 @@
                             <p class="text-xs sm:text-sm text-stone-400 mb-4 leading-normal">Blueprint designed for Central & Northern Luzon tourist traffic.</p>
                             <ul class="space-y-2 text-xs text-stone-500 border-t border-theme/20 pt-3">
                                 <li class="flex items-center gap-2">
-                                    <span class="text-bistro-500">✓</span> <span>30-day regional launch sequence roadmap</span>
+                                    <span class="text-bistro-500">✓</span> <span>30-day regional launch sequence</span>
                                 </li>
                                 <li class="flex items-center gap-2">
-                                    <span class="text-bistro-500">✓</span> <span>Active staff script training modules (Tagalog/English)</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-bistro-500">✓</span> <span>Opening-week marketing and launch materials</span>
+                                    <span class="text-bistro-500">✓</span> <span>Active staff script training modules</span>
                                 </li>
                             </ul>
                         </div>
@@ -728,7 +744,6 @@
                     <div class="text-center max-w-2xl mx-auto mb-12">
                         <span class="text-bistro-500 text-xs font-mono uppercase tracking-widest block mb-2">Sustainable Milestones</span>
                         <h3 class="text-xl sm:text-2xl font-serif text-theme-title">Your 90-Day Active Growth Calendar</h3>
-                        <p class="text-xs sm:text-sm text-stone-400 mt-2">We don't simply ship a QR template and walk away. We deliver a permanent restaurant sales machine.</p>
                     </div>
 
                     <div class="max-w-4xl mx-auto border border-theme bg-theme-subtle rounded-2xl overflow-hidden shadow-sm">
@@ -737,7 +752,7 @@
                                 <thead>
                                     <tr class="bg-stone-900 border-b border-theme text-[10px] text-stone-400 uppercase tracking-widest font-mono">
                                         <th class="p-4 sm:p-5">Phase</th>
-                                        <th class="p-4 sm:p-5">Focus Focus</th>
+                                        <th class="p-4 sm:p-5">Focus</th>
                                         <th class="p-4 sm:p-5">Feature Activation</th>
                                         <th class="p-4 sm:p-5">Target KPI Lift</th>
                                     </tr>
@@ -747,9 +762,8 @@
                                         <td class="p-4 sm:p-5 font-bold font-serif text-bistro-500 whitespace-nowrap">Days 1 - 30</td>
                                         <td class="p-4 sm:p-5">
                                             <strong class="text-theme-title block mb-0.5">Speed & Capture</strong>
-                                            <span class="text-[10px] text-stone-500 block">Launch Week Sequence</span>
                                         </td>
-                                        <td class="p-4 sm:p-5 leading-relaxed text-stone-400">0.2s light menu goes active. GCash & Maya checkouts connected. Durable high-end table standees shipped and deployed.</td>
+                                        <td class="p-4 sm:p-5 leading-relaxed text-stone-400 font-sans">0.2s light menu goes active. GCash & Maya checkouts connected. Table standees deployed.</td>
                                         <td class="p-4 sm:p-5 whitespace-nowrap">
                                             <span class="inline-block bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-lg font-mono font-bold text-[10px] uppercase">
                                                 +18% Table Turn
@@ -760,9 +774,8 @@
                                         <td class="p-4 sm:p-5 font-bold font-serif text-bistro-500 whitespace-nowrap">Days 31 - 60</td>
                                         <td class="p-4 sm:p-5">
                                             <strong class="text-theme-title block mb-0.5">Engineer & Upsell</strong>
-                                            <span class="text-[10px] text-stone-500 block">Profit per Table</span>
                                         </td>
-                                        <td class="p-4 sm:p-5 leading-relaxed text-stone-400">Happy Hour pricing structures active. Sulit combos programmed. Cross-sell items pinned dynamically.</td>
+                                        <td class="p-4 sm:p-5 leading-relaxed text-stone-400 font-sans">Happy Hour pricing active. Sulit combos programmed. Cross-sell items pinned dynamically.</td>
                                         <td class="p-4 sm:p-5 whitespace-nowrap">
                                             <span class="inline-block bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-lg font-mono font-bold text-[10px] uppercase">
                                                 +22% Check Total
@@ -773,9 +786,8 @@
                                         <td class="p-4 sm:p-5 font-bold font-serif text-bistro-500 whitespace-nowrap">Days 61 - 90</td>
                                         <td class="p-4 sm:p-5">
                                             <strong class="text-theme-title block mb-0.5">Retain & Dominate</strong>
-                                            <span class="text-[10px] text-stone-500 block">Repeat Traffic Loop</span>
                                         </td>
-                                        <td class="p-4 sm:p-5 leading-relaxed text-stone-400">Private guest feedback system activated. Table reservation widget deployed. Notice board promos optimized for regular local foot traffic.</td>
+                                        <td class="p-4 sm:p-5 leading-relaxed text-stone-400 font-sans">Private guest feedback activated. Table reservations widget deployed. Notices wall optimized.</td>
                                         <td class="p-4 sm:p-5 whitespace-nowrap">
                                             <span class="inline-block bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-lg font-mono font-bold text-[10px] uppercase">
                                                 +35% Repeat Visits
@@ -794,20 +806,19 @@
                         <div class="md:col-span-8">
                             <h3 class="text-lg font-serif font-bold text-theme-title mb-2">You control the menu. Not the printer.</h3>
                             <p class="text-xs sm:text-sm text-stone-400 leading-relaxed font-sans">
-                                Average Luzon restaurants spend <strong class="text-bistro-500">₱4,500–₱6,200/month</strong> on laminations, graphic designers, and physical re-prints. VibeTable replaces the physical friction instantly, leaving you with absolute real-time autonomy.
+                                Average Luzon restaurants spend <strong class="text-bistro-500">₱4,500–₱6,200/month</strong> on physical menu updates and laminations. VibeTable ends paper waste instantly.
                             </p>
                         </div>
                         <div class="md:col-span-4 p-5 rounded-2xl border-2 border-bistro-500 bg-bistro-500/5 text-center">
                             <span class="text-[10px] text-bistro-500 font-bold uppercase tracking-widest block font-mono">Retained Yearly Profit</span>
                             <span class="text-2xl font-serif font-black text-bistro-500 mt-1 block">Save ₱59,800</span>
-                            <span class="text-[10px] text-stone-500 block mt-1 font-mono">Versus Legacy Re-printing</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Palengke Friendly CTA Scroll Anchor -->
                 <div class="text-center">
-                    <a href="#view-pricing" class="inline-flex items-center gap-2 px-8 py-4 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-bold rounded-full text-xs uppercase tracking-wider transition-all shadow-xl">
+                    <a href="#view-pricing" class="inline-flex items-center gap-2 px-8 py-4 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-bold rounded-full text-xs uppercase tracking-wider transition-all shadow-xl active:scale-95 transition-transform">
                         <span>Explore Palengke-Friendly Pricing Tiers</span>
                         <svg class="w-4 h-4 text-stone-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -826,20 +837,19 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
-                    
                     <!-- Testimonial 1 -->
                     <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between hover:shadow-lg transition-shadow">
                         <div class="space-y-4">
                             <div class="flex text-amber-500 gap-1 text-sm">★★★★★</div>
-                            <p class="text-xs sm:text-sm text-stone-300 italic leading-relaxed">
-                                "Our beachfront surf cafe in San Juan gets slammed with tourists during long weekends. Traditional paper menus were a massive waste of paper and time. VibeTable loads in a blink even when mobile networks are congested!"
+                            <p class="text-xs sm:text-sm text-stone-300 italic leading-relaxed font-sans">
+                                "Our beach cafe in San Juan gets slammed with weekend tourists. Paper menus were a huge hassle. VibeTable loads in a blink even when 5G is congested!"
                             </p>
                         </div>
                         <div class="mt-6 pt-4 border-t border-theme/20 flex items-center gap-3">
                             <div class="w-9 h-9 rounded-full bg-bistro-500/20 text-bistro-500 flex items-center justify-center font-bold text-xs uppercase font-mono">SJB</div>
                             <div>
                                 <h4 class="text-xs font-serif font-bold text-theme-title">Mikaela Roxas</h4>
-                                <p class="text-[10px] text-stone-500 uppercase font-mono">Owner, Surfside Brews (La Union)</p>
+                                <p class="text-[10px] text-stone-500 uppercase font-mono">Owner, Surfside Brews</p>
                             </div>
                         </div>
                     </div>
@@ -848,15 +858,15 @@
                     <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between hover:shadow-lg transition-shadow">
                         <div class="space-y-4">
                             <div class="flex text-amber-500 gap-1 text-sm">★★★★★</div>
-                            <p class="text-xs sm:text-sm text-stone-300 italic leading-relaxed">
-                                "Baguio's deep mountain hotels and stone structures can completely kill cellular signals. We previously hosted our menu as a 12MB PDF on Google Drive and guests were constantly complaining. VibeTable's edge architecture completely solved the friction."
+                            <p class="text-xs sm:text-sm text-stone-300 italic leading-relaxed font-sans">
+                                "Baguio's deep structures kill mobile signals. Hosting a 12MB PDF on Google Drive was constantly failing. VibeTable's edge architecture solved it completely."
                             </p>
                         </div>
                         <div class="mt-6 pt-4 border-t border-theme/20 flex items-center gap-3">
                             <div class="w-9 h-9 rounded-full bg-bistro-500/20 text-bistro-500 flex items-center justify-center font-bold text-xs uppercase font-mono">MCD</div>
                             <div>
-                                <h4 class="text-xs font-serif font-bold text-theme-title">Chef Paulo Baguio</h4>
-                                <p class="text-[10px] text-stone-500 uppercase font-mono">Mountain Cabin Diner (Baguio City)</p>
+                                <h4 class="text-xs font-serif font-bold text-theme-title">Chef Paulo</h4>
+                                <p class="text-[10px] text-stone-500 uppercase font-mono">Mountain Cabin Diner</p>
                             </div>
                         </div>
                     </div>
@@ -865,142 +875,65 @@
                     <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between hover:shadow-lg transition-shadow">
                         <div class="space-y-4">
                             <div class="flex text-amber-500 gap-1 text-sm">★★★★★</div>
-                            <p class="text-xs sm:text-sm text-stone-300 italic leading-relaxed">
-                                "We run a seasonal seafood menu in Dagupan and price adjustments are frequent. Re-printing physical menus every month was costing us thousands. Now we just change the price inside our BOH dashboard on our phones instantly!"
+                            <p class="text-xs sm:text-sm text-stone-300 italic leading-relaxed font-sans">
+                                "We run a seasonal seafood menu in Dagupan and price adjustments are frequent. Now we just change the price inside our dashboard instantly."
                             </p>
                         </div>
                         <div class="mt-6 pt-4 border-t border-theme/20 flex items-center gap-3">
                             <div class="w-9 h-9 rounded-full bg-bistro-500/20 text-bistro-500 flex items-center justify-center font-bold text-xs uppercase font-mono">DAG</div>
                             <div>
                                 <h4 class="text-xs font-serif font-bold text-theme-title">Sir Robert</h4>
-                                <p class="text-[10px] text-stone-500 uppercase font-mono">Alaminos Seafood Cafe (Pangasinan)</p>
+                                <p class="text-[10px] text-stone-500 uppercase font-mono">Alaminos Seafood Cafe</p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Testimonial 4 -->
-                    <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between hover:shadow-lg transition-shadow">
-                        <div class="space-y-4">
-                            <div class="flex text-amber-500 gap-1 text-sm">★★★★★</div>
-                            <p class="text-xs sm:text-sm text-stone-300 italic leading-relaxed">
-                                "Our guests absolutely love the in-house order bag framework. They build their orders directly from beach cabanas. Our staff works with 40% higher efficiency without waiting at tables just to record orders."
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-theme/20 flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-full bg-bistro-500/20 text-bistro-500 flex items-center justify-center font-bold text-xs uppercase font-mono">CCB</div>
-                            <div>
-                                <h4 class="text-xs font-serif font-bold text-theme-title">Dana Santos</h4>
-                                <p class="text-[10px] text-stone-500 uppercase font-mono">GM, Coastline Cabanas (Pangasinan)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 5 -->
-                    <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between hover:shadow-lg transition-shadow md:col-span-2 lg:col-span-1">
-                        <div class="space-y-4">
-                            <div class="flex text-amber-500 gap-1 text-sm">★★★★★</div>
-                            <p class="text-xs sm:text-sm text-stone-300 italic leading-relaxed">
-                                "The integration with TRP Vibe Solutions was flawless. They shipped out the physical acrylic tabletop standees and helped us configure our GCash and Maya API links in less than 48 hours. Absolute absolute recommendation!"
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-theme/20 flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-full bg-bistro-500/20 text-bistro-500 flex items-center justify-center font-bold text-xs uppercase font-mono">RBT</div>
-                            <div>
-                                <h4 class="text-xs font-serif font-bold text-theme-title">Enzo Reyes</h4>
-                                <p class="text-[10px] text-stone-500 uppercase font-mono">Founder, Roasted Beans (Tarlac)</p>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 
-            <!-- FAQ Section on Home Page (Re-engineered to support elegant interactive collapsing states) -->
+            <!-- FAQ Section on Home Page -->
             <div class="mt-24 sm:mt-32 pt-16 border-t border-theme max-w-4xl mx-auto">
                 <div class="text-center mb-12">
                     <span class="text-bistro-500 text-xs font-mono uppercase tracking-widest block mb-2">Helpful Information</span>
                     <h2 class="text-2xl sm:text-4xl font-serif font-light text-theme-title">Frequently Asked Questions</h2>
-                    <p class="text-xs sm:text-sm text-stone-400 mt-2 leading-relaxed max-w-lg mx-auto">
-                        Learn how VibeTable drives restaurant efficiency, prevents signal disconnects, and integrates localized payment channels.
-                    </p>
                 </div>
 
                 <div class="space-y-4 text-left">
                     <!-- FAQ Card 1 -->
                     <div class="rounded-xl border border-theme bg-theme-subtle card-theme overflow-hidden transition-all duration-300">
-                        <button onclick="toggleFaq(1)" class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-1 focus:ring-bistro-500/40 rounded-xl" aria-expanded="false" aria-controls="faq-answer-1">
+                        <button onclick="toggleFaq(1)" class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-1 focus:ring-bistro-500/40 rounded-xl" aria-expanded="false" aria-controls="faq-answer-1" style="min-height: 48px;">
                             <h3 class="text-base font-serif font-bold text-theme-title">How exactly does VibeTable load in under 0.2 seconds?</h3>
                             <span id="faq-icon-1" class="transition-transform duration-300 text-bistro-500 transform shrink-0">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                             </span>
                         </button>
-                        <div id="faq-answer-1" class="hidden px-6 pb-6 text-xs sm:text-sm text-stone-400 leading-relaxed border-t border-theme/15 pt-4">
-                            Unlike traditional restaurant menus hosted as massive PDF files on Google Drive, VibeTable uses lightweight, web-native code optimized for extreme edge caching. We deploy our assets directly onto regional node networks closer to your dining guests, rendering instantly even in low-signal or basement locations.
+                        <div id="faq-answer-1" class="hidden px-6 pb-6 text-xs sm:text-sm text-stone-400 leading-relaxed border-t border-theme/15 pt-4 font-sans">
+                            Unlike traditional restaurant menus hosted as massive PDF files on Google Drive, VibeTable uses lightweight, web-native code optimized for extreme edge caching.
                         </div>
                     </div>
 
                     <!-- FAQ Card 2 -->
                     <div class="rounded-xl border border-theme bg-theme-subtle card-theme overflow-hidden transition-all duration-300">
-                        <button onclick="toggleFaq(2)" class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-1 focus:ring-bistro-500/40 rounded-xl" aria-expanded="false" aria-controls="faq-answer-2">
+                        <button onclick="toggleFaq(2)" class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-1 focus:ring-bistro-500/40 rounded-xl" aria-expanded="false" aria-controls="faq-answer-2" style="min-height: 48px;">
                             <h3 class="text-base font-serif font-bold text-theme-title">Do clients or customers need to download a mobile application?</h3>
                             <span id="faq-icon-2" class="transition-transform duration-300 text-bistro-500 transform shrink-0">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                             </span>
                         </button>
-                        <div id="faq-answer-2" class="hidden px-6 pb-6 text-xs sm:text-sm text-stone-400 leading-relaxed border-t border-theme/15 pt-4">
-                            No download is required. Customers simply scan the table QR code using their built-in smartphone camera. The high-performance digital menu opens directly inside their mobile browser instantly with no account creation or login blocks.
+                        <div id="faq-answer-2" class="hidden px-6 pb-6 text-xs sm:text-sm text-stone-400 leading-relaxed border-t border-theme/15 pt-4 font-sans">
+                            No download is required. Customers simply scan the table QR code using their built-in smartphone camera.
                         </div>
                     </div>
 
                     <!-- FAQ Card 3 -->
                     <div class="rounded-xl border border-theme bg-theme-subtle card-theme overflow-hidden transition-all duration-300">
-                        <button onclick="toggleFaq(3)" class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-1 focus:ring-bistro-500/40 rounded-xl" aria-expanded="false" aria-controls="faq-answer-3">
+                        <button onclick="toggleFaq(3)" class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-1 focus:ring-bistro-500/40 rounded-xl" aria-expanded="false" aria-controls="faq-answer-3" style="min-height: 48px;">
                             <h3 class="text-base font-serif font-bold text-theme-title">Which local payment gateways are fully integrated?</h3>
                             <span id="faq-icon-3" class="transition-transform duration-300 text-bistro-500 transform shrink-0">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                             </span>
                         </button>
-                        <div id="faq-answer-3" class="hidden px-6 pb-6 text-xs sm:text-sm text-stone-400 leading-relaxed border-t border-theme/15 pt-4">
-                            VibeTable is fully equipped with payment hooks configured for Philippine payment ecosystems. We support direct merchant verification for GCash, Maya, and credit card API routing using secure PayMongo credentials.
-                        </div>
-                    </div>
-
-                    <!-- FAQ Card 4 -->
-                    <div class="rounded-xl border border-theme bg-theme-subtle card-theme overflow-hidden transition-all duration-300">
-                        <button onclick="toggleFaq(4)" class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-1 focus:ring-bistro-500/40 rounded-xl" aria-expanded="false" aria-controls="faq-answer-4">
-                            <h3 class="text-base font-serif font-bold text-theme-title">What is included in our physical setup bundle?</h3>
-                            <span id="faq-icon-4" class="transition-transform duration-300 text-bistro-500 transform shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-                            </span>
-                        </button>
-                        <div id="faq-answer-4" class="hidden px-6 pb-6 text-xs sm:text-sm text-stone-400 leading-relaxed border-t border-theme/15 pt-4">
-                            Every onboarding package includes five (5) premium, high-durability acrylic tabletop stands carrying your restaurant's unique QR codes. We also provide complete digital design files for future vector printouts on wood, brass, or marble table mediums.
-                        </div>
-                    </div>
-
-                    <!-- FAQ Card 5 -->
-                    <div class="rounded-xl border border-theme bg-theme-subtle card-theme overflow-hidden transition-all duration-300">
-                        <button onclick="toggleFaq(5)" class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-1 focus:ring-bistro-500/40 rounded-xl" aria-expanded="false" aria-controls="faq-answer-5">
-                            <h3 class="text-base font-serif font-bold text-theme-title">Can we change prices or mark items as sold-out during peak hours?</h3>
-                            <span id="faq-icon-5" class="transition-transform duration-300 text-bistro-500 transform shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-                            </span>
-                        </button>
-                        <div id="faq-answer-5" class="hidden px-6 pb-6 text-xs sm:text-sm text-stone-400 leading-relaxed border-t border-theme/15 pt-4">
-                            Yes! With Tier B and Tier C subscription packages, restaurant staff can access their Back-of-House (BOH) terminal directly from a mobile phone. Toggle sold-out states, apply discounts, or update pricing in real-time, and the changes will refresh instantly on your tables in 0.2s.
-                        </div>
-                    </div>
-
-                    <!-- FAQ Card 6 -->
-                    <div class="rounded-xl border border-theme bg-theme-subtle card-theme overflow-hidden transition-all duration-300">
-                        <button onclick="toggleFaq(6)" class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-1 focus:ring-bistro-500/40 rounded-xl" aria-expanded="false" aria-controls="faq-answer-6">
-                            <h3 class="text-base font-serif font-bold text-theme-title">How does the in-house self-service Order Bag work?</h3>
-                            <span id="faq-icon-6" class="transition-transform duration-300 text-bistro-500 transform shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-                            </span>
-                        </button>
-                        <div id="faq-answer-6" class="hidden px-6 pb-6 text-xs sm:text-sm text-stone-400 leading-relaxed border-t border-theme/15 pt-4">
-                            The Order Bag is a dynamic self-service add-on. Guests can build their virtual food cart right at their table. The system automatically computes local subtotals and displays formatted orders that can be instantly screenshot or forwarded to your waitstaff, cutting kitchen coordination times by 40%.
+                        <div id="faq-answer-3" class="hidden px-6 pb-6 text-xs sm:text-sm text-stone-400 leading-relaxed border-t border-theme/15 pt-4 font-sans">
+                            VibeTable is fully equipped with payment hooks configured for Philippine ecosystems, supporting direct GCash, Maya, and credit card API routing.
                         </div>
                     </div>
                 </div>
@@ -1014,17 +947,17 @@
             <div class="text-center max-w-2xl mx-auto mb-12">
                 <span class="text-bistro-500 text-xs font-semibold uppercase tracking-widest bg-bistro-500/10 border border-bistro-500/20 px-3 py-1.5 rounded-full mb-3 inline-block">State-Driven Interactive Sandbox</span>
                 <h2 class="text-2xl sm:text-4xl font-serif text-theme-title">Interactive Experience Studio</h2>
-                <p class="text-stone-400 mt-3 text-xs sm:text-sm">
+                <p class="text-stone-400 mt-3 text-xs sm:text-sm font-sans">
                     Review a real, active, high-fidelity customer menu or toggle the custom Back-of-House (BOH) controls to test layout performance instantly!
                 </p>
             </div>
 
             <!-- Studio Selector Tabs -->
             <div class="flex justify-center gap-2 mb-8 max-w-md mx-auto bg-stone-900/60 p-1.5 rounded-xl border border-theme">
-                <button onclick="setStudioView('pourdecisions')" id="studio-tab-pourdecisions" class="flex-1 py-2 text-xs font-bold uppercase rounded-lg bg-bistro-500 text-stone-950 border border-bistro-500 shadow-md transition-all">
+                <button onclick="setStudioView('pourdecisions')" id="studio-tab-pourdecisions" class="flex-1 py-2 text-xs font-bold uppercase rounded-lg bg-bistro-500 text-stone-950 border border-bistro-500 shadow-md transition-all active:scale-95 transition-transform" style="min-height: 44px;">
                     Pour Decisions Demo
                 </button>
-                <button onclick="setStudioView('simulator')" id="studio-tab-simulator" class="flex-1 py-2 text-xs font-bold uppercase rounded-lg border border-transparent text-stone-400 hover:text-white transition-all">
+                <button onclick="setStudioView('simulator')" id="studio-tab-simulator" class="flex-1 py-2 text-xs font-bold uppercase rounded-lg border border-transparent text-stone-400 hover:text-white transition-all active:scale-95 transition-transform" style="min-height: 44px;">
                     BOH Sandbox
                 </button>
             </div>
@@ -1033,7 +966,7 @@
             <div id="studio-view-pourdecisions" class="max-w-6xl mx-auto flex flex-col items-center">
                 <div class="text-center mb-6 max-w-xl">
                     <h3 class="text-lg sm:text-xl font-serif font-bold text-theme-title mb-1">Live Customer Experience</h3>
-                    <p class="text-stone-400 text-xs leading-relaxed">
+                    <p class="text-stone-400 text-xs leading-relaxed font-sans">
                         Scroll, click, and interact with our live deployment. Use the switcher below to test the seamless responsiveness on both mobile and desktop screen frames.
                     </p>
                     
@@ -1093,13 +1026,19 @@
                             <span class="text-xs font-mono text-bistro-500 bg-bistro-500/10 px-2 py-0.5 rounded border border-bistro-500/20 uppercase font-bold" id="active-sandbox-badge">Tier B Suite</span>
                         </div>
 
+                        <!-- Dynamic Pricing Relation Tracker -->
+                        <div class="p-3 rounded-xl bg-stone-950/40 border border-theme/20 text-[11px] text-stone-400 font-mono flex justify-between items-center">
+                            <span>Relating Plan Rate: <strong class="text-bistro-500 font-bold" id="sandbox-rel-sub">₱649/mo</strong></span>
+                            <span>Setup Cost: <strong class="text-emerald-400 font-bold" id="sandbox-rel-setup">₱1,300</strong></span>
+                        </div>
+
                         <!-- Tier Level Selector inside Simulator -->
                         <div class="space-y-2 text-left">
                             <span class="text-xs font-bold text-stone-400 uppercase tracking-widest block">Choose Tier Level Permissions</span>
                             <div class="flex gap-2 max-w-sm bg-stone-950/60 p-1 rounded-xl border border-theme">
-                                <button onclick="setSandboxTier('A')" id="sandbox-tier-btn-A" class="flex-1 py-1.5 text-xs font-bold uppercase rounded transition-all">Tier A</button>
-                                <button onclick="setSandboxTier('B')" id="sandbox-tier-btn-B" class="flex-1 py-1.5 text-xs font-bold uppercase rounded transition-all">Tier B</button>
-                                <button onclick="setSandboxTier('C')" id="sandbox-tier-btn-C" class="flex-1 py-1.5 text-xs font-bold uppercase rounded transition-all">Tier C</button>
+                                <button onclick="setSandboxTier('A')" id="sandbox-tier-btn-A" class="flex-1 py-1.5 text-xs font-bold uppercase rounded transition-all active:scale-95 transition-transform" style="min-height: 36px;">Tier A</button>
+                                <button onclick="setSandboxTier('B')" id="sandbox-tier-btn-B" class="flex-1 py-1.5 text-xs font-bold uppercase rounded transition-all active:scale-95 transition-transform" style="min-height: 36px;">Tier B</button>
+                                <button onclick="setSandboxTier('C')" id="sandbox-tier-btn-C" class="flex-1 py-1.5 text-xs font-bold uppercase rounded transition-all active:scale-95 transition-transform" style="min-height: 36px;">Tier C</button>
                             </div>
                         </div>
 
@@ -1116,12 +1055,12 @@
                         <div class="grid sm:grid-cols-2 gap-4">
                             <div class="space-y-1 text-left">
                                 <label class="text-xs font-bold text-bistro-500 uppercase tracking-widest block" for="boh-resto-name">Resto Display Name</label>
-                                <input id="boh-resto-name" type="text" value="San Juan Brews" oninput="syncBohState()" class="w-full border border-theme rounded-lg px-3 py-2 text-xs bg-theme-input focus:outline-none focus:border-bistro-500 text-theme-title transition-colors">
+                                <input id="boh-resto-name" type="text" value="San Juan Brews" oninput="syncBohState()" class="w-full border border-theme rounded-lg px-3 py-2 text-xs bg-theme-input focus:outline-none focus:border-bistro-500 text-theme-title transition-colors" style="min-height: 44px;">
                             </div>
                             
                             <div class="space-y-1 text-left">
                                 <label class="text-xs font-bold text-bistro-500 uppercase tracking-widest block" for="boh-marquee">Announcement Header</label>
-                                <input id="boh-marquee" type="text" value="SURFERS DEAL: FREE ESPRESSO SHOT ON 2ND COLD BREW!" oninput="syncBohState()" class="w-full border border-theme rounded-lg px-3 py-2 text-xs bg-theme-input focus:outline-none focus:border-bistro-500 text-theme-title transition-colors">
+                                <input id="boh-marquee" type="text" value="SURFERS DEAL: FREE ESPRESSO SHOT ON 2ND COLD BREW!" oninput="syncBohState()" class="w-full border border-theme rounded-lg px-3 py-2 text-xs bg-theme-input focus:outline-none focus:border-bistro-500 text-theme-title transition-colors" style="min-height: 44px;">
                             </div>
                         </div>
 
@@ -1134,14 +1073,14 @@
                                 <div class="p-4 rounded-xl border border-theme card-theme" id="item-panel-barako">
                                     <div class="flex items-center justify-between mb-2">
                                         <span class="text-xs font-bold font-serif text-theme-title">Batangas Cold Brew</span>
-                                        <button onclick="toggleStock('batangas-brew')" id="stock-btn-batangas-brew" class="text-xs font-bold uppercase px-2 py-0.5 rounded border bg-emerald-500/10 border-emerald-500/30 text-emerald-400 transition-colors" aria-pressed="true">In Stock</button>
+                                        <button onclick="toggleStock('batangas-brew')" id="stock-btn-batangas-brew" class="text-xs font-bold uppercase px-2 py-1 rounded border bg-emerald-500/10 border-emerald-500/30 text-emerald-400 transition-colors active:scale-95 transition-transform" aria-pressed="true" style="min-height: 36px;">In Stock</button>
                                     </div>
                                     <div class="flex items-center justify-between">
                                         <div class="flex items-center gap-1">
                                             <span class="text-xs text-bistro-500 font-bold">₱</span>
-                                            <input id="price-batangas-brew" aria-label="Batangas Brew Price" type="number" value="115" oninput="syncBohState()" class="w-20 bg-transparent border-b border-theme focus:border-bistro-500 outline-none text-xs font-serif font-black text-theme-title py-1">
+                                            <input id="price-batangas-brew" aria-label="Batangas Brew Price" type="number" value="115" oninput="syncBohState()" class="w-20 bg-transparent border-b border-theme focus:border-bistro-500 outline-none text-xs font-serif font-black text-theme-title py-1" style="min-height: 36px;">
                                         </div>
-                                        <button onclick="togglePromo('batangas-brew')" id="promo-btn-batangas-brew" class="text-xs font-bold uppercase px-2 py-0.5 rounded border border-theme hover:bg-bistro-500/10 text-stone-400">Apply Sale</button>
+                                        <button onclick="togglePromo('batangas-brew')" id="promo-btn-batangas-brew" class="text-xs font-bold uppercase px-2 py-1 rounded border border-theme hover:bg-bistro-500/10 text-stone-400 active:scale-95 transition-transform" style="min-height: 36px;">Apply Sale</button>
                                     </div>
                                 </div>
 
@@ -1149,14 +1088,14 @@
                                 <div class="p-4 rounded-xl border border-theme card-theme" id="item-panel-strawberry">
                                     <div class="flex items-center justify-between mb-2">
                                         <span class="text-xs font-bold font-serif text-theme-title">Baguio Strawberry Latte</span>
-                                        <button onclick="toggleStock('strawberry-latte')" id="stock-btn-strawberry-latte" class="text-xs font-bold uppercase px-2 py-0.5 rounded border bg-emerald-500/10 border-emerald-500/30 text-emerald-400 transition-colors" aria-pressed="true">In Stock</button>
+                                        <button onclick="toggleStock('strawberry-latte')" id="stock-btn-strawberry-latte" class="text-xs font-bold uppercase px-2 py-1 rounded border bg-emerald-500/10 border-emerald-500/30 text-emerald-400 transition-colors active:scale-95 transition-transform" aria-pressed="true" style="min-height: 36px;">In Stock</button>
                                     </div>
                                     <div class="flex items-center justify-between">
                                         <div class="flex items-center gap-1">
                                             <span class="text-xs text-bistro-500 font-bold">₱</span>
-                                            <input id="price-strawberry-latte" aria-label="Strawberry Latte Price" type="number" value="165" oninput="syncBohState()" class="w-20 bg-transparent border-b border-theme focus:border-bistro-500 outline-none text-xs font-serif font-black text-theme-title py-1">
+                                            <input id="price-strawberry-latte" aria-label="Strawberry Latte Price" type="number" value="165" oninput="syncBohState()" class="w-20 bg-transparent border-b border-theme focus:border-bistro-500 outline-none text-xs font-serif font-black text-theme-title py-1" style="min-height: 36px;">
                                         </div>
-                                        <button onclick="togglePromo('strawberry-latte')" id="promo-btn-strawberry-latte" class="text-xs font-bold uppercase px-2 py-0.5 rounded border border-theme hover:bg-bistro-500/10 text-stone-400">Apply Sale</button>
+                                        <button onclick="togglePromo('strawberry-latte')" id="promo-btn-strawberry-latte" class="text-xs font-bold uppercase px-2 py-1 rounded border border-theme hover:bg-bistro-500/10 text-stone-400 active:scale-95 transition-transform" style="min-height: 36px;">Apply Sale</button>
                                     </div>
                                 </div>
 
@@ -1165,22 +1104,22 @@
 
                         <!-- Modular Upsell Actions inside Sandbox -->
                         <div class="space-y-3 text-left pt-2 border-t border-theme" id="sandbox-addon-options-wrapper">
-                            <span class="text-xs font-bold text-stone-400 uppercase tracking-widest block">Simulate Modular Add-on Features on Client Phone</span>
+                            <span class="text-xs font-bold text-stone-400 uppercase tracking-widest block font-sans">Simulate Modular Add-on Features on Client Phone</span>
                             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                                <button onclick="toggleSimAddon('corkboard')" id="addon-sim-btn-corkboard" class="p-2 border border-theme rounded-xl text-center text-xs font-medium transition-all hover:bg-bistro-500/10">
+                                <button onclick="toggleSimAddon('corkboard')" id="addon-sim-btn-corkboard" class="p-2 border border-theme rounded-xl text-center text-xs font-medium transition-all hover:bg-bistro-500/10 active:scale-95 transition-transform" style="min-height: 48px;">
                                     <svg class="w-4 h-4 mx-auto mb-1 block animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
                                         <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                                     </svg>
                                     Broadcasting Wall
                                 </button>
-                                <button onclick="toggleSimAddon('feedback')" id="addon-sim-btn-feedback" class="p-2 border border-theme rounded-xl text-center text-xs font-medium transition-all hover:bg-bistro-500/10">
+                                <button onclick="toggleSimAddon('feedback')" id="addon-sim-btn-feedback" class="p-2 border border-theme rounded-xl text-center text-xs font-medium transition-all hover:bg-bistro-500/10 active:scale-95 transition-transform" style="min-height: 48px;">
                                     <svg class="w-4 h-4 mx-auto mb-1 block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                                     </svg>
                                     Feedback System
                                 </button>
-                                <button onclick="toggleSimAddon('reservations')" id="addon-sim-btn-reservations" class="p-2 border border-theme rounded-xl text-center text-xs font-medium transition-all hover:bg-bistro-500/10">
+                                <button onclick="toggleSimAddon('reservations')" id="addon-sim-btn-reservations" class="p-2 border border-theme rounded-xl text-center text-xs font-medium transition-all hover:bg-bistro-500/10 active:scale-95 transition-transform" style="min-height: 48px;">
                                     <svg class="w-4 h-4 mx-auto mb-1 block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                                         <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -1189,7 +1128,7 @@
                                     </svg>
                                     Table Seating
                                 </button>
-                                <button onclick="toggleSimAddon('orderbag')" id="addon-sim-btn-orderbag" class="p-2 border border-theme rounded-xl text-center text-xs font-medium transition-all hover:bg-bistro-500/10">
+                                <button onclick="toggleSimAddon('orderbag')" id="addon-sim-btn-orderbag" class="p-2 border border-theme rounded-xl text-center text-xs font-medium transition-all hover:bg-bistro-500/10 active:scale-95 transition-transform" style="min-height: 48px;">
                                     <svg class="w-4 h-4 mx-auto mb-1 block text-bistro-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <circle cx="9" cy="21" r="1"></circle>
                                         <circle cx="20" cy="21" r="1"></circle>
@@ -1202,15 +1141,15 @@
 
                         <!-- Theme Presets (Unlocked only in C) -->
                         <div class="space-y-3 text-left pt-2 border-t border-theme" id="sandbox-theme-presets-wrapper">
-                            <span class="text-xs font-bold text-stone-400 uppercase tracking-widest block">Simulated Phone Graphic Theme</span>
+                            <span class="text-xs font-bold text-stone-400 uppercase tracking-widest block font-sans">Simulated Phone Graphic Theme</span>
                             <div class="flex flex-wrap gap-2.5">
-                                <button onclick="setPhoneTheme('warm-brass')" id="palette-btn-warm-brass" class="px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded border border-bistro-500 bg-bistro-500 text-stone-950 transition-all">
+                                <button onclick="setPhoneTheme('warm-brass')" id="palette-btn-warm-brass" class="px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded border border-bistro-500 bg-bistro-500 text-stone-950 transition-all active:scale-95 transition-transform" style="min-height: 36px;">
                                     Warm Brass
                                 </button>
-                                <button onclick="setPhoneTheme('deep-emerald')" id="palette-btn-deep-emerald" class="px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded border border-theme hover:bg-bistro-500/10 text-stone-400 transition-all">
+                                <button onclick="setPhoneTheme('deep-emerald')" id="palette-btn-deep-emerald" class="px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded border border-theme hover:bg-bistro-500/10 text-stone-400 transition-all active:scale-95 transition-transform" style="min-height: 36px;">
                                     Luzon Emerald
                                 </button>
-                                <button onclick="setPhoneTheme('rich-rose')" id="palette-btn-rich-rose" class="px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded border border-theme hover:bg-bistro-500/10 text-stone-400 transition-all">
+                                <button onclick="setPhoneTheme('rich-rose')" id="palette-btn-rich-rose" class="px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded border border-theme hover:bg-bistro-500/10 text-stone-400 transition-all active:scale-95 transition-transform" style="min-height: 36px;">
                                     Crimson Rose
                                 </button>
                             </div>
@@ -1218,10 +1157,10 @@
 
                         <!-- Manual Submit Mockup (Unlocked in A only) -->
                         <div id="tier-A-form-wrapper" class="hidden space-y-3 pt-3 border-t border-theme text-left">
-                            <span class="text-xs font-bold text-bistro-500 uppercase tracking-widest block">Monthly Menu Edit Request (Tier A Limit: 1/mo)</span>
+                            <span class="text-xs font-bold text-bistro-500 uppercase tracking-widest block">Compile & Submit Visual Layout Draft to Support</span>
                             <div class="flex gap-2">
-                                <input id="edit-request-input" type="text" placeholder="e.g., Change Cold Brew price to ₱125..." class="flex-1 bg-theme-input border border-theme rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-bistro-500 text-theme-title">
-                                <button onclick="submitEditRequest()" class="bg-bistro-500 hover:bg-bistro-600 text-stone-950 text-xs font-bold px-4 py-2 rounded-lg uppercase tracking-wider transition-colors shrink-0">Submit Edit</button>
+                                <input id="edit-request-input" type="text" placeholder="e.g., Please change Cold Brew price to ₱125..." class="flex-1 bg-theme-input border border-theme rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-bistro-500 text-theme-title" style="min-height: 44px;">
+                                <button onclick="submitEditRequest()" class="bg-bistro-500 hover:bg-bistro-600 text-stone-950 text-xs font-bold px-4 py-2 rounded-lg uppercase tracking-wider transition-colors shrink-0 active:scale-95 transition-transform" style="min-height: 44px;">Submit Draft</button>
                             </div>
                         </div>
 
@@ -1268,14 +1207,14 @@
                                     </svg>
                                     Live Notice Board
                                 </div>
-                                <p class="text-[11px] text-stone-300 leading-normal">🎸 Friday Acoustic Night starts at 7:00 PM! Grab our local micro-brews at special rates.</p>
+                                <p class="text-[11px] text-stone-300 leading-normal font-sans">🎸 Friday Acoustic Night starts at 7:00 PM! Grab our local micro-brews at special rates.</p>
                             </div>
 
                             <!-- Category tabs selectors -->
                             <div class="flex gap-1 overflow-x-auto pb-1 scrollbar-none border-b border-theme/10">
-                                <button onclick="setPhoneCategory('beverages')" id="cat-btn-beverages" class="text-xs font-bold capitalize px-3 py-1 rounded-full bg-bistro-500 text-stone-950 transition-colors">Beverages</button>
-                                <button onclick="setPhoneCategory('plates')" id="cat-btn-plates" class="text-xs font-bold capitalize px-3 py-1 rounded-full bg-stone-900 text-stone-400 hover:text-white transition-colors">Local Plates</button>
-                                <button onclick="setPhoneCategory('desserts')" id="cat-btn-desserts" class="text-xs font-bold capitalize px-3 py-1 rounded-full bg-stone-900 text-stone-400 hover:text-white transition-colors">Desserts</button>
+                                <button onclick="setPhoneCategory('beverages')" id="cat-btn-beverages" class="text-xs font-bold capitalize px-3 py-1 rounded-full bg-bistro-500 text-stone-950 transition-colors" style="min-height: 28px;">Beverages</button>
+                                <button onclick="setPhoneCategory('plates')" id="cat-btn-plates" class="text-xs font-bold capitalize px-3 py-1 rounded-full bg-stone-900 text-stone-400 hover:text-white transition-colors" style="min-height: 28px;">Local Plates</button>
+                                <button onclick="setPhoneCategory('desserts')" id="cat-btn-desserts" class="text-xs font-bold capitalize px-3 py-1 rounded-full bg-stone-900 text-stone-400 hover:text-white transition-colors" style="min-height: 28px;">Desserts</button>
                             </div>
 
                             <!-- List Menu Cards -->
@@ -1293,7 +1232,7 @@
                                     <button onclick="submitSimFeedback()" class="text-stone-500 hover:text-amber-400 text-xs transition-colors" aria-label="Rate 4 Star">★</button>
                                     <button onclick="submitSimFeedback()" class="text-stone-500 hover:text-amber-400 text-xs transition-colors" aria-label="Rate 5 Star">★</button>
                                 </div>
-                                <button onclick="submitSimFeedback()" class="w-full py-1.5 bg-[#120e0c] hover:bg-stone-850 border border-theme/20 rounded-lg text-xs text-theme-gold uppercase font-bold tracking-widest">Send Private Feedback</button>
+                                <button onclick="submitSimFeedback()" class="w-full py-1.5 bg-[#120e0c] hover:bg-stone-850 border border-theme/20 rounded-lg text-xs text-theme-gold uppercase font-bold tracking-widest active:scale-95 transition-transform" style="min-height: 36px;">Send Private Feedback</button>
                             </div>
 
                             <!-- Table Reservations Mock trigger -->
@@ -1308,14 +1247,14 @@
                                     Reserve Table
                                 </div>
                                 <div class="grid grid-cols-2 gap-1.5">
-                                    <input type="date" aria-label="Seating date" class="bg-stone-950 border border-theme/20 rounded text-xs p-1 text-white focus:outline-none">
-                                    <input type="time" aria-label="Seating time" class="bg-stone-950 border border-theme/20 rounded text-xs p-1 text-white focus:outline-none">
+                                    <input type="date" aria-label="Seating date" class="bg-stone-950 border border-theme/20 rounded text-xs p-1 text-white focus:outline-none" style="min-height: 36px;">
+                                    <input type="time" aria-label="Seating time" class="bg-stone-950 border border-theme/20 rounded text-xs p-1 text-white focus:outline-none" style="min-height: 36px;">
                                 </div>
-                                <button onclick="submitSimBooking()" class="w-full py-1.5 bg-bistro-500 text-stone-950 rounded-lg text-xs font-black uppercase tracking-widest">Confirm Seat</button>
+                                <button onclick="submitSimBooking()" class="w-full py-1.5 bg-bistro-500 text-stone-950 rounded-lg text-xs font-black uppercase tracking-widest active:scale-95 transition-transform" style="min-height: 36px;">Confirm Seat</button>
                             </div>
 
                             <!-- In-house Order Bag Simulated Floating Cart -->
-                            <div id="phone-orderbag-button" class="hidden p-2.5 rounded-xl border border-bistro-500 bg-bistro-500 text-stone-950 flex items-center justify-between font-bold text-xs uppercase tracking-widest animate-slide-in cursor-pointer" onclick="openSimCartModal()">
+                            <div id="phone-orderbag-button" class="hidden p-2.5 rounded-xl border border-bistro-500 bg-bistro-500 text-stone-950 flex items-center justify-between font-bold text-xs uppercase tracking-widest animate-slide-in cursor-pointer active:scale-95 transition-transform" onclick="openSimCartModal()" style="min-height: 44px;">
                                 <span class="flex items-center gap-1.5">
                                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <circle cx="9" cy="21" r="1"></circle>
@@ -1347,232 +1286,246 @@
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-bistro-500 text-xs font-semibold uppercase tracking-widest bg-bistro-500/10 border border-bistro-500/20 px-3 py-1.5 rounded-full mb-3 inline-block">Tiered Localization Packages</span>
                 <h2 class="text-2xl sm:text-4xl font-serif text-theme-title leading-tight">Provincial Multi-Tenant Tiers</h2>
-                <p class="text-stone-400 mt-3 text-xs sm:text-sm">
-                    Reclaim operational control. Select the optimal subscription layer backed by specialized wildcard subdomain and native routing environments.
+                <p class="text-stone-400 mt-3 text-xs sm:text-sm font-sans">
+                    Reclaim operational control. Select the optimal subscription layer backed by specialized wildcard subdomains.
                 </p>
 
                 <!-- Business Category Switcher (Cafe vs Resto) -->
-        <div class="mt-8 flex flex-wrap justify-center gap-1 max-w-xs sm:max-w-md mx-auto bg-stone-900/60 p-1.5 rounded-xl border border-theme">
-            <button onclick="setPricingType('cafe')" id="pricing-type-cafe" class="flex-1 px-5 py-2 rounded-lg text-xs font-bold transition-all uppercase">
-                Cafe Rates
-            </button>
-            <button onclick="setPricingType('resto')" id="pricing-type-resto" class="flex-1 px-5 py-2 rounded-lg text-xs font-bold transition-all uppercase">
-                Resto Rates
-            </button>
-        </div>
-    </div>
-
-    <!-- Tiered Plan Columns -->
-    <div class="grid md:grid-cols-3 gap-6 items-stretch max-w-6xl mx-auto mb-20 text-left">
-        
-        <!-- Package 1: Tier A -->
-        <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between theme-card-hover">
-            <div>
-                <div class="flex justify-between items-center mb-4">
-                    <span class="text-xs font-bold uppercase font-mono text-stone-500">Tier A</span>
-                    <span class="text-xs bg-theme-input text-stone-400 px-2 py-0.5 rounded uppercase font-bold border border-theme">Hands-off</span>
+                <div class="mt-8 flex flex-wrap justify-center gap-1 max-w-xs sm:max-w-md mx-auto bg-stone-900/60 p-1.5 rounded-xl border border-theme">
+                    <button onclick="setPricingType('cafe')" id="pricing-type-cafe" class="flex-1 px-5 py-2 rounded-lg text-xs font-bold transition-all uppercase active:scale-95 transition-transform" style="min-height: 44px;">
+                        Cafe Rates
+                    </button>
+                    <button onclick="setPricingType('resto')" id="pricing-type-resto" class="flex-1 px-5 py-2 rounded-lg text-xs font-bold transition-all uppercase active:scale-95 transition-transform" style="min-height: 44px;">
+                        Resto Rates
+                    </button>
                 </div>
-                <h3 class="text-xl font-serif font-bold text-theme-title">Staff Admin Suite</h3>
-                <p class="text-stone-500 text-xs mt-1.5">Includes: Unlimited updates via WhatsApp/Messenger/Email • Loads in a few seconds • GCash & Maya • Shareable link • Print-ready QR • Map & hours • Staff login to toggle SOLD OUT/SALE • Lockout safety • 1 free acrylic stand</p>
+            </div>
+
+            <!-- Tiered Plan Columns -->
+            <div class="grid md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto mb-20 text-left">
                 
-                <div class="my-6">
-                    <span id="price-card-tierA-sub" class="text-3xl sm:text-4xl font-serif font-black text-bistro-500">₱349</span>
-                    <span class="text-stone-500 text-xs">/ month</span>
-                    <div class="text-xs text-emerald-400 font-mono font-bold uppercase mt-1 leading-snug">
-                        <span id="setup-card-tierA-fee">One-Time Setup: ₱700</span>
-                        <span class="text-stone-400 font-sans font-normal normal-case block sm:inline sm:ml-1">(first 2 months FREE, billing starts month 3)</span>
+                <!-- Package 1: Tier A -->
+                <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between theme-card-hover transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-bold uppercase font-mono text-stone-500">Tier A</span>
+                            <span class="text-xs bg-theme-input text-stone-400 px-2 py-0.5 rounded uppercase font-bold border border-theme">Managed Entry</span>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-theme-title">Staff Admin Suite</h3>
+                        <p class="text-stone-500 text-xs mt-1.5 font-sans">Essential 0.2s ultra-high-speed digital catalog with dynamic QR routing. Ideal for early-stage cafes needing basic, zero-maintenance menu profiles.</p>
+                        
+                        <div class="my-6">
+                            <span id="price-card-tierA-sub" class="text-3xl sm:text-4xl font-serif font-black text-bistro-500">₱349</span>
+                            <span class="text-stone-500 text-xs">/ month</span>
+                            <div class="text-[10px] text-stone-400 font-semibold mt-1">
+                                That's only <strong class="text-bistro-500">₱11.63 per day!</strong>
+                            </div>
+                            <div class="text-xs text-emerald-400 font-mono font-bold uppercase mt-1 leading-snug">
+                                <span id="setup-card-tierA-fee">One-Time Setup: ₱700</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 text-xs text-stone-400 border-t border-theme pt-4 font-sans">
+                            <li class="flex items-start gap-2">
+                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                                <span><strong>Minimum BOH Access:</strong> Live draft dashboard to test & view active menu configs</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                                <span><strong>Support Updates:</strong> 1 developer-handled menu replacement run per month</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                                <span><strong>Instant Edge Servers:</strong> Global server-mirroring for high-speed offline performance</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                                <span><strong>Complimentary Standee:</strong> 1 high-durability acrylic dining table standee included</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                                <span>Basic map locator & store schedules integration</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button onclick="purchasePlan('Tier A Setup')" class="w-full py-3 mt-8 bg-stone-900/50 hover:bg-stone-850 border border-theme text-theme-title hover:text-bistro-500 font-bold text-xs uppercase tracking-widest rounded-lg transition-colors active:scale-95 transition-transform" style="min-height: 44px;">
+                        Select Tier A
+                    </button>
+                </div>
+
+                <!-- Package 2: Tier B -->
+                <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between theme-card-hover transition-all relative">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-bold uppercase font-mono text-stone-500">Tier B</span>
+                            <span class="text-xs bg-theme-input text-stone-400 px-2 py-0.5 rounded uppercase font-bold border border-theme">Direct Control</span>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-theme-title">Complete Identity</h3>
+                        <p class="text-stone-500 text-xs mt-1.5 font-sans">Take control of active inventory. Directly toggle sold-out markers, activate flash promo labels, and align visual colors to your physical brand style.</p>
+                        
+                        <div class="my-6">
+                            <span id="price-card-tierB-sub" class="text-3xl sm:text-4xl font-serif font-black text-bistro-500">₱649</span>
+                            <span class="text-stone-500 text-xs">/ month</span>
+                            <div class="text-[10px] text-stone-400 font-semibold mt-1">
+                                That's only <strong class="text-bistro-500">₱21.63 per day!</strong>
+                            </div>
+                            <div class="text-xs text-emerald-400 font-mono font-bold uppercase mt-1 leading-snug">
+                                <span id="setup-card-tierB-fee">One-Time Setup: ₱1,300</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 text-xs text-stone-400 border-t border-theme pt-4 font-sans">
+                            <li class="flex items-start gap-2">
+                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                                <span><strong>Interactive Inventory:</strong> Instant BOH toggles for items, pricing & promo status</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                                <span><strong>Custom Brand Design:</strong> Custom color templates (Warm Brass, Luzon Emerald, Rose)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                                <span><strong>High-Vis Standees:</strong> 3 laser-etched premium acrylic tabletop standees included</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                                <span><strong>Multi-Device Logins:</strong> Link up to 2 administrative staff tablets/phones</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                                <span>Weekly automated performance metrics summary via email</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button onclick="purchasePlan('Tier B Setup')" class="w-full py-3 mt-8 bg-stone-900/50 hover:bg-stone-850 border border-theme text-theme-title hover:text-bistro-500 font-bold text-xs uppercase tracking-widest rounded-lg transition-colors active:scale-95 transition-transform" style="min-height: 44px;">
+                        Select Tier B
+                    </button>
+                </div>
+
+                <!-- Package 3: Tier C (Aspirational High-Tech POS Focus) -->
+                <div class="tier-c-gradient-glow p-[2.5px] rounded-2xl flex flex-col transition-all duration-300 transform scale-102 hover:scale-[1.04] relative always-dark">
+                    
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-yellow-500 text-stone-950 text-[10px] font-black uppercase px-4 py-1 rounded-full shadow-lg border border-yellow-300 tracking-wider whitespace-nowrap animate-pulse">
+                        👑 Elite POS Level Choice
+                    </div>
+
+                    <div class="bg-stone-950 p-6 rounded-[14px] flex flex-col justify-between h-full text-stone-300">
+                        <div>
+                            <div class="flex justify-between items-center mb-4 mt-2">
+                                <span class="text-xs font-bold uppercase font-mono text-yellow-400">Tier C • Recommended</span>
+                                <span class="text-[9px] bg-yellow-500/10 text-yellow-400 px-2.5 py-0.5 rounded uppercase font-black border border-yellow-500/20 font-mono tracking-widest">Sales OS</span>
+                            </div>
+                            
+                            <h3 class="text-2xl font-serif font-extrabold text-white leading-none">POS-Level Sales OS + Order Bag</h3>
+                            <p class="text-stone-400 text-xs mt-3 leading-relaxed font-sans">
+                                Transform your tables into independent rapid checkout terminals. Guests scan, build their orders, and pay with zero friction. Eliminate order-taking errors completely.
+                            </p>
+                            
+                            <div class="my-6 border-y border-stone-900 py-4 bg-stone-900/20 rounded-xl px-2">
+                                <div class="flex items-baseline gap-1">
+                                    <span id="price-card-tierC-sub" class="text-4xl sm:text-5xl font-serif font-black text-yellow-400">₱949</span>
+                                    <span class="text-stone-500 text-xs font-mono">/ month</span>
+                                </div>
+                                <div class="text-[10px] text-stone-300 font-semibold mt-1">
+                                    That's only <strong class="text-yellow-400">₱31.63 per day!</strong>
+                                </div>
+                                <div class="text-[11px] text-emerald-400 font-mono font-extrabold uppercase mt-2">
+                                    <span id="setup-card-tierC-fee">One-Time Setup: ₱1,800</span>
+                                </div>
+                                <span class="text-[10px] text-stone-500 block mt-1 font-sans">Get 2 Months FREE Setup. Start billing month 3.</span>
+                            </div>
+
+                            <ul class="space-y-3.5 text-xs text-stone-300 pt-1 font-sans">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-yellow-400 shrink-0 font-bold text-sm">✦</span>
+                                    <span class="text-white font-semibold">In-House Order Bag POS System (Direct table-side customer checkout pipeline)</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-yellow-400 shrink-0">✓</span>
+                                    <span>Direct visual GCash & Maya order checkouts</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-yellow-400 shrink-0">✓</span>
+                                    <span>Real-time BOH administrative panel access</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-yellow-400 shrink-0">✓</span>
+                                    <span>6 complimentary luxury acrylic standees</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-yellow-400 shrink-0">✓</span>
+                                    <span>Priority developer updates queue (24h turnaround)</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button onclick="purchasePlan('Tier C Setup')" class="w-full py-4 mt-8 bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-400 hover:to-amber-500 text-stone-950 font-black text-xs uppercase tracking-widest rounded-lg transition-all duration-300 shadow-xl border border-yellow-300 active:scale-95 transition-transform" style="min-height: 48px;">
+                            Equip My Store With POS Power
+                        </button>
                     </div>
                 </div>
 
-                <ul class="space-y-3 text-xs text-stone-400 border-t border-theme pt-4">
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span>Unlimited updates via WhatsApp/Messenger/Email</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span>Loads in a few seconds</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span>GCash & Maya</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span>Shareable link & Print-ready QR</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span>Map & hours</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span>Staff login to toggle SOLD OUT/SALE</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span>Lockout safety</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span>1 free acrylic stand</span>
-                    </li>
-                </ul>
             </div>
 
-            <button onclick="purchasePlan('Tier A Setup')" class="w-full py-3 mt-8 bg-stone-900/50 hover:bg-stone-850 border border-theme text-theme-title hover:text-bistro-500 font-bold text-xs uppercase tracking-widest rounded-lg transition-colors">
-                Select Tier A
-            </button>
-        </div>
+            <!-- À La Carte Add-ons Block -->
+            <div class="max-w-4xl mx-auto mb-16">
+                <h3 class="text-lg font-serif font-bold text-theme-title text-center mb-6">À La Carte Modular Upsells (Optional)</h3>
 
-        <!-- Package 2: Tier B -->
-        <div class="p-6 rounded-2xl border-2 border-bistro-500 bg-theme-subtle card-theme flex flex-col justify-between relative premium-glow">
-            <div class="absolute top-0 right-6 -translate-y-1/2 bg-bistro-500 text-stone-950 text-xs font-black uppercase px-3 py-1 rounded-full shadow-md">
-                The Sweet Spot
-            </div>
-            
-            <div>
-                <div class="flex justify-between items-center mb-4 mt-2">
-                    <span class="text-xs font-bold uppercase font-mono text-bistro-500">Tier B</span>
-                    <span class="text-xs bg-bistro-500/10 text-bistro-500 px-2 py-0.5 rounded uppercase font-bold border border-bistro-500/20">Hybrid Control</span>
-                </div>
-                <h3 class="text-xl font-serif font-bold text-theme-title">Complete Identity</h3>
-                <p class="text-stone-500 text-xs mt-1.5">Includes everything in Tier A, PLUS: Full menu editing • Custom brand colors • About page + socials • Google Maps + reservation-ready layout • 3 free acrylic stands</p>
-                
-                <div class="my-6">
-                    <span id="price-card-tierB-sub" class="text-3xl sm:text-4xl font-serif font-black text-bistro-500">₱649</span>
-                    <span class="text-stone-500 text-xs">/ month</span>
-                    <div class="text-xs text-emerald-400 font-mono font-bold uppercase mt-1 leading-snug">
-                        <span id="setup-card-tierB-fee">One-Time Setup: ₱1,300</span>
-                        <span class="text-stone-400 font-sans font-normal normal-case block sm:inline sm:ml-1">(first 2 months FREE, billing starts month 3)</span>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
+                    
+                    <div class="p-4 rounded-xl border border-theme bg-theme-subtle flex flex-col justify-between">
+                        <div class="mb-4">
+                            <span class="text-xs font-bold text-theme-title block">Community Corkboard</span>
+                            <span class="text-xs text-stone-500 leading-tight block mt-1 font-sans">Live broadcasting wall for acoustic night notices & customer notes.</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2 border-t border-theme/20">
+                            <span class="text-xs font-bold text-bistro-500 font-mono">+₱150/mo</span>
+                            <button onclick="toggleAddon('corkboard')" id="addon-btn-corkboard" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors active:scale-95 transition-transform" style="min-height: 28px;">Add</button>
+                        </div>
                     </div>
-                </div>
 
-                <ul class="space-y-3 text-xs text-stone-400 border-t border-theme/20 pt-4">
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span class="text-theme-title font-semibold">Everything in Tier A, PLUS:</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span>Full menu editing</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span>Custom brand colors</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span>About page + socials</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span>Google Maps + reservation-ready layout</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span>3 free acrylic stands</span>
-                    </li>
-                </ul>
-            </div>
-
-            <button onclick="purchasePlan('Tier B Setup')" class="w-full py-3 mt-8 bg-bistro-500 hover:bg-bistro-650 text-stone-950 font-black text-xs uppercase tracking-widest rounded-lg transition-colors shadow-md">
-                Select Tier B
-            </button>
-        </div>
-
-        <!-- Package 3: Tier C -->
-        <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between theme-card-hover">
-            <div>
-                <div class="flex justify-between items-center mb-4">
-                    <span class="text-xs font-bold uppercase font-mono text-stone-500">Tier C</span>
-                    <span class="text-xs bg-theme-input text-stone-400 px-2 py-0.5 rounded uppercase font-bold border border-theme">Full Branding</span>
-                </div>
-                <h3 class="text-xl font-serif font-bold text-theme-title">Sales OS + Order Bag</h3>
-                <p class="text-stone-500 text-xs mt-1.5">Includes everything in Tier B, PLUS: In-House Order Bag Framework (built-in order system) • Priority update lane • 6 free acrylic stands</p>
-                
-                <div class="my-6">
-                    <span id="price-card-tierC-sub" class="text-3xl sm:text-4xl font-serif font-black text-bistro-500">₱949</span>
-                    <span class="text-stone-500 text-xs">/ month</span>
-                    <div class="text-xs text-emerald-400 font-mono font-bold uppercase mt-1 leading-snug">
-                        <span id="setup-card-tierC-fee">One-Time Setup: ₱1,800</span>
-                        <span class="text-stone-400 font-sans font-normal normal-case block sm:inline sm:ml-1">(first 2 months FREE, billing starts month 3)</span>
+                    <div class="p-4 rounded-xl border border-theme bg-theme-subtle flex flex-col justify-between">
+                        <div class="mb-4">
+                            <span class="text-xs font-bold text-theme-title block">Private Feedback System</span>
+                            <span class="text-xs text-stone-500 leading-tight block mt-1 font-sans">Interactive review portal routing guest complaints securely to dashboard.</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2 border-t border-theme/20">
+                            <span class="text-xs font-bold text-bistro-500 font-mono">+₱100/mo</span>
+                            <button onclick="toggleAddon('feedback')" id="addon-btn-feedback" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors active:scale-95 transition-transform" style="min-height: 28px;">Add</button>
+                        </div>
                     </div>
-                </div>
 
-                <ul class="space-y-3 text-xs text-stone-400 border-t border-theme pt-4">
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span class="text-theme-title font-semibold">Everything in Tier B, PLUS:</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span>In-House Order Bag Framework (built-in order system)</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span>Priority update lane</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                        <span>6 free acrylic stands</span>
-                    </li>
-                </ul>
-            </div>
+                    <div class="p-4 rounded-xl border-2 border-bistro-500 bg-theme-subtle flex flex-col justify-between relative">
+                        <div class="absolute -top-2.5 right-4 bg-bistro-500 text-stone-950 text-[9px] font-black uppercase px-2 py-0.5 rounded shadow tracking-wider">
+                            TOP UPSELL
+                        </div>
+                        <div class="mb-4">
+                            <span class="text-xs font-bold text-theme-title block">Table Reservation Engine</span>
+                            <span class="text-xs text-stone-500 leading-tight block mt-1 font-sans">Accept calendar-bound seating bookings (Pending, Confirmed status).</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2 border-t border-theme/20">
+                            <span class="text-xs font-bold text-bistro-500 font-mono">+₱299/mo</span>
+                            <button onclick="toggleAddon('reservations')" id="addon-btn-reservations" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors active:scale-95 transition-transform" style="min-height: 28px;">Add</button>
+                        </div>
+                    </div>
 
-            <button onclick="purchasePlan('Tier C Setup')" class="w-full py-3 mt-8 bg-stone-900/50 hover:bg-stone-850 border border-theme text-theme-title hover:text-bistro-500 font-bold text-xs uppercase tracking-widest rounded-lg transition-colors">
-                Select Tier C
-            </button>
-        </div>
+                    <div class="p-4 rounded-xl border border-theme bg-theme-subtle flex flex-col justify-between">
+                        <div class="mb-4">
+                            <span class="text-xs font-bold text-theme-title block">Custom Domain Option</span>
+                            <span class="text-xs text-stone-500 leading-tight block mt-1 font-sans">White-label your digital menu with a custom domain (yourbusiness.com).</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2 border-t border-theme/20">
+                            <span class="text-xs font-bold text-bistro-500 font-mono">+₱580/yr ($11.28 Year-1)</span>
+                            <button onclick="toggleAddon('domain')" id="addon-btn-domain" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors active:scale-95 transition-transform" style="min-height: 28px;">Add</button>
+                        </div>
+                    </div>
 
-    </div>
-
-    <!-- À La Carte Add-ons Block -->
-    <div class="max-w-4xl mx-auto mb-16">
-        <h3 class="text-lg font-serif font-bold text-theme-title text-center mb-6">À La Carte Modular Upsells (Optional)</h3>
-
-        <div class="grid sm:grid-cols-3 gap-4 text-left">
-            
-            <div class="p-4 rounded-xl border border-theme bg-theme-subtle flex flex-col justify-between">
-                <div class="mb-4">
-                    <span class="text-xs font-bold text-theme-title block">Community Corkboard</span>
-                    <span class="text-xs text-stone-500 leading-tight block mt-1">Live broadcasting wall for acoustic night notices & customer notes.</span>
-                </div>
-                <div class="flex justify-between items-center pt-2 border-t border-theme/20">
-                    <span class="text-xs font-bold text-bistro-500">+₱150/mo</span>
-                    <button onclick="toggleAddon('corkboard')" id="addon-btn-corkboard" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors" style="min-height: 28px;">Add</button>
                 </div>
             </div>
 
-            <div class="p-4 rounded-xl border border-theme bg-theme-subtle flex flex-col justify-between">
-                <div class="mb-4">
-                    <span class="text-xs font-bold text-theme-title block">Private Feedback System</span>
-                    <span class="text-xs text-stone-500 leading-tight block mt-1">Interactive review portal routing guest complaints securely to dashboard.</span>
-                </div>
-                <div class="flex justify-between items-center pt-2 border-t border-theme/20">
-                    <span class="text-xs font-bold text-bistro-500">+₱100/mo</span>
-                    <button onclick="toggleAddon('feedback')" id="addon-btn-feedback" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors" style="min-height: 28px;">Add</button>
-                </div>
-            </div>
-
-            <div class="p-4 rounded-xl border-2 border-bistro-500 bg-theme-subtle flex flex-col justify-between relative">
-                <div class="absolute -top-2.5 right-4 bg-bistro-500 text-stone-950 text-[9px] font-black uppercase px-2 py-0.5 rounded shadow tracking-wider">
-                    TOP UPSELL
-                </div>
-                <div class="mb-4">
-                    <span class="text-xs font-bold text-theme-title block">Table Reservation Engine</span>
-                    <span class="text-xs text-stone-500 leading-tight block mt-1">Accept calendar-bound seating bookings (Pending, Confirmed status).</span>
-                </div>
-                <div class="flex justify-between items-center pt-2 border-t border-theme/20">
-                    <span class="text-xs font-bold text-bistro-500">+₱299/mo</span>
-                    <button onclick="toggleAddon('reservations')" id="addon-btn-reservations" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors" style="min-height: 28px;">Add</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Operational Margins Calculator -->
+            <!-- Operational Margins Calculator -->
             <div class="p-6 sm:p-8 rounded-3xl border border-theme bg-theme-subtle text-left max-w-4xl mx-auto premium-glow">
                 
                 <div class="flex items-center gap-3 mb-6">
@@ -1589,9 +1542,15 @@
                             Luzon Hospitality Operational Overhead Calculator
                         </h4>
                         <p class="text-stone-500 text-xs font-sans">
-                            Map out legacy laminated card reprints + weak-signal PDF attrition losses vs high-performance VibeTable SaaS.
+                            Compare legacy reprint costs + separate agency service markups against VibeTable's unified micro-daily rates.
                         </p>
                     </div>
+                </div>
+
+                <!-- ROI Quick Stat Banner -->
+                <div class="p-4 rounded-xl bg-bistro-500/10 border border-bistro-500/20 text-xs text-bistro-500 font-bold mb-6 flex flex-col sm:flex-row justify-between items-center gap-2">
+                    <span>⚡ ROI HIGHLIGHT: Complete system payback achieved in average <strong class="underline">14 days!</strong></span>
+                    <span id="roi-time-banner" class="bg-bistro-500 text-stone-950 px-2.5 py-1 rounded text-[10px] font-black uppercase font-mono">Saves ₱12,400 in first 3 Months</span>
                 </div>
 
                 <!-- Calculator inputs -->
@@ -1619,8 +1578,7 @@
 
                     <div class="space-y-1.5">
                         <label class="text-xs font-bold text-bistro-500 uppercase tracking-widest block" for="calc-print-cost">Laminate Card Cost (PHP)</label>
-                        <input id="calc-print-cost" type="number" value="150" oninput="runFinancialCalc()" class="w-full border border-theme rounded-lg px-3 py-1.5 text-xs text-right bg-theme-input focus:outline-none focus:border-bistro-500 text-theme-title font-mono">
-                        <span class="text-xs text-stone-500 block text-right mt-1">Est. printing fee per table card</span>
+                        <input id="calc-print-cost" type="number" value="150" oninput="runFinancialCalc()" class="w-full border border-theme rounded-lg px-3 py-1.5 text-xs text-right bg-theme-input focus:outline-none focus:border-bistro-500 text-theme-title font-mono" style="min-height: 36px;">
                     </div>
 
                 </div>
@@ -1628,32 +1586,58 @@
                 <!-- Dynamic comparison outputs -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                     
-                    <div class="p-4 rounded-xl border border-theme bg-theme-input flex flex-col justify-between">
-                        <span class="text-xs text-stone-500 font-bold uppercase tracking-widest">Yearly Paper Reprint Loss</span>
-                        <span id="out-print-cost" class="text-xl font-serif font-black text-red-400 mt-2">₱12,000</span>
-                        <span class="text-xs text-stone-600 mt-1">Direct physical production cost</span>
+                    <div class="p-4 rounded-xl border border-theme bg-theme-input flex flex-col justify-between text-left">
+                        <div>
+                            <span class="text-[10px] text-stone-500 font-bold uppercase tracking-widest block font-mono">Competitor Agency Charges</span>
+                            <span class="text-xs text-red-400 block mt-1 font-semibold">Separate Systems:</span>
+                            <ul class="text-[11px] text-stone-400 space-y-1 mt-2 list-disc list-inside">
+                                <li>Menu Editors (₱1,000/mo)</li>
+                                <li>POS Systems (₱1,500/mo)</li>
+                                <li>Physical reprint cards friction</li>
+                            </ul>
+                        </div>
+                        <div class="border-t border-theme/20 pt-2.5 mt-3">
+                            <span class="text-[10px] text-stone-500 block uppercase font-mono">Annual Legacy Spent</span>
+                            <span id="out-print-cost" class="text-xl font-serif font-black text-red-400 mt-0.5 block">₱42,000</span>
+                        </div>
                     </div>
 
-                    <div class="p-4 rounded-xl border border-theme bg-theme-input flex flex-col justify-between">
-                        <span class="text-xs text-stone-500 font-bold uppercase tracking-widest">Est. Low Signal PDF Attrition</span>
-                        <span id="out-pdf-attrition" class="text-xl font-serif font-black text-red-400 mt-2">₱60,000</span>
-                        <span class="text-xs text-stone-600 mt-1">Diners dropping out on slow loads</span>
+                    <div class="p-4 rounded-xl border border-theme bg-theme-input flex flex-col justify-between text-left">
+                        <div>
+                            <span class="text-[10px] text-stone-500 font-bold uppercase tracking-widest block font-mono">Low-Signal Dropouts</span>
+                            <span class="text-xs text-red-400 block mt-1 font-semibold">Customer Attrition:</span>
+                            <p class="text-[11px] text-stone-400 mt-2 leading-relaxed">
+                                Losses triggered when heavy PDFs fail to load inside basement dining floors or mountain resorts.
+                            </p>
+                        </div>
+                        <div class="border-t border-theme/20 pt-2.5 mt-3">
+                            <span class="text-[10px] text-stone-500 block uppercase font-mono">Estimated Attrition Loss</span>
+                            <span id="out-pdf-attrition" class="text-xl font-serif font-black text-red-400 mt-0.5 block">₱60,000</span>
+                        </div>
                     </div>
 
-                    <div class="p-4 rounded-xl border-2 border-bistro-500 bg-bistro-500/5 flex flex-col justify-between">
-                        <span class="text-xs text-bistro-500 font-black uppercase tracking-widest">Total Retained Yearly Profit</span>
-                        <span id="out-saved-profit" class="text-2xl font-serif font-black text-bistro-500 mt-1">₱59,800</span>
-                        <span class="text-xs text-emerald-400 font-mono font-bold uppercase mt-1">With VibeTable Setup</span>
+                    <div class="p-4 rounded-xl border-2 border-bistro-500 bg-bistro-500/5 flex flex-col justify-between text-left">
+                        <div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-[10px] text-bistro-500 font-black uppercase tracking-widest font-mono">VibeTable Advantage</span>
+                                <span class="bg-bistro-500/15 text-bistro-500 text-[9px] font-black uppercase font-mono px-1.5 py-0.5 rounded">All-In-One</span>
+                            </div>
+                            <span class="text-xs text-stone-300 block mt-1 font-semibold">Consolidated Micro-Daily SaaS:</span>
+                            <p class="text-[11px] text-stone-400 mt-2 leading-relaxed">
+                                Menu drafting, real-time inventory panels, instant online GCash checkout routing, and table standees unified in a single feed.
+                            </p>
+                        </div>
+                        <div class="border-t border-bistro-500/20 pt-2.5 mt-3">
+                            <span class="text-[10px] text-bistro-500 block uppercase font-mono font-bold">Total Retained Yearly Profit</span>
+                            <span id="out-saved-profit" class="text-2xl font-serif font-black text-bistro-500 mt-0.5 block">₱59,800</span>
+                        </div>
                     </div>
 
                 </div>
 
                 <div class="flex flex-col gap-2 mt-6 pt-5 border-t border-theme text-xs text-stone-500">
                     <p class="leading-relaxed font-sans">
-                        *Calculated comparing physical laminate costs against VibeTable Tier B subscription baseline + any checked à la carte addons. Slow menu dropouts modeled at a realistic ₱250 estimate per checkout loss under low cellular signal thresholds.
-                    </p>
-                    <p class="leading-normal font-sans italic text-stone-400">
-                        Illustrative estimate only. All prices in PHP, VAT exclusive.
+                        *Calculated comparing physical reprint and legacy agency editor service models against VibeTable unified software base. Slow menu dropouts modeled at ₱250 estimate per checkout loss under low cellular signal thresholds.
                     </p>
                 </div>
 
@@ -1663,14 +1647,14 @@
 
     </main>
 
-    <!-- Bottom Action CTA Banner (Preserved in premium dark mode always for perfect light theme readability) -->
+    <!-- Bottom Action CTA Banner -->
     <section class="always-dark py-16 sm:py-24 relative overflow-hidden border-t border-theme">
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
             <h2 class="text-2xl sm:text-4xl font-serif font-light mb-4 leading-tight text-white">
                 Ready to upgrade your restaurant's digital presence?
             </h2>
             <p class="text-stone-400 text-xs sm:text-sm max-w-xl mx-auto mb-6 leading-relaxed font-sans">
-                Equip your venues across Northern and Central Luzon with responsive catalogs designed for loading speed and visual excellence. Let us consult on your GCash and sub-domain setups.
+                Equip your venues across Northern and Central Luzon with responsive catalogs designed for speed and visual excellence.
             </p>
 
             <div class="flex flex-col items-center gap-2 mb-10">
@@ -1684,10 +1668,10 @@
             </div>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
-                <button onclick="openBookingModal('Onboarding Strategy Session', 'Arrange a sync with our Luzon engineers.')" class="w-full sm:w-auto px-8 py-4 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-bold rounded-full text-xs uppercase tracking-wider transition-all shadow-xl" style="min-height: 48px;">
+                <button onclick="openBookingModal('Onboarding Strategy Session', 'Arrange a sync with our Luzon engineers.')" class="w-full sm:w-auto px-8 py-4 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-bold rounded-full text-xs uppercase tracking-wider transition-all shadow-xl active:scale-95 transition-transform" style="min-height: 48px;">
                     Request Custom Quote
                 </button>
-                <a href="tel:+639927628293" class="w-full sm:w-auto px-8 py-4 border border-theme rounded-full font-bold text-xs uppercase tracking-wider hover:bg-bistro-500/10 text-white flex items-center justify-center gap-2" style="min-height: 48px;">
+                <a href="tel:+639927628293" class="w-full sm:w-auto px-8 py-4 border border-theme rounded-full font-bold text-xs uppercase tracking-wider hover:bg-bistro-500/10 text-white flex items-center justify-center gap-2 active:scale-95 transition-transform" style="min-height: 48px;">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92v3a2 2 0 0 1-2.18 2"></path>
                     </svg>
@@ -1697,7 +1681,7 @@
         </div>
     </section>
 
-    <!-- Footer (Supports precise Light Theme bold-black titles and stone overrides) -->
+    <!-- Footer -->
     <footer class="pt-16 pb-12 border-t border-theme bg-stone-950 text-xs text-stone-500 text-left transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10">
@@ -1707,7 +1691,6 @@
                         <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-bistro-500 bg-stone-950 p-0.5">
                             <img src="images/VT_logo_transparent_bg.png" alt="VibeTable logo" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/100x100/c49b55/ffffff?text=VT'">
                         </div>
-                        <!-- VibeTable PH brand title changes to bold black in light mode -->
                         <span class="text-base font-serif font-bold text-white tracking-tight footer-brand-title">VibeTable PH</span>
                     </div>
                     <p class="leading-relaxed max-w-sm text-stone-400 font-sans">
@@ -1715,12 +1698,10 @@
                     </p>
                     <div class="text-xs text-stone-300 space-y-2">
                         <div>
-                            <!-- Direct Hotline & Email labels use identical text matching rules -->
                             <span class="footer-hotline-label font-bold">Direct Hotline: </span>
                             <a href="tel:+639927628293" class="text-bistro-500 font-bold font-mono hover:underline footer-hotline-number">+63 992 762 8293</a>
                         </div>
                         <div>
-                            <!-- Permenently injected exact email support contact commanded by user -->
                             <span class="footer-email-label font-bold">Email Support: </span>
                             <a href="mailto:trpvibesoluions@gmail.com" class="text-bistro-500 font-bold font-mono hover:underline">trpvibesoluions@gmail.com</a>
                         </div>
@@ -1733,7 +1714,6 @@
                         <li><span class="hover:text-bistro-500 transition-colors">Dagupan, Pangasinan</span></li>
                         <li><span class="hover:text-bistro-500 transition-colors">San Juan, La Union</span></li>
                         <li><span class="hover:text-bistro-500 transition-colors">Baguio City, Benguet</span></li>
-                        <li><span class="hover:text-bistro-500 transition-colors">Tarlac & Nueva Ecija Hubs</span></li>
                     </ul>
                 </div>
 
@@ -1751,11 +1731,6 @@
                 <p class="leading-relaxed">
                     © 2026 VibeTable Digital Menus. All rights reserved. VibeTable Digital Menus is a proud subsidiary of **TRP Vibe Solutions** in Pangasinan, Philippines.
                 </p>
-                <div class="flex gap-4 shrink-0">
-                    <span class="hover:text-bistro-500 cursor-pointer">Security Specs</span>
-                    <span>•</span>
-                    <span class="hover:text-bistro-500 cursor-pointer">Data Privacy compliance</span>
-                </div>
             </div>
         </div>
     </footer>
@@ -1771,13 +1746,11 @@
         </a>
     </div>
 
-    <!-- Glowing / Triggering WhatsApp Floating Icon (Connected to +63 992 762 8293) -->
-    <!-- Positioning moves above the mobile contact bar on phone devices (bottom-20) -->
+    <!-- Glowing / Triggering WhatsApp Floating Icon -->
     <a href="https://wa.me/639927628293" target="_blank" rel="noopener noreferrer" class="fixed bottom-20 sm:bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-[0_0_20px_rgba(37,211,102,0.6)] hover:shadow-[0_0_30px_rgba(37,211,102,0.9)] transition-all duration-300 hover:scale-110 animate-wa-glow group" aria-label="Chat with VibeTable on WhatsApp">
         <svg class="w-7 h-7 text-white fill-current" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
             <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-117zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
         </svg>
-        <!-- Responsive hover speech bubble -->
         <span class="absolute right-16 bg-stone-900 border border-theme text-white text-xs font-bold py-2 px-3 rounded-xl whitespace-nowrap shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none font-sans">
             Chat on WhatsApp Live!
         </span>
@@ -1802,7 +1775,7 @@
             </div>
 
             <h4 id="modal-title" class="text-lg font-serif font-bold mb-1.5 text-white">Interactive Setup Call Booking</h4>
-            <p id="modal-desc" class="text-stone-500 text-xs mb-6 leading-relaxed">
+            <p id="modal-desc" class="text-stone-500 text-xs mb-6 leading-relaxed font-sans">
                 Provide operational metrics and choose a setup pipeline below.
             </p>
 
@@ -1855,7 +1828,7 @@
             
             <h4 class="text-lg font-serif font-bold mb-1.5 text-white">Booking request filed</h4>
             <p class="text-stone-500 text-xs mb-6 leading-relaxed font-sans">
-                Our local development hub has registered your request. An operations engineer will contact you via email, call, or message at <strong class="text-bistro-500">+63 992 762 8293</strong> within 24 hours to organize your menu launch.
+                Our local development hub has registered your request. An operations engineer will contact you at <strong class="text-bistro-500 font-mono">+63 992 762 8293</strong> within 24 hours.
             </p>
 
             <button onclick="closeSuccessModal()" class="w-full py-2.5 bg-stone-900 border border-theme hover:bg-stone-850 text-white font-bold rounded-lg text-xs uppercase tracking-widest transition-colors" style="min-height: 44px;">
@@ -1869,7 +1842,7 @@
         <div class="p-5 rounded-2xl max-w-xs w-full bg-stone-950 border border-bistro-500/30 text-left text-xs space-y-4">
             <div class="flex justify-between items-center border-b border-stone-900 pb-2">
                 <span class="font-serif font-bold text-white uppercase tracking-widest text-xs">Your Order Bag</span>
-                <button onclick="closeSimCartModal()" class="text-stone-500 hover:text-white" aria-label="Close Cart">
+                <button onclick="closeSimCartModal()" class="text-stone-500 hover:text-white" aria-label="Close Cart" style="min-height: 36px; min-width: 36px;">
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <line x1="18" y1="6" x2="6" y2="18"></line>
                         <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -1883,7 +1856,7 @@
                 <span>Grand Total:</span>
                 <span id="phone-cart-total-price" class="text-bistro-500 font-serif">₱0.00</span>
             </div>
-            <button onclick="triggerSimulatePayment()" class="w-full py-2 bg-bistro-500 text-stone-950 font-black rounded-lg uppercase tracking-wider text-xs" style="min-height: 36px;">
+            <button onclick="triggerSimulatePayment()" class="w-full py-2 bg-bistro-500 text-stone-950 font-black rounded-lg uppercase tracking-wider text-xs active:scale-95 transition-transform" style="min-height: 36px;">
                 Proceed to GCash Payment
             </button>
         </div>
@@ -1972,25 +1945,25 @@
         // CENTRAL SAAS APP STATE ENGINE
         let appState = {
             theme: 'dark',
-            pricingType: 'cafe', // cafe or resto
+            pricingType: 'cafe', 
             selectedAddons: {
-                corkboard: false, // +₱150/mo
-                feedback: false, // +₱100/mo
-                reservations: false, // +₱299/mo
-                orderbag: false // +₱499/mo
+                corkboard: false, 
+                feedback: false, 
+                reservations: false, 
+                orderbag: false,
+                domain: false
             },
             sandbox: {
-                activeTier: 'B', // 'A', 'B', 'C'
+                activeTier: 'B', 
                 restoName: 'San Juan Brews',
                 marquee: 'SURFERS DEAL: FREE ESPRESSO SHOT ON 2ND COLD BREW!',
                 activeCategory: 'beverages',
                 phoneTheme: 'warm-brass',
                 menuItems: JSON.parse(JSON.stringify(MENU_DATA)),
-                cart: [] // In-house Order Bag state
+                cart: [] 
             }
         };
 
-        // Modal focus trackers
         let lastActiveElement = null;
 
         // THEME PERSISTENCE & LOAD SYSTEM
@@ -2027,7 +2000,6 @@
         function updateThemeToggleButtonUI() {
             const container = document.getElementById('theme-icon-container');
             if (appState.theme === 'light') {
-                // Sun Icon
                 container.innerHTML = `
                     <svg class="w-5 h-5 text-theme-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -2042,7 +2014,6 @@
                     </svg>
                 `;
             } else {
-                // Moon Icon
                 container.innerHTML = `
                     <svg class="w-5 h-5 text-theme-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -2071,7 +2042,6 @@
                 }
             });
 
-            // Sync visual header active links
             const navLinks = {
                 '#view-home': 'nav-home',
                 '#/home': 'nav-home',
@@ -2108,7 +2078,6 @@
             handleHashRouting();
             initApp();
             
-            // Modal Esc accessibility checks
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') {
                     closeBookingModal();
@@ -2118,7 +2087,6 @@
             });
         });
 
-        // Toggle mobile menu along with the blur overlay background
         function toggleMobileDrawer() {
             const drawer = document.getElementById('mobile-drawer');
             const overlay = document.getElementById('mobile-drawer-overlay');
@@ -2145,18 +2113,17 @@
             if (viewKey === 'pourdecisions') {
                 viewIframe.classList.remove('hidden');
                 viewSim.classList.add('hidden');
-                tabIframe.className = "flex-1 py-2 text-xs font-bold uppercase rounded-lg bg-bistro-500 text-stone-950 border border-bistro-500 shadow-md transition-all";
-                tabSim.className = "flex-1 py-2 text-xs font-bold uppercase rounded-lg border border-transparent text-stone-400 hover:text-white transition-all";
+                tabIframe.className = "flex-1 py-2 text-xs font-bold uppercase rounded-lg bg-bistro-500 text-stone-950 border border-bistro-500 shadow-md transition-all active:scale-95 transition-transform";
+                tabSim.className = "flex-1 py-2 text-xs font-bold uppercase rounded-lg border border-transparent text-stone-400 hover:text-white transition-all active:scale-95 transition-transform";
             } else {
                 viewSim.classList.remove('hidden');
                 viewIframe.classList.add('hidden');
-                tabSim.className = "flex-1 py-2 text-xs font-bold uppercase rounded-lg bg-bistro-500 text-stone-950 border border-bistro-500 shadow-md transition-all";
-                tabIframe.className = "flex-1 py-2 text-xs font-bold uppercase rounded-lg border border-transparent text-stone-400 hover:text-white transition-all";
+                tabSim.className = "flex-1 py-2 text-xs font-bold uppercase rounded-lg bg-bistro-500 text-stone-950 border border-bistro-500 shadow-md transition-all active:scale-95 transition-transform";
+                tabIframe.className = "flex-1 py-2 text-xs font-bold uppercase rounded-lg border border-transparent text-stone-400 hover:text-white transition-all active:scale-95 transition-transform";
                 syncBohState();
             }
         }
 
-        // Viewport Switcher logic for Demo Iframe Layout Frame
         function setDemoViewport(mode) {
             const frameMobile = document.getElementById('demo-frame-mobile');
             const frameDesktop = document.getElementById('demo-frame-desktop');
@@ -2182,9 +2149,9 @@
             ['A', 'B', 'C'].forEach(t => {
                 const btn = document.getElementById(`sandbox-tier-btn-${t}`);
                 if (t === tier) {
-                    btn.className = "flex-1 py-1.5 text-xs font-bold uppercase rounded bg-bistro-500 text-stone-950 border border-bistro-500 shadow transition-all";
+                    btn.className = "flex-1 py-1.5 text-xs font-bold uppercase rounded bg-bistro-500 text-stone-950 border border-bistro-500 shadow transition-all active:scale-95 transition-transform";
                 } else {
-                    btn.className = "flex-1 py-1.5 text-xs font-bold uppercase rounded border border-transparent text-stone-400 hover:text-white transition-all";
+                    btn.className = "flex-1 py-1.5 text-xs font-bold uppercase rounded border border-transparent text-stone-400 hover:text-white transition-all active:scale-95 transition-transform";
                 }
             });
 
@@ -2193,6 +2160,13 @@
             const statusText = document.getElementById('sandbox-status-text');
             const liveDot = document.getElementById('sandbox-live-dot');
             const sandboxBadge = document.getElementById('active-sandbox-badge');
+            
+            // Dynamic relationship indicator updates mapping to pricing tiers
+            const model = PRICES[appState.pricingType];
+            const currentSub = model[tier];
+            const currentSetup = model[`setup${tier}`];
+            document.getElementById('sandbox-rel-sub').innerText = `₱${currentSub}/mo`;
+            document.getElementById('sandbox-rel-setup').innerText = `₱${currentSetup}`;
             
             const fieldRestoName = document.getElementById('boh-resto-name');
             const fieldMarquee = document.getElementById('boh-marquee');
@@ -2221,27 +2195,23 @@
 
             if (tier === 'A') {
                 noticeBlock.classList.remove('hidden');
-                noticeDesc.innerHTML = "<strong>Lockout Enabled (Tier A):</strong> Merchants get NO administrative dashboard login. Changes must be processed by VibeTable developers manually (1 minor edit allowed per month).";
-                statusText.innerText = "Sandbox Lockout Active";
-                liveDot.className = "w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse";
-                sandboxBadge.innerText = "Tier A Managed";
+                noticeDesc.innerHTML = "<strong>Minimum Draft Access Enabled (Tier A):</strong> Change any values or toggles below. It will compile a structured layout draft. Send it directly to Support via WhatsApp/Email to apply live!";
+                statusText.innerText = "Draft Config Editor Active";
+                liveDot.className = "w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse";
+                sandboxBadge.innerText = "Tier A Managed Portal";
                 
-                enableInputs(false);
+                // Allow Tier A to edit so they can test but state it compiles a draft
+                enableInputs(true);
                 addonWrapper.classList.add('opacity-30', 'pointer-events-none');
                 themeWrapper.classList.add('opacity-30', 'pointer-events-none');
                 tierAForm.classList.remove('hidden');
                 
-                fieldRestoName.value = "San Juan Brews";
-                fieldMarquee.value = "MOCKUP ONLY: PITCH DEMO ONLINE";
-                appState.sandbox.restoName = "San Juan Brews";
-                appState.sandbox.marquee = "MOCKUP ONLY: PITCH DEMO ONLINE";
-                
             } else if (tier === 'B') {
                 noticeBlock.classList.remove('hidden');
-                noticeDesc.innerHTML = "<strong>Hybrid Administrative Control (Tier B):</strong> Restricted dashboard access. Toggle Sold-Out and Sale Indicators on existing cards. Lockout active on adding/deleting items or category directories.";
-                statusText.innerText = "Limited BOH Dashboard";
-                liveDot.className = "w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse";
-                sandboxBadge.innerText = "Tier B Control";
+                noticeDesc.innerHTML = "<strong>Hybrid Live Access (Tier B):</strong> Direct stock & price toggles are pushed to live customer devices in real-time. Core visual themes and custom domains are managed.";
+                statusText.innerText = "Direct Live Control Screen";
+                liveDot.className = "w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse";
+                sandboxBadge.innerText = "Tier B Live Panel";
                 
                 fieldRestoName.disabled = true;
                 fieldMarquee.disabled = true;
@@ -2260,7 +2230,7 @@
                 noticeBlock.classList.add('hidden');
                 statusText.innerText = "Full BOH Administrative Terminal";
                 liveDot.className = "w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse";
-                sandboxBadge.innerText = "Tier C Admin";
+                sandboxBadge.innerText = "Tier C Elite POS";
                 
                 enableInputs(true);
                 addonWrapper.classList.remove('opacity-30', 'pointer-events-none');
@@ -2298,10 +2268,10 @@
                 button.setAttribute('aria-pressed', item.inStock ? "true" : "false");
                 if (item.inStock) {
                     button.innerText = "In Stock";
-                    button.className = "text-xs font-bold uppercase px-2 py-0.5 rounded border bg-emerald-500/10 border-emerald-500/30 text-emerald-400 transition-colors";
+                    button.className = "text-xs font-bold uppercase px-2 py-1 rounded border bg-emerald-500/10 border-emerald-500/30 text-emerald-400 transition-colors active:scale-95 transition-transform";
                 } else {
                     button.innerText = "Sold Out";
-                    button.className = "text-xs font-bold uppercase px-2 py-0.5 rounded border bg-red-500/10 border-red-500/30 text-red-400 transition-colors";
+                    button.className = "text-xs font-bold uppercase px-2 py-1 rounded border bg-red-500/10 border-red-500/30 text-red-400 transition-colors active:scale-95 transition-transform";
                 }
                 triggerPhoneToast(`${item.name} toggled to ${item.inStock ? 'IN STOCK' : 'SOLD OUT'}`);
                 renderPhoneView();
@@ -2315,10 +2285,10 @@
                 const button = document.getElementById(`promo-btn-${itemId}`);
                 if (item.isOnSale) {
                     button.innerText = "Promo Active";
-                    button.className = "text-xs font-bold uppercase px-2 py-0.5 rounded border bg-amber-500/15 border-amber-500/30 text-amber-400 transition-colors";
+                    button.className = "text-xs font-bold uppercase px-2 py-1 rounded border bg-amber-500/15 border-amber-500/30 text-amber-400 transition-colors active:scale-95 transition-transform";
                 } else {
                     button.innerText = "Apply Sale";
-                    button.className = "text-xs font-bold uppercase px-2 py-0.5 rounded border border-theme hover:bg-bistro-500/10 text-stone-400";
+                    button.className = "text-xs font-bold uppercase px-2 py-1 rounded border border-theme hover:bg-bistro-500/10 text-stone-400 active:scale-95 transition-transform";
                 }
                 triggerPhoneToast(`${item.name} set to ${item.isOnSale ? 'ON SALE' : 'REGULAR PRICE'}`);
                 renderPhoneView();
@@ -2349,9 +2319,9 @@
             ['warm-brass', 'deep-emerald', 'rich-rose'].forEach(id => {
                 const button = document.getElementById(`palette-btn-${id}`);
                 if (id === themeId) {
-                    button.className = "px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded border border-bistro-500 bg-bistro-500 text-stone-950 transition-all";
+                    button.className = "px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded border border-bistro-500 bg-bistro-500 text-stone-950 transition-all active:scale-95 transition-transform";
                 } else {
-                    button.className = "px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded border border-theme hover:bg-bistro-500/10 text-stone-400 transition-all";
+                    button.className = "px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded border border-theme hover:bg-bistro-500/10 text-stone-400 transition-all active:scale-95 transition-transform";
                 }
             });
 
@@ -2423,7 +2393,7 @@
             let sumTotal = 0;
 
             if (appState.sandbox.cart.length === 0) {
-                list.innerHTML = `<div class="text-center text-stone-500 py-6">Your bag is empty. Tap items on menu to add.</div>`;
+                list.innerHTML = `<div class="text-center text-stone-500 py-6 font-sans">Your bag is empty. Tap items on menu to add.</div>`;
             } else {
                 appState.sandbox.cart.forEach((item, index) => {
                     sumTotal += item.price;
@@ -2431,10 +2401,10 @@
                     el.className = 'flex justify-between items-center border-b border-stone-900 pb-1.5';
                     el.innerHTML = `
                         <div>
-                            <span class="text-white block font-medium">${item.name}</span>
+                            <span class="text-white block font-medium font-sans">${item.name}</span>
                             <span class="text-bistro-500 font-mono">₱${item.price}</span>
                         </div>
-                        <button onclick="removeSimCartItem(${index})" class="text-red-500 hover:text-red-400">
+                        <button onclick="removeSimCartItem(${index})" class="text-red-500 hover:text-red-400 font-sans" style="min-height: 28px;">
                             Remove
                         </button>
                     `;
@@ -2492,13 +2462,13 @@
                     <div class="w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-stone-800">
                         <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/1c1917/ffffff?text=Item'">
                     </div>
-                    <div class="flex-1 flex flex-col justify-between min-w-0">
+                    <div class="flex-1 flex flex-col justify-between min-w-0 text-left">
                         <div>
                             <div class="flex items-start justify-between gap-1.5">
                                 <span class="text-xs font-serif font-bold text-white truncate">${item.name}</span>
                                 ${item.isPopular ? `<span class="text-[9px] font-mono bg-amber-500/10 text-amber-400 border border-amber-500/30 px-1 py-0.2 rounded shrink-0 font-black">POPULAR</span>` : ''}
                             </div>
-                            <p class="text-xs text-stone-500 leading-tight line-clamp-2 mt-0.5">${item.description}</p>
+                            <p class="text-[11px] text-stone-500 leading-tight line-clamp-2 mt-0.5 font-sans">${item.description}</p>
                         </div>
                         <div class="flex items-center justify-between pt-1 border-t border-stone-900">
                             <div class="flex items-center gap-1">
@@ -2507,9 +2477,9 @@
                             </div>
                             <div class="flex gap-1">
                                 ${item.inStock ? `
-                                    <button onclick="addSimCartItem('${item.id}')" class="text-xs font-bold uppercase px-2 py-0.5 rounded border border-theme text-stone-300 hover:bg-bistro-500 hover:text-stone-950 transition-colors" style="min-height: 28px;">Add</button>
+                                    <button onclick="addSimCartItem('${item.id}')" class="text-xs font-bold uppercase px-2 py-0.5 rounded border border-theme text-stone-300 hover:bg-bistro-500 hover:text-stone-950 transition-colors active:scale-95 transition-transform" style="min-height: 28px;">Add</button>
                                 ` : `
-                                    <span class="text-xs font-bold uppercase text-red-400">Sold Out</span>
+                                    <span class="text-xs font-bold uppercase text-red-400 font-sans">Sold Out</span>
                                 `}
                             </div>
                         </div>
@@ -2535,6 +2505,14 @@
             }
 
             calculateSubscriptionGridPrices();
+
+            // Sync current dynamic sandbox tracker to match active pricing type
+            if (document.getElementById('sandbox-rel-sub')) {
+                const model = PRICES[appState.pricingType];
+                const tier = appState.sandbox.activeTier;
+                document.getElementById('sandbox-rel-sub').innerText = `₱${model[tier]}/mo`;
+                document.getElementById('sandbox-rel-setup').innerText = `₱${model[`setup${tier}`]}`;
+            }
         }
 
         function calculateSubscriptionGridPrices() {
@@ -2558,10 +2536,10 @@
             const btn = document.getElementById(`addon-btn-${addonKey}`);
             if (appState.selectedAddons[addonKey]) {
                 btn.innerText = "Added";
-                btn.className = "px-4 py-1.5 rounded bg-bistro-500 text-stone-950 font-bold uppercase text-xs transition-colors shadow";
+                btn.className = "px-4 py-1.5 rounded bg-bistro-500 text-stone-950 font-bold uppercase text-xs transition-colors shadow active:scale-95 transition-transform";
             } else {
                 btn.innerText = "Add";
-                btn.className = "text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors";
+                btn.className = "text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors active:scale-95 transition-transform";
             }
 
             calculateSubscriptionGridPrices();
@@ -2575,9 +2553,14 @@
             document.getElementById('calc-tables-val').innerText = `${tables} Tables`;
             document.getElementById('calc-reprints-val').innerText = `${reprints} Runs / year`;
 
+            // Reprint costs:
             const totalReprintCost = tables * reprints * costPerPrint;
+            
+            // Competitor Agency Fees: Menu Editor (₱1000/mo = ₱12000/yr) + POS (₱1500/mo = ₱18000/yr)
+            const competitorAgencyFees = 12000 + 18000;
+            const totalLegacyAgencySpent = totalReprintCost + competitorAgencyFees;
 
-            // Attrition loss formula based on actual average checkout dropouts on slow local networks
+            // Low signal PDF drops:
             const frictionLoss = Math.round(tables * 250 * 12); 
 
             let activeSubBase = PRICES[appState.pricingType].B;
@@ -2588,48 +2571,30 @@
             if (appState.selectedAddons.reservations) addonSum += 299;
             if (appState.selectedAddons.orderbag) addonSum += 499;
 
-            const totalVibeTableAnnualCost = (activeSubBase + addonSum) * 12;
+            let annualAddonSum = 0;
+            if (appState.selectedAddons.domain) annualAddonSum += 580; // Flat year-1 domain cost ($11.28 equivalent)
 
-            const totalLossLegacy = totalReprintCost + frictionLoss;
+            const totalVibeTableAnnualCost = ((activeSubBase + addonSum) * 12) + annualAddonSum;
+
+            const totalLossLegacy = totalLegacyAgencySpent + frictionLoss;
             const netSavings = totalLossLegacy - totalVibeTableAnnualCost;
+            
+            // 3-Month Retained value for the banner:
+            const threeMonthSavings = Math.round(netSavings / 4);
 
-            document.getElementById('out-print-cost').innerText = `₱${totalReprintCost.toLocaleString()}`;
+            document.getElementById('out-print-cost').innerText = `₱${totalLegacyAgencySpent.toLocaleString()}`;
             document.getElementById('out-pdf-attrition').innerText = `₱${frictionLoss.toLocaleString()}`;
             document.getElementById('out-saved-profit').innerText = `₱${netSavings.toLocaleString()}`;
-        }
-
-        // ACCESSIBLE FORM & DIALOG PORTAL ACTIONS
-        function openBookingModal(title, description) {
-            lastActiveElement = document.activeElement;
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-desc').innerText = description;
             
-            const modal = document.getElementById('booking-modal');
-            modal.classList.remove('hidden');
-            
-            // Trap Focus accessibility pattern
-            const firstFocusable = modal.querySelector('button, input, select');
-            if (firstFocusable) firstFocusable.focus();
-        }
-
-        document.addEventListener('click', function(e) {
-            // Dismiss tooltip inside WhatsApp widget if closed
-            if (e.target.closest('#dismiss-wa-tooltip-btn')) {
-                e.preventDefault();
-                dismissWhatsappTooltip();
-            }
-        });
-
-        function closeBookingModal() {
-            document.getElementById('booking-modal').classList.add('hidden');
-            if (lastActiveElement) {
-                lastActiveElement.focus();
+            const roiBanner = document.getElementById('roi-time-banner');
+            if (roiBanner) {
+                roiBanner.innerText = `Saves ₱${threeMonthSavings.toLocaleString()} in first 3 Months`;
             }
         }
 
         function purchasePlan(planName) {
             const pricingModel = PRICES[appState.pricingType];
-            let totalMonthly = pricingModel.B; // Standard B Tier Base
+            let totalMonthly = pricingModel.B; 
             if (planName.includes("A")) totalMonthly = pricingModel.A;
             if (planName.includes("C")) totalMonthly = pricingModel.C;
 
@@ -2640,7 +2605,13 @@
             if (appState.selectedAddons.orderbag) addonSum += 499;
 
             const computedTotal = totalMonthly + addonSum;
-            openBookingModal(`Onboarding Setup: ${planName}`, `Fill out your registration metrics below. Selected: ${planName} — Computed Subscription Total: ₱${computedTotal}/month.`);
+            
+            let addonText = `Computed Subscription Total: ₱${computedTotal}/month.`;
+            if (appState.selectedAddons.domain) {
+                addonText += ` (Includes Yearly Custom Domain setup: +₱580/yr-1)`;
+            }
+
+            openBookingModal(`Onboarding Setup: ${planName}`, `Fill out your registration metrics below. Selected: ${planName} — ${addonText}`);
         }
 
         function submitBookingForm(e) {
@@ -2686,12 +2657,11 @@
         function submitEditRequest() {
             const req = document.getElementById('edit-request-input').value;
             if (req.trim() !== '') {
-                triggerPhoneToast("Manual edit request queued! Check your email inbox for progress reports.");
+                triggerPhoneToast("Draft Config compiled! Structure sent directly to VibeTable technical support pipeline.");
                 document.getElementById('edit-request-input').value = '';
             }
         }
 
-        // Accordion collapsing and accessibility toggle function
         function toggleFaq(index) {
             const answer = document.getElementById(`faq-answer-${index}`);
             const icon = document.getElementById(`faq-icon-${index}`);
@@ -2699,8 +2669,6 @@
             
             if (answer && icon) {
                 const isCollapsed = answer.classList.contains('hidden');
-                
-                // Toggle state
                 if (isCollapsed) {
                     answer.classList.remove('hidden');
                     icon.classList.add('rotate-180');
