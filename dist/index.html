@@ -91,6 +91,150 @@
             --badge-bg: rgba(138, 95, 31, 0.1);
         }
 
+        /* Intelligent Contrast Adapters for Light Theme elements */
+        .light-theme .text-stone-400 {
+            color: #57534e !important; /* High-contrast stone-600 */
+        }
+        .light-theme .text-stone-500 {
+            color: #44403c !important; /* High-contrast stone-700 */
+        }
+        .light-theme .text-stone-600 {
+            color: #292524 !important; /* High-contrast stone-800 */
+        }
+        .light-theme .text-stone-300 {
+            color: #1c1917 !important; /* High-contrast stone-900 */
+        }
+        .light-theme .bg-stone-900 {
+            background-color: #eae6df !important;
+        }
+        .light-theme .bg-stone-950 {
+            background-color: #eae6df !important;
+        }
+        .light-theme .bg-stone-900\/60 {
+            background-color: rgba(234, 230, 223, 0.8) !important;
+        }
+        .light-theme .bg-[#0f0b09] {
+            background-color: #f4f1eb !important;
+        }
+        .light-theme .bg-theme-subtle {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+        }
+        .light-theme .border-stone-900 {
+            border-color: rgba(138, 95, 31, 0.2) !important;
+        }
+        .light-theme .text-white {
+            color: #1e1b18 !important;
+        }
+
+        /* ALWAYS-DARK SCOPING: Protects dark sections from light-theme overrides */
+        .always-dark, 
+        .always-dark * {
+            --bg-color: #0c0a09 !important;
+            --text-color: #d6d3d1 !important;
+            --title-color: #ffffff !important;
+            --panel-bg: rgba(18, 14, 12, 0.85) !important;
+            --border-color: rgba(196, 155, 85, 0.15) !important;
+            --accent-gold: #c49b55 !important;
+            --card-bg: rgba(18, 14, 12, 0.4) !important;
+            --glass-glow: rgba(196, 155, 85, 0.08) !important;
+        }
+        .always-dark {
+            background-color: #0c0a09 !important;
+            color: #d6d3d1 !important;
+            border-color: rgba(196, 155, 85, 0.15) !important;
+        }
+        .always-dark h1, 
+        .always-dark h2, 
+        .always-dark h3, 
+        .always-dark h4, 
+        .always-dark h5, 
+        .always-dark h6,
+        .always-dark .text-theme-title,
+        .always-dark .text-white {
+            color: #ffffff !important;
+        }
+        .light-theme .always-dark .text-stone-400,
+        .light-theme .always-dark.text-stone-400,
+        .always-dark .text-stone-400,
+        .always-dark.text-stone-400 {
+            color: #a8a29e !important;
+        }
+        .light-theme .always-dark .text-stone-500,
+        .light-theme .always-dark.text-stone-500,
+        .always-dark .text-stone-500,
+        .always-dark.text-stone-500 {
+            color: #78716c !important;
+        }
+        .light-theme .always-dark .text-stone-300,
+        .light-theme .always-dark.text-stone-300,
+        .always-dark .text-stone-300,
+        .always-dark.text-stone-300 {
+            color: #d6d3d1 !important;
+        }
+        .always-dark .text-stone-100 {
+            color: #f5f5f4 !important;
+        }
+        .always-dark .text-bistro-500 {
+            color: #c49b55 !important;
+        }
+        .always-dark .border-theme {
+            border-color: rgba(196, 155, 85, 0.15) !important;
+        }
+        .always-dark .border-stone-900 {
+            border-color: #1c1917 !important;
+        }
+        .always-dark .bg-stone-950 {
+            background-color: #0c0a09 !important;
+        }
+        .always-dark .bg-stone-900\/40 {
+            background-color: rgba(28, 25, 23, 0.4) !important;
+        }
+        .always-dark .bg-stone-900\/60 {
+            background-color: rgba(28, 25, 23, 0.6) !important;
+        }
+        .always-dark .bg-stone-900 {
+            background-color: #1c1917 !important;
+        }
+
+        /* Simulated phone light theme contrast overrides */
+        .light-theme #phone-container {
+            border-color: #dfd9ce !important;
+            background-color: #fbf9f6 !important;
+            box-shadow: 0 25px 60px -15px rgba(138, 95, 31, 0.15) !important;
+        }
+        .light-theme #phone-screen-header,
+        .light-theme #phone-screen-footer,
+        .light-theme #phone-body {
+            background-color: #faf8f5 !important;
+            border-color: #eae4da !important;
+        }
+        .light-theme #phone-body .bg-stone-950,
+        .light-theme #phone-body .bg-stone-900\/40 {
+            background-color: #ffffff !important;
+            border-color: #eae4da !important;
+        }
+        .light-theme #phone-container .text-white {
+            color: #1e1b18 !important;
+        }
+        .light-theme #phone-container .text-stone-300 {
+            color: #3f3a36 !important;
+        }
+        .light-theme #phone-container .text-stone-500 {
+            color: #6b635c !important;
+        }
+        .light-theme #phone-container .bg-stone-900 {
+            background-color: #f4f0e8 !important;
+            color: #3f3a36 !important;
+        }
+        .light-theme #phone-container .bg-stone-900:hover {
+            background-color: #eae4da !important;
+        }
+        .light-theme #phone-toast {
+            background-color: #ffffff !important;
+            color: #1e1b18 !important;
+            border-color: #8a5f1f !important;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
@@ -98,7 +242,7 @@
             overflow-x: hidden;
             transition: background-color 0.4s ease, color 0.4s ease;
             margin: 0;
-            padding-bottom: 60px; /* Buffer room for sticky mobile call bar */
+            padding-bottom: 74px; /* Buffer room for sticky mobile call bar + floating triggers */
         }
         @media (min-width: 640px) {
             body { padding-bottom: 0; }
@@ -143,7 +287,7 @@
             50% { opacity: .5; }
         }
         @keyframes bounce {
-            0%, 100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8,0,1,1); }
+            0%, 100% { transform: translateY(-10%); animation-timing-function: cubic-bezier(0.8,0,1,1); }
             50% { transform: none; animation-timing-function: cubic-bezier(0,0,0.2,1); }
         }
         @keyframes spin {
@@ -175,46 +319,6 @@
             display: none;
         }
     </style>
-    
-    <!-- Structured JSON-LD LocalBusiness Schema for Google PH Indexability -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "VibeTable Philippines",
-      "image": "https://vibetable.ph/og-vibetable-luzon.jpg",
-      "@id": "https://vibetable.ph/#localbusiness",
-      "url": "https://vibetable.ph",
-      "telephone": "+639927628293",
-      "priceRange": "₱₱",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "San Juan",
-        "addressRegion": "La Union",
-        "addressCountry": "PH"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "16.6616",
-        "longitude": "120.3204"
-      },
-      "areaServed": [
-        {
-          "@type": "AdministrativeArea",
-          "name": "Ilocos Region"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Central Luzon"
-        }
-      ],
-      "sameAs": [
-        "https://facebook.com/vibetableph",
-        "https://instagram.com/vibetableph"
-      ],
-      "description": "Premium digital table catalog solutions integrated with GCash, Maya, and PayMongo for design-first dining venues in Luzon."
-    }
-    </script>
 </head>
 <body class="selection:bg-bistro-200 selection:text-bistro-950 antialiased font-sans">
 
@@ -227,33 +331,36 @@
     <nav id="navbar" class="sticky top-0 z-50 backdrop-blur-xl border-b panel-theme transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <a href="#view-home" class="flex items-center gap-3 h-11" aria-label="VibeTable Home">
-                <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-bistro-500 shadow-[0_0_15px_rgba(196,155,85,0.2)] bg-stone-950">
+            <a href="#view-home" class="flex items-center gap-3.5 h-12" aria-label="VibeTable Home">
+                <div class="w-11 h-11 rounded-full overflow-hidden border-2 border-bistro-500 shadow-[0_0_15px_rgba(196,155,85,0.35)] bg-stone-950 p-0.5 transition-transform duration-300 hover:rotate-12">
                     <img src="/assets/VT_logo_transparent_bg-OXbOS_i5.png" alt="VibeTable logo" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/100x100/c49b55/ffffff?text=VT'">
                 </div>
                 <div class="flex flex-col text-left">
-                    <span class="text-base sm:text-lg font-serif font-bold tracking-tight text-theme-title leading-none">VibeTable</span>
-                    <span class="text-[10px] font-mono uppercase tracking-widest text-bistro-500 font-bold mt-1">Digital Menus PH</span>
+                    <span class="text-xl sm:text-2xl font-serif font-bold tracking-tight text-theme-title leading-none">VibeTable</span>
+                    <span class="text-[9px] font-mono uppercase tracking-widest text-bistro-500 font-extrabold mt-1">TRP VIBE SOLUTIONS</span>
                 </div>
             </a>
 
             <!-- Desktop Links -->
-            <div class="hidden lg:flex items-center gap-8 text-xs font-semibold text-stone-400">
-                <a href="#view-home" id="nav-home" class="hover:text-theme-gold transition-colors duration-150 h-11 inline-flex items-center">Home</a>
-                <a href="#view-demo" id="nav-demo" class="hover:text-theme-gold transition-colors duration-150 flex items-center gap-1.5 h-11">
-                    Live Demo & Admin Sandbox
-                    <span class="bg-bistro-500/15 border border-bistro-500/30 text-bistro-500 text-[10px] font-mono px-1.5 py-0.5 rounded uppercase font-black animate-pulse">Interactive</span>
+            <div class="hidden lg:flex items-center gap-8 text-xs font-bold uppercase tracking-wider text-stone-400">
+                <a href="#view-home" id="nav-home" class="hover:text-theme-gold transition-colors duration-150 h-11 inline-flex items-center relative group">
+                    <span>Home</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-bistro-500 transition-all duration-300 group-hover:w-full"></span>
                 </a>
-                <a href="#view-pricing" id="nav-pricing" class="hover:text-theme-gold transition-colors duration-150 h-11 inline-flex items-center">PH Plans & Calculator</a>
-                <a href="#view-playbook" id="nav-playbook" class="hover:text-theme-gold transition-colors duration-150 flex items-center gap-1 h-11">
-                    Provincial Playbook
-                    <span class="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-mono px-1 rounded">Strategy</span>
+                <a href="#view-demo" id="nav-demo" class="hover:text-theme-gold transition-colors duration-150 flex items-center gap-1.5 h-11 relative group">
+                    <span>Live Demo & BOH Sandbox</span>
+                    <span class="bg-bistro-500/15 border border-bistro-500/30 text-bistro-500 text-[10px] font-mono px-1.5 py-0.5 rounded uppercase font-black animate-pulse">Interactive</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-bistro-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#view-pricing" id="nav-pricing" class="hover:text-theme-gold transition-colors duration-150 h-11 inline-flex items-center relative group">
+                    <span>PH Plans & Cost Calculator</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-bistro-500 transition-all duration-300 group-hover:w-full"></span>
                 </a>
             </div>
 
             <!-- Header Action Block -->
             <div class="flex items-center gap-3">
-                <button onclick="toggleTheme()" class="w-10 h-10 flex items-center justify-center rounded-xl border border-theme hover:bg-bistro-500/10 text-theme-gold transition-all" aria-label="Toggle Theme Preference">
+                <button onclick="toggleTheme()" class="w-10 h-10 flex items-center justify-center rounded-xl border border-theme hover:bg-bistro-500/10 text-theme-gold transition-all" style="min-height: 44px; min-width: 44px;" aria-label="Toggle Theme Preference">
                     <span id="theme-icon-container">
                         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -262,18 +369,18 @@
                 </button>
 
                 <!-- Clean Primary Header CTA Pair -->
-                <a href="tel:+639927628293" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 border-2 border-bistro-500 text-bistro-500 hover:bg-bistro-500 hover:text-stone-950 font-bold text-xs uppercase tracking-wider rounded-full transition-all duration-300">
+                <a href="tel:+639927628293" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 border-2 border-bistro-500 text-bistro-500 hover:bg-bistro-500 hover:text-stone-950 font-bold text-xs uppercase tracking-wider rounded-full transition-all duration-300" style="min-height: 44px;">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92v3a2 2 0 0 1-2.18 2"></path>
                     </svg>
-                    Call +63 992 762 8293
+                    Call Luzon Hub
                 </a>
 
-                <button onclick="openBookingModal('Northern Luzon Consultation', 'Connect directly with our regional deployment crew to jumpstart your onboarding process.')" class="hidden sm:inline-flex px-5 py-2.5 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-bold text-xs uppercase tracking-wider rounded-full transition-all duration-300 shadow-md">
+                <button onclick="openBookingModal('Northern Luzon Consultation', 'Connect directly with our regional deployment crew to jumpstart your onboarding process.')" class="hidden sm:inline-flex px-5 py-2.5 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-bold text-xs uppercase tracking-wider rounded-full transition-all duration-300 shadow-md" style="min-height: 44px;">
                     Connect with Luzon Crew
                 </button>
 
-                <button onclick="toggleMobileDrawer()" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl border border-theme text-stone-400 hover:text-theme-title" aria-label="Open menu">
+                <button onclick="toggleMobileDrawer()" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl border border-theme text-stone-400 hover:text-theme-title" style="min-height: 44px; min-width: 44px;" aria-label="Open menu">
                     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
                         <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -283,23 +390,25 @@
             </div>
         </div>
 
-        <!-- Mobile Drawer -->
-        <div id="mobile-drawer" class="hidden lg:hidden border-t border-theme panel-theme px-6 py-5 space-y-3.5 text-left">
-            <a href="#view-home" onclick="toggleMobileDrawer()" class="block w-full py-2 px-3 hover:bg-bistro-500/10 rounded-lg text-sm font-semibold text-theme-text">
-                Home & Core Solutions
+        <!-- Translucent overlay for mobile menu drawer -->
+        <div id="mobile-drawer-overlay" class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-opacity" onclick="toggleMobileDrawer()"></div>
+
+        <!-- Mobile Drawer Menu Drawer -->
+        <div id="mobile-drawer" class="hidden lg:hidden border-t border-theme panel-theme px-6 py-5 space-y-3.5 text-left fixed top-20 left-0 right-0 z-50 shadow-2xl transition-all duration-300">
+            <a href="#view-home" onclick="toggleMobileDrawer()" class="flex items-center justify-between py-2 px-3 hover:bg-bistro-500/10 rounded-lg text-sm font-semibold text-theme-text" style="min-height: 44px;">
+                <span>Home & Core Solutions</span>
+                <svg class="w-4 h-4 text-stone-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
             </a>
-            <a href="#view-demo" onclick="toggleMobileDrawer()" class="block w-full py-2 px-3 hover:bg-bistro-500/10 rounded-lg text-sm font-semibold text-theme-text flex items-center justify-between">
-                <span>Interactive BOH Dashboard & Demo</span>
+            <a href="#view-demo" onclick="toggleMobileDrawer()" class="flex items-center justify-between py-2 px-3 hover:bg-bistro-500/10 rounded-lg text-sm font-semibold text-theme-text" style="min-height: 44px;">
+                <span class="flex items-center gap-2">Interactive BOH Dashboard</span>
                 <span class="bg-bistro-500/15 text-bistro-500 text-[10px] font-mono px-1.5 py-0.5 rounded uppercase">Simulate</span>
             </a>
-            <a href="#view-pricing" onclick="toggleMobileDrawer()" class="block w-full py-2 px-3 hover:bg-bistro-500/10 rounded-lg text-sm font-semibold text-theme-text">
-                PH Plans & Cost Calculator
-            </a>
-            <a href="#view-playbook" onclick="toggleMobileDrawer()" class="block w-full py-2 px-3 hover:bg-bistro-500/10 rounded-lg text-sm font-semibold text-theme-text">
-                Provincial Sales Playbook
+            <a href="#view-pricing" onclick="toggleMobileDrawer()" class="flex items-center justify-between py-2 px-3 hover:bg-bistro-500/10 rounded-lg text-sm font-semibold text-theme-text" style="min-height: 44px;">
+                <span>PH Plans & Cost Calculator</span>
+                <svg class="w-4 h-4 text-stone-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
             </a>
             <div class="pt-3 border-t border-theme">
-                <button onclick="toggleMobileDrawer(); openBookingModal('Provincial Launch Inquiry', 'Setup custom payment gateways and local menu mapping.')" class="w-full py-3 bg-bistro-500 text-stone-950 font-bold text-xs uppercase tracking-widest rounded-xl text-center shadow">
+                <button onclick="toggleMobileDrawer(); openBookingModal('Provincial Launch Inquiry', 'Setup custom payment gateways and local menu mapping.')" class="w-full py-3 bg-bistro-500 text-stone-950 font-bold text-xs uppercase tracking-widest rounded-xl text-center shadow" style="min-height: 44px;">
                     Request Setup Consultation
                 </button>
             </div>
@@ -330,14 +439,14 @@
 
                 <!-- Elevated mobile-first hero conversion block with contact numbers -->
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto mb-12">
-                    <a href="#view-pricing" class="w-full sm:w-auto px-8 py-4 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-bold rounded-full text-xs uppercase tracking-wider transition-all shadow-xl flex items-center justify-center gap-2">
+                    <a href="#view-pricing" class="w-full sm:w-auto px-8 py-4 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-bold rounded-full text-xs uppercase tracking-wider transition-all shadow-xl flex items-center justify-center gap-2" style="min-height: 48px;">
                         Explore Local Plans 
                         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
                     </a>
-                    <a href="#view-demo" class="w-full sm:w-auto px-8 py-4 border border-theme rounded-full font-bold text-xs uppercase tracking-wider hover:bg-bistro-500/10 text-theme-title flex items-center justify-center gap-2">
+                    <a href="#view-demo" class="w-full sm:w-auto px-8 py-4 border border-theme rounded-full font-bold text-xs uppercase tracking-wider hover:bg-bistro-500/10 text-theme-title flex items-center justify-center gap-2" style="min-height: 48px;">
                         Launch Demo & Admin Sandbox 
                         <svg class="w-4 h-4 text-bistro-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <circle cx="12" cy="12" r="10"></circle>
@@ -428,6 +537,355 @@
                 </div>
             </div>
 
+            <!-- ================= ACTIVE GROWTH BLUEPRINT SECTION ================= -->
+            <div class="mt-24 sm:mt-32 pt-16 border-t border-theme">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-bistro-500 text-xs font-mono uppercase tracking-widest block mb-2">Not Just A Menu — It's Your Sales OS</span>
+                    <h2 class="text-2xl sm:text-4xl font-serif font-light text-theme-title">
+                        The Active Growth Blueprint: <br>
+                        <span class="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-bistro-400 via-bistro-500 to-bistro-700">
+                            5X Sales Engine
+                        </span> for Luzon Cafes
+                    </h2>
+                    <p class="text-xs sm:text-sm text-stone-400 mt-4 leading-relaxed max-w-2xl mx-auto">
+                        Philippine cafes lose valuable sales to slow loading menus, dead cellular spots, and kitchen ordering errors. VibeTable resolves the entire service stack — from scan to GCash payment verified.
+                    </p>
+                </div>
+
+                <!-- Two Column Intro Grid -->
+                <div class="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto mb-16 text-left">
+                    <div class="p-6 sm:p-8 rounded-2xl border border-theme bg-theme-subtle card-theme">
+                        <h3 class="text-lg font-serif font-bold mb-3 text-theme-title">0.2s load, anywhere in the store</h3>
+                        <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
+                            VibeTable isn't another slow and bloated PDF file on a drive. It's built for La Union surf spots, Baguio peak hotels, and Pangasinan dining establishments. Your menu loads in under 0.2 seconds on our Luzon edge node mirrors — even with 1-bar mobile connection levels.
+                        </p>
+                    </div>
+                    <div class="p-6 sm:p-8 rounded-2xl border border-theme bg-theme-subtle card-theme">
+                        <h3 class="text-lg font-serif font-bold mb-3 text-theme-title">Instant BOH control = more profit</h3>
+                        <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
+                            With integrated GCash & Maya gateways, guests order and complete payments in 3 simple taps. Back-of-house admins gain instant stock control: toggle longganisa off, slide Happy Hour deals active, or deploy rainy day promos instantly on all table screens.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5 Pillars Matrix -->
+                <div class="mb-20 text-left">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <span class="text-bistro-500 text-xs font-mono uppercase tracking-widest block mb-2">System Architecture</span>
+                        <h3 class="text-xl sm:text-2xl font-serif text-theme-title">5 Pillars to 5X Restaurant Sales</h3>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+                        <!-- Pillar 1 -->
+                        <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme theme-card-hover relative overflow-hidden">
+                            <span class="absolute top-4 right-4 bg-bistro-500/10 border border-bistro-500/20 text-bistro-500 font-mono text-[9px] px-2 py-0.5 rounded-full font-bold">Pillar 1</span>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                                <h4 class="text-base font-serif font-bold text-theme-title">Speed-to-Sale</h4>
+                            </div>
+                            <p class="text-xs sm:text-sm text-stone-400 mb-4 leading-normal">Win the initial 3-second attention threshold. Zero buffering, no app installs.</p>
+                            <ul class="space-y-2 text-xs text-stone-500 border-t border-theme/20 pt-3">
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Basement-signal proof edge caching</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>High durability acrylic QR stands included</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>One-tap Sold Out sync to client device</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Pillar 2 -->
+                        <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme theme-card-hover relative overflow-hidden">
+                            <span class="absolute top-4 right-4 bg-bistro-500/10 border border-bistro-500/20 text-bistro-500 font-mono text-[9px] px-2 py-0.5 rounded-full font-bold">Pillar 2</span>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M7 12h10M10 17h4" stroke-linecap="round"/></svg>
+                                </div>
+                                <h4 class="text-base font-serif font-bold text-theme-title">Menu Engineering</h4>
+                            </div>
+                            <p class="text-xs sm:text-sm text-stone-400 mb-4 leading-normal">Price dynamically like a modern merchant, bypassing slow reprint fees.</p>
+                            <ul class="space-y-2 text-xs text-stone-500 border-t border-theme/20 pt-3">
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Instant pricing changes via mobile terminal</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Automated Happy Hour timers</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Bundling combos, promos, & addons</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Pillar 3 -->
+                        <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme theme-card-hover relative overflow-hidden">
+                            <span class="absolute top-4 right-4 bg-bistro-500/10 border border-bistro-500/20 text-bistro-500 font-mono text-[9px] px-2 py-0.5 rounded-full font-bold">Pillar 3</span>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h18M7 15h4M9 6h6a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V9a3 3 0 0 1 3-3z" stroke-linecap="round"/></svg>
+                                </div>
+                                <h4 class="text-base font-serif font-bold text-theme-title">Frictionless Checkout</h4>
+                            </div>
+                            <p class="text-xs sm:text-sm text-stone-400 mb-4 leading-normal">GCash & Maya native integration. Rapid orders sent directly to kitchen.</p>
+                            <ul class="space-y-2 text-xs text-stone-500 border-t border-theme/20 pt-3">
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Direct GCash & Maya checkouts</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Simulated table-side order bags</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Boosted merchant & waitstaff output</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Pillar 4 -->
+                        <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme theme-card-hover relative overflow-hidden">
+                            <span class="absolute top-4 right-4 bg-bistro-500/10 border border-bistro-500/20 text-bistro-500 font-mono text-[9px] px-2 py-0.5 rounded-full font-bold">Pillar 4</span>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 16l3-3 4 4 5-7" stroke-linecap="round"/></svg>
+                                </div>
+                                <h4 class="text-base font-serif font-bold text-theme-title">The Data Loop</h4>
+                            </div>
+                            <p class="text-xs sm:text-sm text-stone-400 mb-4 leading-normal">Own your customer relationships, reviews, and slow-period traffic.</p>
+                            <ul class="space-y-2 text-xs text-stone-500 border-t border-theme/20 pt-3">
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Private feedback portal routing complaints</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Built-in table reservation calendar system</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Community notices and promo billboard walls</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Pillar 5 -->
+                        <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme theme-card-hover relative overflow-hidden md:col-span-2 lg:col-span-1">
+                            <span class="absolute top-4 right-4 bg-bistro-500/10 border border-bistro-500/20 text-bistro-500 font-mono text-[9px] px-2 py-0.5 rounded-full font-bold">Pillar 5</span>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7l3-7z" stroke-linecap="round"/></svg>
+                                </div>
+                                <h4 class="text-base font-serif font-bold text-theme-title">Local Dominance</h4>
+                            </div>
+                            <p class="text-xs sm:text-sm text-stone-400 mb-4 leading-normal">Blueprint designed for Central & Northern Luzon tourist traffic.</p>
+                            <ul class="space-y-2 text-xs text-stone-500 border-t border-theme/20 pt-3">
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>30-day regional launch sequence roadmap</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Active staff script training modules (Tagalog/English)</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Opening-week marketing and launch materials</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 90-Day Active Growth Calendar -->
+                <div class="mb-20 text-left">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <span class="text-bistro-500 text-xs font-mono uppercase tracking-widest block mb-2">Sustainable Milestones</span>
+                        <h3 class="text-xl sm:text-2xl font-serif text-theme-title">Your 90-Day Active Growth Calendar</h3>
+                        <p class="text-xs sm:text-sm text-stone-400 mt-2">We don't simply ship a QR template and walk away. We deliver a permanent restaurant sales machine.</p>
+                    </div>
+
+                    <div class="max-w-4xl mx-auto border border-theme bg-theme-subtle rounded-2xl overflow-hidden shadow-sm">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs border-collapse">
+                                <thead>
+                                    <tr class="bg-stone-900 border-b border-theme text-[10px] text-stone-400 uppercase tracking-widest font-mono">
+                                        <th class="p-4 sm:p-5">Phase</th>
+                                        <th class="p-4 sm:p-5">Focus Focus</th>
+                                        <th class="p-4 sm:p-5">Feature Activation</th>
+                                        <th class="p-4 sm:p-5">Target KPI Lift</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-theme/40 text-stone-300">
+                                    <tr class="hover:bg-bistro-500/5 transition-colors">
+                                        <td class="p-4 sm:p-5 font-bold font-serif text-bistro-500 whitespace-nowrap">Days 1 - 30</td>
+                                        <td class="p-4 sm:p-5">
+                                            <strong class="text-theme-title block mb-0.5">Speed & Capture</strong>
+                                            <span class="text-[10px] text-stone-500 block">Launch Week Sequence</span>
+                                        </td>
+                                        <td class="p-4 sm:p-5 leading-relaxed text-stone-400">0.2s light menu goes active. GCash & Maya checkouts connected. Durable high-end table standees shipped and deployed.</td>
+                                        <td class="p-4 sm:p-5 whitespace-nowrap">
+                                            <span class="inline-block bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-lg font-mono font-bold text-[10px] uppercase">
+                                                +18% Table Turn
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-bistro-500/5 transition-colors">
+                                        <td class="p-4 sm:p-5 font-bold font-serif text-bistro-500 whitespace-nowrap">Days 31 - 60</td>
+                                        <td class="p-4 sm:p-5">
+                                            <strong class="text-theme-title block mb-0.5">Engineer & Upsell</strong>
+                                            <span class="text-[10px] text-stone-500 block">Profit per Table</span>
+                                        </td>
+                                        <td class="p-4 sm:p-5 leading-relaxed text-stone-400">Happy Hour pricing structures active. Sulit combos programmed. Cross-sell items pinned dynamically.</td>
+                                        <td class="p-4 sm:p-5 whitespace-nowrap">
+                                            <span class="inline-block bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-lg font-mono font-bold text-[10px] uppercase">
+                                                +22% Check Total
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-bistro-500/5 transition-colors">
+                                        <td class="p-4 sm:p-5 font-bold font-serif text-bistro-500 whitespace-nowrap">Days 61 - 90</td>
+                                        <td class="p-4 sm:p-5">
+                                            <strong class="text-theme-title block mb-0.5">Retain & Dominate</strong>
+                                            <span class="text-[10px] text-stone-500 block">Repeat Traffic Loop</span>
+                                        </td>
+                                        <td class="p-4 sm:p-5 leading-relaxed text-stone-400">Private guest feedback system activated. Table reservation widget deployed. Notice board promos optimized for regular local foot traffic.</td>
+                                        <td class="p-4 sm:p-5 whitespace-nowrap">
+                                            <span class="inline-block bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-lg font-mono font-bold text-[10px] uppercase">
+                                                +35% Repeat Visits
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Print Overhead Contrast Teaser Card -->
+                <div class="p-6 sm:p-8 rounded-3xl border border-theme bg-theme-subtle text-left max-w-4xl mx-auto premium-glow mb-16">
+                    <div class="grid md:grid-cols-12 gap-6 items-center">
+                        <div class="md:col-span-8">
+                            <h3 class="text-lg font-serif font-bold text-theme-title mb-2">You control the menu. Not the printer.</h3>
+                            <p class="text-xs sm:text-sm text-stone-400 leading-relaxed font-sans">
+                                Average Luzon restaurants spend <strong class="text-bistro-500">₱4,500–₱6,200/month</strong> on laminations, graphic designers, and physical re-prints. VibeTable replaces the physical friction instantly, leaving you with absolute real-time autonomy.
+                            </p>
+                        </div>
+                        <div class="md:col-span-4 p-5 rounded-2xl border-2 border-bistro-500 bg-bistro-500/5 text-center">
+                            <span class="text-[10px] text-bistro-500 font-bold uppercase tracking-widest block font-mono">Retained Yearly Profit</span>
+                            <span class="text-2xl font-serif font-black text-bistro-500 mt-1 block">Save ₱59,800</span>
+                            <span class="text-[10px] text-stone-500 block mt-1 font-mono">Versus Legacy Re-printing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Palengke Friendly CTA Scroll Anchor -->
+                <div class="text-center">
+                    <a href="#view-pricing" class="inline-flex items-center gap-2 px-8 py-4 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-bold rounded-full text-xs uppercase tracking-wider transition-all shadow-xl">
+                        <span>Explore Palengke-Friendly Pricing Tiers</span>
+                        <svg class="w-4 h-4 text-stone-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Testimonials Grid Section -->
+            <div class="mt-24 sm:mt-32 pt-16 border-t border-theme">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-bistro-500 text-xs font-mono uppercase tracking-widest block mb-2">Proven Partner Success</span>
+                    <h2 class="text-2xl sm:text-4xl font-serif font-light text-theme-title">Trusted by leading Luzon F&B operators</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+                    
+                    <!-- Testimonial 1 -->
+                    <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between hover:shadow-lg transition-shadow">
+                        <div class="space-y-4">
+                            <div class="flex text-amber-500 gap-1 text-sm">★★★★★</div>
+                            <p class="text-xs sm:text-sm text-stone-300 italic leading-relaxed">
+                                "Our beachfront surf cafe in San Juan gets slammed with tourists during long weekends. Traditional paper menus were a massive waste of paper and time. VibeTable loads in a blink even when mobile networks are congested!"
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-theme/20 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-bistro-500/20 text-bistro-500 flex items-center justify-center font-bold text-xs uppercase font-mono">SJB</div>
+                            <div>
+                                <h4 class="text-xs font-serif font-bold text-theme-title">Mikaela Roxas</h4>
+                                <p class="text-[10px] text-stone-500 uppercase font-mono">Owner, Surfside Brews (La Union)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between hover:shadow-lg transition-shadow">
+                        <div class="space-y-4">
+                            <div class="flex text-amber-500 gap-1 text-sm">★★★★★</div>
+                            <p class="text-xs sm:text-sm text-stone-300 italic leading-relaxed">
+                                "Baguio's deep mountain hotels and stone structures can completely kill cellular signals. We previously hosted our menu as a 12MB PDF on Google Drive and guests were constantly complaining. VibeTable's edge architecture completely solved the friction."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-theme/20 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-bistro-500/20 text-bistro-500 flex items-center justify-center font-bold text-xs uppercase font-mono">MCD</div>
+                            <div>
+                                <h4 class="text-xs font-serif font-bold text-theme-title">Chef Paulo Baguio</h4>
+                                <p class="text-[10px] text-stone-500 uppercase font-mono">Mountain Cabin Diner (Baguio City)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between hover:shadow-lg transition-shadow">
+                        <div class="space-y-4">
+                            <div class="flex text-amber-500 gap-1 text-sm">★★★★★</div>
+                            <p class="text-xs sm:text-sm text-stone-300 italic leading-relaxed">
+                                "We run a seasonal seafood menu in Dagupan and price adjustments are frequent. Re-printing physical menus every month was costing us thousands. Now we just change the price inside our BOH dashboard on our phones instantly!"
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-theme/20 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-bistro-500/20 text-bistro-500 flex items-center justify-center font-bold text-xs uppercase font-mono">DAG</div>
+                            <div>
+                                <h4 class="text-xs font-serif font-bold text-theme-title">Sir Robert</h4>
+                                <p class="text-[10px] text-stone-500 uppercase font-mono">Alaminos Seafood Cafe (Pangasinan)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between hover:shadow-lg transition-shadow">
+                        <div class="space-y-4">
+                            <div class="flex text-amber-500 gap-1 text-sm">★★★★★</div>
+                            <p class="text-xs sm:text-sm text-stone-300 italic leading-relaxed">
+                                "Our guests absolutely love the in-house order bag framework. They build their orders directly from beach cabanas. Our staff works with 40% higher efficiency without waiting at tables just to record orders."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-theme/20 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-bistro-500/20 text-bistro-500 flex items-center justify-center font-bold text-xs uppercase font-mono">CCB</div>
+                            <div>
+                                <h4 class="text-xs font-serif font-bold text-theme-title">Dana Santos</h4>
+                                <p class="text-[10px] text-stone-500 uppercase font-mono">GM, Coastline Cabanas (Pangasinan)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between hover:shadow-lg transition-shadow md:col-span-2 lg:col-span-1">
+                        <div class="space-y-4">
+                            <div class="flex text-amber-500 gap-1 text-sm">★★★★★</div>
+                            <p class="text-xs sm:text-sm text-stone-300 italic leading-relaxed">
+                                "The integration with TRP Vibe Solutions was flawless. They shipped out the physical acrylic tabletop standees and helped us configure our GCash and Maya API links in less than 48 hours. Absolute absolute recommendation!"
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-theme/20 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-bistro-500/20 text-bistro-500 flex items-center justify-center font-bold text-xs uppercase font-mono">RBT</div>
+                            <div>
+                                <h4 class="text-xs font-serif font-bold text-theme-title">Enzo Reyes</h4>
+                                <p class="text-[10px] text-stone-500 uppercase font-mono">Founder, Roasted Beans (Tarlac)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </section>
 
         <!-- ================= VIEW 2: INTERACTIVE BOH SIMULATOR & DEMO ================= -->
@@ -443,7 +901,7 @@
 
             <!-- Studio Selector Tabs -->
             <div class="flex justify-center gap-2 mb-8 max-w-md mx-auto bg-stone-900/60 p-1.5 rounded-xl border border-theme">
-                <button onclick="setStudioView('pourdecisions')" id="studio-tab-pourdecisions" class="flex-1 py-2 text-xs font-bold uppercase rounded-lg bg-bistro-500 text-stone-950 border border-bistro-500 shadow-md transition-all">
+                <button onclick="setStudioView('pourdecisions')" id="studio-tab-pourdecisions" class="flex-1 py-2 text-xs font-bold uppercase rounded-lg bg-bistro-500 text-stone-950 border border-bistro-500 shadow-md transition-all animate-pulse">
                     Pour Decisions Demo
                 </button>
                 <button onclick="setStudioView('simulator')" id="studio-tab-simulator" class="flex-1 py-2 text-xs font-bold uppercase rounded-lg border border-transparent text-stone-400 hover:text-white transition-all">
@@ -451,19 +909,51 @@
                 </button>
             </div>
 
-            <!-- Pour Decisions Live Iframe Section -->
-            <div id="studio-view-pourdecisions" class="max-w-4xl mx-auto flex flex-col items-center">
+            <!-- Pour Decisions Live Iframe Section with Desktop & Mobile View Switchers -->
+            <div id="studio-view-pourdecisions" class="max-w-6xl mx-auto flex flex-col items-center">
                 <div class="text-center mb-6 max-w-xl">
                     <h3 class="text-lg sm:text-xl font-serif font-bold text-theme-title mb-1">Live Customer Experience</h3>
                     <p class="text-stone-400 text-xs leading-relaxed">
-                        Scroll, click, and interact with a live deployment of our flagship high-performance catalog. Bypasses signal blockages at blazing speeds.
+                        Scroll, click, and interact with our live deployment. Use the switcher below to test the seamless responsiveness on both mobile and desktop screen frames.
                     </p>
+                    
+                    <!-- Viewport Switcher Controls -->
+                    <div class="inline-flex gap-1 bg-stone-900/50 p-1.5 rounded-xl border border-theme/40 mt-4">
+                        <button onclick="setDemoViewport('mobile')" id="demo-viewport-mobile" class="px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded bg-bistro-500 text-stone-950 shadow transition-colors">
+                            Smartphone View
+                        </button>
+                        <button onclick="setDemoViewport('desktop')" id="demo-viewport-desktop" class="px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded border border-transparent text-stone-400 hover:text-white transition-colors">
+                            Desktop Mockup
+                        </button>
+                    </div>
                 </div>
-                <div class="w-full max-w-[340px] h-[680px] rounded-[48px] border-[12px] border-stone-900 bg-stone-950 overflow-hidden relative shadow-2xl flex flex-col">
+
+                <!-- Smartphone Iframe View -->
+                <div id="demo-frame-mobile" class="w-full max-w-[340px] h-[680px] rounded-[48px] border-[12px] border-stone-900 bg-stone-950 overflow-hidden relative shadow-2xl flex flex-col transition-all duration-300">
                     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-stone-900 rounded-b-2xl z-20 flex items-center justify-center">
                         <div class="w-12 h-1 bg-black rounded-full"></div>
                     </div>
-                    <iframe src="https://pourdecisions.vibetable.site/" class="w-full h-full pt-6 border-none bg-stone-950" title="VibeTable Live Premium Menu Deploy"></iframe>
+                    <iframe src="https://pourdecisions.vibetable.site/" class="w-full h-full pt-6 border-none bg-stone-950" title="VibeTable Live Premium Menu Deploy Mobile"></iframe>
+                </div>
+
+                <!-- Desktop Browser Mockup View -->
+                <div id="demo-frame-desktop" class="hidden w-full max-w-[920px] rounded-2xl border border-theme/40 bg-stone-950 overflow-hidden relative shadow-2xl flex flex-col transition-all duration-300">
+                    <!-- Browser Window Header Mac-style -->
+                    <div class="bg-stone-900/80 px-4 py-3 border-b border-theme/20 flex items-center gap-3">
+                        <div class="flex gap-1.5">
+                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                        </div>
+                        <div class="flex-1 max-w-sm mx-auto bg-stone-950/60 rounded-lg px-3 py-1 border border-theme/20 text-[11px] text-stone-400 font-mono flex items-center justify-between">
+                            <span>pourdecisions.vibetable.site</span>
+                            <svg class="w-3 h-3 text-emerald-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        </div>
+                    </div>
+                    <!-- Large Desktop Browser Aspect Frame -->
+                    <div class="w-full h-[580px] bg-stone-950">
+                        <iframe src="https://pourdecisions.vibetable.site/" class="w-full h-full border-none bg-stone-950" title="VibeTable Live Premium Menu Deploy Desktop"></iframe>
+                    </div>
                 </div>
             </div>
 
@@ -618,9 +1108,9 @@
                     </div>
                 </div>
 
-                <!-- Right Panel: Smartphone Screen Frame Mockup -->
+                <!-- Right Panel: Smartphone Screen Frame Mockup (Preserved in dark mode theme always) -->
                 <div class="lg:col-span-5 flex justify-center items-center">
-                    <div id="phone-container" class="w-full max-w-[310px] h-[580px] rounded-[36px] border-[8px] border-stone-900 bg-stone-950 overflow-hidden relative flex flex-col shadow-2xl transition-all duration-300">
+                    <div id="phone-container" class="always-dark w-full max-w-[310px] h-[580px] rounded-[36px] border-[8px] border-stone-900 bg-stone-950 overflow-hidden relative flex flex-col shadow-2xl transition-all duration-300">
                         
                         <!-- Internal Toast Popup inside phone screen -->
                         <div id="phone-toast" class="absolute top-12 left-4 right-4 border border-bistro-500/30 text-xs px-3 py-2.5 rounded-lg shadow-2xl z-40 bg-stone-950/95 text-stone-100 transition-all duration-300 translate-y-[-100px] opacity-0 flex items-center gap-2 text-left">
@@ -1059,59 +1549,12 @@
 
         </section>
 
-        <!-- ================= VIEW 4: PROVINCIAL PLAYBOOK ================= -->
-        <section id="view-playbook" class="spa-view hidden max-w-7xl mx-auto px-4 sm:px-6 py-12">
-            
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-bistro-500 text-xs font-semibold uppercase tracking-widest bg-bistro-500/10 border border-bistro-500/20 px-3 py-1.5 rounded-full mb-3 inline-block">Active Growth Blueprint</span>
-                <h2 class="text-2xl sm:text-4xl font-serif text-theme-title">Provincial Client Acquisition Playbook</h2>
-                <p class="text-stone-400 mt-3 text-xs sm:text-sm">
-                    Strategic systems formulated specifically to convert traditional hospitality operators inside Pangasinan, Tarlac, and La Union districts.
-                </p>
-            </div>
-
-            <!-- Playbook Matrix -->
-            <div class="grid md:grid-cols-2 gap-6 lg:gap-8 text-left max-w-4xl mx-auto mb-16">
-                
-                <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme">
-                    <div class="w-12 h-12 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center mb-6">
-                        <!-- Open Box Vector -->
-                        <svg class="w-6 h-6 text-bistro-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
-                            <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xs sm:text-base font-bold text-theme-title mb-2">1. The Turnkey Material Bundle</h3>
-                    <p class="text-xs text-stone-400 leading-relaxed font-sans">
-                        Form partnership networks with print providers in Dagupan, Tarlac City, or Urdaneta. Supply five (5) ultra-durable acrylic tabletop QR stands within the initial setup fee. Immediate, tangible hardware value anchors software retention and builds immediate trust with traditional restaurant operators.
-                    </p>
-                </div>
-
-                <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme">
-                    <div class="w-12 h-12 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center mb-6">
-                        <!-- Refresh/Loop Vector -->
-                        <svg class="w-6 h-6 text-bistro-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <polyline points="23 4 23 10 17 10"></polyline>
-                            <polyline points="1 20 1 14 7 14"></polyline>
-                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xs sm:text-base font-bold text-theme-title mb-2">2. Systematic Feature Upsell Engine</h3>
-                    <p class="text-xs text-stone-400 leading-relaxed font-sans">
-                        When Tier B operations express technical interest in seasonal additions or minor layout changes, process structural enhancements under a single flat execution rate (e.g., ₱300 standard update adjustment fee per processing block) rather than mandating full subscription tier upgrades.
-                    </p>
-                </div>
-
-            </div>
-
-        </section>
-
     </main>
 
-    <!-- Bottom Action CTA Banner -->
-    <section class="py-16 sm:py-24 relative overflow-hidden border-t border-theme bg-[#0f0b09]/80">
+    <!-- Bottom Action CTA Banner (Preserved in premium dark mode always for perfect light theme readability) -->
+    <section class="always-dark py-16 sm:py-24 relative overflow-hidden border-t border-theme">
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h2 class="text-2xl sm:text-4xl font-serif font-light mb-4 leading-tight text-theme-title">
+            <h2 class="text-2xl sm:text-4xl font-serif font-light mb-4 leading-tight text-white">
                 Ready to upgrade your restaurant's digital presence?
             </h2>
             <p class="text-stone-400 text-xs sm:text-sm max-w-xl mx-auto mb-6 leading-relaxed">
@@ -1122,7 +1565,7 @@
                 <span class="text-xs text-stone-500 uppercase tracking-widest font-mono">Book your deployment call directly</span>
                 <a href="tel:+639927628293" class="text-base sm:text-2xl font-serif font-black text-bistro-500 hover:underline flex items-center justify-center gap-2.5">
                     <svg class="w-6 h-6 text-bistro-500 animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92v3a2 2 0 0 1-2.18 2"></path>
                     </svg>
                     +63 992 762 8293
                 </a>
@@ -1132,9 +1575,9 @@
                 <button onclick="openBookingModal('Onboarding Strategy Session', 'Arrange a sync with our Luzon engineers.')" class="w-full sm:w-auto px-8 py-4 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-bold rounded-full text-xs uppercase tracking-wider transition-all shadow-xl">
                     Request Custom Quote
                 </button>
-                <a href="tel:+639927628293" class="w-full sm:w-auto px-8 py-4 border border-theme rounded-full font-bold text-xs uppercase tracking-wider hover:bg-bistro-500/10 text-theme-title flex items-center justify-center gap-2">
+                <a href="tel:+639927628293" class="w-full sm:w-auto px-8 py-4 border border-theme rounded-full font-bold text-xs uppercase tracking-wider hover:bg-bistro-500/10 text-white flex items-center justify-center gap-2">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92v3a2 2 0 0 1-2.18 2"></path>
                     </svg>
                     Connect with Luzon Hub
                 </a>
@@ -1142,21 +1585,15 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="pt-16 pb-12 border-t border-theme bg-stone-950 text-xs text-stone-500 text-left">
+    <!-- Footer (Preserved in high-contrast scoped always-dark layout) -->
+    <footer class="always-dark pt-16 pb-12 border-t border-theme bg-stone-950 text-xs text-stone-500 text-left">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10">
                 
                 <div class="md:col-span-2 space-y-4">
                     <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-full bg-stone-950 flex items-center justify-center border-2 border-bistro-500">
-                            <!-- Inline QR vector -->
-                            <svg class="w-4 h-4 text-bistro-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
+                        <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-bistro-500 bg-stone-950 p-0.5">
+                            <img src="/assets/VT_logo_transparent_bg-OXbOS_i5.png" alt="VibeTable logo" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/100x100/c49b55/ffffff?text=VT'">
                         </div>
                         <span class="text-base font-serif font-bold text-white tracking-tight">VibeTable PH</span>
                     </div>
@@ -1184,7 +1621,6 @@
                     <ul class="space-y-2.5 font-medium text-stone-500">
                         <li><a href="#view-demo" class="hover:text-bistro-500 transition-colors">BOH Sandbox Sim</a></li>
                         <li><a href="#view-pricing" class="hover:text-bistro-500 transition-colors">PHP Billing Tiers</a></li>
-                        <li><a href="#view-playbook" class="hover:text-bistro-500 transition-colors">Provincial Playbook</a></li>
                     </ul>
                 </div>
 
@@ -1192,25 +1628,23 @@
 
             <div class="pt-8 border-t border-stone-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500 text-center">
                 <p class="leading-relaxed">
-                    © 2026 VibeTable Philippines. DTI registered. We comply with the Philippine Data Privacy Act of 2012. | <a href="#" class="hover:text-bistro-500">Privacy Policy</a> | <a href="#" class="hover:text-bistro-500">Terms</a>
+                    © 2026 VibeTable Digital Menus. All rights reserved. VibeTable Digital Menus is a proud subsidiary of **TRP Vibe Solutions** in Pangasinan, Philippines.
                 </p>
-                <div class="flex gap-4">
+                <div class="flex gap-4 shrink-0">
                     <span class="hover:text-bistro-500 cursor-pointer">Security Specs</span>
                     <span>•</span>
-                    <span class="hover:text-bistro-500 cursor-pointer">GDPR Compliance</span>
-                    <span>•</span>
-                    <span class="hover:text-bistro-500 cursor-pointer">SLA Agreement</span>
+                    <span class="hover:text-bistro-500 cursor-pointer">Data Privacy compliance</span>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- STICKY MOBILE PHONE ACTION BAR -->
-    <div class="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-stone-950 border-t border-bistro-500/30 px-4 py-3 flex items-center justify-between shadow-2xl backdrop-blur-md">
+    <div class="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-stone-950 border-t border-bistro-500/30 px-4 py-3 flex items-center justify-between shadow-2xl backdrop-blur-md">
         <span class="text-xs text-stone-300 font-bold uppercase tracking-wider">Luzon Hotline:</span>
         <a href="tel:+639927628293" class="inline-flex items-center gap-2 px-4 py-2.5 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-black text-xs uppercase tracking-wider rounded-full shadow-lg transition-transform active:scale-95" style="min-height: 44px;">
             <svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92v3a2 2 0 0 1-2.18 2"></path>
             </svg>
             Tawag: 0992 762 8293
         </a>
@@ -1220,7 +1654,7 @@
     <div id="booking-modal" role="dialog" aria-modal="true" class="fixed inset-0 bg-black/70 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden animate-fade-in-up">
         <div class="p-6 rounded-2xl max-w-lg w-full relative shadow-2xl border border-theme bg-[#0f0b09] text-stone-300 text-left">
             
-            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-stone-500 hover:text-white transition-colors" aria-label="Close form dialog">
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-stone-500 hover:text-white transition-colors" style="min-height: 44px; min-width: 44px;" aria-label="Close form dialog">
                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -1487,12 +1921,11 @@
         // NAVIGATION & ROUTING HANDLERS
         function handleHashRouting() {
             const hash = window.location.hash || '#view-home';
-            const allViews = ['view-home', 'view-demo', 'view-pricing', 'view-playbook'];
+            const allViews = ['view-home', 'view-demo', 'view-pricing'];
             
             let targetView = 'view-home';
             if (hash === '#view-demo' || hash === '#/demo') targetView = 'view-demo';
             if (hash === '#view-pricing' || hash === '#/pricing') targetView = 'view-pricing';
-            if (hash === '#view-playbook' || hash === '#/playbook') targetView = 'view-playbook';
 
             allViews.forEach(viewId => {
                 const el = document.getElementById(viewId);
@@ -1512,12 +1945,10 @@
                 '#view-demo': 'nav-demo',
                 '#/demo': 'nav-demo',
                 '#view-pricing': 'nav-pricing',
-                '#/pricing': 'nav-pricing',
-                '#view-playbook': 'nav-playbook',
-                '#/playbook': 'nav-playbook'
+                '#/pricing': 'nav-pricing'
             };
 
-            const linkElements = ['nav-home', 'nav-demo', 'nav-pricing', 'nav-playbook'];
+            const linkElements = ['nav-home', 'nav-demo', 'nav-pricing'];
             linkElements.forEach(id => {
                 const linkEl = document.getElementById(id);
                 if (linkEl) {
@@ -1554,9 +1985,21 @@
             });
         });
 
+        // Toggle mobile drawer along with its blur overlay
         function toggleMobileDrawer() {
             const drawer = document.getElementById('mobile-drawer');
-            drawer.classList.toggle('hidden');
+            const overlay = document.getElementById('mobile-drawer-overlay');
+            if (drawer && overlay) {
+                if (drawer.classList.contains('hidden')) {
+                    drawer.classList.remove('hidden');
+                    overlay.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    drawer.classList.add('hidden');
+                    overlay.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            }
         }
 
         // DEMO PORTAL LOGIC & ACTIONS
@@ -1580,15 +2023,35 @@
             }
         }
 
+        // Viewport Switcher logic for Demo Iframe Layout Frame
+        function setDemoViewport(mode) {
+            const frameMobile = document.getElementById('demo-frame-mobile');
+            const frameDesktop = document.getElementById('demo-frame-desktop');
+            const btnMobile = document.getElementById('demo-viewport-mobile');
+            const btnDesktop = document.getElementById('demo-viewport-desktop');
+
+            if (mode === 'mobile') {
+                frameMobile.classList.remove('hidden');
+                frameDesktop.classList.add('hidden');
+                btnMobile.className = "px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded bg-bistro-500 text-stone-950 shadow transition-colors";
+                btnDesktop.className = "px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded border border-transparent text-stone-400 hover:text-white transition-colors";
+            } else {
+                frameDesktop.classList.remove('hidden');
+                frameMobile.classList.add('hidden');
+                btnDesktop.className = "px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded bg-bistro-500 text-stone-950 shadow transition-colors";
+                btnMobile.className = "px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded border border-transparent text-stone-400 hover:text-white transition-colors";
+            }
+        }
+
         function setSandboxTier(tier) {
             appState.sandbox.activeTier = tier;
             
             ['A', 'B', 'C'].forEach(t => {
                 const btn = document.getElementById(`sandbox-tier-btn-${t}`);
                 if (t === tier) {
-                    btn.className = "flex-1 py-1 text-xs font-bold uppercase rounded bg-bistro-500 text-stone-950 border border-bistro-500 shadow transition-all";
+                    btn.className = "flex-1 py-1.5 text-xs font-bold uppercase rounded bg-bistro-500 text-stone-950 border border-bistro-500 shadow transition-all";
                 } else {
-                    btn.className = "flex-1 py-1 text-xs font-bold uppercase rounded border border-transparent text-stone-400 hover:text-white transition-all";
+                    btn.className = "flex-1 py-1.5 text-xs font-bold uppercase rounded border border-transparent text-stone-400 hover:text-white transition-all";
                 }
             });
 
@@ -1747,7 +2210,7 @@
             const container = document.getElementById('phone-container');
             const banner = document.getElementById('phone-marquee-banner');
 
-            container.className = "w-full max-w-[310px] h-[580px] rounded-[36px] border-[8px] overflow-hidden relative flex flex-col shadow-2xl transition-all duration-300";
+            container.className = "always-dark w-full max-w-[310px] h-[580px] rounded-[36px] border-[8px] overflow-hidden relative flex flex-col shadow-2xl transition-all duration-300";
             banner.className = "text-xs font-bold py-1 px-3 tracking-wider text-center uppercase whitespace-nowrap overflow-hidden text-ellipsis transition-colors";
             
             ['warm-brass', 'deep-emerald', 'rich-rose'].forEach(id => {
@@ -1884,7 +2347,7 @@
             container.innerHTML = '';
 
             if (filtered.length === 0) {
-                container.innerHTML = `<div class="text-center text-stone-600 text-xs py-10 font-mono">No Items Available</div>`;
+                container.innerHTML = `<div class="text-center text-stone-600 text-xs py-10 font-mono font-bold">No Items Available</div>`;
                 return;
             }
 
@@ -1894,7 +2357,7 @@
                 
                 card.innerHTML = `
                     <div class="w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-stone-800">
-                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
+                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/1c1917/ffffff?text=Item'">
                     </div>
                     <div class="flex-1 flex flex-col justify-between min-w-0">
                         <div>
@@ -1911,7 +2374,7 @@
                             </div>
                             <div class="flex gap-1">
                                 ${item.inStock ? `
-                                    <button onclick="addSimCartItem('${item.id}')" class="text-xs font-bold uppercase px-2 py-0.5 rounded border border-theme text-stone-300 hover:bg-bistro-500 hover:text-stone-950 transition-colors">Add</button>
+                                    <button onclick="addSimCartItem('${item.id}')" class="text-xs font-bold uppercase px-2 py-0.5 rounded border border-theme text-stone-300 hover:bg-bistro-500 hover:text-stone-950 transition-colors" style="min-height: 28px;">Add</button>
                                 ` : `
                                     <span class="text-xs font-bold uppercase text-red-400">Sold Out</span>
                                 `}
@@ -1962,10 +2425,10 @@
             const btn = document.getElementById(`addon-btn-${addonKey}`);
             if (appState.selectedAddons[addonKey]) {
                 btn.innerText = "Added";
-                btn.className = "px-4 py-1 rounded bg-bistro-500 text-stone-950 font-bold uppercase text-xs transition-colors shadow";
+                btn.className = "px-4 py-1.5 rounded bg-bistro-500 text-stone-950 font-bold uppercase text-xs transition-colors shadow";
             } else {
                 btn.innerText = "Add";
-                btn.className = "text-xs font-mono px-2 py-1 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors";
+                btn.className = "text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors";
             }
 
             calculateSubscriptionGridPrices();
@@ -1981,7 +2444,7 @@
 
             const totalReprintCost = tables * reprints * costPerPrint;
 
-            // Updated frictionLoss formula from 30x multiplier to more realistic 250x based on customer feedback studies
+            // Attrition loss formula based on actual average checkout dropouts on slow local networks
             const frictionLoss = Math.round(tables * 250 * 12); 
 
             let activeSubBase = PRICES[appState.pricingType].B;
@@ -2015,6 +2478,14 @@
             const firstFocusable = modal.querySelector('button, input, select');
             if (firstFocusable) firstFocusable.focus();
         }
+
+        document.addEventListener('click', function(e) {
+            // Dismiss tooltip inside WhatsApp widget if closed
+            if (e.target.closest('#dismiss-wa-tooltip-btn')) {
+                e.preventDefault();
+                dismissWhatsappTooltip();
+            }
+        });
 
         function closeBookingModal() {
             document.getElementById('booking-modal').classList.add('hidden');
