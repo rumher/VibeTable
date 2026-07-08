@@ -1352,235 +1352,227 @@
                 </p>
 
                 <!-- Business Category Switcher (Cafe vs Resto) -->
-                <div class="mt-8 flex flex-wrap justify-center gap-1 max-w-xs sm:max-w-md mx-auto bg-stone-900/60 p-1.5 rounded-xl border border-theme">
-                    <button onclick="setPricingType('cafe')" id="pricing-type-cafe" class="flex-1 px-5 py-2 rounded-lg text-xs font-bold transition-all uppercase">
-                        Cafe Rates
-                    </button>
-                    <button onclick="setPricingType('resto')" id="pricing-type-resto" class="flex-1 px-5 py-2 rounded-lg text-xs font-bold transition-all uppercase">
-                        Resto Rates
-                    </button>
-                </div>
-            </div>
+        <div class="mt-8 flex flex-wrap justify-center gap-1 max-w-xs sm:max-w-md mx-auto bg-stone-900/60 p-1.5 rounded-xl border border-theme">
+            <button onclick="setPricingType('cafe')" id="pricing-type-cafe" class="flex-1 px-5 py-2 rounded-lg text-xs font-bold transition-all uppercase">
+                Cafe Rates
+            </button>
+            <button onclick="setPricingType('resto')" id="pricing-type-resto" class="flex-1 px-5 py-2 rounded-lg text-xs font-bold transition-all uppercase">
+                Resto Rates
+            </button>
+        </div>
+    </div>
 
-            <!-- Tiered Plan Columns -->
-            <div class="grid md:grid-cols-3 gap-6 items-stretch max-w-6xl mx-auto mb-20 text-left">
+    <!-- Tiered Plan Columns -->
+    <div class="grid md:grid-cols-3 gap-6 items-stretch max-w-6xl mx-auto mb-20 text-left">
+        
+        <!-- Package 1: Tier A -->
+        <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between theme-card-hover">
+            <div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-xs font-bold uppercase font-mono text-stone-500">Tier A</span>
+                    <span class="text-xs bg-theme-input text-stone-400 px-2 py-0.5 rounded uppercase font-bold border border-theme">Hands-off</span>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-theme-title">Staff Admin Suite</h3>
+                <p class="text-stone-500 text-xs mt-1.5">Includes: Unlimited updates via WhatsApp/Messenger/Email • Loads in a few seconds • GCash & Maya • Shareable link • Print-ready QR • Map & hours • Staff login to toggle SOLD OUT/SALE • Lockout safety • 1 free acrylic stand</p>
                 
-                <!-- Package 1: Tier A -->
-                <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between theme-card-hover">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-xs font-bold uppercase font-mono text-stone-500">Tier A</span>
-                            <span class="text-xs bg-theme-input text-stone-400 px-2 py-0.5 rounded uppercase font-bold border border-theme">Hands-off</span>
-                        </div>
-                        <h3 class="text-xl font-serif font-bold text-theme-title">Managed View</h3>
-                        <p class="text-stone-500 text-xs mt-1.5">Best for micro-cafes, food stalls, and milk tea booths looking to digitize menus securely.</p>
-                        
-                        <div class="my-6">
-                            <span id="price-card-tierA-sub" class="text-3xl sm:text-4xl font-serif font-black text-bistro-500">₱349</span>
-                            <span class="text-stone-500 text-xs">/ month</span>
-                            <div id="setup-card-tierA-fee" class="text-xs text-emerald-400 font-mono font-bold uppercase mt-1">One-Time Setup: ₱700</div>
-                        </div>
-
-                        <ul class="space-y-3 text-xs text-stone-400 border-t border-theme pt-4">
-                            <li class="flex items-start gap-2">
-                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span>High-performance view-only menu website</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span>Max 1 monthly minor edit done by us</span>
-                            </li>
-                            <li class="flex items-start gap-2 text-stone-500/70">
-                                <span class="text-red-500 shrink-0 mt-0.5">✗</span>
-                                <span>No dashboard panel or login credentials</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span>Digital menu layout and QR vector export</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-bistro-500 shrink-0 mt-0.5">ℹ</span>
-                                <span class="italic text-stone-500">"Cheaper than printing new paper menus every time your prices change."</span>
-                            </li>
-                        </ul>
+                <div class="my-6">
+                    <span id="price-card-tierA-sub" class="text-3xl sm:text-4xl font-serif font-black text-bistro-500">₱349</span>
+                    <span class="text-stone-500 text-xs">/ month</span>
+                    <div class="text-xs text-emerald-400 font-mono font-bold uppercase mt-1 leading-snug">
+                        <span id="setup-card-tierA-fee">One-Time Setup: ₱700</span>
+                        <span class="text-stone-400 font-sans font-normal normal-case block sm:inline sm:ml-1">(first 2 months FREE, billing starts month 3)</span>
                     </div>
-
-                    <button onclick="purchasePlan('Tier A Setup')" class="w-full py-3 mt-8 bg-stone-900/50 hover:bg-stone-850 border border-theme text-theme-title hover:text-bistro-500 font-bold text-xs uppercase tracking-widest rounded-lg transition-colors">
-                        Select Tier A
-                    </button>
                 </div>
 
-                <!-- Package 2: Tier B -->
-                <div class="p-6 rounded-2xl border-2 border-bistro-500 bg-theme-subtle card-theme flex flex-col justify-between relative premium-glow">
-                    <div class="absolute top-0 right-6 -translate-y-1/2 bg-bistro-500 text-stone-950 text-xs font-black uppercase px-3 py-1 rounded-full shadow-md">
-                        The Sweet Spot
-                    </div>
-                    
-                    <div>
-                        <div class="flex justify-between items-center mb-4 mt-2">
-                            <span class="text-xs font-bold uppercase font-mono text-bistro-500">Tier B</span>
-                            <span class="text-xs bg-bistro-500/10 text-bistro-500 px-2 py-0.5 rounded uppercase font-bold border border-bistro-500/20">Hybrid Control</span>
-                        </div>
-                        <h3 class="text-xl font-serif font-bold text-theme-title">Staff Admin Suite</h3>
-                        <p class="text-stone-500 text-xs mt-1.5">For local coffee shops, casual diners, and busy restobars seeking quick operational control.</p>
-                        
-                        <div class="my-6">
-                            <span id="price-card-tierB-sub" class="text-3xl sm:text-4xl font-serif font-black text-bistro-500">₱649</span>
-                            <span class="text-stone-500 text-xs">/ month</span>
-                            <div id="setup-card-tierB-fee" class="text-xs text-emerald-400 font-mono font-bold uppercase mt-1">One-Time Setup: ₱1,300</div>
-                        </div>
-
-                        <ul class="space-y-3 text-xs text-stone-400 border-t border-theme/20 pt-4">
-                            <li class="flex items-start gap-2">
-                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span class="text-theme-title font-semibold">Everything in Tier A, plus:</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span>Limited merchant administrative panel access</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span>Toggle Sold Out & Sale indicators instantly</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-stone-500 shrink-0 mt-0.5">🔒</span>
-                                <span class="text-stone-500 leading-snug">Lockout safety rules (No adding/deleting items to protect layout integrity)</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-bistro-500 shrink-0 mt-0.5">ℹ</span>
-                                <span class="italic text-stone-300">"Mark items as 'Sold Out' instantly so your waiters don't have to keep apologizing."</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <button onclick="purchasePlan('Tier B Setup')" class="w-full py-3 mt-8 bg-bistro-500 hover:bg-bistro-650 text-stone-950 font-black text-xs uppercase tracking-widest rounded-lg transition-colors shadow-md">
-                        Select Tier B
-                    </button>
-                </div>
-
-                <!-- Package 3: Tier C -->
-                <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between theme-card-hover">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-xs font-bold uppercase font-mono text-stone-500">Tier C</span>
-                            <span class="text-xs bg-theme-input text-stone-400 px-2 py-0.5 rounded uppercase font-bold border border-theme">Full Branding</span>
-                        </div>
-                        <h3 class="text-xl font-serif font-bold text-theme-title">Complete Identity</h3>
-                        <p class="text-stone-500 text-xs mt-1.5">Designed for premium cafes, hotels, and tourist resorts craving custom brand control.</p>
-                        
-                        <div class="my-6">
-                            <span id="price-card-tierC-sub" class="text-3xl sm:text-4xl font-serif font-black text-bistro-500">₱949</span>
-                            <span class="text-stone-500 text-xs">/ month</span>
-                            <div id="setup-card-tierC-fee" class="text-xs text-emerald-400 font-mono font-bold uppercase mt-1">One-Time Setup: ₱1,800</div>
-                        </div>
-
-                        <ul class="space-y-3 text-xs text-stone-400 border-t border-theme pt-4">
-                            <li class="flex items-start gap-2">
-                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span class="text-theme-title font-semibold">Everything in Tier B, plus:</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span>Complete administrative controls (Full menu additions)</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span>Integrated About, Contact, Social, & Google Maps</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span>Custom brand colors matching your identity</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-bistro-500 shrink-0 mt-0.5">ℹ</span>
-                                <span class="italic text-stone-300">"Get your own .com website. Perfect for tourists searching for you on Google."</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <button onclick="purchasePlan('Tier C Setup')" class="w-full py-3 mt-8 bg-stone-900/50 hover:bg-stone-850 border border-theme text-theme-title hover:text-bistro-500 font-bold text-xs uppercase tracking-widest rounded-lg transition-colors">
-                        Select Tier C
-                    </button>
-                </div>
-
+                <ul class="space-y-3 text-xs text-stone-400 border-t border-theme pt-4">
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span>Unlimited updates via WhatsApp/Messenger/Email</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span>Loads in a few seconds</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span>GCash & Maya</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span>Shareable link & Print-ready QR</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span>Map & hours</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span>Staff login to toggle SOLD OUT/SALE</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span>Lockout safety</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span>1 free acrylic stand</span>
+                    </li>
+                </ul>
             </div>
 
-            <!-- À La Carte Add-ons Block -->
-            <div class="max-w-4xl mx-auto mb-16">
-                <h3 class="text-lg font-serif font-bold text-theme-title text-center mb-6">À La Carte Modular Upsells (Optional)</h3>
+            <button onclick="purchasePlan('Tier A Setup')" class="w-full py-3 mt-8 bg-stone-900/50 hover:bg-stone-850 border border-theme text-theme-title hover:text-bistro-500 font-bold text-xs uppercase tracking-widest rounded-lg transition-colors">
+                Select Tier A
+            </button>
+        </div>
+
+        <!-- Package 2: Tier B -->
+        <div class="p-6 rounded-2xl border-2 border-bistro-500 bg-theme-subtle card-theme flex flex-col justify-between relative premium-glow">
+            <div class="absolute top-0 right-6 -translate-y-1/2 bg-bistro-500 text-stone-950 text-xs font-black uppercase px-3 py-1 rounded-full shadow-md">
+                The Sweet Spot
+            </div>
+            
+            <div>
+                <div class="flex justify-between items-center mb-4 mt-2">
+                    <span class="text-xs font-bold uppercase font-mono text-bistro-500">Tier B</span>
+                    <span class="text-xs bg-bistro-500/10 text-bistro-500 px-2 py-0.5 rounded uppercase font-bold border border-bistro-500/20">Hybrid Control</span>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-theme-title">Complete Identity</h3>
+                <p class="text-stone-500 text-xs mt-1.5">Includes everything in Tier A, PLUS: Full menu editing • Custom brand colors • About page + socials • Google Maps + reservation-ready layout • 3 free acrylic stands</p>
                 
-                <!-- TOP-TIER UPSELL FEATURE HIGHLIGHT: In-house Order Bag Framework -->
-                <div class="p-6 rounded-3xl border-2 border-bistro-500 bg-bistro-500/5 flex flex-col md:flex-row justify-between items-center gap-6 mb-8 relative overflow-hidden premium-glow text-left">
-                    <div class="absolute top-0 right-6 bg-bistro-500 text-stone-950 text-xs font-black uppercase px-3 py-1 rounded-b-xl shadow-md tracking-wider">
-                        ★ TOP-TIER UPSELL
-                    </div>
-                    
-                    <div class="text-left space-y-2 max-w-2xl">
-                        <div class="flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-bistro-500 text-stone-950 font-black flex items-center justify-center">
-                                <svg class="w-5 h-5 text-stone-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <circle cx="9" cy="21" r="1"></circle>
-                                    <circle cx="20" cy="21" r="1"></circle>
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                                </svg>
-                            </span>
-                            <span class="text-sm sm:text-base font-bold text-theme-title">In-House Order Bag Framework</span>
-                        </div>
-                        <p class="text-xs text-stone-300 leading-relaxed font-sans">
-                            Turn your digital menu into an interactive self-service terminal. Guests build their virtual food bags right at their table, which automatically computes totals and generates structured order blocks to send straight to the kitchen.
-                        </p>
-                        <span class="inline-block text-xs text-bistro-500 font-bold uppercase tracking-wider bg-bistro-500/10 px-2 py-0.5 rounded border border-bistro-500/20 font-mono">
-                            Drastically reduces waiter turnaround times by up to 40%
-                        </span>
-                    </div>
-                    <div class="text-center md:text-right shrink-0">
-                        <span class="text-xl sm:text-2xl font-serif font-black text-bistro-500 block">+₱499 / mo</span>
-                        <button onclick="toggleAddon('orderbag')" id="addon-btn-orderbag" class="mt-3 px-6 py-2 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-bold uppercase text-xs rounded-xl tracking-wider transition-colors shadow" style="min-height: 36px;">
-                            Add to Plan
-                        </button>
+                <div class="my-6">
+                    <span id="price-card-tierB-sub" class="text-3xl sm:text-4xl font-serif font-black text-bistro-500">₱649</span>
+                    <span class="text-stone-500 text-xs">/ month</span>
+                    <div class="text-xs text-emerald-400 font-mono font-bold uppercase mt-1 leading-snug">
+                        <span id="setup-card-tierB-fee">One-Time Setup: ₱1,300</span>
+                        <span class="text-stone-400 font-sans font-normal normal-case block sm:inline sm:ml-1">(first 2 months FREE, billing starts month 3)</span>
                     </div>
                 </div>
 
-                <div class="grid sm:grid-cols-3 gap-4 text-left">
-                    
-                    <div class="p-4 rounded-xl border border-theme bg-theme-subtle flex flex-col justify-between">
-                        <div class="mb-4">
-                            <span class="text-xs font-bold text-theme-title block">Community Corkboard</span>
-                            <span class="text-xs text-stone-500 leading-tight block mt-1">Live broadcasting wall for acoustic night notices & customer notes.</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-theme/20">
-                            <span class="text-xs font-bold text-bistro-500">+₱150/mo</span>
-                            <button onclick="toggleAddon('corkboard')" id="addon-btn-corkboard" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors" style="min-height: 28px;">Add</button>
-                        </div>
-                    </div>
+                <ul class="space-y-3 text-xs text-stone-400 border-t border-theme/20 pt-4">
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span class="text-theme-title font-semibold">Everything in Tier A, PLUS:</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span>Full menu editing</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span>Custom brand colors</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span>About page + socials</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span>Google Maps + reservation-ready layout</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span>3 free acrylic stands</span>
+                    </li>
+                </ul>
+            </div>
 
-                    <div class="p-4 rounded-xl border border-theme bg-theme-subtle flex flex-col justify-between">
-                        <div class="mb-4">
-                            <span class="text-xs font-bold text-theme-title block">Private Feedback System</span>
-                            <span class="text-xs text-stone-500 leading-tight block mt-1">Interactive review portal routing guest complaints securely to dashboard.</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-theme/20">
-                            <span class="text-xs font-bold text-bistro-500">+₱100/mo</span>
-                            <button onclick="toggleAddon('feedback')" id="addon-btn-feedback" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors" style="min-height: 28px;">Add</button>
-                        </div>
-                    </div>
+            <button onclick="purchasePlan('Tier B Setup')" class="w-full py-3 mt-8 bg-bistro-500 hover:bg-bistro-650 text-stone-950 font-black text-xs uppercase tracking-widest rounded-lg transition-colors shadow-md">
+                Select Tier B
+            </button>
+        </div>
 
-                    <div class="p-4 rounded-xl border border-theme bg-theme-subtle flex flex-col justify-between">
-                        <div class="mb-4">
-                            <span class="text-xs font-bold text-theme-title block">Table Reservation Engine</span>
-                            <span class="text-xs text-stone-500 leading-tight block mt-1">Accept calendar-bound seating bookings (Pending, Confirmed status).</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-theme/20">
-                            <span class="text-xs font-bold text-bistro-500">+₱299/mo</span>
-                            <button onclick="toggleAddon('reservations')" id="addon-btn-reservations" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors" style="min-height: 28px;">Add</button>
-                        </div>
+        <!-- Package 3: Tier C -->
+        <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between theme-card-hover">
+            <div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-xs font-bold uppercase font-mono text-stone-500">Tier C</span>
+                    <span class="text-xs bg-theme-input text-stone-400 px-2 py-0.5 rounded uppercase font-bold border border-theme">Full Branding</span>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-theme-title">Sales OS + Order Bag</h3>
+                <p class="text-stone-500 text-xs mt-1.5">Includes everything in Tier B, PLUS: In-House Order Bag Framework (built-in order system) • Priority update lane • 6 free acrylic stands</p>
+                
+                <div class="my-6">
+                    <span id="price-card-tierC-sub" class="text-3xl sm:text-4xl font-serif font-black text-bistro-500">₱949</span>
+                    <span class="text-stone-500 text-xs">/ month</span>
+                    <div class="text-xs text-emerald-400 font-mono font-bold uppercase mt-1 leading-snug">
+                        <span id="setup-card-tierC-fee">One-Time Setup: ₱1,800</span>
+                        <span class="text-stone-400 font-sans font-normal normal-case block sm:inline sm:ml-1">(first 2 months FREE, billing starts month 3)</span>
                     </div>
+                </div>
 
+                <ul class="space-y-3 text-xs text-stone-400 border-t border-theme pt-4">
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span class="text-theme-title font-semibold">Everything in Tier B, PLUS:</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span>In-House Order Bag Framework (built-in order system)</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span>Priority update lane</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
+                        <span>6 free acrylic stands</span>
+                    </li>
+                </ul>
+            </div>
+
+            <button onclick="purchasePlan('Tier C Setup')" class="w-full py-3 mt-8 bg-stone-900/50 hover:bg-stone-850 border border-theme text-theme-title hover:text-bistro-500 font-bold text-xs uppercase tracking-widest rounded-lg transition-colors">
+                Select Tier C
+            </button>
+        </div>
+
+    </div>
+
+    <!-- À La Carte Add-ons Block -->
+    <div class="max-w-4xl mx-auto mb-16">
+        <h3 class="text-lg font-serif font-bold text-theme-title text-center mb-6">À La Carte Modular Upsells (Optional)</h3>
+
+        <div class="grid sm:grid-cols-3 gap-4 text-left">
+            
+            <div class="p-4 rounded-xl border border-theme bg-theme-subtle flex flex-col justify-between">
+                <div class="mb-4">
+                    <span class="text-xs font-bold text-theme-title block">Community Corkboard</span>
+                    <span class="text-xs text-stone-500 leading-tight block mt-1">Live broadcasting wall for acoustic night notices & customer notes.</span>
+                </div>
+                <div class="flex justify-between items-center pt-2 border-t border-theme/20">
+                    <span class="text-xs font-bold text-bistro-500">+₱150/mo</span>
+                    <button onclick="toggleAddon('corkboard')" id="addon-btn-corkboard" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors" style="min-height: 28px;">Add</button>
                 </div>
             </div>
 
-            <!-- Operational Margins Calculator -->
+            <div class="p-4 rounded-xl border border-theme bg-theme-subtle flex flex-col justify-between">
+                <div class="mb-4">
+                    <span class="text-xs font-bold text-theme-title block">Private Feedback System</span>
+                    <span class="text-xs text-stone-500 leading-tight block mt-1">Interactive review portal routing guest complaints securely to dashboard.</span>
+                </div>
+                <div class="flex justify-between items-center pt-2 border-t border-theme/20">
+                    <span class="text-xs font-bold text-bistro-500">+₱100/mo</span>
+                    <button onclick="toggleAddon('feedback')" id="addon-btn-feedback" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors" style="min-height: 28px;">Add</button>
+                </div>
+            </div>
+
+            <div class="p-4 rounded-xl border-2 border-bistro-500 bg-theme-subtle flex flex-col justify-between relative">
+                <div class="absolute -top-2.5 right-4 bg-bistro-500 text-stone-950 text-[9px] font-black uppercase px-2 py-0.5 rounded shadow tracking-wider">
+                    TOP UPSELL
+                </div>
+                <div class="mb-4">
+                    <span class="text-xs font-bold text-theme-title block">Table Reservation Engine</span>
+                    <span class="text-xs text-stone-500 leading-tight block mt-1">Accept calendar-bound seating bookings (Pending, Confirmed status).</span>
+                </div>
+                <div class="flex justify-between items-center pt-2 border-t border-theme/20">
+                    <span class="text-xs font-bold text-bistro-500">+₱299/mo</span>
+                    <button onclick="toggleAddon('reservations')" id="addon-btn-reservations" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors" style="min-height: 28px;">Add</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Operational Margins Calculator -->
             <div class="p-6 sm:p-8 rounded-3xl border border-theme bg-theme-subtle text-left max-w-4xl mx-auto premium-glow">
                 
                 <div class="flex items-center gap-3 mb-6">
