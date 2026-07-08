@@ -153,13 +153,22 @@
         .always-dark .text-white {
             color: #ffffff !important;
         }
-        .always-dark .text-stone-400 {
+        .light-theme .always-dark .text-stone-400,
+        .light-theme .always-dark.text-stone-400,
+        .always-dark .text-stone-400,
+        .always-dark.text-stone-400 {
             color: #a8a29e !important;
         }
-        .always-dark .text-stone-500 {
+        .light-theme .always-dark .text-stone-500,
+        .light-theme .always-dark.text-stone-500,
+        .always-dark .text-stone-500,
+        .always-dark.text-stone-500 {
             color: #78716c !important;
         }
-        .always-dark .text-stone-300 {
+        .light-theme .always-dark .text-stone-300,
+        .light-theme .always-dark.text-stone-300,
+        .always-dark .text-stone-300,
+        .always-dark.text-stone-300 {
             color: #d6d3d1 !important;
         }
         .always-dark .text-stone-100 {
@@ -347,11 +356,6 @@
                     <span>PH Plans & Cost Calculator</span>
                     <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-bistro-500 transition-all duration-300 group-hover:w-full"></span>
                 </a>
-                <a href="#view-playbook" id="nav-playbook" class="hover:text-theme-gold transition-colors duration-150 flex items-center gap-1 h-11 relative group">
-                    <span>Provincial Playbook</span>
-                    <span class="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-mono px-1 rounded">Strategy</span>
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-bistro-500 transition-all duration-300 group-hover:w-full"></span>
-                </a>
             </div>
 
             <!-- Header Action Block -->
@@ -389,7 +393,7 @@
         <!-- Translucent overlay for mobile menu drawer -->
         <div id="mobile-drawer-overlay" class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-opacity" onclick="toggleMobileDrawer()"></div>
 
-        <!-- Mobile Drawer Menu Dropdown -->
+        <!-- Mobile Drawer Menu Drawer -->
         <div id="mobile-drawer" class="hidden lg:hidden border-t border-theme panel-theme px-6 py-5 space-y-3.5 text-left fixed top-20 left-0 right-0 z-50 shadow-2xl transition-all duration-300">
             <a href="#view-home" onclick="toggleMobileDrawer()" class="flex items-center justify-between py-2 px-3 hover:bg-bistro-500/10 rounded-lg text-sm font-semibold text-theme-text" style="min-height: 44px;">
                 <span>Home & Core Solutions</span>
@@ -401,10 +405,6 @@
             </a>
             <a href="#view-pricing" onclick="toggleMobileDrawer()" class="flex items-center justify-between py-2 px-3 hover:bg-bistro-500/10 rounded-lg text-sm font-semibold text-theme-text" style="min-height: 44px;">
                 <span>PH Plans & Cost Calculator</span>
-                <svg class="w-4 h-4 text-stone-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-            </a>
-            <a href="#view-playbook" onclick="toggleMobileDrawer()" class="flex items-center justify-between py-2 px-3 hover:bg-bistro-500/10 rounded-lg text-sm font-semibold text-theme-text" style="min-height: 44px;">
-                <span>Provincial Sales Playbook</span>
                 <svg class="w-4 h-4 text-stone-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
             </a>
             <div class="pt-3 border-t border-theme">
@@ -535,6 +535,258 @@
                         </p>
                     </div>
                 </div>
+            </div>
+
+            <!-- ================= ACTIVE GROWTH BLUEPRINT SECTION ================= -->
+            <div class="mt-24 sm:mt-32 pt-16 border-t border-theme">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-bistro-500 text-xs font-mono uppercase tracking-widest block mb-2">Not Just A Menu — It's Your Sales OS</span>
+                    <h2 class="text-2xl sm:text-4xl font-serif font-light text-theme-title">
+                        The Active Growth Blueprint: <br>
+                        <span class="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-bistro-400 via-bistro-500 to-bistro-700">
+                            5X Sales Engine
+                        </span> for Luzon Cafes
+                    </h2>
+                    <p class="text-xs sm:text-sm text-stone-400 mt-4 leading-relaxed max-w-2xl mx-auto">
+                        Philippine cafes lose valuable sales to slow loading menus, dead cellular spots, and kitchen ordering errors. VibeTable resolves the entire service stack — from scan to GCash payment verified.
+                    </p>
+                </div>
+
+                <!-- Two Column Intro Grid -->
+                <div class="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto mb-16 text-left">
+                    <div class="p-6 sm:p-8 rounded-2xl border border-theme bg-theme-subtle card-theme">
+                        <h3 class="text-lg font-serif font-bold mb-3 text-theme-title">0.2s load, anywhere in the store</h3>
+                        <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
+                            VibeTable isn't another slow and bloated PDF file on a drive. It's built for La Union surf spots, Baguio peak hotels, and Pangasinan dining establishments. Your menu loads in under 0.2 seconds on our Luzon edge node mirrors — even with 1-bar mobile connection levels.
+                        </p>
+                    </div>
+                    <div class="p-6 sm:p-8 rounded-2xl border border-theme bg-theme-subtle card-theme">
+                        <h3 class="text-lg font-serif font-bold mb-3 text-theme-title">Instant BOH control = more profit</h3>
+                        <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
+                            With integrated GCash & Maya gateways, guests order and complete payments in 3 simple taps. Back-of-house admins gain instant stock control: toggle longganisa off, slide Happy Hour deals active, or deploy rainy day promos instantly on all table screens.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5 Pillars Matrix -->
+                <div class="mb-20 text-left">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <span class="text-bistro-500 text-xs font-mono uppercase tracking-widest block mb-2">System Architecture</span>
+                        <h3 class="text-xl sm:text-2xl font-serif text-theme-title">5 Pillars to 5X Restaurant Sales</h3>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+                        <!-- Pillar 1 -->
+                        <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme theme-card-hover relative overflow-hidden">
+                            <span class="absolute top-4 right-4 bg-bistro-500/10 border border-bistro-500/20 text-bistro-500 font-mono text-[9px] px-2 py-0.5 rounded-full font-bold">Pillar 1</span>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                                <h4 class="text-base font-serif font-bold text-theme-title">Speed-to-Sale</h4>
+                            </div>
+                            <p class="text-xs sm:text-sm text-stone-400 mb-4 leading-normal">Win the initial 3-second attention threshold. Zero buffering, no app installs.</p>
+                            <ul class="space-y-2 text-xs text-stone-500 border-t border-theme/20 pt-3">
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Basement-signal proof edge caching</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>High durability acrylic QR stands included</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>One-tap Sold Out sync to client device</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Pillar 2 -->
+                        <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme theme-card-hover relative overflow-hidden">
+                            <span class="absolute top-4 right-4 bg-bistro-500/10 border border-bistro-500/20 text-bistro-500 font-mono text-[9px] px-2 py-0.5 rounded-full font-bold">Pillar 2</span>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M7 12h10M10 17h4" stroke-linecap="round"/></svg>
+                                </div>
+                                <h4 class="text-base font-serif font-bold text-theme-title">Menu Engineering</h4>
+                            </div>
+                            <p class="text-xs sm:text-sm text-stone-400 mb-4 leading-normal">Price dynamically like a modern merchant, bypassing slow reprint fees.</p>
+                            <ul class="space-y-2 text-xs text-stone-500 border-t border-theme/20 pt-3">
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Instant pricing changes via mobile terminal</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Automated Happy Hour timers</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Bundling combos, promos, & addons</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Pillar 3 -->
+                        <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme theme-card-hover relative overflow-hidden">
+                            <span class="absolute top-4 right-4 bg-bistro-500/10 border border-bistro-500/20 text-bistro-500 font-mono text-[9px] px-2 py-0.5 rounded-full font-bold">Pillar 3</span>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h18M7 15h4M9 6h6a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V9a3 3 0 0 1 3-3z" stroke-linecap="round"/></svg>
+                                </div>
+                                <h4 class="text-base font-serif font-bold text-theme-title">Frictionless Checkout</h4>
+                            </div>
+                            <p class="text-xs sm:text-sm text-stone-400 mb-4 leading-normal">GCash & Maya native integration. Rapid orders sent directly to kitchen.</p>
+                            <ul class="space-y-2 text-xs text-stone-500 border-t border-theme/20 pt-3">
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Direct GCash & Maya checkouts</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Simulated table-side order bags</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Boosted merchant & waitstaff output</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Pillar 4 -->
+                        <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme theme-card-hover relative overflow-hidden">
+                            <span class="absolute top-4 right-4 bg-bistro-500/10 border border-bistro-500/20 text-bistro-500 font-mono text-[9px] px-2 py-0.5 rounded-full font-bold">Pillar 4</span>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 16l3-3 4 4 5-7" stroke-linecap="round"/></svg>
+                                </div>
+                                <h4 class="text-base font-serif font-bold text-theme-title">The Data Loop</h4>
+                            </div>
+                            <p class="text-xs sm:text-sm text-stone-400 mb-4 leading-normal">Own your customer relationships, reviews, and slow-period traffic.</p>
+                            <ul class="space-y-2 text-xs text-stone-500 border-t border-theme/20 pt-3">
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Private feedback portal routing complaints</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Built-in table reservation calendar system</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Community notices and promo billboard walls</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Pillar 5 -->
+                        <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme theme-card-hover relative overflow-hidden md:col-span-2 lg:col-span-1">
+                            <span class="absolute top-4 right-4 bg-bistro-500/10 border border-bistro-500/20 text-bistro-500 font-mono text-[9px] px-2 py-0.5 rounded-full font-bold">Pillar 5</span>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7l3-7z" stroke-linecap="round"/></svg>
+                                </div>
+                                <h4 class="text-base font-serif font-bold text-theme-title">Local Dominance</h4>
+                            </div>
+                            <p class="text-xs sm:text-sm text-stone-400 mb-4 leading-normal">Blueprint designed for Central & Northern Luzon tourist traffic.</p>
+                            <ul class="space-y-2 text-xs text-stone-500 border-t border-theme/20 pt-3">
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>30-day regional launch sequence roadmap</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Active staff script training modules (Tagalog/English)</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-bistro-500">✓</span> <span>Opening-week marketing and launch materials</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 90-Day Active Growth Calendar -->
+                <div class="mb-20 text-left">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <span class="text-bistro-500 text-xs font-mono uppercase tracking-widest block mb-2">Sustainable Milestones</span>
+                        <h3 class="text-xl sm:text-2xl font-serif text-theme-title">Your 90-Day Active Growth Calendar</h3>
+                        <p class="text-xs sm:text-sm text-stone-400 mt-2">We don't simply ship a QR template and walk away. We deliver a permanent restaurant sales machine.</p>
+                    </div>
+
+                    <div class="max-w-4xl mx-auto border border-theme bg-theme-subtle rounded-2xl overflow-hidden shadow-sm">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs border-collapse">
+                                <thead>
+                                    <tr class="bg-stone-900 border-b border-theme text-[10px] text-stone-400 uppercase tracking-widest font-mono">
+                                        <th class="p-4 sm:p-5">Phase</th>
+                                        <th class="p-4 sm:p-5">Focus Focus</th>
+                                        <th class="p-4 sm:p-5">Feature Activation</th>
+                                        <th class="p-4 sm:p-5">Target KPI Lift</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-theme/40 text-stone-300">
+                                    <tr class="hover:bg-bistro-500/5 transition-colors">
+                                        <td class="p-4 sm:p-5 font-bold font-serif text-bistro-500 whitespace-nowrap">Days 1 - 30</td>
+                                        <td class="p-4 sm:p-5">
+                                            <strong class="text-theme-title block mb-0.5">Speed & Capture</strong>
+                                            <span class="text-[10px] text-stone-500 block">Launch Week Sequence</span>
+                                        </td>
+                                        <td class="p-4 sm:p-5 leading-relaxed text-stone-400">0.2s light menu goes active. GCash & Maya checkouts connected. Durable high-end table standees shipped and deployed.</td>
+                                        <td class="p-4 sm:p-5 whitespace-nowrap">
+                                            <span class="inline-block bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-lg font-mono font-bold text-[10px] uppercase">
+                                                +18% Table Turn
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-bistro-500/5 transition-colors">
+                                        <td class="p-4 sm:p-5 font-bold font-serif text-bistro-500 whitespace-nowrap">Days 31 - 60</td>
+                                        <td class="p-4 sm:p-5">
+                                            <strong class="text-theme-title block mb-0.5">Engineer & Upsell</strong>
+                                            <span class="text-[10px] text-stone-500 block">Profit per Table</span>
+                                        </td>
+                                        <td class="p-4 sm:p-5 leading-relaxed text-stone-400">Happy Hour pricing structures active. Sulit combos programmed. Cross-sell items pinned dynamically.</td>
+                                        <td class="p-4 sm:p-5 whitespace-nowrap">
+                                            <span class="inline-block bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-lg font-mono font-bold text-[10px] uppercase">
+                                                +22% Check Total
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-bistro-500/5 transition-colors">
+                                        <td class="p-4 sm:p-5 font-bold font-serif text-bistro-500 whitespace-nowrap">Days 61 - 90</td>
+                                        <td class="p-4 sm:p-5">
+                                            <strong class="text-theme-title block mb-0.5">Retain & Dominate</strong>
+                                            <span class="text-[10px] text-stone-500 block">Repeat Traffic Loop</span>
+                                        </td>
+                                        <td class="p-4 sm:p-5 leading-relaxed text-stone-400">Private guest feedback system activated. Table reservation widget deployed. Notice board promos optimized for regular local foot traffic.</td>
+                                        <td class="p-4 sm:p-5 whitespace-nowrap">
+                                            <span class="inline-block bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-lg font-mono font-bold text-[10px] uppercase">
+                                                +35% Repeat Visits
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Print Overhead Contrast Teaser Card -->
+                <div class="p-6 sm:p-8 rounded-3xl border border-theme bg-theme-subtle text-left max-w-4xl mx-auto premium-glow mb-16">
+                    <div class="grid md:grid-cols-12 gap-6 items-center">
+                        <div class="md:col-span-8">
+                            <h3 class="text-lg font-serif font-bold text-theme-title mb-2">You control the menu. Not the printer.</h3>
+                            <p class="text-xs sm:text-sm text-stone-400 leading-relaxed font-sans">
+                                Average Luzon restaurants spend <strong class="text-bistro-500">₱4,500–₱6,200/month</strong> on laminations, graphic designers, and physical re-prints. VibeTable replaces the physical friction instantly, leaving you with absolute real-time autonomy.
+                            </p>
+                        </div>
+                        <div class="md:col-span-4 p-5 rounded-2xl border-2 border-bistro-500 bg-bistro-500/5 text-center">
+                            <span class="text-[10px] text-bistro-500 font-bold uppercase tracking-widest block font-mono">Retained Yearly Profit</span>
+                            <span class="text-2xl font-serif font-black text-bistro-500 mt-1 block">Save ₱59,800</span>
+                            <span class="text-[10px] text-stone-500 block mt-1 font-mono">Versus Legacy Re-printing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Palengke Friendly CTA Scroll Anchor -->
+                <div class="text-center">
+                    <a href="#view-pricing" class="inline-flex items-center gap-2 px-8 py-4 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-bold rounded-full text-xs uppercase tracking-wider transition-all shadow-xl">
+                        <span>Explore Palengke-Friendly Pricing Tiers</span>
+                        <svg class="w-4 h-4 text-stone-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
             </div>
 
             <!-- Testimonials Grid Section -->
@@ -1297,53 +1549,6 @@
 
         </section>
 
-        <!-- ================= VIEW 4: PROVINCIAL PLAYBOOK ================= -->
-        <section id="view-playbook" class="spa-view hidden max-w-7xl mx-auto px-4 sm:px-6 py-12">
-            
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-bistro-500 text-xs font-semibold uppercase tracking-widest bg-bistro-500/10 border border-bistro-500/20 px-3 py-1.5 rounded-full mb-3 inline-block">Active Growth Blueprint</span>
-                <h2 class="text-2xl sm:text-4xl font-serif text-theme-title">Provincial Client Acquisition Playbook</h2>
-                <p class="text-stone-400 mt-3 text-xs sm:text-sm">
-                    Strategic systems formulated specifically to convert traditional hospitality operators inside Pangasinan, Tarlac, and La Union districts.
-                </p>
-            </div>
-
-            <!-- Playbook Matrix -->
-            <div class="grid md:grid-cols-2 gap-6 lg:gap-8 text-left max-w-4xl mx-auto mb-16">
-                
-                <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme">
-                    <div class="w-12 h-12 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center mb-6">
-                        <!-- Open Box Vector -->
-                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
-                            <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xs sm:text-base font-bold text-theme-title mb-2">1. The Turnkey Material Bundle</h3>
-                    <p class="text-xs text-stone-400 leading-relaxed font-sans">
-                        Form partnership networks with print providers in Dagupan, Tarlac City, or Urdaneta. Supply five (5) ultra-durable acrylic tabletop QR stands within the initial setup fee. Immediate, tangible hardware value anchors software retention and builds immediate trust with traditional restaurant operators.
-                    </p>
-                </div>
-
-                <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme">
-                    <div class="w-12 h-12 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center mb-6">
-                        <!-- Refresh/Loop Vector -->
-                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <polyline points="23 4 23 10 17 10"></polyline>
-                            <polyline points="1 20 1 14 7 14"></polyline>
-                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xs sm:text-base font-bold text-theme-title mb-2">2. Systematic Feature Upsell Engine</h3>
-                    <p class="text-xs text-stone-400 leading-relaxed font-sans">
-                        When Tier B operations express technical interest in seasonal additions or minor layout changes, process structural enhancements under a single flat execution rate (e.g., ₱300 standard update adjustment fee per processing block) rather than mandating full subscription tier upgrades.
-                    </p>
-                </div>
-
-            </div>
-
-        </section>
-
     </main>
 
     <!-- Bottom Action CTA Banner (Preserved in premium dark mode always for perfect light theme readability) -->
@@ -1416,7 +1621,6 @@
                     <ul class="space-y-2.5 font-medium text-stone-500">
                         <li><a href="#view-demo" class="hover:text-bistro-500 transition-colors">BOH Sandbox Sim</a></li>
                         <li><a href="#view-pricing" class="hover:text-bistro-500 transition-colors">PHP Billing Tiers</a></li>
-                        <li><a href="#view-playbook" class="hover:text-bistro-500 transition-colors">Provincial Playbook</a></li>
                     </ul>
                 </div>
 
@@ -1717,12 +1921,11 @@
         // NAVIGATION & ROUTING HANDLERS
         function handleHashRouting() {
             const hash = window.location.hash || '#view-home';
-            const allViews = ['view-home', 'view-demo', 'view-pricing', 'view-playbook'];
+            const allViews = ['view-home', 'view-demo', 'view-pricing'];
             
             let targetView = 'view-home';
             if (hash === '#view-demo' || hash === '#/demo') targetView = 'view-demo';
             if (hash === '#view-pricing' || hash === '#/pricing') targetView = 'view-pricing';
-            if (hash === '#view-playbook' || hash === '#/playbook') targetView = 'view-playbook';
 
             allViews.forEach(viewId => {
                 const el = document.getElementById(viewId);
@@ -1742,12 +1945,10 @@
                 '#view-demo': 'nav-demo',
                 '#/demo': 'nav-demo',
                 '#view-pricing': 'nav-pricing',
-                '#/pricing': 'nav-pricing',
-                '#view-playbook': 'nav-playbook',
-                '#/playbook': 'nav-playbook'
+                '#/pricing': 'nav-pricing'
             };
 
-            const linkElements = ['nav-home', 'nav-demo', 'nav-pricing', 'nav-playbook'];
+            const linkElements = ['nav-home', 'nav-demo', 'nav-pricing'];
             linkElements.forEach(id => {
                 const linkEl = document.getElementById(id);
                 if (linkEl) {
