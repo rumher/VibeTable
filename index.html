@@ -1318,7 +1318,7 @@
                             <span id="price-card-tierA-sub" class="text-3xl sm:text-4xl font-serif font-black text-bistro-500">₱349</span>
                             <span class="text-stone-500 text-xs">/ month</span>
                             <div class="text-[10px] text-stone-400 font-semibold mt-1">
-                                That's only <strong class="text-bistro-500">₱11.63 per day!</strong>
+                                That's only <strong id="daily-tierA-sub" class="text-bistro-500">₱11.63 per day!</strong>
                             </div>
                             <div class="text-xs text-emerald-400 font-mono font-bold uppercase mt-1 leading-snug">
                                 <span id="setup-card-tierA-fee">One-Time Setup: ₱700</span>
@@ -1368,7 +1368,7 @@
                             <span id="price-card-tierB-sub" class="text-3xl sm:text-4xl font-serif font-black text-bistro-500">₱649</span>
                             <span class="text-stone-500 text-xs">/ month</span>
                             <div class="text-[10px] text-stone-400 font-semibold mt-1">
-                                That's only <strong class="text-bistro-500">₱21.63 per day!</strong>
+                                That's only <strong id="daily-tierB-sub" class="text-bistro-500">₱21.63 per day!</strong>
                             </div>
                             <div class="text-xs text-emerald-400 font-mono font-bold uppercase mt-1 leading-snug">
                                 <span id="setup-card-tierB-fee">One-Time Setup: ₱1,300</span>
@@ -1429,7 +1429,7 @@
                                     <span class="text-stone-500 text-xs font-mono">/ month</span>
                                 </div>
                                 <div class="text-[10px] text-stone-300 font-semibold mt-1">
-                                    That's only <strong class="text-yellow-400">₱31.63 per day!</strong>
+                                    That's only <strong id="daily-tierC-sub" class="text-yellow-400">₱31.63 per day!</strong>
                                 </div>
                                 <div class="text-[11px] text-emerald-400 font-mono font-extrabold uppercase mt-2">
                                     <span id="setup-card-tierC-fee">One-Time Setup: ₱1,800</span>
@@ -1475,7 +1475,10 @@
 
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
                     
-                    <div class="p-4 rounded-xl border border-theme bg-theme-subtle flex flex-col justify-between">
+                    <div class="p-4 rounded-xl border-2 border-bistro-500 bg-theme-subtle flex flex-col justify-between relative">
+                        <div class="absolute -top-2.5 right-4 bg-bistro-500 text-stone-950 text-[9px] font-black uppercase px-2 py-0.5 rounded shadow tracking-wider">
+                            TOP UPSELL
+                        </div>
                         <div class="mb-4">
                             <span class="text-xs font-bold text-theme-title block">Community Corkboard</span>
                             <span class="text-xs text-stone-500 leading-tight block mt-1 font-sans">Live broadcasting wall for acoustic night notices & customer notes.</span>
@@ -1497,10 +1500,7 @@
                         </div>
                     </div>
 
-                    <div class="p-4 rounded-xl border-2 border-bistro-500 bg-theme-subtle flex flex-col justify-between relative">
-                        <div class="absolute -top-2.5 right-4 bg-bistro-500 text-stone-950 text-[9px] font-black uppercase px-2 py-0.5 rounded shadow tracking-wider">
-                            TOP UPSELL
-                        </div>
+                    <div class="p-4 rounded-xl border border-theme bg-theme-subtle flex flex-col justify-between">
                         <div class="mb-4">
                             <span class="text-xs font-bold text-theme-title block">Table Reservation Engine</span>
                             <span class="text-xs text-stone-500 leading-tight block mt-1 font-sans">Accept calendar-bound seating bookings (Pending, Confirmed status).</span>
@@ -1969,8 +1969,8 @@
         // THEME PERSISTENCE & LOAD SYSTEM
         function initTheme() {
             const savedTheme = localStorage.getItem('vibe-theme');
-            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const chosenTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            // Force "dark" mode as default on first load by ignoring system preference if no savedTheme is present
+            const chosenTheme = savedTheme || 'dark';
             
             appState.theme = chosenTheme;
             const body = document.body;
@@ -2526,6 +2526,16 @@
 
             document.getElementById('price-card-tierC-sub').innerText = `₱${pricingModel.C}`;
             document.getElementById('setup-card-tierC-fee').innerText = `One-Time Setup: ₱${pricingModel.setupC}`;
+
+            if (appState.pricingType === 'cafe') {
+                document.getElementById('daily-tierA-sub').innerText = `₱11.63 per day!`;
+                document.getElementById('daily-tierB-sub').innerText = `₱21.63 per day!`;
+                document.getElementById('daily-tierC-sub').innerText = `₱31.63 per day!`;
+            } else {
+                document.getElementById('daily-tierA-sub').innerText = `₱18.3 per day!`;
+                document.getElementById('daily-tierB-sub').innerText = `₱28.3 per day!`;
+                document.getElementById('daily-tierC-sub').innerText = `₱34.96 per day!`;
+            }
 
             runFinancialCalc();
         }
