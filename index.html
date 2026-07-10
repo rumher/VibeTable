@@ -42,6 +42,7 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         serif: ['"Cormorant Garamond"', 'serif'],
+                        display: ['"Cormorant Garamond"', 'serif'],
                     },
                     colors: {
                         bistro: {
@@ -390,6 +391,7 @@
             display: none;
         }
 
+        /* Modular-level transition for simulator draft indicators */
         .draft-active-glow {
             box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
             border-color: rgba(245, 158, 11, 0.4) !important;
@@ -535,7 +537,7 @@
                 <!-- Northern & Central Luzon Map Highlights -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-10 border-t border-theme max-w-5xl mx-auto">
                     <div class="p-4 text-left">
-                        <span class="text-2xl sm:text-3xl font-serif font-black text-bistro-500 block">₱349</span>
+                        <span class="text-2xl sm:text-3xl font-serif font-black text-bistro-500 block">₱299</span>
                         <span class="text-[10px] text-stone-500 uppercase tracking-widest font-mono">Entry subscription base</span>
                     </div>
                     <div class="p-4 text-left">
@@ -824,7 +826,7 @@
                 <!-- Palengke Friendly CTA Scroll Anchor -->
                 <div class="text-center">
                     <a href="#view-pricing" class="inline-flex items-center gap-2 px-8 py-4 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-bold rounded-full text-xs uppercase tracking-wider transition-all shadow-xl active:scale-95 transition-transform">
-                        <span>Explore Cafe-Friendly Pricing Tiers</span>
+                        <span>Explore Palengke-Friendly Pricing Tiers</span>
                         <svg class="w-4 h-4 text-stone-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
@@ -1033,8 +1035,8 @@
 
                         <!-- Dynamic Pricing Relation Tracker -->
                         <div class="p-3 rounded-xl bg-stone-950/40 border border-theme/20 text-[11px] text-stone-400 font-mono flex justify-between items-center">
-                            <span>Relating Plan Rate: <strong class="text-bistro-500 font-bold" id="sandbox-rel-sub">₱649/mo</strong></span>
-                            <span>Setup Cost: <strong class="text-emerald-400 font-bold" id="sandbox-rel-setup">₱1,300</strong></span>
+                            <span>Relating Plan Rate: <strong class="text-bistro-500 font-bold" id="sandbox-rel-sub">₱549/mo</strong></span>
+                            <span>Setup Cost: <strong class="text-emerald-400 font-bold" id="sandbox-rel-setup">₱499</strong></span>
                         </div>
 
                         <!-- Tier Level Selector inside Simulator -->
@@ -1147,7 +1149,7 @@
                         <!-- Theme Presets (Unlocked only in C) -->
                         <div class="space-y-3 text-left pt-2 border-t border-theme" id="sandbox-theme-presets-wrapper">
                             <span class="text-xs font-bold text-stone-400 uppercase tracking-widest block font-sans">Simulated Phone Graphic Theme</span>
-                            <div class="flex flex-wrap gap.2.5">
+                            <div class="flex flex-wrap gap-2.5">
                                 <button onclick="setPhoneTheme('warm-brass')" id="palette-btn-warm-brass" class="px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded border border-bistro-500 bg-bistro-500 text-stone-950 transition-all active:scale-95 transition-transform" style="min-height: 36px;">
                                     Warm Brass
                                 </button>
@@ -1289,175 +1291,218 @@
         <section id="view-pricing" class="spa-view hidden max-w-7xl mx-auto px-4 sm:px-6 py-12">
             
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-bistro-500 text-xs font-semibold uppercase tracking-widest bg-bistro-500/10 border border-bistro-500/20 px-3 py-1.5 rounded-full mb-3 inline-block">Tiered Localization Packages</span>
+                <span class="text-bistro-500 text-xs font-semibold uppercase tracking-widest bg-bistro-500/10 border border-bistro-500/20 px-3 py-1.5 rounded-full mb-3 inline-block font-sans">Tiered Localization Packages</span>
                 <h2 class="text-2xl sm:text-4xl font-serif text-theme-title leading-tight">Provincial Multi-Tenant Tiers</h2>
                 <p class="text-stone-400 mt-3 text-xs sm:text-sm font-sans">
-                    Reclaim operational control. Select the optimal subscription layer backed by specialized wildcard subdomains tailored specifically to your cafe infrastructure.
+                    Keep 3 tiers. Franchise scales change the price per branch automatically.
                 </p>
+
+                <!-- Plan Segment Toggle (Single Café vs Franchise Chain) -->
+                <div class="mt-8 flex bg-stone-900/60 p-1 rounded-full max-w-xs sm:max-w-md mx-auto border border-theme">
+                    <button id="singleBtn" onclick="setMode('single')" class="flex-1 px-5 py-2.5 rounded-full text-xs font-bold transition-all uppercase" style="min-height: 44px;">Single Café</button>
+                    <button id="franBtn" onclick="setMode('franchise')" class="flex-1 px-5 py-2.5 rounded-full text-xs font-bold transition-all uppercase" style="min-height: 44px;">Franchise Chain</button>
+                </div>
             </div>
 
             <!-- Tiered Plan Columns -->
             <div class="grid md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto mb-20 text-left">
                 
                 <!-- Package 1: Tier A -->
-                <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between theme-card-hover transition-all">
+                <div class="p-6 rounded-[20px] border border-[#E8D5B7]/20 bg-theme-subtle card-theme flex flex-col justify-between theme-card-hover transition-all">
                     <div>
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-xs font-bold uppercase font-mono text-stone-500">Tier A</span>
-                            <span class="text-xs bg-theme-input text-stone-400 px-2 py-0.5 rounded uppercase font-bold border border-theme">Managed Entry</span>
+                            <span class="text-[11px] tracking-widest font-bold opacity-60 font-mono text-stone-400">TIER A</span>
+                            <span id="badge-a" class="text-[10px] border px-2.5 py-1 rounded-md font-bold bg-[#FAF6F0] border-[#E8D5B7]/30 text-stone-300">MANAGED ENTRY</span>
                         </div>
-                        <h3 class="text-xl font-serif font-bold text-theme-title">Staff Admin Suite</h3>
-                        <p class="text-stone-500 text-xs mt-1.5 font-sans">Essential 0.2s ultra-high-speed digital catalog with dynamic QR routing. Ideal for early-stage cafes needing basic, zero-maintenance menu profiles.</p>
+                        <h3 class="font-serif text-xl font-bold text-theme-title">Staff Admin Suite</h3>
+                        <p class="text-stone-500 text-xs mt-1.5 font-sans min-h-[32px]" id="desc-a">Essential 0.2s ultra-high-speed digital catalog with dynamic QR routing.</p>
                         
                         <div class="my-6">
-                            <span id="price-card-tierA-sub" class="text-3xl sm:text-4xl font-serif font-black text-bistro-500">₱349</span>
-                            <span class="text-stone-500 text-xs">/ month</span>
-                            <div class="text-[10px] text-stone-400 font-semibold mt-1">
-                                That's only <strong id="daily-tierA-sub" class="text-bistro-500">₱11.63 per day!</strong>
+                            <div class="flex items-baseline gap-1">
+                                <span id="price-a" class="text-3xl sm:text-4xl font-serif font-black text-bistro-500">₱299</span>
+                                <span class="text-stone-500 text-xs">/ month</span>
                             </div>
-                            <div class="text-xs text-emerald-400 font-mono font-bold uppercase mt-1 leading-snug">
-                                <span id="setup-card-tierA-fee">One-Time Setup: ₱700</span>
+                            <div id="daily-a" class="text-[12px] font-semibold text-bistro-500 mt-1">That's only ₱9.97 per day!</div>
+                            <div id="scale-a" class="hidden text-[10px] font-bold text-stone-950 bg-bistro-500 inline-block px-2 py-0.5 rounded mt-2 uppercase font-mono tracking-wider">5-10 BRANCHES</div>
+                            <div id="setup-a" class="text-[11px] font-bold text-emerald-400 font-mono mt-1 leading-snug">
+                                ONE-TIME SETUP: ₱0 software • Standee ₱350 optional
                             </div>
                         </div>
 
-                        <ul class="space-y-3 text-xs text-stone-400 border-t border-theme pt-4 font-sans">
+                        <!-- Scale pricing table inside card -->
+                        <div id="scale-table-a" class="hidden mt-4 bg-[#FFFBEB] border border-[#F5D78E] rounded-xl p-3 text-[11px] text-stone-900 font-sans mb-5">
+                            <div class="font-bold mb-1 text-stone-950 font-mono text-[10px] uppercase">Franchise Scale Pricing (per branch):</div>
+                            <div class="flex justify-between border-b border-stone-200/50 py-1 font-semibold">
+                                <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 5-10 branches</span>
+                                <b>₱279/mo — ₱9.30/day</b>
+                            </div>
+                            <div class="flex justify-between border-b border-stone-200/50 py-1 opacity-60">
+                                <span>11-30 branches</span>
+                                <span>₱249/mo — ₱8.30/day</span>
+                            </div>
+                            <div class="flex justify-between py-1 opacity-60">
+                                <span>31+ branches</span>
+                                <span>₱219/mo — ₱7.30/day</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 text-xs text-stone-400 border-t border-theme/20 pt-4 font-sans">
                             <li class="flex items-start gap-2">
                                 <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span><strong>Minimum BOH Access:</strong> Live draft dashboard to test & view active menu configs</span>
+                                <span><strong>Minimum BOH:</strong> Live draft dashboard to inspect configs</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span><strong>Support Updates:</strong> 1 developer-handled menu replacement run per month</span>
+                                <span><strong>Support:</strong> 1 developer-handled replacement run per month</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span><strong>Instant Edge Servers:</strong> Global server-mirroring for high-speed offline performance</span>
+                                <span><strong>Edge Servers:</strong> Global server-mirroring for offline signal proofing</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span><strong>Complimentary Standee:</strong> 1 high-durability acrylic dining table standee included</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span>Basic map locator & store schedules integration</span>
+                                <span>1 standee at cost • Basic local maps locator integration</span>
                             </li>
                         </ul>
                     </div>
 
-                    <button onclick="purchasePlan('Tier A Setup')" class="w-full py-3 mt-8 bg-stone-900/50 hover:bg-stone-850 border border-theme text-theme-title hover:text-bistro-500 font-bold text-xs uppercase tracking-widest rounded-lg transition-colors active:scale-95 transition-transform" style="min-height: 44px;">
-                        Select Tier A
+                    <button onclick="purchasePlan('Tier A Setup')" class="w-full py-3 mt-8 bg-stone-900/50 hover:bg-stone-850 border border-theme text-theme-title hover:text-bistro-500 font-bold text-xs uppercase tracking-widest rounded-lg transition-colors active:scale-95 transition-transform" style="min-height: 44px;" id="cta-a">
+                        Start with Tier A
                     </button>
                 </div>
 
                 <!-- Package 2: Tier B -->
-                <div class="p-6 rounded-2xl border border-theme bg-theme-subtle card-theme flex flex-col justify-between theme-card-hover transition-all relative">
+                <div class="p-6 rounded-[20px] border border-[#E8D5B7]/20 bg-theme-subtle card-theme flex flex-col justify-between theme-card-hover transition-all relative">
                     <div>
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-xs font-bold uppercase font-mono text-stone-500">Tier B</span>
-                            <span class="text-xs bg-theme-input text-stone-400 px-2 py-0.5 rounded uppercase font-bold border border-theme">Direct Control</span>
+                            <span class="text-[11px] tracking-widest font-bold opacity-60 font-mono text-stone-400">TIER B</span>
+                            <span id="badge-b" class="text-[10px] border px-2.5 py-1 rounded-md font-bold bg-[#FAF6F0] border-[#E8D5B7]/30 text-stone-300">DIRECT CONTROL</span>
                         </div>
-                        <h3 class="text-xl font-serif font-bold text-theme-title">Complete Identity</h3>
-                        <p class="text-stone-500 text-xs mt-1.5 font-sans">Take control of active inventory. Directly toggle sold-out markers, activate flash promo labels, and align visual colors to your physical brand style.</p>
+                        <h3 class="font-serif text-xl font-bold text-theme-title">Complete Identity</h3>
+                        <p class="text-stone-500 text-xs mt-1.5 font-sans min-h-[32px]" id="desc-b">Control inventory, promo highlights, and brand styling directly.</p>
                         
                         <div class="my-6">
-                            <span id="price-card-tierB-sub" class="text-3xl sm:text-4xl font-serif font-black text-bistro-500">₱649</span>
-                            <span class="text-stone-500 text-xs">/ month</span>
-                            <div class="text-[10px] text-stone-400 font-semibold mt-1">
-                                That's only <strong id="daily-tierB-sub" class="text-bistro-500">₱21.63 per day!</strong>
+                            <div class="flex items-baseline gap-1">
+                                <span id="price-b" class="text-3xl sm:text-4xl font-serif font-black text-bistro-500">₱549</span>
+                                <span class="text-stone-500 text-xs">/ month</span>
                             </div>
-                            <div class="text-xs text-emerald-400 font-mono font-bold uppercase mt-1 leading-snug">
-                                <span id="setup-card-tierB-fee">One-Time Setup: ₱1,300</span>
+                            <div id="daily-b" class="text-[12px] font-semibold text-bistro-500 mt-1">That's only ₱18.30 per day!</div>
+                            <div id="scale-b" class="hidden text-[10px] font-bold text-stone-950 bg-bistro-500 inline-block px-2 py-0.5 rounded mt-2 uppercase font-mono tracking-wider">11-30 BRANCHES • MOST POPULAR</div>
+                            <div id="setup-b" class="text-[11px] font-bold text-emerald-400 font-mono mt-1 leading-snug">
+                                ONE-TIME SETUP: ₱499 per brand — waived at 10+
                             </div>
                         </div>
 
-                        <ul class="space-y-3 text-xs text-stone-400 border-t border-theme pt-4 font-sans">
+                        <!-- Scale pricing table inside card -->
+                        <div id="scale-table-b" class="hidden mt-4 bg-[#FFFBEB] border border-[#F5D78E] rounded-xl p-3 text-[11px] text-stone-900 font-sans mb-5">
+                            <div class="font-bold mb-1 text-stone-950 font-mono text-[10px] uppercase">Franchise Scale Pricing (per branch):</div>
+                            <div class="flex justify-between border-b border-stone-200/50 py-1 opacity-60">
+                                <span>5-10 branches</span>
+                                <span>₱559/mo — ₱18.63/day</span>
+                            </div>
+                            <div class="flex justify-between border-b border-stone-200/50 py-1 font-semibold">
+                                <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 11-30 branches</span>
+                                <b>₱519/mo — ₱17.30/day</b>
+                            </div>
+                            <div class="flex justify-between py-1 opacity-60">
+                                <span>31+ branches</span>
+                                <span>₱469/mo — ₱15.63/day</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 text-xs text-stone-400 border-t border-theme/20 pt-4 font-sans">
                             <li class="flex items-start gap-2">
                                 <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span><strong>Interactive Inventory:</strong> Instant BOH toggles for items, pricing & promo status</span>
+                                <span class="text-stone-300 font-medium">Community Corkboard Included — live promos wall for acoustic nights & customer notes</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span><strong>Custom Brand Design:</strong> Custom color templates (Warm Brass, Luzon Emerald, Rose)</span>
+                                <span><strong>Interactive Inventory:</strong> Real-time toggles for stock & dynamic sale pricing</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span><strong>High-Vis Standees:</strong> 3 laser-etched premium acrylic tabletop standees included</span>
+                                <span>3 laser-etched tabletop standees included (waived at 10+ branches)</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span><strong>Multi-Device Logins:</strong> Link up to 2 administrative staff tablets/phones</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-bistro-500 shrink-0 mt-0.5">✓</span>
-                                <span>Weekly automated performance metrics summary via email</span>
+                                <span>Multi-device logins • Weekly automated performance metrics report</span>
                             </li>
                         </ul>
                     </div>
 
-                    <button onclick="purchasePlan('Tier B Setup')" class="w-full py-3 mt-8 bg-stone-900/50 hover:bg-stone-850 border border-theme text-theme-title hover:text-bistro-500 font-bold text-xs uppercase tracking-widest rounded-lg transition-colors active:scale-95 transition-transform" style="min-height: 44px;">
-                        Select Tier B
+                    <button onclick="purchasePlan('Tier B Setup')" class="w-full py-3 mt-8 bg-stone-900/50 hover:bg-stone-850 border border-theme text-theme-title hover:text-bistro-500 font-bold text-xs uppercase tracking-widest rounded-lg transition-colors active:scale-95 transition-transform" style="min-height: 44px;" id="cta-b">
+                        Choose Tier B
                     </button>
                 </div>
 
-                <!-- Package 3: Tier C (Aspirational High-Tech POS Focus) -->
-                <div class="tier-c-gradient-glow p-[2.5px] rounded-2xl flex flex-col transition-all duration-300 transform scale-102 hover:scale-[1.04] relative always-dark">
+                <!-- Package 3: Tier C (Elite POS Level) -->
+                <div class="tier-c-gradient-glow p-[2.5px] rounded-[20px] flex flex-col transition-all duration-300 transform relative always-dark">
                     
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-yellow-500 text-stone-950 text-[10px] font-black uppercase px-4 py-1 rounded-full shadow-lg border border-yellow-300 tracking-wider whitespace-nowrap animate-pulse">
-                        👑 Elite POS Level Choice
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#D4A76A] text-white text-[10px] font-black uppercase px-4 py-1 rounded-full shadow-lg border border-yellow-300 tracking-wider whitespace-nowrap animate-pulse">
+                        ELITE POS LEVEL
                     </div>
 
-                    <div class="bg-stone-950 p-6 rounded-[14px] flex flex-col justify-between h-full text-stone-300">
+                    <div class="bg-[#1A120E] p-6 rounded-[18px] flex flex-col justify-between h-full text-stone-300">
                         <div>
                             <div class="flex justify-between items-center mb-4 mt-2">
-                                <span class="text-xs font-bold uppercase font-mono text-yellow-400">Tier C • Recommended</span>
-                                <span class="text-[9px] bg-yellow-500/10 text-yellow-400 px-2.5 py-0.5 rounded uppercase font-black border border-yellow-500/20 font-mono tracking-widest">Sales OS</span>
+                                <span class="text-[11px] tracking-widest font-bold text-[#F2C14E] font-mono">TIER C</span>
+                                <span id="badge-c" class="text-[10px] bg-[#2A211C] border border-[#3C2A21] text-[#F2C14E] px-2.5 py-1 rounded-md font-bold">SALES OS</span>
                             </div>
                             
-                            <h3 class="text-2xl font-serif font-extrabold text-white leading-none">POS-Level Sales OS + Order Bag</h3>
-                            <p class="text-stone-400 text-xs mt-3 leading-relaxed font-sans">
-                                Transform your tables into independent rapid checkout terminals. Guests scan, build their orders, and pay with zero friction. Eliminate order-taking errors completely.
-                            </p>
+                            <h3 class="font-serif text-xl font-bold text-white">POS-Level Sales OS + Order Bag</h3>
+                            <p class="text-[12px] text-[#D8CFC7] mt-1.5 font-sans min-h-[32px]" id="desc-c">Tables become independent self-contained checkout terminals.</p>
                             
-                            <div class="my-6 border-y border-stone-900 py-4 bg-stone-900/20 rounded-xl px-2">
+                            <div class="my-6 border-y border-stone-800/60 py-4 bg-stone-900/20 rounded-xl px-2">
                                 <div class="flex items-baseline gap-1">
-                                    <span id="price-card-tierC-sub" class="text-4xl sm:text-5xl font-serif font-black text-yellow-400">₱949</span>
+                                    <span id="price-c" class="text-3xl sm:text-4xl font-serif font-black text-[#F2C14E]">₱849</span>
                                     <span class="text-stone-500 text-xs font-mono">/ month</span>
                                 </div>
-                                <div class="text-[10px] text-stone-300 font-semibold mt-1">
-                                    That's only <strong id="daily-tierC-sub" class="text-yellow-400">₱31.63 per day!</strong>
+                                <div id="daily-c" class="text-[12px] font-semibold text-[#F2C14E] mt-1">That's only ₱28.30 per day!</div>
+                                <div id="scale-c" class="hidden text-[10px] font-bold text-stone-950 bg-[#F2C14E] inline-block px-2 py-0.5 rounded mt-2 uppercase font-mono tracking-wider">31+ BRANCHES • NATIONWIDE</div>
+                                <div id="setup-c" class="text-[11px] font-bold text-emerald-400 font-mono mt-1">
+                                    ONE-TIME SETUP: ₱0 • 2 Months FREE
                                 </div>
-                                <div class="text-[11px] text-emerald-400 font-mono font-extrabold uppercase mt-2">
-                                    <span id="setup-card-tierC-fee">One-Time Setup: ₱1,800</span>
-                                </div>
-                                <span class="text-[10px] text-stone-500 block mt-1 font-sans">Get 2 Months FREE Setup. Start billing month 3.</span>
                             </div>
 
-                            <ul class="space-y-3.5 text-xs text-stone-300 pt-1 font-sans">
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-yellow-400 shrink-0 font-bold text-sm">✦</span>
-                                    <span class="text-white font-semibold">In-House Order Bag POS System (Direct table-side customer checkout pipeline)</span>
+                            <!-- Scale pricing table inside card -->
+                            <div id="scale-table-c" class="hidden mt-4 bg-[#2A211C] border border-[#3C2A21] rounded-xl p-3 text-[11px] text-[#E8D5B7] font-sans mb-5">
+                                <div class="font-bold mb-1 text-[#F2C14E] font-mono text-[10px] uppercase">Franchise Scale Pricing (per branch):</div>
+                                <div class="flex justify-between border-b border-stone-800/40 py-1 opacity-60">
+                                    <span>5-10 branches</span>
+                                    <span>₱699/mo — ₱23.30/day</span>
+                                </div>
+                                <div class="flex justify-between border-b border-stone-800/40 py-1 opacity-60">
+                                    <span>11-30 branches</span>
+                                    <span>₱647/mo — ₱21.57/day</span>
+                                </div>
+                                <div class="flex justify-between py-1 font-semibold text-white">
+                                    <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-[#F2C14E]"></span> 31+ branches</span>
+                                    <b>₱617/mo — ₱20.57/day</b>
+                                </div>
+                            </div>
+
+                            <ul class="space-y-3.5 text-xs text-stone-300 pt-1 font-sans border-t border-stone-800/40 mt-4">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-[#F2C14E] shrink-0 font-bold text-sm">✦</span>
+                                    <span class="text-white font-semibold">Order Bag POS System (Direct table-side customer checkout pipeline)</span>
                                 </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-yellow-400 shrink-0">✓</span>
-                                    <span>Direct visual GCash & Maya order checkouts</span>
+                                <li class="flex items-start gap-2 font-medium">
+                                    <span class="text-[#F2C14E] shrink-0">✓</span>
+                                    <span>Community Corkboard Included — HQ broadcast network to all branches</span>
                                 </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-yellow-400 shrink-0">✓</span>
-                                    <span>Real-time BOH administrative panel access</span>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-[#F2C14E] shrink-0">✓</span>
+                                    <span>GCash & Maya direct verification • Real-time BOH admin logs</span>
                                 </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-yellow-400 shrink-0">✓</span>
-                                    <span>6 complimentary luxury acrylic standees</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-yellow-400 shrink-0">✓</span>
-                                    <span>Priority developer updates queue (24h turnaround)</span>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-[#F2C14E] shrink-0">✓</span>
+                                    <span>6 luxury acrylic standees at 15+ branches • 24h priority dev update pipeline</span>
                                 </li>
                             </ul>
                         </div>
 
-                        <button onclick="purchasePlan('Tier C Setup')" class="w-full py-4 mt-8 bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-400 hover:to-amber-500 text-stone-950 font-black text-xs uppercase tracking-widest rounded-lg transition-all duration-300 shadow-xl border border-yellow-300 active:scale-95 transition-transform" style="min-height: 48px;">
-                            Equip My Store With POS Power
+                        <button onclick="purchasePlan('Tier C Setup')" class="w-full py-4 mt-8 bg-[#F2C14E] hover:bg-[#ffcf66] text-stone-950 font-black text-xs uppercase tracking-widest rounded-lg transition-all duration-300 shadow-xl border border-yellow-300 active:scale-95 transition-transform" id="cta-c">
+                            EQUIP MY STORE
                         </button>
                     </div>
                 </div>
@@ -1466,53 +1511,73 @@
 
             <!-- À La Carte Add-ons Block -->
             <div class="max-w-4xl mx-auto mb-16">
-                <h3 class="text-lg font-serif font-bold text-theme-title text-center mb-6">À La Carte Modular Upsells (Optional)</h3>
+                <h3 class="text-lg font-serif font-bold text-theme-title text-center mb-6">À La Carte Modular Upsells</h3>
 
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
                     
-                    <div class="p-4 rounded-xl border-2 border-bistro-500 bg-theme-subtle flex flex-col justify-between relative">
-                        <div class="absolute -top-2.5 right-4 bg-bistro-500 text-stone-950 text-[9px] font-black uppercase px-2 py-0.5 rounded shadow tracking-wider">
-                            TOP UPSELL
-                        </div>
-                        <div class="mb-4">
-                            <span class="text-xs font-bold text-theme-title block">Community Corkboard</span>
-                            <span class="text-xs text-stone-500 leading-tight block mt-1 font-sans">Live broadcasting wall for acoustic night notices & customer notes.</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-theme/20">
-                            <span class="text-xs font-bold text-bistro-500 font-mono">+₱150/mo</span>
-                            <button onclick="toggleAddon('corkboard')" id="addon-btn-corkboard" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors active:scale-95 transition-transform" style="min-height: 28px;">Add</button>
-                        </div>
-                    </div>
-
+                    <!-- Community Corkboard (Now modularly priced for Tier A, included in B & C) -->
                     <div class="p-4 rounded-xl border border-theme bg-theme-subtle flex flex-col justify-between">
                         <div class="mb-4">
-                            <span class="text-xs font-bold text-theme-title block">Private Feedback System</span>
-                            <span class="text-xs text-stone-500 leading-tight block mt-1 font-sans">Interactive review portal routing guest complaints securely to dashboard.</span>
+                            <span class="text-xs font-bold text-theme-title block">Community Corkboard</span>
+                            <span class="text-xs text-stone-500 leading-tight block mt-1 font-sans">Live wall for notices, community notes & local acoustic gigs.</span>
+                            <div class="text-[10px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 inline-block px-2 py-0.5 rounded font-bold mt-2 font-mono">INCLUDED in Tier B & C</div>
                         </div>
                         <div class="flex justify-between items-center pt-2 border-t border-theme/20">
-                            <span class="text-xs font-bold text-bistro-500 font-mono">+₱100/mo</span>
-                            <button onclick="toggleAddon('feedback')" id="addon-btn-feedback" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors active:scale-95 transition-transform" style="min-height: 28px;">Add</button>
+                            <div>
+                                <span class="text-xs font-bold text-bistro-500 font-mono">+₱150/mo</span>
+                                <div class="text-[9px] text-stone-500">₱5.00/day</div>
+                            </div>
+                            <button onclick="toggleAddon('corkboard')" id="addon-btn-corkboard" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors active:scale-95 transition-transform" style="min-height: 28px;">Add for Tier A</button>
                         </div>
                     </div>
 
+                    <!-- Private Feedback System (TOP UPSELL with Dark High-Contrast styling) -->
+                    <div class="p-4 rounded-xl border-2 border-[#D4A76A] bg-stone-950 flex flex-col justify-between relative text-stone-300">
+                        <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-[#D4A76A] text-stone-950 text-[9px] font-black uppercase px-2 py-0.5 rounded shadow tracking-wider">
+                            TOP UPSELL
+                        </div>
+                        <div class="mb-4 mt-2">
+                            <span class="text-xs font-bold text-white block">Private Feedback System</span>
+                            <span class="text-xs text-stone-400 leading-tight block mt-1 font-sans">Iwas 1-star Google review. Routes guest complaints directly to your dashboard.</span>
+                            <div class="text-[10px] text-[#F2C14E] font-bold font-mono mt-1">Franchise: ₱69/mo</div>
+                        </div>
+                        <div class="flex justify-between items-center pt-2 border-t border-stone-900">
+                            <div>
+                                <span class="text-xs font-bold text-[#F2C14E] font-mono">+₱100/mo</span>
+                                <div class="text-[9px] text-stone-500">₱3.33/day</div>
+                            </div>
+                            <button onclick="toggleAddon('feedback')" id="addon-btn-feedback" class="text-xs font-mono px-3 py-1.5 rounded bg-[#D4A76A] hover:bg-[#e4b77a] text-stone-950 font-bold transition-colors active:scale-95 transition-transform" style="min-height: 28px;">Add — Most Popular</button>
+                        </div>
+                    </div>
+
+                    <!-- Table Reservation Engine -->
                     <div class="p-4 rounded-xl border border-theme bg-theme-subtle flex flex-col justify-between">
                         <div class="mb-4">
                             <span class="text-xs font-bold text-theme-title block">Table Reservation Engine</span>
-                            <span class="text-xs text-stone-500 leading-tight block mt-1 font-sans">Accept calendar-bound seating bookings (Pending, Confirmed status).</span>
+                            <span class="text-xs text-stone-500 leading-tight block mt-1 font-sans">Accept custom calendar-bound guest table bookings directly.</span>
+                            <div class="text-[10px] text-stone-500 font-bold font-mono mt-1">Franchise: ₱999 flat HQ</div>
                         </div>
                         <div class="flex justify-between items-center pt-2 border-t border-theme/20">
-                            <span class="text-xs font-bold text-bistro-500 font-mono">+₱299/mo</span>
+                            <div>
+                                <span class="text-xs font-bold text-bistro-500 font-mono">+₱299/mo</span>
+                                <div class="text-[9px] text-stone-500">₱9.97/day</div>
+                            </div>
                             <button onclick="toggleAddon('reservations')" id="addon-btn-reservations" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors active:scale-95 transition-transform" style="min-height: 28px;">Add</button>
                         </div>
                     </div>
 
+                    <!-- Custom Domain Option -->
                     <div class="p-4 rounded-xl border border-theme bg-theme-subtle flex flex-col justify-between">
                         <div class="mb-4">
-                            <span class="text-xs font-bold text-theme-title block">Custom Domain Option</span>
-                            <span class="text-xs text-stone-500 leading-tight block mt-1 font-sans">White-label your digital menu with a custom domain (yourbusiness.com).</span>
+                            <span class="text-xs font-bold text-theme-title block">Custom Domain</span>
+                            <span class="text-xs text-stone-500 leading-tight block mt-1 font-sans">menu.yourbusiness.com - White-label all QR endpoints under your web domain.</span>
+                            <div class="text-[10px] text-stone-500 font-bold font-mono mt-1">Covers all branches</div>
                         </div>
                         <div class="flex justify-between items-center pt-2 border-t border-theme/20">
-                            <span class="text-xs font-bold text-bistro-500 font-mono">+₱580/yr ($11.28 Year-1)</span>
+                            <div>
+                                <span class="text-xs font-bold text-bistro-500 font-mono">+₱580/yr</span>
+                                <div class="text-[9px] text-stone-500">₱1.59/day</div>
+                            </div>
                             <button onclick="toggleAddon('domain')" id="addon-btn-domain" class="text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors active:scale-95 transition-transform" style="min-height: 28px;">Add</button>
                         </div>
                     </div>
@@ -1520,370 +1585,1223 @@
                 </div>
             </div>
 
-            <!-- Operational Margins Calculator -->
+            <!-- Operational Margins & Scale Calculator -->
             <div class="p-6 sm:p-8 rounded-3xl border border-theme bg-theme-subtle text-left max-w-4xl mx-auto premium-glow">
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <h3 class="text-xl font-serif font-bold text-theme-title mb-4">Operational Margins Calculator</h3>
-                        <p class="text-xs sm:text-sm text-stone-400 mb-6 font-sans">See how much your cafe saves by cutting menu reprint overheads and increasing table turnover rates.</p>
-                        <div class="space-y-4">
-                            <div>
-                                <label class="text-xs font-mono uppercase tracking-wider text-stone-400 block mb-2" for="calc-orders">Estimated Monthly Orders</label>
-                                <input type="range" id="calc-orders" min="100" max="5000" value="1500" class="w-full accent-bistro-500" oninput="updateCalculations()">
-                                <div class="flex justify-between text-xs font-mono text-stone-500 mt-1">
-                                    <span>100</span>
-                                    <span id="calc-orders-val" class="text-bistro-500 font-bold">1,500 orders</span>
-                                    <span>5,000</span>
-                                </div>
-                            </div>
-                        </div>
+                
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-full bg-bistro-500/10 flex items-center justify-center border border-bistro-500/30 text-bistro-500">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                            <line x1="9" y1="22" x2="9" y2="16"></line>
+                            <line x1="8" y1="6" x2="16" y2="6"></line>
+                            <line x1="16" y1="14" x2="16" y2="18"></line>
+                        </svg>
                     </div>
-                    <div class="p-6 rounded-2xl bg-stone-900/40 border border-theme text-center space-y-4">
-                        <span class="text-xs font-mono uppercase tracking-widest text-stone-400 block">Estimated Monthly Savings</span>
-                        <span id="calc-savings" class="text-4xl font-serif font-black text-bistro-500 block">₱9,750</span>
-                        <p class="text-[11px] text-stone-500 font-sans">Based on reduced table wait times, upselling enhancements, and absolute zero printing re-costs.</p>
+                    <div>
+                        <h4 class="text-lg font-serif font-bold text-theme-title">
+                            Luzon Hospitality Operational Overhead Calculator
+                        </h4>
+                        <p class="text-stone-500 text-xs font-sans">
+                            Compare legacy reprint costs + separate agency service markups against VibeTable's unified micro-daily rates.
+                        </p>
                     </div>
                 </div>
+
+                <!-- ROI Quick Stat Banner -->
+                <div class="p-4 rounded-xl bg-bistro-500/10 border border-bistro-500/20 text-xs text-bistro-500 font-bold mb-6 flex flex-col sm:flex-row justify-between items-center gap-2">
+                    <span>⚡ ROI HIGHLIGHT: Complete system payback achieved in average <strong class="underline">14 days!</strong></span>
+                    <span id="roi-time-banner" class="bg-bistro-500 text-stone-950 px-2.5 py-1 rounded text-[10px] font-black uppercase font-mono">Saves ₱12,400 in first 3 Months</span>
+                </div>
+
+                <!-- Calculator inputs -->
+                <div class="grid sm:grid-cols-3 gap-6 mb-8">
+                    
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-bold text-bistro-500 uppercase tracking-widest block" for="calc-tables">Number of Tables</label>
+                        <input id="calc-tables" type="range" min="5" max="100" value="20" oninput="runFinancialCalc()" class="w-full accent-bistro-500">
+                        <div class="flex justify-between items-center text-xs text-stone-500 font-mono mt-1">
+                            <span>5 tables</span>
+                            <span id="calc-tables-val" class="text-bistro-500 font-black">20 Tables</span>
+                            <span>100 tables</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-bold text-bistro-500 uppercase tracking-widest block" for="calc-reprints">Paper reprints / year</label>
+                        <input id="calc-reprints" type="range" min="1" max="12" value="4" oninput="runFinancialCalc()" class="w-full accent-bistro-500">
+                        <div class="flex justify-between items-center text-xs text-stone-500 font-mono mt-1">
+                            <span>1 run</span>
+                            <span id="calc-reprints-val" class="text-bistro-500 font-black">4 Runs</span>
+                            <span>12 runs</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-bold text-bistro-500 uppercase tracking-widest block" for="calc-print-cost">Laminate Card Cost (PHP)</label>
+                        <input id="calc-print-cost" type="number" value="150" oninput="runFinancialCalc()" class="w-full border border-theme rounded-lg px-3 py-1.5 text-xs text-right bg-theme-input focus:outline-none focus:border-bistro-500 text-theme-title font-mono" style="min-height: 36px;">
+                    </div>
+
+                </div>
+
+                <!-- Dynamic comparison outputs -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                    
+                    <div class="p-4 rounded-xl border border-theme bg-theme-input flex flex-col justify-between text-left">
+                        <div>
+                            <span class="text-[10px] text-stone-500 font-bold uppercase tracking-widest block font-mono">Competitor Agency Charges</span>
+                            <span class="text-xs text-red-400 block mt-1 font-semibold">Separate Systems:</span>
+                            <ul class="text-[11px] text-stone-400 space-y-1 mt-2 list-disc list-inside">
+                                <li>Menu Editors (₱1,000/mo)</li>
+                                <li>POS Systems (₱1,500/mo)</li>
+                                <li>Physical reprint cards friction</li>
+                            </ul>
+                        </div>
+                        <div class="border-t border-theme/20 pt-2.5 mt-3">
+                            <span class="text-[10px] text-stone-500 block uppercase font-mono">Annual Legacy Spent</span>
+                            <span id="out-print-cost" class="text-xl font-serif font-black text-red-400 mt-0.5 block">₱42,000</span>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl border border-theme bg-theme-input flex flex-col justify-between text-left">
+                        <div>
+                            <span class="text-[10px] text-stone-500 font-bold uppercase tracking-widest block font-mono">Low-Signal Dropouts</span>
+                            <span class="text-xs text-red-400 block mt-1 font-semibold">Customer Attrition:</span>
+                            <p class="text-[11px] text-stone-400 mt-2 leading-relaxed">
+                                Losses triggered when heavy PDFs fail to load inside basement dining floors or mountain resorts.
+                            </p>
+                        </div>
+                        <div class="border-t border-theme/20 pt-2.5 mt-3">
+                            <span class="text-[10px] text-stone-500 block uppercase font-mono">Estimated Attrition Loss</span>
+                            <span id="out-pdf-attrition" class="text-xl font-serif font-black text-red-400 mt-0.5 block">₱60,000</span>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl border-2 border-bistro-500 bg-bistro-500/5 flex flex-col justify-between text-left">
+                        <div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-[10px] text-bistro-500 font-black uppercase tracking-widest font-mono font-bold">VibeTable Advantage</span>
+                                <span class="bg-bistro-500/15 text-bistro-500 text-[9px] font-black uppercase font-mono px-1.5 py-0.5 rounded">All-In-One</span>
+                            </div>
+                            <span class="text-xs text-stone-300 block mt-1 font-semibold">Consolidated Micro-Daily SaaS:</span>
+                            <p class="text-[11px] text-stone-400 mt-2 leading-relaxed">
+                                Menu drafting, real-time inventory panels, instant online GCash checkout routing, and table standees unified in a single feed.
+                            </p>
+                        </div>
+                        <div class="border-t border-bistro-500/20 pt-2.5 mt-3">
+                            <span class="text-[10px] text-bistro-500 block uppercase font-mono font-bold">Total Retained Yearly Profit</span>
+                            <span id="out-saved-profit" class="text-2xl font-serif font-black text-bistro-500 mt-0.5 block">₱59,800</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="flex flex-col gap-2 mt-6 pt-5 border-t border-theme text-xs text-stone-500">
+                    <p class="leading-relaxed font-sans">
+                        *Calculated comparing physical reprint and legacy agency editor service models against VibeTable unified software base. Slow menu dropouts modeled at ₱250 estimate per checkout loss under low cellular signal thresholds.
+                    </p>
+                </div>
+
             </div>
 
         </section>
+
     </main>
 
-    <!-- Footer Component Section -->
-    <footer class="border-t border-theme bg-stone-950 text-stone-400 text-xs py-12 mt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
-            <div class="space-y-4">
-                <div class="flex items-center gap-3">
-                    <img src="images/VT_logo_transparent_bg.png" alt="VibeTable logo thumbnail" class="w-8 h-8 rounded-full border border-bistro-500" onerror="this.src='https://placehold.co/100x100/c49b55/ffffff?text=VT'">
-                    <span class="text-lg font-serif font-bold text-white footer-brand-title">VibeTable</span>
-                </div>
-                <p class="text-[11px] leading-relaxed font-sans">Premium multi-tenant QR code menu platform optimized for North & Central Luzon hospitality realities.</p>
+    <!-- Bottom Action CTA Banner -->
+    <section class="always-dark py-16 sm:py-24 relative overflow-hidden border-t border-theme">
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-2xl sm:text-4xl font-serif font-light mb-4 leading-tight text-white">
+                Ready to upgrade your restaurant's digital presence?
+            </h2>
+            <p class="text-stone-400 text-xs sm:text-sm max-w-xl mx-auto mb-6 leading-relaxed font-sans">
+                Equip your venues across Northern and Central Luzon with responsive catalogs designed for speed and visual excellence.
+            </p>
+
+            <div class="flex flex-col items-center gap-2 mb-10">
+                <span class="text-xs text-stone-500 uppercase tracking-widest font-mono">Book your deployment call directly</span>
+                <a href="tel:+639927628293" class="text-base sm:text-2xl font-serif font-black text-bistro-500 hover:underline flex items-center justify-center gap-2.5">
+                    <svg class="w-6 h-6 text-bistro-500 animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92v3a2 2 0 0 1-2.18 2"></path>
+                    </svg>
+                    +63 992 762 8293
+                </a>
             </div>
-            <div>
-                <h4 class="text-white font-mono text-[10px] uppercase tracking-widest font-bold mb-4">Navigation links</h4>
-                <ul class="space-y-2 font-semibold">
-                    <li><a href="#view-home" class="hover:text-theme-gold transition-colors">Home & Solutions</a></li>
-                    <li><a href="#view-demo" class="hover:text-theme-gold transition-colors">Interactive BOH Dashboard</a></li>
-                    <li><a href="#view-pricing" class="hover:text-theme-gold transition-colors">PH Subscription Plans</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-mono text-[10px] uppercase tracking-widest font-bold mb-4">Contact Channels</h4>
-                <ul class="space-y-2 font-sans">
-                    <li class="footer-hotline-label">Luzon Hub Line: <a href="tel:+639927628293" class="text-bistro-500 font-bold hover:underline">+63 992 762 8293</a></li>
-                    <li class="footer-email-label">Inquiries: <span class="text-stone-300 font-semibold">support@vibetable.ph</span></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-mono text-[10px] uppercase tracking-widest font-bold mb-4">Regional Reach</h4>
-                <p class="text-[11px] leading-relaxed font-sans">Actively deploying in Pangasinan, La Union, Benguet, Ilocos, Pampanga, and Tarlac corridors.</p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+                <button onclick="openBookingModal('Onboarding Strategy Session', 'Arrange a sync with our Luzon engineers.')" class="w-full sm:w-auto px-8 py-4 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-bold rounded-full text-xs uppercase tracking-wider transition-all shadow-xl active:scale-95 transition-transform" style="min-height: 48px;">
+                    Request Custom Quote
+                </button>
+                <a href="tel:+639927628293" class="w-full sm:w-auto px-8 py-4 border border-theme rounded-full font-bold text-xs uppercase tracking-wider hover:bg-bistro-500/10 text-white flex items-center justify-center gap-2 active:scale-95 transition-transform" style="min-height: 48px;">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92v3a2 2 0 0 1-2.18 2"></path>
+                    </svg>
+                    Connect with Luzon Hub
+                </a>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-theme/20 mt-8 pt-6 text-center text-[11px] text-stone-500 font-sans">
-            &copy; 2026 VibeTable Philippines. All rights reserved. Built for progressive restaurant scales.
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-16 pb-12 border-t border-theme bg-stone-950 text-xs text-stone-500 text-left transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10">
+                
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-bistro-500 bg-stone-950 p-0.5">
+                            <img src="images/VT_logo_transparent_bg.png" alt="VibeTable logo" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/100x100/c49b55/ffffff?text=VT'">
+                        </div>
+                        <span class="text-base font-serif font-bold text-white tracking-tight footer-brand-title">VibeTable PH</span>
+                    </div>
+                    <p class="leading-relaxed max-w-sm text-stone-400 font-sans">
+                        Premium digital table catalog solutions served at extreme edge speeds. Engineered for design-first dining venues, artisan coffee bars, and luxury resorts across Luzon.
+                    </p>
+                    <div class="text-xs text-stone-300 space-y-2">
+                        <div>
+                            <span class="footer-hotline-label font-bold font-sans">Direct Hotline: </span>
+                            <a href="tel:+639927628293" class="text-bistro-500 font-bold font-mono hover:underline footer-hotline-number">+63 992 762 8293</a>
+                        </div>
+                        <div>
+                            <span class="footer-email-label font-bold font-sans">Email Support: </span>
+                            <a href="mailto:trpvibesoluions@gmail.com" class="text-bistro-500 font-bold font-mono hover:underline">trpvibesoluions@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="font-bold uppercase tracking-widest text-xs mb-4 text-stone-400">Luzon Hub Corridors</h5>
+                    <ul class="space-y-2.5 font-medium text-stone-500 font-sans">
+                        <li><span class="hover:text-bistro-500 transition-colors">Dagupan, Pangasinan</span></li>
+                        <li><span class="hover:text-bistro-500 transition-colors">San Juan, La Union</span></li>
+                        <li><span class="hover:text-bistro-500 transition-colors">Baguio City, Benguet</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-bold uppercase tracking-widest text-xs mb-4 text-stone-400 font-mono">Platform Specs</h5>
+                    <ul class="space-y-2.5 font-medium text-stone-500 font-sans">
+                        <li><a href="#view-demo" class="hover:text-bistro-500 transition-colors">BOH Sandbox Sim</a></li>
+                        <li><a href="#view-pricing" class="hover:text-bistro-500 transition-colors">PHP Billing Tiers</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-stone-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500 text-center font-sans">
+                <p class="leading-relaxed">
+                    © 2026 VibeTable Digital Menus. All rights reserved. VibeTable Digital Menus is a proud subsidiary of **TRP Vibe Solutions** in Pangasinan, Philippines.
+                </p>
+            </div>
         </div>
     </footer>
 
-    <!-- Interactive Script Mechanics -->
+    <!-- STICKY MOBILE PHONE ACTION BAR -->
+    <div class="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-stone-950 border-t border-bistro-500/30 px-4 py-3 flex items-center justify-between shadow-2xl backdrop-blur-md">
+        <span class="text-xs text-stone-300 font-bold uppercase tracking-wider">Luzon Hotline:</span>
+        <a href="tel:+639927628293" class="inline-flex items-center gap-2 px-4 py-2.5 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-black text-xs uppercase tracking-wider rounded-full shadow-lg transition-transform active:scale-95" style="min-height: 44px;">
+            <svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92v3a2 2 0 0 1-2.18 2"></path>
+            </svg>
+            Tawag: 0992 762 8293
+        </a>
+    </div>
+
+    <!-- Glowing / Triggering WhatsApp Floating Icon -->
+    <a href="https://wa.me/639927628293" target="_blank" rel="noopener noreferrer" class="fixed bottom-20 sm:bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-[0_0_20px_rgba(37,211,102,0.6)] hover:shadow-[0_0_30px_rgba(37,211,102,0.9)] transition-all duration-300 hover:scale-110 animate-wa-glow group" aria-label="Chat with VibeTable on WhatsApp">
+        <svg class="w-7 h-7 text-white fill-current" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-117zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+        <span class="absolute right-16 bg-stone-900 border border-theme text-white text-xs font-bold py-2 px-3 rounded-xl whitespace-nowrap shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none font-sans">
+            Chat on WhatsApp Live!
+        </span>
+    </a>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" role="dialog" aria-modal="true" class="fixed inset-0 bg-black/70 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden animate-fade-in-up">
+        <div class="p-6 rounded-2xl max-w-lg w-full relative shadow-2xl border border-theme bg-[#0f0b09] text-stone-300 text-left">
+            
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-stone-500 hover:text-white transition-colors animate-pulse" style="min-height: 44px; min-width: 44px;" aria-label="Close form dialog">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <div class="w-10 h-10 rounded-xl bg-bistro-500/10 border border-bistro-500/30 text-bistro-500 flex items-center justify-center mb-4">
+                <svg class="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+            </div>
+
+            <h4 id="modal-title" class="text-lg font-serif font-bold mb-1.5 text-white">Interactive Setup Call Booking</h4>
+            <p id="modal-desc" class="text-stone-500 text-xs mb-6 leading-relaxed font-sans">
+                Provide operational metrics and choose a setup pipeline below.
+            </p>
+
+            <form action="/api/lead" method="POST" onsubmit="submitBookingForm(event)" class="space-y-4">
+                <input type="hidden" name="source" value="website">
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="space-y-1">
+                        <label class="text-xs text-bistro-500 block uppercase tracking-widest font-black" for="form-operator-name">Operator Name</label>
+                        <input id="form-operator-name" type="text" name="operator_name" required placeholder="Juan dela Cruz" class="w-full border border-theme rounded-lg px-3 py-2 text-xs bg-stone-950 text-white focus:outline-none focus:border-bistro-500" style="min-height: 44px;">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs text-bistro-500 block uppercase tracking-widest font-black" for="form-resto-name">Resto Name</label>
+                        <input id="form-resto-name" type="text" name="resto_name" required placeholder="San Juan Cafe" class="w-full border border-theme rounded-lg px-3 py-2 text-xs bg-stone-950 text-white focus:outline-none focus:border-bistro-500" style="min-height: 44px;">
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-xs text-bistro-500 block uppercase tracking-widest font-black" for="form-email">Email Address</label>
+                    <input id="form-email" type="email" name="email" required placeholder="owner@sanjuan.ph" class="w-full border border-theme rounded-lg px-3 py-2 text-xs bg-stone-950 text-white focus:outline-none focus:border-bistro-500" style="min-height: 44px;">
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-xs text-bistro-500 block uppercase tracking-widest font-black" for="form-phone">Phone Number</label>
+                    <input id="form-phone" type="tel" name="phone" required placeholder="0912 345 6789" class="w-full border border-theme rounded-lg px-3 py-2 text-xs bg-stone-950 text-white focus:outline-none focus:border-bistro-500" style="min-height: 44px;">
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-xs text-bistro-500 block uppercase tracking-widest font-black" for="form-gateway">Preferred Local Payment Gateway</label>
+                    <select id="form-gateway" name="gateway" class="w-full border border-theme rounded-lg px-3 py-2 text-xs bg-stone-950 text-white focus:outline-none focus:border-bistro-500" style="min-height: 44px;">
+                        <option value="gcash">GCash payments direct verification</option>
+                        <option value="maya">Maya digital checkout links</option>
+                        <option value="paymongo">PayMongo API stack (Visa/Mastercard/GrabPay/GCash)</option>
+                        <option value="none-visual">None (Visual QR Catalog only, no checkout flows)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="w-full py-3 bg-bistro-500 hover:bg-bistro-600 text-stone-950 font-black rounded-lg uppercase text-xs tracking-wider transition-all shadow-md mt-2" style="min-height: 44px;">
+                    Submit Onboarding Inquiry
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Feedback Modal Dialogue -->
+    <div id="success-modal" role="dialog" aria-modal="true" class="fixed inset-0 bg-black/70 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden animate-fade-in-up">
+        <div class="p-6 rounded-2xl max-w-sm w-full text-center border border-theme bg-[#0f0b09] text-stone-300">
+            <div class="w-12 h-12 rounded-full bg-bistro-500/15 border border-bistro-500/30 text-bistro-500 flex items-center justify-center mx-auto mb-4">
+                <span class="text-xl animate-bounce">✓</span>
+            </div>
+            
+            <h4 class="text-lg font-serif font-bold mb-1.5 text-white">Booking request filed</h4>
+            <p class="text-stone-500 text-xs mb-6 leading-relaxed font-sans">
+                Our local development hub has registered your request. An operations engineer will contact you at <strong class="text-bistro-500 font-mono">+63 992 762 8293</strong> within 24 hours.
+            </p>
+
+            <button onclick="closeSuccessModal()" class="w-full py-2.5 bg-stone-900 border border-theme hover:bg-stone-850 text-white font-bold rounded-lg text-xs uppercase tracking-widest transition-colors" style="min-height: 44px;">
+                Return to Main Screen
+            </button>
+        </div>
+    </div>
+
+    <!-- Live simulated Order Bag Checkout Modal inside phone view -->
+    <div id="phone-cart-modal" role="dialog" aria-modal="true" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 hidden animate-fade-in-up">
+        <div class="p-5 rounded-2xl max-w-xs w-full bg-stone-950 border border-bistro-500/30 text-left text-xs space-y-4">
+            <div class="flex justify-between items-center border-b border-stone-900 pb-2">
+                <span class="font-serif font-bold text-white uppercase tracking-widest text-xs">Your Order Bag</span>
+                <button onclick="closeSimCartModal()" class="text-stone-500 hover:text-white" aria-label="Close Cart" style="min-height: 36px; min-width: 36px;">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div id="phone-cart-items-list" class="space-y-2 max-h-[180px] overflow-y-auto">
+                <!-- Cart items list dynamically mapped -->
+            </div>
+            <div class="border-t border-stone-900 pt-2 flex justify-between items-center text-stone-300 font-bold">
+                <span>Grand Total:</span>
+                <span id="phone-cart-total-price" class="text-bistro-500 font-serif">₱0.00</span>
+            </div>
+            <button onclick="triggerSimulatePayment()" class="w-full py-2 bg-bistro-500 text-stone-950 font-black rounded-lg uppercase tracking-wider text-xs active:scale-95 transition-transform" style="min-height: 36px;">
+                Proceed to GCash Payment
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts Area -->
     <script>
-        // Core Theme Preference Switcher
-        function toggleTheme() {
-            document.documentElement.classList.toggle('light-theme');
-        }
-
-        // Mobile Canvas Drawer Controller
-        function toggleMobileDrawer() {
-            const drawer = document.getElementById('mobile-drawer');
-            const overlay = document.getElementById('mobile-drawer-overlay');
-            drawer.classList.toggle('hidden');
-            overlay.classList.toggle('hidden');
-        }
-
-        // Single Page App Simulation View Router Mechanics
-        window.addEventListener('hashchange', handleRouting);
-        function handleRouting() {
-            const hash = window.location.hash || '#view-home';
-            const views = ['view-home', 'view-demo', 'view-pricing'];
-            views.forEach(v => {
-                const el = document.getElementById(v);
-                if (('#' + v) === hash) {
-                    el.classList.remove('hidden');
-                } else {
-                    el.classList.add('hidden');
-                }
-            });
-        }
-        // Run routing on initial document launch
-        handleRouting();
-
-        // FAQ Collapse Toggle
-        function toggleFaq(id) {
-            const ans = document.getElementById(`faq-answer-${id}`);
-            const icon = document.getElementById(`faq-icon-${id}`);
-            ans.classList.toggle('hidden');
-            icon.classList.toggle('rotate-180');
-        }
-
-        // Interactive Studio Tabs Matrix Switcher
-        function setStudioView(view) {
-            const pdTab = document.getElementById('studio-tab-pourdecisions');
-            const simTab = document.getElementById('studio-tab-simulator');
-            const pdView = document.getElementById('studio-view-pourdecisions');
-            const simView = document.getElementById('studio-view-simulator');
-
-            if (view === 'pourdecisions') {
-                pdTab.className = "flex-1 py-2 text-xs font-bold uppercase rounded-lg bg-bistro-500 text-stone-950 border border-bistro-500 shadow-md transition-all";
-                simTab.className = "flex-1 py-2 text-xs font-bold uppercase rounded-lg border border-transparent text-stone-400 hover:text-white transition-all";
-                pdView.classList.remove('hidden');
-                simView.classList.add('hidden');
-            } else {
-                simTab.className = "flex-1 py-2 text-xs font-bold uppercase rounded-lg bg-bistro-500 text-stone-950 border border-bistro-500 shadow-md transition-all";
-                pdTab.className = "flex-1 py-2 text-xs font-bold uppercase rounded-lg border border-transparent text-stone-400 hover:text-white transition-all";
-                simView.classList.remove('hidden');
-                pdView.classList.add('hidden');
-                renderPhoneItems(); 
-            }
-        }
-
-        // Demo Iframe Frame Responsive Width Switcher 
-        function setDemoViewport(vp) {
-            const mBtn = document.getElementById('demo-viewport-mobile');
-            const dBtn = document.getElementById('demo-viewport-desktop');
-            const mFrame = document.getElementById('demo-frame-mobile');
-            const dFrame = document.getElementById('demo-frame-desktop');
-
-            if (vp === 'mobile') {
-                mBtn.className = "px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded bg-bistro-500 text-stone-950 shadow transition-colors";
-                dBtn.className = "px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded border border-transparent text-stone-400 hover:text-white transition-colors";
-                mFrame.classList.remove('hidden');
-                dFrame.classList.add('hidden');
-            } else {
-                dBtn.className = "px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded bg-bistro-500 text-stone-950 shadow transition-colors";
-                mBtn.className = "px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded border border-transparent text-stone-400 hover:text-white transition-colors";
-                dFrame.classList.remove('hidden');
-                mFrame.classList.add('hidden');
-            }
-        }
-
-        // BOH Sandbox Core Mock State Configuration Logic
-        let sandboxState = {
-            tier: 'B',
-            restoName: 'San Juan Brews',
-            marquee: 'SURFERS DEAL: FREE ESPRESSO SHOT ON 2ND COLD BREW!',
-            items: {
-                'batangas-brew': { name: 'Batangas Cold Brew', price: 115, inStock: true, onSale: false, category: 'beverages' },
-                'strawberry-latte': { name: 'Baguio Strawberry Latte', price: 165, inStock: true, onSale: false, category: 'beverages' }
+        // CENTRAL SAAS APP CONFIG
+        const PRICES = {
+            single: {
+                A: 299,
+                B: 549,
+                C: 849,
+                setupA: 0,
+                setupB: 499,
+                setupC: 0
             },
-            addons: { corkboard: false, feedback: false, reservations: false, orderbag: false },
-            phoneTheme: 'warm-brass',
-            phoneCategory: 'beverages'
+            franchise: {
+                A: 279,
+                B: 519,
+                C: 617,
+                setupA: 0,
+                setupB: 0,
+                setupC: 0
+            }
         };
 
-        function setSandboxTier(tier) {
-            sandboxState.tier = tier;
-            ['A', 'B', 'C'].forEach(t => {
-                const btn = document.getElementById(`sandbox-tier-btn-${t}`);
-                if (t === tier) {
-                    btn.className = "flex-1 py-1.5 text-xs font-bold uppercase rounded bg-bistro-500 text-stone-950";
-                } else {
-                    btn.className = "flex-1 py-1.5 text-xs font-bold uppercase rounded text-stone-400 hover:text-white";
-                }
-            });
-
-            document.getElementById('active-sandbox-badge').innerText = `Tier ${tier} Suite`;
-            const notice = document.getElementById('sandbox-lockout-notice');
-            const desc = document.getElementById('lockout-notice-desc');
-            const formA = document.getElementById('tier-A-form-wrapper');
-
-            if (tier === 'A') {
-                notice.classList.remove('hidden');
-                desc.innerText = "Tier A Permissions: BOH item controls are read-only layout drafts. Click 'Submit Draft' to request manual update changes.";
-                formA.classList.remove('hidden');
-            } else if (tier === 'B') {
-                notice.classList.remove('hidden');
-                desc.innerText = "Tier B Permissions: Brand inputs and advanced Theme layouts are managed by development teams. Stock controls are unlocked.";
-                formA.classList.add('hidden');
-            } else {
-                notice.classList.add('hidden');
-                formA.classList.add('hidden');
+        const MENU_DATA = [
+            {
+                id: 'batangas-brew',
+                name: 'Batangas Barako Brew',
+                category: 'beverages',
+                description: '100% pure premium Batangas Liberica beans slow-brewed to rich perfection.',
+                price: 115,
+                isPopular: true,
+                inStock: true,
+                isOnSale: false,
+                image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&q=80&w=300'
+            },
+            {
+                id: 'strawberry-latte',
+                name: 'Baguio Strawberry Latte',
+                category: 'beverages',
+                description: 'Fresh Benguet strawberry puree layered with espresso and farm-fresh milk.',
+                price: 165,
+                isPopular: true,
+                inStock: true,
+                isOnSale: false,
+                image: 'https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&q=80&w=300'
+            },
+            {
+                id: 'crispy-sisig',
+                name: 'Sizzling Sisig Tacos',
+                category: 'plates',
+                description: 'Luzon-style crispy pork sisig topped with kalamansi crema and chili peppers.',
+                price: 195,
+                isPopular: false,
+                inStock: true,
+                isOnSale: false,
+                image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=300'
+            },
+            {
+                id: 'vigan-longganisa',
+                name: 'Vigan Longganisa Platter',
+                category: 'plates',
+                description: 'Traditional garlic-infused Ilocano pork sausages served over garlic fried rice.',
+                price: 245,
+                isPopular: true,
+                inStock: true,
+                isOnSale: false,
+                image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=300'
+            },
+            {
+                id: 'la-union-coconut-crepe',
+                name: 'La Union Coconut Crepe',
+                category: 'desserts',
+                description: 'Soft crepe filled with fresh coconut flakes and sweet Tagudin sugarcane molasses.',
+                price: 120,
+                isPopular: false,
+                inStock: true,
+                isOnSale: false,
+                image: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&q=80&w=300'
             }
-            showPhoneToast(`Switched to Tier ${tier} Workspace`);
+        ];
+
+        // CENTRAL SAAS APP STATE ENGINE
+        let appState = {
+            theme: 'dark',
+            pricingMode: 'single', 
+            selectedAddons: {
+                corkboard: false, 
+                feedback: false, 
+                reservations: false, 
+                orderbag: false,
+                domain: false
+            },
+            sandbox: {
+                activeTier: 'B', 
+                restoName: 'San Juan Brews',
+                marquee: 'SURFERS DEAL: FREE ESPRESSO SHOT ON 2ND COLD BREW!',
+                activeCategory: 'beverages',
+                phoneTheme: 'warm-brass',
+                menuItems: JSON.parse(JSON.stringify(MENU_DATA)),
+                cart: [] 
+            }
+        };
+
+        let lastActiveElement = null;
+
+        // THEME PERSISTENCE & LOAD SYSTEM
+        function initTheme() {
+            const savedTheme = localStorage.getItem('vibe-theme');
+            const chosenTheme = savedTheme || 'dark';
+            
+            appState.theme = chosenTheme;
+            const body = document.body;
+            if (chosenTheme === 'light') {
+                body.classList.add('light-theme');
+            } else {
+                body.classList.remove('light-theme');
+            }
+            updateThemeToggleButtonUI();
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            if (body.classList.contains('light-theme')) {
+                body.classList.remove('light-theme');
+                appState.theme = 'dark';
+                localStorage.setItem('vibe-theme', 'dark');
+            } else {
+                body.classList.add('light-theme');
+                appState.theme = 'light';
+                localStorage.setItem('vibe-theme', 'light');
+            }
+            updateThemeToggleButtonUI();
             syncBohState();
         }
 
-        function showPhoneToast(msg) {
-            const toast = document.getElementById('phone-toast');
-            document.getElementById('phone-toast-text').innerText = msg;
-            toast.classList.remove('translate-y-[-100px]', 'opacity-0');
-            setTimeout(() => {
-                toast.classList.add('translate-y-[-100px]', 'opacity-0');
-            }, 2500);
+        function updateThemeToggleButtonUI() {
+            const container = document.getElementById('theme-icon-container');
+            if (appState.theme === 'light') {
+                container.innerHTML = `
+                    <svg class="w-5 h-5 text-theme-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                `;
+            } else {
+                container.innerHTML = `
+                    <svg class="w-5 h-5 text-theme-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                `;
+            }
+        }
+
+        // NAVIGATION & ROUTING HANDLERS
+        function handleHashRouting() {
+            const hash = window.location.hash || '#view-home';
+            const allViews = ['view-home', 'view-demo', 'view-pricing'];
+            
+            let targetView = 'view-home';
+            if (hash === '#view-demo' || hash === '#/demo') targetView = 'view-demo';
+            if (hash === '#view-pricing' || hash === '#/pricing') targetView = 'view-pricing';
+
+            allViews.forEach(viewId => {
+                const el = document.getElementById(viewId);
+                if (el) {
+                    if (viewId === targetView) {
+                        el.classList.remove('hidden');
+                    } else {
+                        el.classList.add('hidden');
+                    }
+                }
+            });
+
+            const navLinks = {
+                '#view-home': 'nav-home',
+                '#/home': 'nav-home',
+                '#view-demo': 'nav-demo',
+                '#/demo': 'nav-demo',
+                '#view-pricing': 'nav-pricing',
+                '#/pricing': 'nav-pricing'
+            };
+
+            const linkElements = ['nav-home', 'nav-demo', 'nav-pricing'];
+            linkElements.forEach(id => {
+                const linkEl = document.getElementById(id);
+                if (linkEl) {
+                    linkEl.classList.remove('text-bistro-500');
+                    linkEl.classList.add('text-stone-400');
+                }
+            });
+
+            const activeNavId = navLinks[hash];
+            if (activeNavId) {
+                const linkEl = document.getElementById(activeNavId);
+                if (linkEl) {
+                    linkEl.classList.add('text-bistro-500');
+                    linkEl.classList.remove('text-stone-400');
+                }
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('hashchange', handleHashRouting);
+        window.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            handleHashRouting();
+            initApp();
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeBookingModal();
+                    closeSuccessModal();
+                    closeSimCartModal();
+                }
+            });
+        });
+
+        function toggleMobileDrawer() {
+            const drawer = document.getElementById('mobile-drawer');
+            const overlay = document.getElementById('mobile-drawer-overlay');
+            if (drawer && overlay) {
+                if (drawer.classList.contains('hidden')) {
+                    drawer.classList.remove('hidden');
+                    overlay.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    drawer.classList.add('hidden');
+                    overlay.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            }
+        }
+
+        // DEMO PORTAL LOGIC & ACTIONS
+        function setStudioView(viewKey) {
+            const tabIframe = document.getElementById('studio-tab-pourdecisions');
+            const tabSim = document.getElementById('studio-tab-simulator');
+            const viewIframe = document.getElementById('studio-view-pourdecisions');
+            const viewSim = document.getElementById('studio-view-simulator');
+
+            if (viewKey === 'pourdecisions') {
+                viewIframe.classList.remove('hidden');
+                viewSim.classList.add('hidden');
+                tabIframe.className = "flex-1 py-2 text-xs font-bold uppercase rounded-lg bg-bistro-500 text-stone-950 border border-bistro-500 shadow-md transition-all active:scale-95 transition-transform";
+                tabSim.className = "flex-1 py-2 text-xs font-bold uppercase rounded-lg border border-transparent text-stone-400 hover:text-white transition-all active:scale-95 transition-transform";
+            } else {
+                viewSim.classList.remove('hidden');
+                viewIframe.classList.add('hidden');
+                tabSim.className = "flex-1 py-2 text-xs font-bold uppercase rounded-lg bg-bistro-500 text-stone-950 border border-bistro-500 shadow-md transition-all active:scale-95 transition-transform";
+                tabIframe.className = "flex-1 py-2 text-xs font-bold uppercase rounded-lg border border-transparent text-stone-400 hover:text-white transition-all active:scale-95 transition-transform";
+                syncBohState();
+            }
+        }
+
+        function setDemoViewport(mode) {
+            const frameMobile = document.getElementById('demo-frame-mobile');
+            const frameDesktop = document.getElementById('demo-frame-desktop');
+            const btnMobile = document.getElementById('demo-viewport-mobile');
+            const btnDesktop = document.getElementById('demo-viewport-desktop');
+
+            if (mode === 'mobile') {
+                frameMobile.classList.remove('hidden');
+                frameDesktop.classList.add('hidden');
+                btnMobile.className = "px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded bg-bistro-500 text-stone-950 shadow transition-colors";
+                btnDesktop.className = "px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded border border-transparent text-stone-400 hover:text-white transition-colors";
+            } else {
+                frameDesktop.classList.remove('hidden');
+                frameMobile.classList.add('hidden');
+                btnDesktop.className = "px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded bg-bistro-500 text-stone-950 shadow transition-colors";
+                btnMobile.className = "px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded border border-transparent text-stone-400 hover:text-white transition-colors";
+            }
+        }
+
+        function setSandboxTier(tier) {
+            appState.sandbox.activeTier = tier;
+            
+            ['A', 'B', 'C'].forEach(t => {
+                const btn = document.getElementById(`sandbox-tier-btn-${t}`);
+                if (t === tier) {
+                    btn.className = "flex-1 py-1.5 text-xs font-bold uppercase rounded bg-bistro-500 text-stone-950 border border-bistro-500 shadow transition-all active:scale-95 transition-transform";
+                } else {
+                    btn.className = "flex-1 py-1.5 text-xs font-bold uppercase rounded border border-transparent text-stone-400 hover:text-white transition-all active:scale-95 transition-transform";
+                }
+            });
+
+            const noticeBlock = document.getElementById('sandbox-lockout-notice');
+            const noticeDesc = document.getElementById('lockout-notice-desc');
+            const statusText = document.getElementById('sandbox-status-text');
+            const liveDot = document.getElementById('sandbox-live-dot');
+            const sandboxBadge = document.getElementById('active-sandbox-badge');
+            
+            // Dynamic relationship indicator updates mapping to pricing mode tiers
+            const model = PRICES[appState.pricingMode];
+            const currentSub = model[tier];
+            const currentSetup = model[`setup${tier}`];
+            document.getElementById('sandbox-rel-sub').innerText = `₱${currentSub}/mo`;
+            document.getElementById('sandbox-rel-setup').innerText = `₱${currentSetup}`;
+            
+            const fieldRestoName = document.getElementById('boh-resto-name');
+            const fieldMarquee = document.getElementById('boh-marquee');
+            const fieldPriceBarako = document.getElementById('price-batangas-brew');
+            const fieldPriceLatte = document.getElementById('price-strawberry-latte');
+            
+            const btnPromoBarako = document.getElementById('promo-btn-batangas-brew');
+            const btnPromoLatte = document.getElementById('promo-btn-strawberry-latte');
+            const btnStockBarako = document.getElementById('stock-btn-batangas-brew');
+            const btnStockLatte = document.getElementById('stock-btn-strawberry-latte');
+
+            const addonWrapper = document.getElementById('sandbox-addon-options-wrapper');
+            const themeWrapper = document.getElementById('sandbox-theme-presets-wrapper');
+            const tierAForm = document.getElementById('tier-A-form-wrapper');
+
+            const enableInputs = (state) => {
+                fieldRestoName.disabled = !state;
+                fieldMarquee.disabled = !state;
+                fieldPriceBarako.disabled = !state;
+                fieldPriceLatte.disabled = !state;
+                btnPromoBarako.disabled = !state;
+                btnPromoLatte.disabled = !state;
+                btnStockBarako.disabled = !state;
+                btnStockLatte.disabled = !state;
+            };
+
+            if (tier === 'A') {
+                noticeBlock.classList.remove('hidden');
+                noticeDesc.innerHTML = "<strong>Minimum Draft Access Enabled (Tier A):</strong> Change any values or toggles below. It will compile a structured layout draft. Send it directly to Support via WhatsApp/Email to apply live!";
+                statusText.innerText = "Draft Config Editor Active";
+                liveDot.className = "w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse";
+                sandboxBadge.innerText = "Tier A Managed Portal";
+                
+                enableInputs(true);
+                addonWrapper.classList.add('opacity-30', 'pointer-events-none');
+                themeWrapper.classList.add('opacity-30', 'pointer-events-none');
+                tierAForm.classList.remove('hidden');
+                
+            } else if (tier === 'B') {
+                noticeBlock.classList.remove('hidden');
+                noticeDesc.innerHTML = "<strong>Hybrid Live Access (Tier B):</strong> Direct stock & price toggles are pushed to live customer devices in real-time. Core visual themes and custom domains are managed.";
+                statusText.innerText = "Direct Live Control Screen";
+                liveDot.className = "w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse";
+                sandboxBadge.innerText = "Tier B Live Panel";
+                
+                fieldRestoName.disabled = true;
+                fieldMarquee.disabled = true;
+                fieldPriceBarako.disabled = false;
+                fieldPriceLatte.disabled = false;
+                btnPromoBarako.disabled = false;
+                btnPromoLatte.disabled = false;
+                btnStockBarako.disabled = false;
+                btnStockLatte.disabled = false;
+
+                addonWrapper.classList.add('opacity-30', 'pointer-events-none');
+                themeWrapper.classList.add('opacity-30', 'pointer-events-none');
+                tierAForm.classList.add('hidden');
+                
+            } else {
+                noticeBlock.classList.add('hidden');
+                statusText.innerText = "Full BOH Administrative Terminal";
+                liveDot.className = "w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse";
+                sandboxBadge.innerText = "Tier C Elite POS";
+                
+                enableInputs(true);
+                addonWrapper.classList.remove('opacity-30', 'pointer-events-none');
+                themeWrapper.classList.remove('opacity-30', 'pointer-events-none');
+                tierAForm.classList.add('hidden');
+            }
+
+            syncBohState();
         }
 
         function syncBohState() {
             const nameInput = document.getElementById('boh-resto-name').value;
             const marqueeInput = document.getElementById('boh-marquee').value;
-            
-            document.getElementById('phone-resto-title-output').innerText = nameInput;
-            document.getElementById('phone-marquee-banner').innerText = marqueeInput;
+            const barakoPrice = parseFloat(document.getElementById('price-batangas-brew').value) || 0;
+            const strawberryPrice = parseFloat(document.getElementById('price-strawberry-latte').value) || 0;
 
-            sandboxState.items['batangas-brew'].price = document.getElementById('price-batangas-brew').value;
-            sandboxState.items['strawberry-latte'].price = document.getElementById('price-strawberry-latte').value;
+            if (appState.sandbox.activeTier !== 'A') {
+                appState.sandbox.restoName = nameInput || "My Venue";
+                appState.sandbox.marquee = marqueeInput || "Welcome to our Digital Menu!";
+            }
 
-            renderPhoneItems();
+            appState.sandbox.menuItems.forEach(item => {
+                if (item.id === 'batangas-brew') item.price = barakoPrice;
+                if (item.id === 'strawberry-latte') item.price = strawberryPrice;
+            });
+
+            renderPhoneView();
         }
 
         function toggleStock(itemId) {
-            if (sandboxState.tier === 'A') {
-                showPhoneToast("Action Locked: Upgrade to Tier B for live stock control.");
-                return;
+            const item = appState.sandbox.menuItems.find(i => i.id === itemId);
+            if (item) {
+                item.inStock = !item.inStock;
+                const button = document.getElementById(`stock-btn-${itemId}`);
+                button.setAttribute('aria-pressed', item.inStock ? "true" : "false");
+                if (item.inStock) {
+                    button.innerText = "In Stock";
+                    button.className = "text-xs font-bold uppercase px-2 py-1 rounded border bg-emerald-500/10 border-emerald-500/30 text-emerald-400 transition-colors active:scale-95 transition-transform";
+                } else {
+                    button.innerText = "Sold Out";
+                    button.className = "text-xs font-bold uppercase px-2 py-1 rounded border bg-red-500/10 border-red-500/30 text-red-400 transition-colors active:scale-95 transition-transform";
+                }
+                triggerPhoneToast(`${item.name} toggled to ${item.inStock ? 'IN STOCK' : 'SOLD OUT'}`);
+                renderPhoneView();
             }
-            sandboxState.items[itemId].inStock = !sandboxState.items[itemId].inStock;
-            const btn = document.getElementById(`stock-btn-${itemId}`);
-            if (sandboxState.items[itemId].inStock) {
-                btn.className = "text-xs font-bold uppercase px-2 py-1 rounded border bg-emerald-500/10 border-emerald-500/30 text-emerald-400 transition-colors";
-                btn.innerText = "In Stock";
-            } else {
-                btn.className = "text-xs font-bold uppercase px-2 py-1 rounded border bg-rose-500/10 border-rose-500/30 text-rose-400 transition-colors";
-                btn.innerText = "Sold Out";
-            }
-            renderPhoneItems();
-            showPhoneToast(`${sandboxState.items[itemId].name} updated.`);
         }
 
         function togglePromo(itemId) {
-            if (sandboxState.tier === 'A') {
-                showPhoneToast("Action Locked: Upgrade to Tier B for live promo tags.");
-                return;
-            }
-            sandboxState.items[itemId].onSale = !sandboxState.items[itemId].onSale;
-            const btn = document.getElementById(`promo-btn-${itemId}`);
-            if (sandboxState.items[itemId].onSale) {
-                btn.className = "text-xs font-bold uppercase px-2 py-1 rounded border bg-amber-500 text-stone-950 transition-colors";
-            } else {
-                btn.className = "text-xs font-bold uppercase px-2 py-1 rounded border border-theme hover:bg-bistro-500/10 text-stone-400 transition-colors";
-            }
-            renderPhoneItems();
-        }
-
-        function toggleSimAddon(addonId) {
-            sandboxState.addons[addonId] = !sandboxState.addons[addonId];
-            const btn = document.getElementById(`addon-sim-btn-${addonId}`);
-            const card = document.getElementById(`phone-${addonId}-${addonId === 'orderbag' ? 'button' : 'card'}`);
-            
-            if (sandboxState.addons[addonId]) {
-                btn.classList.add('bg-bistro-500/20', 'border-bistro-500');
-                card.classList.remove('hidden');
-            } else {
-                btn.classList.remove('bg-bistro-500/20', 'border-bistro-500');
-                card.classList.add('hidden');
+            const item = appState.sandbox.menuItems.find(i => i.id === itemId);
+            if (item) {
+                item.isOnSale = !item.isOnSale;
+                const button = document.getElementById(`promo-btn-${itemId}`);
+                if (item.isOnSale) {
+                    button.innerText = "Promo Active";
+                    button.className = "text-xs font-bold uppercase px-2 py-1 rounded border bg-amber-500/15 border-amber-500/30 text-amber-400 transition-colors active:scale-95 transition-transform";
+                } else {
+                    button.innerText = "Apply Sale";
+                    button.className = "text-xs font-bold uppercase px-2 py-1 rounded border border-theme hover:bg-bistro-500/10 text-stone-400 active:scale-95 transition-transform";
+                }
+                triggerPhoneToast(`${item.name} set to ${item.isOnSale ? 'ON SALE' : 'REGULAR PRICE'}`);
+                renderPhoneView();
             }
         }
 
-        function setPhoneTheme(theme) {
-            if (sandboxState.tier !== 'C') {
-                showPhoneToast("Theme customization requires Tier C level access.");
-                return;
-            }
-            sandboxState.phoneTheme = theme;
-            const pContainer = document.getElementById('phone-container');
-            
-            ['warm-brass', 'deep-emerald', 'rich-rose'].forEach(t => {
-                document.getElementById(`palette-btn-${t}`).className = "px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded border border-theme hover:bg-bistro-500/10 text-stone-400 transition-all";
-            });
-            document.getElementById(`palette-btn-${theme}`).className = "px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded border border-bistro-500 bg-bistro-500 text-stone-950 transition-all";
-
-            if (theme === 'deep-emerald') {
-                pContainer.style.setProperty('--accent-gold', '#10b981');
-            } else if (theme === 'rich-rose') {
-                pContainer.style.setProperty('--accent-gold', '#f43f5e');
-            } else {
-                pContainer.style.setProperty('--accent-gold', '#c49b55');
-            }
-            showPhoneToast(`Applied style preset.`);
-        }
-
-        function setPhoneCategory(cat) {
-            sandboxState.phoneCategory = cat;
-            ['beverages', 'plates', 'desserts'].forEach(c => {
-                const btn = document.getElementById(`cat-btn-${c}`);
-                if (c === cat) {
+        // BOH PHONE VIEWPORT MECHANICS
+        function setPhoneCategory(catId) {
+            appState.sandbox.activeCategory = catId;
+            ['beverages', 'plates', 'desserts'].forEach(category => {
+                const btn = document.getElementById(`cat-btn-${category}`);
+                if (category === catId) {
                     btn.className = "text-xs font-bold capitalize px-3 py-1 rounded-full bg-bistro-500 text-stone-950 transition-colors";
                 } else {
                     btn.className = "text-xs font-bold capitalize px-3 py-1 rounded-full bg-stone-900 text-stone-400 hover:text-white transition-colors";
                 }
             });
-            renderPhoneItems();
+            renderPhoneView();
         }
 
-        function renderPhoneItems() {
-            const container = document.getElementById('phone-items-container');
-            container.innerHTML = '';
+        function setPhoneTheme(themeId) {
+            appState.sandbox.phoneTheme = themeId;
+            const container = document.getElementById('phone-container');
+            const banner = document.getElementById('phone-marquee-banner');
 
-            if (sandboxState.phoneCategory !== 'beverages') {
-                container.innerHTML = `<p class="text-xs text-stone-500 italic text-center py-4">No test items programmed under this sandbox category.</p>`;
-                return;
+            container.className = "always-dark w-full max-w-[310px] h-[580px] rounded-[36px] border-[8px] overflow-hidden relative flex flex-col shadow-2xl transition-all duration-300";
+            banner.className = "text-xs font-bold py-1 px-3 tracking-wider text-center uppercase whitespace-nowrap overflow-hidden text-ellipsis transition-colors";
+            
+            ['warm-brass', 'deep-emerald', 'rich-rose'].forEach(id => {
+                const button = document.getElementById(`palette-btn-${id}`);
+                if (id === themeId) {
+                    button.className = "px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded border border-bistro-500 bg-bistro-500 text-stone-950 transition-all active:scale-95 transition-transform";
+                } else {
+                    button.className = "px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded border border-theme hover:bg-bistro-500/10 text-stone-400 transition-all active:scale-95 transition-transform";
+                }
+            });
+
+            if (themeId === 'warm-brass') {
+                container.classList.add('border-stone-900', 'bg-stone-950');
+                banner.classList.add('bg-bistro-500/20', 'text-bistro-500');
+            } else if (themeId === 'deep-emerald') {
+                container.classList.add('border-emerald-950', 'bg-stone-950');
+                banner.classList.add('bg-emerald-500/20', 'text-emerald-400');
+            } else {
+                container.classList.add('border-rose-950', 'bg-stone-950');
+                banner.classList.add('bg-rose-500/20', 'text-rose-400');
             }
 
-            Object.keys(sandboxState.items).forEach(key => {
-                const item = sandboxState.items[key];
-                const opacityClass = item.inStock ? 'opacity-100' : 'opacity-50';
-                const priceDisplay = item.onSale ? `<span class="line-through text-stone-600 text-[10px] mr-1">₱${parseInt(item.price)+25}</span> ₱${item.price}` : `₱${item.price}`;
-                
-                const cardHtml = `
-                    <div class="p-3 rounded-xl border border-stone-900 bg-stone-900/40 flex justify-between items-center ${opacityClass}">
-                        <div>
-                            <h5 class="text-xs font-bold font-serif text-white">${item.name}</h5>
-                            <p class="text-[10px] text-stone-400 font-serif mt-0.5">${priceDisplay} ${item.onSale ? '<span class="text-amber-500 font-sans text-[9px] font-black uppercase ml-1">SALE</span>' : ''}</p>
-                        </div>
-                        ${item.inStock ? `
-                            <button onclick="addSimCart(${item.price})" class="px-2.5 py-1 bg-stone-900 hover:bg-stone-800 border border-stone-800 text-bistro-500 rounded font-mono text-[10px] font-bold uppercase transition-colors" style="min-height:28px;">+ Add</button>
-                        ` : `
-                            <span class="text-[10px] font-mono text-rose-400 font-bold uppercase bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20">OUT</span>
-                        `}
-                    </div>
-                `;
-                container.innerHTML += cardHtml;
-            });
+            triggerPhoneToast(`Menu CSS palette shifted to ${themeId.replace('-', ' ')}`);
+            renderPhoneView();
         }
 
-        let currentCartTotal = 0;
-        function addSimCart(price) {
-            currentCartTotal += parseFloat(price);
-            document.getElementById('sim-cart-count').innerText = `₱${currentCartTotal.toFixed(2)}`;
-            showPhoneToast("Added item to checkout bag.");
+        function toggleSimAddon(addonKey) {
+            const btn = document.getElementById(`addon-sim-btn-${addonKey}`);
+            const card = document.getElementById(`phone-${addonKey}-card`);
+            const flowButton = document.getElementById(`phone-${addonKey}-button`);
+
+            if (addonKey === 'corkboard') {
+                card.classList.toggle('hidden');
+                btn.classList.toggle('bg-bistro-500');
+                btn.classList.toggle('text-stone-950');
+            } else if (addonKey === 'feedback') {
+                card.classList.toggle('hidden');
+                btn.classList.toggle('bg-bistro-500');
+                btn.classList.toggle('text-stone-950');
+            } else if (addonKey === 'reservations') {
+                card.classList.toggle('hidden');
+                btn.classList.toggle('bg-bistro-500');
+                btn.classList.toggle('text-stone-950');
+            } else if (addonKey === 'orderbag') {
+                flowButton.classList.toggle('hidden');
+                btn.classList.toggle('bg-bistro-500');
+                btn.classList.toggle('text-stone-950');
+                syncCartTotalDisplay();
+            }
+        }
+
+        function addSimCartItem(itemId) {
+            const item = appState.sandbox.menuItems.find(i => i.id === itemId);
+            if (item) {
+                if (!item.inStock) {
+                    triggerPhoneToast("Item sold out! Cannot add to order bag.");
+                    return;
+                }
+                appState.sandbox.cart.push(item);
+                triggerPhoneToast(`${item.name} added to Order Bag.`);
+                syncCartTotalDisplay();
+            }
+        }
+
+        function syncCartTotalDisplay() {
+            const countBtn = document.getElementById('sim-cart-count');
+            const total = appState.sandbox.cart.reduce((sum, item) => sum + item.price, 0);
+            countBtn.innerText = `₱${total.toFixed(2)}`;
         }
 
         function openSimCartModal() {
-            showPhoneToast(`Checking out: Total ₱${currentCartTotal.toFixed(2)} via GCash API module.`);
-            currentCartTotal = 0;
-            document.getElementById('sim-cart-count').innerText = `₱0.00`;
-        }
+            const modal = document.getElementById('phone-cart-modal');
+            const list = document.getElementById('phone-cart-items-list');
+            const totalOut = document.getElementById('phone-cart-total-price');
 
-        function submitSimFeedback() { showPhoneToast("Feedback sent directly to BOH panel logs."); }
-        function submitSimBooking() { showPhoneToast("Table seating reserved."); }
-        function submitEditRequest() { alert("Draft updates compiled successfully."); }
-        function purchasePlan(planName) { alert(`Routing setup consultation registration workflow for: ${planName}`); }
+            list.innerHTML = '';
+            let sumTotal = 0;
 
-        // Operational Savings Calculator Dynamic Updates Logic
-        function updateCalculations() {
-            const orders = document.getElementById('calc-orders').value;
-            document.getElementById('calc-orders-val').innerText = `${parseInt(orders).toLocaleString()} orders`;
-            const savings = orders * 6.5; 
-            document.getElementById('calc-savings').innerText = `₱${Math.round(savings).toLocaleString()}`;
-        }
-
-        // Add-ons module handler
-        function toggleAddon(id) {
-            const btn = document.getElementById(`addon-btn-${id}`);
-            if (btn.innerText === "Add") {
-                btn.innerText = "Added";
-                btn.className = "text-xs font-mono px-2.5 py-1.5 rounded bg-bistro-500 text-stone-950 font-bold transition-colors";
+            if (appState.sandbox.cart.length === 0) {
+                list.innerHTML = `<div class="text-center text-stone-500 py-6 font-sans">Your bag is empty. Tap items on menu to add.</div>`;
             } else {
-                btn.innerText = "Add";
-                btn.className = "text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors";
+                appState.sandbox.cart.forEach((item, index) => {
+                    sumTotal += item.price;
+                    const el = document.createElement('div');
+                    el.className = 'flex justify-between items-center border-b border-stone-900 pb-1.5';
+                    el.innerHTML = `
+                        <div>
+                            <span class="text-white block font-medium font-sans">${item.name}</span>
+                            <span class="text-bistro-500 font-mono">₱${item.price}</span>
+                        </div>
+                        <button onclick="removeSimCartItem(${index})" class="text-red-500 hover:text-red-400 font-sans" style="min-height: 28px;">
+                            Remove
+                        </button>
+                    `;
+                    list.appendChild(el);
+                });
+            }
+
+            totalOut.innerText = `₱${sumTotal.toFixed(2)}`;
+            modal.classList.remove('hidden');
+        }
+
+        function closeSimCartModal() {
+            document.getElementById('phone-cart-modal').classList.add('hidden');
+        }
+
+        function removeSimCartItem(index) {
+            appState.sandbox.cart.splice(index, 1);
+            syncCartTotalDisplay();
+            openSimCartModal();
+        }
+
+        function triggerSimulatePayment() {
+            if (appState.sandbox.cart.length === 0) {
+                triggerPhoneToast("Bag empty! Add dishes before proceeding.");
+                return;
+            }
+            closeSimCartModal();
+            triggerPhoneToast("Processing simulated GCash link redirect... Direct payment check secured!");
+            appState.sandbox.cart = [];
+            syncCartTotalDisplay();
+        }
+
+        function renderPhoneView() {
+            const container = document.getElementById('phone-items-container');
+            const restoTitle = document.getElementById('phone-resto-title-output');
+            const marqueeBanner = document.getElementById('phone-marquee-banner');
+            
+            if(!restoTitle) return;
+            restoTitle.innerText = appState.sandbox.restoName;
+            marqueeBanner.innerText = appState.sandbox.marquee;
+
+            const filtered = appState.sandbox.menuItems.filter(item => item.category === appState.sandbox.activeCategory);
+            container.innerHTML = '';
+
+            if (filtered.length === 0) {
+                container.innerHTML = `<div class="text-center text-stone-600 text-xs py-10 font-mono font-bold">No Items Available</div>`;
+                return;
+            }
+
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = `p-2.5 rounded-xl border border-theme flex gap-3 transition-all ${!item.inStock ? 'opacity-40' : ''} ${appState.sandbox.phoneTheme === 'warm-brass' ? 'bg-stone-900/40' : 'bg-stone-950'}`;
+                
+                card.innerHTML = `
+                    <div class="w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-stone-800">
+                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/1c1917/ffffff?text=Item'">
+                    </div>
+                    <div class="flex-1 flex flex-col justify-between min-w-0 text-left">
+                        <div>
+                            <div class="flex items-start justify-between gap-1.5">
+                                <span class="text-xs font-serif font-bold text-white truncate">${item.name}</span>
+                                ${item.isPopular ? `<span class="text-[9px] font-mono bg-amber-500/10 text-amber-400 border border-amber-500/30 px-1 py-0.2 rounded shrink-0 font-black">POPULAR</span>` : ''}
+                            </div>
+                            <p class="text-[11px] text-stone-500 leading-tight line-clamp-2 mt-0.5 font-sans">${item.description}</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-1 border-t border-stone-900">
+                            <div class="flex items-center gap-1">
+                                <span class="font-serif font-black text-xs text-bistro-500">₱${item.price}</span>
+                                ${item.isOnSale ? `<span class="text-xs bg-red-500/15 text-red-400 border border-red-500/20 px-1.5 rounded uppercase tracking-wider font-extrabold animate-pulse">SALE</span>` : ''}
+                            </div>
+                            <div class="flex gap-1">
+                                ${item.inStock ? `
+                                    <button onclick="addSimCartItem('${item.id}')" class="text-xs font-bold uppercase px-2 py-0.5 rounded border border-theme text-stone-300 hover:bg-bistro-500 hover:text-stone-950 transition-colors active:scale-95 transition-transform" style="min-height: 28px;">Add</button>
+                                ` : `
+                                    <span class="text-xs font-bold uppercase text-red-400 font-sans">Sold Out</span>
+                                `}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // PRICING MODE AND SCALE CONTROLLER
+        function setMode(mode) {
+            appState.pricingMode = mode;
+            
+            document.getElementById('singleBtn').className = mode === 'single'
+                ? 'flex-1 px-5 py-2.5 rounded-full text-xs font-bold bg-bistro-500 text-stone-950 border border-bistro-500 shadow-md transition-all uppercase'
+                : 'flex-1 px-5 py-2.5 rounded-full text-xs font-bold border border-transparent text-stone-400 hover:text-white transition-all uppercase';
+            
+            document.getElementById('franBtn').className = mode === 'franchise'
+                ? 'flex-1 px-5 py-2.5 rounded-full text-xs font-bold bg-bistro-500 text-stone-950 border border-bistro-500 shadow-md transition-all uppercase'
+                : 'flex-1 px-5 py-2.5 rounded-full text-xs font-bold border border-transparent text-stone-400 hover:text-white transition-all uppercase';
+
+            const single = {
+                a: { p: '₱299', d: "That's only ₱9.97 per day!", badge: 'MANAGED ENTRY', setup: 'ONE-TIME SETUP: ₱0 software • Standee ₱350 optional', cta: 'Start with Tier A' },
+                b: { p: '₱549', d: "That's only ₱18.30 per day!", badge: 'DIRECT CONTROL', setup: 'ONE-TIME SETUP: ₱499 per brand — waived at 10+', cta: 'Choose Tier B' },
+                c: { p: '₱849', d: "That's only ₱28.30 per day!", badge: 'SALES OS', setup: 'ONE-TIME SETUP: ₱0 • 2 Months FREE', cta: 'EQUIP MY STORE' }
+            };
+
+            const franchise = {
+                a: { p: '₱279', d: "That's only ₱9.30 per day!", badge: '5-10 BRANCHES', setup: 'Setup: ₱0 — HQ dashboard included', cta: 'Start 5-10 Branches' },
+                b: { p: '₱519', d: "That's only ₱17.30 per day!", badge: '11-30 BRANCHES • MOST POPULAR', setup: 'Setup: ₱0 — Includes Corkboard + Brand + 3 standees', cta: 'Scale 11-30 Branches' },
+                c: { p: '₱617', d: "That's only ₱20.57 per day!", badge: '31+ BRANCHES • NATIONWIDE', setup: 'Setup: ₱0 — Includes Corkboard + POS + 6 standees', cta: 'Equip 31+ Branches' }
+            };
+
+            const data = mode === 'single' ? single : franchise;
+
+            document.getElementById('price-a').textContent = data.a.p;
+            document.getElementById('daily-a').textContent = data.a.d;
+            document.getElementById('badge-a').textContent = data.a.badge;
+            document.getElementById('setup-a').textContent = data.a.setup;
+            document.getElementById('cta-a').textContent = data.a.cta;
+
+            document.getElementById('price-b').textContent = data.b.p;
+            document.getElementById('daily-b').textContent = data.b.d;
+            document.getElementById('badge-b').textContent = data.b.badge;
+            document.getElementById('setup-b').textContent = data.b.setup;
+            document.getElementById('cta-b').textContent = data.b.cta;
+
+            document.getElementById('price-c').textContent = data.c.p;
+            document.getElementById('daily-c').textContent = data.c.d;
+            document.getElementById('badge-c').textContent = data.c.badge;
+            document.getElementById('setup-c').textContent = data.c.setup;
+            document.getElementById('cta-c').textContent = data.c.cta;
+
+            document.getElementById('scale-a').classList.toggle('hidden', mode !== 'franchise');
+            document.getElementById('scale-b').classList.toggle('hidden', mode !== 'franchise');
+            document.getElementById('scale-c').classList.toggle('hidden', mode !== 'franchise');
+
+            document.getElementById('scale-table-a').classList.toggle('hidden', mode !== 'franchise');
+            document.getElementById('scale-table-b').classList.toggle('hidden', mode !== 'franchise');
+            document.getElementById('scale-table-c').classList.toggle('hidden', mode !== 'franchise');
+
+            // Sync dynamic BOH sandbox display pricing info
+            const currentSub = PRICES[mode][appState.sandbox.activeTier];
+            const currentSetup = PRICES[mode][`setup${appState.sandbox.activeTier}`];
+            document.getElementById('sandbox-rel-sub').innerText = `₱${currentSub}/mo`;
+            document.getElementById('sandbox-rel-setup').innerText = `₱${currentSetup}`;
+
+            runFinancialCalc();
+        }
+
+        function toggleAddon(addonKey) {
+            appState.selectedAddons[addonKey] = !appState.selectedAddons[addonKey];
+            
+            const btn = document.getElementById(`addon-btn-${addonKey}`);
+            if (appState.selectedAddons[addonKey]) {
+                btn.innerText = "Added";
+                btn.className = "px-4 py-1.5 rounded bg-bistro-500 text-stone-950 font-bold uppercase text-xs transition-colors shadow active:scale-95 transition-transform";
+                if(addonKey === 'feedback') {
+                    btn.className = "text-xs font-mono px-3 py-1.5 rounded bg-[#D4A76A] text-stone-950 font-black transition-all border border-transparent shadow active:scale-95 transition-transform";
+                }
+            } else {
+                btn.innerText = addonKey === 'feedback' ? "Add — Most Popular" : (addonKey === 'corkboard' ? "Add for Tier A" : "Add");
+                btn.className = "text-xs font-mono px-2.5 py-1.5 rounded bg-stone-900 hover:bg-stone-800 border border-theme text-stone-400 transition-colors active:scale-95 transition-transform";
+                if(addonKey === 'feedback') {
+                    btn.className = "text-xs font-mono px-3 py-1.5 rounded bg-[#D4A76A] hover:bg-[#e4b77a] text-stone-950 font-bold transition-colors active:scale-95 transition-transform";
+                }
+            }
+
+            runFinancialCalc();
+        }
+
+        function runFinancialCalc() {
+            const tables = parseInt(document.getElementById('calc-tables').value) || 5;
+            const reprints = parseInt(document.getElementById('calc-reprints').value) || 1;
+            const costPerPrint = parseInt(document.getElementById('calc-print-cost').value) || 0;
+
+            document.getElementById('calc-tables-val').innerText = `${tables} Tables`;
+            document.getElementById('calc-reprints-val').innerText = `${reprints} Runs / year`;
+
+            // Reprint costs:
+            const totalReprintCost = tables * reprints * costPerPrint;
+            
+            // Competitor Agency Fees: Menu Editor (₱1000/mo = ₱12000/yr) + POS (₱1500/mo = ₱18000/yr)
+            const competitorAgencyFees = 12000 + 18000;
+            const totalLegacyAgencySpent = totalReprintCost + competitorAgencyFees;
+
+            // Low signal PDF drops:
+            const frictionLoss = Math.round(tables * 250 * 12); 
+
+            let activeSubBase = PRICES[appState.pricingMode].B;
+
+            let addonSum = 0;
+            if (appState.selectedAddons.corkboard) addonSum += 150;
+            if (appState.selectedAddons.feedback) addonSum += 100;
+            if (appState.selectedAddons.reservations) addonSum += 299;
+            if (appState.selectedAddons.orderbag) addonSum += 499;
+
+            let annualAddonSum = 0;
+            if (appState.selectedAddons.domain) annualAddonSum += 580; // Year-1 Domain Setup
+
+            const totalVibeTableAnnualCost = ((activeSubBase + addonSum) * 12) + annualAddonSum;
+
+            const totalLossLegacy = totalLegacyAgencySpent + frictionLoss;
+            const netSavings = totalLossLegacy - totalVibeTableAnnualCost;
+            
+            // 3-Month Retained value for the banner:
+            const threeMonthSavings = Math.round(netSavings / 4);
+
+            document.getElementById('out-print-cost').innerText = `₱${totalLegacyAgencySpent.toLocaleString()}`;
+            document.getElementById('out-pdf-attrition').innerText = `₱${frictionLoss.toLocaleString()}`;
+            document.getElementById('out-saved-profit').innerText = `₱${netSavings.toLocaleString()}`;
+            
+            const roiBanner = document.getElementById('roi-time-banner');
+            if (roiBanner) {
+                roiBanner.innerText = `Saves ₱${threeMonthSavings.toLocaleString()} in first 3 Months`;
             }
         }
+
+        function purchasePlan(planName) {
+            const pricingModel = PRICES[appState.pricingMode];
+            let totalMonthly = pricingModel.B; 
+            if (planName.includes("A")) totalMonthly = pricingModel.A;
+            if (planName.includes("C")) totalMonthly = pricingModel.C;
+
+            let addonSum = 0;
+            if (appState.selectedAddons.corkboard) addonSum += 150;
+            if (appState.selectedAddons.feedback) addonSum += 100;
+            if (appState.selectedAddons.reservations) addonSum += 299;
+            if (appState.selectedAddons.orderbag) addonSum += 499;
+
+            const computedTotal = totalMonthly + addonSum;
+            
+            let addonText = `Computed Subscription Total: ₱${computedTotal}/month.`;
+            if (appState.selectedAddons.domain) {
+                addonText += ` (Includes Yearly Custom Domain setup: +₱580/yr-1)`;
+            }
+
+            openBookingModal(`Onboarding Setup: ${planName}`, `Fill out your registration metrics below. Selected: ${planName} — ${addonText}`);
+        }
+
+        function openBookingModal(title, desc) {
+            lastActiveElement = document.activeElement;
+            const modal = document.getElementById('booking-modal');
+            const mTitle = document.getElementById('modal-title');
+            const mDesc = document.getElementById('modal-desc');
+            
+            mTitle.innerText = title;
+            mDesc.innerText = desc;
+            
+            modal.classList.remove('hidden');
+            const firstFocusable = modal.querySelector('input');
+            if (firstFocusable) firstFocusable.focus();
+        }
+
+        function closeBookingModal() {
+            document.getElementById('booking-modal').classList.add('hidden');
+            if (lastActiveElement) {
+                lastActiveElement.focus();
+            }
+        }
+
+        function submitBookingForm(e) {
+            e.preventDefault();
+            closeBookingModal();
+            const successModal = document.getElementById('success-modal');
+            successModal.classList.remove('hidden');
+            
+            const firstFocusable = successModal.querySelector('button');
+            if (firstFocusable) firstFocusable.focus();
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+            if (lastActiveElement) {
+                lastActiveElement.focus();
+            }
+        }
+
+        function triggerPhoneToast(msg) {
+            const toast = document.getElementById('phone-toast');
+            const txt = document.getElementById('phone-toast-text');
+            if (toast && txt) {
+                txt.innerText = msg;
+                toast.classList.remove('opacity-0', 'translate-y-[-100px]');
+                toast.classList.add('opacity-100', 'translate-y-0');
+                
+                setTimeout(() => {
+                    toast.classList.remove('opacity-100', 'translate-y-0');
+                    toast.classList.add('opacity-0', 'translate-y-[-100px]');
+                }, 2500);
+            }
+        }
+
+        function submitSimFeedback() {
+            triggerPhoneToast("Feedback captured securely in private merchant panel dashboard!");
+        }
+
+        function submitSimBooking() {
+            triggerPhoneToast("Reservations recorded! Status set to 'PENDING'.");
+        }
+
+        function submitEditRequest() {
+            const req = document.getElementById('edit-request-input').value;
+            if (req.trim() !== '') {
+                triggerPhoneToast("Draft Config compiled! Structure sent directly to VibeTable technical support pipeline.");
+                document.getElementById('edit-request-input').value = '';
+            }
+        }
+
+        function toggleFaq(index) {
+            const answer = document.getElementById(`faq-answer-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+            const button = answer.previousElementSibling;
+            
+            if (answer && icon) {
+                const isCollapsed = answer.classList.contains('hidden');
+                if (isCollapsed) {
+                    answer.classList.remove('hidden');
+                    icon.classList.add('rotate-180');
+                    button.setAttribute('aria-expanded', 'true');
+                } else {
+                    answer.classList.add('hidden');
+                    icon.classList.remove('rotate-180');
+                    button.setAttribute('aria-expanded', 'false');
+                }
+            }
+        }
+
+        function initApp() {
+            setMode('single');
+            setSandboxTier('B');
+            setPhoneCategory('beverages');
+            setPhoneTheme('warm-brass');
+        }
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 40) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
     </script>
 </body>
 </html>
